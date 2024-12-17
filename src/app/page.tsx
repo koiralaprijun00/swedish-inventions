@@ -9,6 +9,14 @@ interface SectionProps {
   children: React.ReactNode;  // children can be any valid JSX content
 }
 
+// Define the prop types for InventionCard
+interface InventionCardProps {
+  name: string;
+  description: string;
+  imageSrc: string;
+  link?: string;  // link is optional
+}
+
 export default function Home() {
   return (
     <div className="justify-items-start min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -45,7 +53,7 @@ function Section({ title, children }: SectionProps) {
 }
 
 // InventionCard Component
-function InventionCard({ name, description, imageSrc, link }) {
+function InventionCard({ name, description, imageSrc, link }: InventionCardProps) {
   return (
     <div className="invention-card">
       {/* Left Section: Image and Text */}
