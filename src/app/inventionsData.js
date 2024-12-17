@@ -1,3 +1,4 @@
+
 // inventionsData.js
 const inventionsData = [
   {
@@ -12,8 +13,8 @@ const inventionsData = [
       {
         name: "Coca-Cola Bottle (1916)",
         description: "The iconic contoured bottle design, created by Swedish-born Alexander Samuelson.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        imageSrc: "/invention-images/coca-cola.jpg",
+        link: "https://www.coca-colacompany.com/about-us/history/the-history-of-the-coca-cola-contour-bottle"
       },
       {
         name: "Absolut Vodka",

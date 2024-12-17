@@ -1,4 +1,5 @@
 import inventionsData from "./inventionsData"
+import Image from 'next/image';
 import "./style.css"
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
       {/* Header */}
       <header className="text-start">
         <h1>Famous Swedish Inventions</h1>
-        <p>Discovering Sweden's Contributions to the World</p>
+        <p>Discovering Sweden&#39;s Contributions to the World</p>
       </header>
 
       {/* Main Content */}
@@ -42,7 +43,13 @@ function InventionCard({ name, description, imageSrc, link }) {
     <div className="invention-card">
       {/* Left Section: Image and Text */}
       <div className="invention-card-content">
-        <img src={imageSrc} alt={name} />
+      <Image
+          src={imageSrc}
+          alt={name}
+          width={300} // Adjust the width based on your layout needs
+          height={200} // Adjust the height as well
+          className="rounded-md" // Optional: add some styling like border radius
+        />
         <h3>
           {name}
         </h3>
