@@ -31,7 +31,7 @@ export default function Home() {
 }
 
 // Section Component
-function Section({ title, children }) {
+function Section({ title, children }: SectionProps) {
   return (
     <section>
       <h2 className="text-xl font-bold mb-4">
