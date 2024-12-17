@@ -1,6 +1,13 @@
+import React from 'react';
 import inventionsData from "./inventionsData"
 import Image from 'next/image';
 import "./style.css"
+
+// Define types for the Section component props
+interface SectionProps {
+  title: string;  // The title prop will be a string
+  children: React.ReactNode;  // children can be any valid JSX content
+}
 
 export default function Home() {
   return (
