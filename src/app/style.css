@@ -1,0 +1,91 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #0f3a56;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff; /* White text for contrast */
+}
+
+header {
+  color: #ffffff; /* White text for contrast */
+  padding: 50px 20px; /* Generous padding for space */
+  border-radius: 8px; /* Slight rounding for modern feel */
+}
+
+header h1 {
+  font-size: 3.5rem; /* Large, bold text */
+  font-weight: 700; /* Bold font weight */
+  margin-bottom: 20px;
+  line-height: 1.2; /* Slightly tighter line-height */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Clean, modern font */
+}
+
+header p {
+  font-size: 1.5rem;
+  font-weight: 300; /* Lighter subheading text */
+  margin: 0;
+}
+
+.invention-card-content {
+  flex: 1; /* Allows text to occupy remaining space */
+}
+
+.invention-card h3 {
+  color: #005b99;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+/* General Section Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Creates 5 equal columns */
+  gap: 20px; /* Space between cards */
+  padding: 10px;
+}
+
+.invention-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left (start) horizontally */
+  justify-content: flex-start; /* Align items to the top (start) vertically */
+  text-align: left; /* Text alignment to the left */
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 450px; /* Fixed width as desired */
+}
+
+/* Image */
+.invention-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+/* Card Content */
+.invention-card h3 {
+  font-size: 1rem;
+  color: #005b99;
+  margin: 10px 0;
+}
+
+.invention-card p {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+  margin: 0;
+}
