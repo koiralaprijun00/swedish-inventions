@@ -5,6 +5,7 @@ body {
   margin: 0 auto;
   padding: 20px;
   background-color: #0f3a56;
+  color: white;
 }
 h1,
 h2,
@@ -35,12 +36,9 @@ header p {
   margin: 0;
 }
 
-.invention-card-content {
-  flex: 1; /* Allows text to occupy remaining space */
-}
+
 
 .invention-card h3 {
-  color: #005b99;
   font-size: 1.2rem;
   margin-bottom: 8px;
 }
@@ -54,18 +52,22 @@ header p {
 }
 
 .invention-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align items to the left (start) horizontally */
-  justify-content: flex-start; /* Align items to the top (start) vertically */
-  text-align: left; /* Text alignment to the left */
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  width: 450px; /* Fixed width as desired */
+  color: white;
+  display: flex; /* Flex layout for left and right sections */
+  align-items: top; /* Center items vertically */
+  justify-content: space-between; /* Space between content and logo */
+  padding: 20px 26px;
+  height: auto; /* Adjust height to content */
+  width: 450px;
+  text-align: left;
+  border: 12px solid rgb(252, 174, 118);
+
 }
+
+.invention-card-content {
+  flex: 1; /* Occupy available space on the left */
+}
+
 
 /* Image */
 .invention-card img {
@@ -78,14 +80,25 @@ header p {
 
 /* Card Content */
 .invention-card h3 {
-  font-size: 1rem;
-  color: #005b99;
+  font-weight: bolder;
+  font-size: 1.2rem;
   margin: 10px 0;
 }
 
 .invention-card p {
   font-size: 0.9rem;
-  color: #444;
   line-height: 1.4;
   margin: 0;
+}
+
+/* Wikipedia Logo Link */
+.wikipedia-link img {
+  width: 30px; /* Small Wikipedia logo */
+  height: 30px;
+  object-fit: contain;
+}
+
+.wikipedia-link {
+  margin-left: 20px; /* Add space between content and the logo */
+  display: inline-block;
 }
