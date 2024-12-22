@@ -1,34 +1,36 @@
-
 // inventionsData.js
 const inventionsData = [
   {
     category: "Food & Beverage",
     items: [
       {
-        name: "Oatmeal",
-        description: "A staple breakfast food, widely consumed for its simplicity and nutritional value.",
-        imageSrc: "https://via.placeholder.com/150",
+        name: "Oatly Oat Milk",
+        description:
+          "Oatly Oat Milk is a plant-based milk alternative made from oats. It is known for its creamy texture and mild, slightly sweet flavor. Oatly is a popular choice for those who are lactose intolerant, vegan, or looking to reduce their dairy consumption. It is often used in coffee, smoothies, and baking, and is fortified with vitamins and minerals to provide a nutritious alternative to cow's milk.",
+        imageSrc: "/invention-images/oatly.jpg",
         link: "https://example.com/oatmeal",
-        inventorName: "Prijun Koirala"
+        inventorName: "Rickard Öste"
       },
       {
         name: "Coca-Cola Bottle (1916)",
-        description: "The iconic contoured bottle design, created by Swedish-born Alexander Samuelson.",
+        description: "The iconic contoured Coca-Cola bottle was designed by Swedish-born Alexander Samuelson in 1915. He was working for the Root Glass Company in Indiana, USA, at the time.",
         imageSrc: "/invention-images/coca-cola.jpg",
-        link: "https://www.coca-colacompany.com/about-us/history/the-history-of-the-coca-cola-contour-bottle"
+        link: "https://www.coca-colacompany.com/about-us/history/the-history-of-the-coca-cola-contour-bottle",
+        inventorName: "Alexander Samuelson"
       },
       {
         name: "Absolut Vodka",
-        description: "A globally recognized premium vodka brand, originating in Sweden.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description: "Lars Olsson Smith, a Swedish entrepreneur, introduced Absolut Rent Brännvin (Absolute Pure Vodka) in 1879. He is known for revolutionizing the vodka industry with his continuous distillation process.",
+        imageSrc: "/invention-images/absolut-vodka.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Lars Olsson Smith"
       },
       {
         name: "Peepoo Bag",
-        description:
-          "A single-use toilet designed to prevent contamination from human waste, showcasing Sweden's commitment to sustainable solutions for sanitation issues in developing countries.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description:"nders Wilhelmson, a Swedish architect and professor, invented the Peepoo Bag. It is a single-use, self-sanitizing toilet designed to provide safe sanitation in areas lacking proper facilities.",
+        imageSrc: "/invention-images/peepoo-bag.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Anders Wilhelmson"
       }
     ]
   },
@@ -36,35 +38,39 @@ const inventionsData = [
     category: "Engineering & Technology",
     items: [
       {
-        name: "Adjustable Wrench (1892)",
-        description:
-          "Invented by Johan Petter Johansson, this versatile tool allows users to adjust the size of the opening to fit various nuts and bolts, eliminating the need for multiple wrenches.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        name: "Adjustable Wrench",
+        description:"ohan Petter Johansson, a Swedish inventor, created the adjustable wrench in 1892. This tool allows users to adjust the size of the opening to fit various nuts and bolts, eliminating the need for multiple wrenches.",
+        imageSrc: "/invention-images/wrench.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Johan Petter Johansson"
       },
       {
-        name: "Safety Matches (Early 19th Century)",
-        description: "Developed by Gustaf Erik Pasch, these matches moved the flammable material to the side of the box, making them much safer to use.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        name: "Safety Matches",
+        description: "Gustaf Erik Pasch, a Swedish chemist, developed safety matches in the early 19th century. He moved the flammable material to the side of the box, making them much safer to use compared to earlier matches.",
+        imageSrc: "/invention-images/safety-matches.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Gustaf Erik Pasch"
       },
       {
         name: "Tetra Pak (1940s)",
-        description: "Invented by Erik Wallenberg, this packaging method revolutionized food storage by allowing liquids to be stored without refrigeration.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description: "Erik Wallenberg, a Swedish engineer, invented the Tetra Pak packaging method in the 1940s. This innovative packaging allows liquids to be stored without refrigeration, revolutionizing food storage and distribution.",
+        imageSrc: "/invention-images/tetra-pak.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Erik Wallenberg"
       },
       {
         name: "Ultrasound Technology",
         description: "Pioneered in Sweden, ultrasound imaging has become a vital tool in medical diagnostics.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        imageSrc: "/invention-images/ultrasound.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Prijun Koirala"
       },
       {
         name: "Three-Point Seatbelt (1959)",
-        description: "Invented by Volvo, the three-point seatbelt significantly improved car safety.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description: "Nils Bohlin, a Swedish engineer working for Volvo, invented the three-point seatbelt in 1959. This design significantly improved car safety by securing both the upper and lower body with a single continuous belt. It has since become a standard safety feature in vehicles worldwide.",
+        imageSrc: "/invention-images/seatbelt.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Nils Bohlin"
       }
     ]
   },
@@ -73,33 +79,41 @@ const inventionsData = [
     items: [
       {
         name: "Bluetooth Technology",
-        description: "Developed by Swedish engineers Jaap Haartsen and Sven Mattisson, Bluetooth allows for short-range wireless communication between devices.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description: "Bluetooth technology was developed by Swedish engineers Jaap Haartsen and Sven Mattisson while working at Ericsson in the 1990s. It allows for short-range wireless communication between devices, enabling the creation of wireless personal area networks.",
+        imageSrc: "/invention-images/blueetooth.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Jaap Haartsen and Sven Mattisson"
       },
       {
         name: "Automatic Identification Systems (AIS)",
-        description: "Created by Håkan Lans, this system enhances maritime navigation by tracking vessels using GPS technology.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description: "Håkan Lans, a Swedish inventor, created the Automatic Identification System (AIS). This system enhances maritime navigation by tracking vessels using GPS technology, improving safety and efficiency in maritime operations.",
+        imageSrc: "/invention-images/ais.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Håkan Lans"
       },
       {
         name: "Skype",
-        description: "A game-changing platform for online voice and video calls.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description:
+          "Skype was co-founded by Swedish entrepreneur Niklas Zennström and Danish entrepreneur Janus Friis in 2003. It revolutionized online communication by providing a platform for voice and video calls over the internet.",
+        imageSrc: "/invention-images/skype.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Niklas Zennström and Janus Friis"
       },
       {
         name: "Spotify",
-        description: "The world's leading music streaming service, transforming how we listen to music.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description:
+          "Spotify was founded by Swedish entrepreneurs Daniel Ek and Martin Lorentzon in 2006. It is a digital music streaming service that provides users with access to millions of songs and podcasts from around the world.",
+        imageSrc: "/invention-images/spotify.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Daniel Ek and Martin Lorentzon "
       },
       {
         name: "Ericsson",
-        description: "A major telecommunications company, pioneering mobile communication.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description:
+          "Founded in 1876 by Lars Magnus Ericsson, Ericsson is a Swedish multinational networking and telecommunications company. It has been at the forefront of mobile communication technology, contributing significantly to the development of mobile networks and infrastructure worldwide.",
+        imageSrc: "/invention-images/ericsson.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Lars Magnus Ericsson"
       }
     ]
   },
@@ -108,15 +122,19 @@ const inventionsData = [
     items: [
       {
         name: "Minecraft",
-        description: "A globally popular sandbox video game created by Mojang, a Swedish company.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description:
+          "Minecraft is a globally popular sandbox video game created by Markus Persson, also known as Notch. It was developed by Mojang, a Swedish company, and released in 2011. The game allows players to build and explore virtual worlds made up of blocks.",
+        imageSrc: "/invention-images/minecraft.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Markus Persson(Notch)"
       },
       {
         name: "Candy Crush",
-        description: "A highly addictive mobile game developed by King, a Swedish company.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description:
+          "Candy Crush is a highly addictive mobile game developed by King, a Swedish company. It was released in 2012 and quickly became one of the most popular mobile games worldwide. The game involves matching candies to achieve specific goals and progress through levels.",
+        imageSrc: "/invention-images/candy-crush.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Riccardo Zacconi (CEO of King)"
       }
     ]
   },
@@ -125,27 +143,34 @@ const inventionsData = [
     items: [
       {
         name: "Nobel Prize",
-        description: "Established by Alfred Nobel, awarded for excellence in sciences, peace, and literature.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description:
+          "The Nobel Prize was established by Alfred Nobel, a Swedish inventor, engineer, and industrialist, in his will in 1895. The prizes are awarded annually in recognition of outstanding achievements in the fields of Physics, Chemistry, Medicine, Literature, Peace, and Economic Sciences. The Nobel Prizes are considered some of the most prestigious awards in the world, honoring individuals and organizations that have made significant contributions to humanity.",
+        imageSrc: "/invention-images/nobel-prize.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Alfred Nobel"
       },
       {
-        name: "First Cholera Vaccine",
-        description: "Developed by a Swedish scientist to combat the deadly disease.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        name: "First Oral Cholera Vaccine, Drokal",
+        description:
+          "Jan Holmgren, a Swedish scientist, developed the first effective oral cholera vaccine known as Drokal. This vaccine has been crucial in combating the deadly disease by providing an easy-to-administer and effective method of immunization, significantly reducing the incidence of cholera in affected regions.",
+        imageSrc: "/invention-images/cholera-vaccine.jpeg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Jan Holmgren"
       },
       {
         name: "Hövding (Invisible Bicycle Helmet)",
-        description: "This innovative helmet functions like an airbag for cyclists, inflating upon impact to protect the head while being worn as a collar.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description:
+          "The Hövding is an innovative bicycle helmet designed by Swedish inventors Anna Haupt and Terese Alstin. Unlike traditional helmets, the Hövding is worn as a collar around the neck and inflates like an airbag upon impact to protect the cyclist's head. This design provides both safety and comfort, making it a popular choice among urban cyclists.",
+        imageSrc: "/invention-images/hovding.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Anna Haupt and Terese Alstin"
       },
       {
         name: "Life-Saving Drones",
         description: "Swedish innovations in drone technology have been applied in healthcare for delivering medical supplies quickly and efficiently.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        imageSrc: "/invention-images/drones.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Prijun Koirala"
       }
     ]
   },
@@ -154,15 +179,19 @@ const inventionsData = [
     items: [
       {
         name: "H&M",
-        description: "A leading global fashion retailer, known for affordable clothing.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description:
+          "H&M, short for Hennes & Mauritz, is a leading global fashion retailer founded by Swedish entrepreneur Erling Persson in 1947. The company is known for offering fashionable and affordable clothing for men, women, and children. H&M has expanded its presence worldwide, becoming one of the largest fashion retailers with a focus on sustainability and innovation in the fashion industry.",
+        imageSrc: "/invention-images/handm.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Erling Persson"
       },
       {
         name: "IKEA",
-        description: "A Swedish multinational furnishing company famous for flat-pack furniture and affordable home designs.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        description:
+          "IKEA is a Swedish multinational furnishing company founded by Ingvar Kamprad in 1943. It is renowned for its affordable, flat-pack furniture and innovative home designs. IKEA's products are designed to be easily assembled by the consumer, making stylish and functional home furnishings accessible to a wide audience. The company has grown to become one of the largest furniture retailers in the world, with a strong focus on sustainability and customer experience.",
+        imageSrc: "/invention-images/ikea.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Ingvar Kamprad"
       }
     ]
   },
@@ -172,8 +201,9 @@ const inventionsData = [
       {
         name: "Celsius Temperature Scale (1742)",
         description: "Developed by Anders Celsius, this scale is widely used around the world for measuring temperature.",
-        imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        imageSrc: "/invention-images/celsius.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Prijun Koirala"
       }
     ]
   }

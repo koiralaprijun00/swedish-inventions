@@ -23,7 +23,10 @@ export default function Home() {
     <div className="justify-items-start min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       {/* Header */}
       <header className="text-start">
-        <h1>Famous Swedish Inventions</h1>
+        <h1>
+          Famous Swedish <span style={{ fontFamily: "Libre Franklin", fontSize: "1.3em", fontWeight: "1000" }}>Inventions</span> and{" "}
+          <span style={{ fontFamily: "Libre Franklin", fontSize: "1.3em", fontWeight: "1000" }}>innovations</span>
+        </h1>
         <p>Discovering Sweden&#39;s Contributions to the World</p>
       </header>
 

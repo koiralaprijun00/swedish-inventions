@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Oi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Oi&display=swap');
+
+/* Add any additional styles here */
+.custom-font {
+  font-family: 'Oi', cursive;
+  font-size: 2em; /* Adjust the size as needed */
+}
+
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
