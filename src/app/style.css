@@ -36,13 +36,6 @@ header p {
   margin: 0;
 }
 
-
-
-.invention-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
 /* General Section Grid */
 .grid-container {
   display: grid;
@@ -61,13 +54,10 @@ header p {
   width: 450px;
   text-align: left;
   border: 12px solid rgb(252, 174, 118);
-
 }
-
 .invention-card-content {
   flex: 1; /* Occupy available space on the left */
 }
-
 
 /* Image */
 .invention-card img {
@@ -82,13 +72,14 @@ header p {
 .invention-card h3 {
   font-weight: bolder;
   font-size: 1.2rem;
-  margin: 10px 0;
+  margin: 20px 0 0 0;
 }
 
 .invention-card p {
   font-size: 0.9rem;
   line-height: 1.4;
   margin: 0;
+  padding: 40px 0 0 0;
 }
 
 /* Wikipedia Logo Link */

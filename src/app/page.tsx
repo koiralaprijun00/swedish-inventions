@@ -1,20 +1,21 @@
-import React from 'react';
+import React from "react"
 import inventionsData from "./inventionsData"
-import Image from 'next/image';
+import Image from "next/image"
 import "./style.css"
 
 // Define types for the Section component props
 interface SectionProps {
-  title: string;  // The title prop will be a string
-  children: React.ReactNode;  // children can be any valid JSX content
+  title: string // The title prop will be a string
+  children: React.ReactNode // children can be any valid JSX content
 }
 
 // Define the prop types for InventionCard
 interface InventionCardProps {
-  name: string;
-  description: string;
-  imageSrc: string;
-  link?: string;  // link is optional
+  name: string
+  description: string
+  imageSrc: string
+  link?: string
+  inventorName?: string // link is optional
 }
 
 export default function Home() {
@@ -30,7 +31,9 @@ export default function Home() {
       <main>
         {inventionsData.map((category, index) =>
           <Section key={index} title={category.category}>
-            {category.items.map((item, idx) => <InventionCard key={idx} name={item.name} description={item.description} imageSrc={item.imageSrc} link={item.link} />)}
+            {category.items.map((item, idx) =>
+              <InventionCard key={idx} name={item.name} description={item.description} imageSrc={item.imageSrc} link={item.link} inventorName={item.inventorName} />
+            )}
           </Section>
         )}
       </main>
@@ -53,12 +56,12 @@ function Section({ title, children }: SectionProps) {
 }
 
 // InventionCard Component
-function InventionCard({ name, description, imageSrc, link }: InventionCardProps) {
+function InventionCard({ name, description, imageSrc, link, inventorName }: InventionCardProps) {
   return (
     <div className="invention-card">
       {/* Left Section: Image and Text */}
       <div className="invention-card-content">
-      <Image
+        <Image
           src={imageSrc}
           alt={name}
           width={300} // Adjust the width based on your layout needs
@@ -68,6 +71,9 @@ function InventionCard({ name, description, imageSrc, link }: InventionCardProps
         <h3>
           {name}
         </h3>
+        <h4>
+          Inventor: {inventorName || " "}
+        </h4>
         <p>
           {description}
         </p>

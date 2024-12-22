@@ -8,7 +8,8 @@ const inventionsData = [
         name: "Oatmeal",
         description: "A staple breakfast food, widely consumed for its simplicity and nutritional value.",
         imageSrc: "https://via.placeholder.com/150",
-        link: "https://example.com/oatmeal"
+        link: "https://example.com/oatmeal",
+        inventorName: "Prijun Koirala"
       },
       {
         name: "Coca-Cola Bottle (1916)",
