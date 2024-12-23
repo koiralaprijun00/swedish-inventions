@@ -10,11 +10,9 @@
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
-  max-width: 1600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #0f3a56;
-  color: white;
+  color: #0f3a56;
 }
 h1,
 h2,
@@ -22,11 +20,10 @@ h3,
 h4,
 h5,
 h6 {
-  color: #ffffff; /* White text for contrast */
+  color: #0f3a56;
 }
 
 header {
-  color: #ffffff; /* White text for contrast */
   padding: 50px 20px; /* Generous padding for space */
   border-radius: 8px; /* Slight rounding for modern feel */
 }
@@ -42,7 +39,6 @@ header h1 {
 header p {
   font-size: 1.5rem;
   font-weight: 300; /* Lighter subheading text */
-  margin: 0;
 }
 
 /* General Section Grid */
@@ -54,7 +50,7 @@ header p {
 }
 
 .invention-card {
-  color: white;
+  color: #0f3a56;
   display: flex; /* Flex layout for left and right sections */
   align-items: top; /* Center items vertically */
   justify-content: space-between; /* Space between content and logo */
@@ -62,8 +58,8 @@ header p {
   height: auto; /* Adjust height to content */
   width: 450px;
   text-align: left;
-  border: 12px solid rgb(252, 174, 118);
 }
+
 .invention-card-content {
   flex: 1; /* Occupy available space on the left */
 }
@@ -91,14 +87,30 @@ header p {
   padding: 40px 0 0 0;
 }
 
-/* Wikipedia Logo Link */
-.wikipedia-link img {
-  width: 30px; /* Small Wikipedia logo */
-  height: 30px;
-  object-fit: contain;
+.two-links {
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  justify-content: space-between; /* Space between top and bottom */
+  height: 100%; /* Ensure container takes full height */
+  align-items: center; /* Center items horizontally */
 }
 
-.wikipedia-link {
-  margin-left: 20px; /* Add space between content and the logo */
-  display: inline-block;
+.wikipedia-link img,
+.right-arrow-button img {
+  width: 25px; /* Adjust size as needed */
+  height: auto;
+}
+.right-arrow-button img {
+  opacity: 0.5; /* Slightly transparent */
+  transition: all 0.3s ease;
+}
+
+.right-arrow-button img:hover {
+  opacity: 1; /* Fully visible */
+  transform: scale(1.2);
+  color: #0f3a56;
+}
+
+.right-arrow-button {
+  margin-top: auto; /* Push to the bottom */
 }

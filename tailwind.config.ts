@@ -11,7 +11,19 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        regalBlue: '#243c5a',
+        swedishYellow: 'rgb(252 211 77 / var(--tw-bg-opacity, 1))'
       },
+      borderWidth: {
+        DEFAULT: '1px',
+        '0': '0',
+        '2': '2px',
+        '3': '3px',
+        '4': '4px',
+        '6': '6px',
+        '8': '8px',
+        '12': '12px',
+      }
     },
   },
   plugins: [],
