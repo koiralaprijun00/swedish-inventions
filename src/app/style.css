@@ -44,20 +44,21 @@ header p {
 /* General Section Grid */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Creates 5 equal columns */
+  /* Use auto-fill and minmax to create a responsive grid */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px; /* Space between cards */
   padding: 10px;
 }
 
+/* Invention Card */
 .invention-card {
   color: #0f3a56;
   display: flex; /* Flex layout for left and right sections */
-  align-items: top; /* Center items vertically */
-  justify-content: space-between; /* Space between content and logo */
+  align-items: flex-start; /* Align items at the top (instead of 'top', use 'flex-start') */
+  justify-content: space-between; /* Space between content and arrow */
   padding: 20px 26px;
-  height: auto; /* Adjust height to content */
-  width: 450px;
   text-align: left;
+  margin-bottom: 30px;
 }
 
 .invention-card-content {
@@ -87,6 +88,7 @@ header p {
   padding: 40px 0 0 0;
 }
 
+/* Right Column (Arrow, Wiki Link) */
 .two-links {
   display: flex;
   flex-direction: column; /* Arrange children vertically */
@@ -108,9 +110,16 @@ header p {
 .right-arrow-button img:hover {
   opacity: 1; /* Fully visible */
   transform: scale(1.2);
+  transform: translate(5px, 0);
   color: #0f3a56;
 }
 
 .right-arrow-button {
   margin-top: auto; /* Push to the bottom */
+}
+
+/* Drawer Image Container */
+.drawer-image-container img {
+  max-height: 500px;
+  object-fit: cover;
 }

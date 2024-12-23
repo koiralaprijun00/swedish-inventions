@@ -87,13 +87,13 @@ function InventionCard({ name, description, imageSrc, link, inventorName }: Inve
     const drawer = document.getElementById(drawerId)
     const backdrop = document.getElementById(backdropId)
     if (drawer && backdrop) {
-      drawer.style.transform = "translateX(-100%)" // Hide the drawer
+      drawer.style.transform = "translateX(100%)" // Hide the drawer
       backdrop.classList.add("hidden") // Hide the backdrop
     }
   }
 
   return (
-    <div className="invention-card border-solid border-2  border-swedishYellow">
+    <div className="invention-card  shadow-sm shadow-gray-50 border-solid border-2 hover:border-cyan-950 hover:border-2">
       {/* Left Section: Image and Text */}
       <div className="invention-card-content">
         <Image src={imageSrc} alt={name} width={300} height={200} className="rounded-md" />
@@ -108,10 +108,6 @@ function InventionCard({ name, description, imageSrc, link, inventorName }: Inve
       {/* Right Section: Wikipedia Logo Link */}
       <div className="two-links flex-column content-between">
         {/* Top Section: Wikipedia Link */}
-        {link &&
-          <a href={link} target="_blank" rel="noopener noreferrer" className="wikipedia-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg" alt="Wikipedia" />
-          </a>}
 
         {/* Bottom Section: Right Arrow Button */}
         <a
@@ -145,24 +141,33 @@ function InventionCard({ name, description, imageSrc, link, inventorName }: Inve
         {/* The Drawer */}
         <div
           id={drawerId}
-          className="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800"
+          className="fixed bg-gray-200 top-0 right-0 z-40 h-screen px-12 pt-36 overflow-y-auto transition-transform translate-x-full bg-white w-80 dark:bg-gray-800 w-full sm:w-[40%]"
           aria-labelledby="drawer-label"
         >
           {/* Close Button */}
-          <button type="button" className="mb-4 text-white bg-red-500 hover:bg-red-600 font-bold py-2 px-4 rounded" onClick={() => closeDrawer()}>
+          <button type="button" className="absolute top-4 right-4 mb-4 text-white bg-red-500 hover:bg-red-600 font-bold py-2 px-4 rounded" onClick={() => closeDrawer()}>
             Close
           </button>
 
           {/* Drawer Content: image, name, inventor, description */}
-          <div className="flex flex-col items-center">
-            <Image src={imageSrc} alt={name} width={300} height={200} className="rounded-md mb-4" />
-            <h3 className="text-lg font-semibold mb-1">
+          <div className="flex flex-col px-2">
+            {/* Unique container so we can style only this image */}
+            <div className="drawer-image-container w-full mb-4">
+              <Image
+                src={imageSrc}
+                alt={name}
+                width={1200} // A larger width
+                height={700} // A larger height
+                className="rounded-md w-full h-auto object-cover"
+              />
+            </div>
+            <h3 className="text-lg font-semibold mb-1 text-regalBlue">
               {name}
             </h3>
-            <h4 className="text-sm text-gray-600 mb-2">
-              Inventor: {inventorName || " "}
+            <h4 className="text-sm text-gray-600 mb-4">
+              Inventor: <span className="font-medium">{inventorName || " "}</span>
             </h4>
-            <p className="text-sm text-gray-800">
+            <p className="text-sm text-gray-800 leading-relaxed text-justify">
               {description}
             </p>
           </div>
