@@ -13,6 +13,7 @@ body {
   margin: 0 auto;
   padding: 20px;
   color: #0f3a56;
+  max-width: 1400px;
 }
 h1,
 h2,
@@ -105,6 +106,7 @@ header p {
 .right-arrow-button img {
   opacity: 0.5; /* Slightly transparent */
   transition: all 0.3s ease;
+  border-radius: 0;
 }
 
 .right-arrow-button img:hover {
@@ -120,6 +122,6 @@ header p {
 
 /* Drawer Image Container */
 .drawer-image-container img {
-  max-height: 500px;
+  max-height: 300px;
   object-fit: cover;
 }
