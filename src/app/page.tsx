@@ -107,7 +107,6 @@ function InventionCard({ name, description, imageSrc, link, inventorName }: Inve
 
       {/* Right Section: Wikipedia Logo Link */}
       <div className="two-links flex-column content-between">
-        {/* Top Section: Wikipedia Link */}
 
         {/* Bottom Section: Right Arrow Button */}
         <a
