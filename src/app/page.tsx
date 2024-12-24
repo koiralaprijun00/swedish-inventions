@@ -69,7 +69,7 @@ function Section({ title, children }: SectionProps) {
 }
 
 // InventionCard Component
-function InventionCard({ name, description, imageSrc, link, inventorName }: InventionCardProps) {
+function InventionCard({ name, description, imageSrc, inventorName }: InventionCardProps) {
   const drawerId = `drawer-${name.replace(/\s/g, "-").toLowerCase()}`
   const backdropId = `backdrop-${name.replace(/\s/g, "-").toLowerCase()}`
 
