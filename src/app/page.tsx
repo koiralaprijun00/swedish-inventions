@@ -121,7 +121,7 @@ function InventionCard({ name, description, imageSrc, inventorName }: InventionC
           data-drawer-show="drawer-example"
           aria-controls="drawer-example"
         >
-          <img src="/right-arrow.svg" alt="Go to another page" />
+          <Image src="/right-arrow.svg" alt="Go to another page" />
         </a>
 
         {/* Backdrop: click outside to close */}
