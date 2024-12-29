@@ -32,6 +32,7 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-SZZPBRPWY5"
         ></Script>
         <Script
+         id="google-tag-manager" // Add the id attribute here
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];

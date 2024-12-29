@@ -85,7 +85,6 @@ interface InventionCardProps {
 
 function InventionCard({
   name,
-  description,
   imageSrc,
   inventorName,
   onClick
