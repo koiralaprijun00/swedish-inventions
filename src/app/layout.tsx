@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -26,11 +27,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Tag Manager */}
-        <script
+        <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-SZZPBRPWY5"
-        ></script>
-        <script
+        ></Script>
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -39,7 +40,7 @@ export default function RootLayout({
               gtag('config', 'G-SZZPBRPWY5');
             `,
           }}
-        ></script>
+        ></Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
