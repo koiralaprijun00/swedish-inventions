@@ -39,7 +39,7 @@ export default function RootLayout({
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
           <div className="text-sm text-gray-500">
-            <span>Discovering Sweden's Contributions to the World</span>
+            <span>Showcasing Contribution of Sweden to the World</span>
           </div>
           <div className="mt-4 flex space-x-6">
             <a 
