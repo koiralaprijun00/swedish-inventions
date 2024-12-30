@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <meta name="google-adsense-account" content="ca-pub-4708248697764153">
+      <meta name="google-adsense-account" content="ca-pub-4708248697764153"></meta>
       </head>
       <GoogleTagManager gtmId="G-WJ47ZHVZ27" />
       <body
