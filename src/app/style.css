@@ -125,3 +125,37 @@ header p {
   max-height: 300px;
   object-fit: cover;
 }
+
+
+/* Container for category chips */
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;      /* Wrap to next line if too many */
+  gap: 12px;            /* Space between chips */
+  margin-bottom: 2rem;  /* Some spacing below the chips */
+}
+
+/* Basic chip style */
+.category-chip {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  color: #0f3a56;
+  border-radius: 20px;  
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover effect */
+.category-chip:hover {
+  background-color: #e5e5e5;
+}
+
+/* Active chip style */
+.category-chip.active {
+  background-color: #0f3a56; /* or your brand color */
+  color: #fff;
+}
+

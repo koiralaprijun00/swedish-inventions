@@ -138,6 +138,31 @@ function Section({
   )
 }
 
+// -- NEW: A small CategoryFilter component for clickable chips --
+function CategoryFilter({
+  categories,
+  selectedCategory,
+  onSelectCategory,
+}: {
+  categories: string[];
+  selectedCategory: string;
+  onSelectCategory: (cat: string) => void;
+}) {
+  return (
+    <div className="category-filter">
+      {categories.map((cat) => (
+        <button
+          key={cat}
+          onClick={() => onSelectCategory(cat)}
+          className={`category-chip ${selectedCategory === cat ? "active" : ""}`}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+  )
+}
+
 // 4. Main Home component - Our single default export
 export default function Home() {
   const [drawerOpen, setDrawerOpen] = useState(false)
@@ -147,6 +172,22 @@ export default function Home() {
     imageSrc: string
     inventorName?: string
   } | null>(null)
+
+   // -- NEW: We’ll store the currently selected category --
+   const [selectedCategory, setSelectedCategory] = useState<string>("All")
+
+   // 1. Gather all unique categories from your inventionsData
+   //    (plus "All" at the start).
+   const allCategories = ["All", ...inventionsData.map((cat) => cat.category)]
+ 
+   // 2. Filter the data based on selectedCategory.
+   //    If "All" is selected, show everything.
+   const filteredData =
+     selectedCategory === "All"
+       ? inventionsData
+       : inventionsData.filter(
+           (cat) => cat.category === selectedCategory
+         )
 
   const openDrawer = (item: {
     name: string
@@ -190,9 +231,16 @@ export default function Home() {
         </p>
       </header>
 
+      {/* NEW: Category Filter Chips (just below the heading) */}
+      <CategoryFilter
+        categories={Array.from(new Set(allCategories))}
+        selectedCategory={selectedCategory}
+        onSelectCategory={(cat) => setSelectedCategory(cat)}
+      />
+
       {/* Main Content */}
       <main>
-        {inventionsData.map((category, index) => (
+      {filteredData.map((category, index) => (
           <Section key={index} title={category.category}>
             {category.items.map((item, idx) => (
               <InventionCard
