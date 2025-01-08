@@ -1,4 +1,5 @@
-// inventionsData.js
+"use client"
+
 const inventionsData = [
   {
     category: "Food & Beverage",
@@ -13,21 +14,24 @@ const inventionsData = [
       },
       {
         name: "Coca-Cola Bottle (1916)",
-        description: "The iconic contoured Coca-Cola bottle was designed by Swedish-born Alexander Samuelson in 1915. He was working for the Root Glass Company in Indiana, USA, at the time.",
+        description:
+          "The iconic contoured Coca-Cola bottle was designed by Swedish-born Alexander Samuelson in 1915. He was working for the Root Glass Company in Indiana, USA, at the time.",
         imageSrc: "/invention-images/coca-cola.jpg",
         link: "https://www.coca-colacompany.com/about-us/history/the-history-of-the-coca-cola-contour-bottle",
         inventorName: "Alexander Samuelson"
       },
       {
         name: "Absolut Vodka",
-        description: "Lars Olsson Smith, a Swedish entrepreneur, introduced Absolut Rent Brännvin (Absolute Pure Vodka) in 1879. He is known for revolutionizing the vodka industry with his continuous distillation process.",
+        description:
+          "Lars Olsson Smith, a Swedish entrepreneur, introduced Absolut Rent Brännvin (Absolute Pure Vodka) in 1879. He is known for revolutionizing the vodka industry with his continuous distillation process.",
         imageSrc: "/invention-images/absolut-vodka.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Lars Olsson Smith"
       },
       {
         name: "Peepoo Bag",
-        description:"nders Wilhelmson, a Swedish architect and professor, invented the Peepoo Bag. It is a single-use, self-sanitizing toilet designed to provide safe sanitation in areas lacking proper facilities.",
+        description:
+          "nders Wilhelmson, a Swedish architect and professor, invented the Peepoo Bag. It is a single-use, self-sanitizing toilet designed to provide safe sanitation in areas lacking proper facilities.",
         imageSrc: "/invention-images/peepoo-bag.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Anders Wilhelmson"
@@ -39,21 +43,24 @@ const inventionsData = [
     items: [
       {
         name: "Adjustable Wrench",
-        description:"ohan Petter Johansson, a Swedish inventor, created the adjustable wrench in 1892. This tool allows users to adjust the size of the opening to fit various nuts and bolts, eliminating the need for multiple wrenches.",
+        description:
+          "ohan Petter Johansson, a Swedish inventor, created the adjustable wrench in 1892. This tool allows users to adjust the size of the opening to fit various nuts and bolts, eliminating the need for multiple wrenches.",
         imageSrc: "/invention-images/wrench.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Johan Petter Johansson"
       },
       {
         name: "Safety Matches",
-        description: "Gustaf Erik Pasch, a Swedish chemist, developed safety matches in the early 19th century. He moved the flammable material to the side of the box, making them much safer to use compared to earlier matches.",
+        description:
+          "Gustaf Erik Pasch, a Swedish chemist, developed safety matches in the early 19th century. He moved the flammable material to the side of the box, making them much safer to use compared to earlier matches.",
         imageSrc: "/invention-images/safety-matches.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Gustaf Erik Pasch"
       },
       {
         name: "Tetra Pak (1940s)",
-        description: "Erik Wallenberg, a Swedish engineer, invented the Tetra Pak packaging method in the 1940s. This innovative packaging allows liquids to be stored without refrigeration, revolutionizing food storage and distribution.",
+        description:
+          "Erik Wallenberg, a Swedish engineer, invented the Tetra Pak packaging method in the 1940s. This innovative packaging allows liquids to be stored without refrigeration, revolutionizing food storage and distribution.",
         imageSrc: "/invention-images/tetra-pak.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Erik Wallenberg"
@@ -67,7 +74,8 @@ const inventionsData = [
       },
       {
         name: "Three-Point Seatbelt (1959)",
-        description: "Nils Bohlin, a Swedish engineer working for Volvo, invented the three-point seatbelt in 1959. This design significantly improved car safety by securing both the upper and lower body with a single continuous belt. It has since become a standard safety feature in vehicles worldwide.",
+        description:
+          "Nils Bohlin, a Swedish engineer working for Volvo, invented the three-point seatbelt in 1959. This design significantly improved car safety by securing both the upper and lower body with a single continuous belt. It has since become a standard safety feature in vehicles worldwide.",
         imageSrc: "/invention-images/seatbelt.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Nils Bohlin"
@@ -79,14 +87,16 @@ const inventionsData = [
     items: [
       {
         name: "Bluetooth Technology",
-        description: "Bluetooth technology was developed by Swedish engineers Jaap Haartsen and Sven Mattisson while working at Ericsson in the 1990s. It allows for short-range wireless communication between devices, enabling the creation of wireless personal area networks.",
+        description:
+          "Bluetooth technology was developed by Swedish engineers Jaap Haartsen and Sven Mattisson while working at Ericsson in the 1990s. It allows for short-range wireless communication between devices, enabling the creation of wireless personal area networks.",
         imageSrc: "/invention-images/blueetooth.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Jaap Haartsen and Sven Mattisson"
       },
       {
         name: "Automatic Identification Systems (AIS)",
-        description: "Håkan Lans, a Swedish inventor, created the Automatic Identification System (AIS). This system enhances maritime navigation by tracking vessels using GPS technology, improving safety and efficiency in maritime operations.",
+        description:
+          "Håkan Lans, a Swedish inventor, created the Automatic Identification System (AIS). This system enhances maritime navigation by tracking vessels using GPS technology, improving safety and efficiency in maritime operations.",
         imageSrc: "/invention-images/ais.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Håkan Lans"
@@ -179,8 +189,71 @@ const inventionsData = [
     items: [
       {
         name: "H&M",
-        description:
-          "H&M, short for Hennes & Mauritz, is a leading global fashion retailer founded by Swedish entrepreneur Erling Persson in 1947. The company is known for offering fashionable and affordable clothing for men, women, and children. H&M has expanded its presence worldwide, becoming one of the largest fashion retailers with a focus on sustainability and innovation in the fashion industry.",
+        description: (
+          <div class="container">
+            <section class="space-y-8 mb-8">
+              <p class="text-lg leading-relaxed">
+                Sweden, renowned for its breathtaking landscapes and innovative spirit, has given the world numerous groundbreaking contributions. Among these is Hennes & Mauritz,
+                better known as H&M, a global fashion giant that has revolutionized the retail clothing industry. As part of Sweden&lsquo;s rich legacy of innovation, H&M has
+                established itself not only as a fashion leader but also as a pioneer in sustainable practices and accessible style. This blog explores the story, growth, and
+                impact of H&M, demonstrating why it deserves a spot among the top 100 Swedish inventions.
+              </p>
+
+              <section>
+                <h2 class="text-xl font-semibold text-blue-500">Humble Beginnings: The Birth of H&M</h2>
+                <p class="text-lg leading-relaxed">
+                  H&M was founded in 1947 by Erling Persson in the small Swedish town of Västerås. Originally named Hennes (Swedish for “hers”), the store focused exclusively on
+                  women&rsquo;s clothing. Persson's inspiration came from a trip to the United States, where he observed the efficiency and popularity of mass-produced clothing.
+                  Persson envisioned a store that offered fashionable, affordable clothing to the everyday consumer.
+                </p>
+                <p class="text-lg leading-relaxed">
+                  In 1968, Persson acquired Mauritz Widforss, a retailer specializing in men&rsquo;s and outdoor clothing, leading to the rebranding of the company as Hennes &
+                  Mauritz—H&M. With this merger, H&M began offering a wide array of clothing for women, men, and eventually children, catering to a diverse audience and laying the
+                  foundation for its global expansion.
+                </p>
+              </section>
+
+              <section>
+                <h2 class="text-xl font-semibold text-blue-500">Global Expansion: Becoming a Fashion Empire</h2>
+                <p class="text-lg leading-relaxed">
+                  H&M&rsquo;sjourney from a single store in Sweden to a global fashion empire is a testament to its innovative business model and relentless pursuit of excellence.
+                  The company&rsquo;s first international store opened in Norway in 1964, and by the 1970s, it had expanded to Denmark and the United Kingdom.
+                </p>
+                <p class="text-lg leading-relaxed">
+                  H&M&rsquo;sappeal lies in its ability to merge affordability with trend-focused designs. The brand embraced the concept of fast fashion, ensuring that
+                  high-quality, fashionable clothing reached stores quickly after appearing on runways. This model not only democratized fashion but also cemented H&M as a go-to
+                  destination for consumers seeking style without breaking the bank.
+                </p>
+                <p class="text-lg leading-relaxed">
+                  By the 2000s, H&M had firmly established itself on every continent, with flagship stores in major cities like New York, Paris, and Tokyo. Today, H&M operates in
+                  over 75 markets with thousands of stores and a robust online presence.
+                </p>
+              </section>
+
+              <section>
+                <h2 class="text-xl font-semibold text-blue-500">Innovations in the Retail Industry</h2>
+                <p class="text-lg leading-relaxed">
+                  H&M&rsquo;s success can be attributed to its innovative approach to retail. The brand has consistently stayed ahead of industry trends, leveraging technology and
+                  design to enhance the shopping experience.
+                </p>
+
+                <h3 class="text-xl font-semibold text-blue-400 mt-6">Collaborations with Designers and Celebrities</h3>
+                <p class="text-lg leading-relaxed">
+                  H&M pioneered the concept of designer collaborations, bridging the gap between high fashion and mainstream retail. Partnerships with industry icons like Karl
+                  Lagerfeld, Stella McCartney, and Alexander Wang brought haute couture designs to the masses at affordable prices. These limited-edition collections generated
+                  global buzz, attracting millions of shoppers and solidifying H&M&rsquo;sstatus as a trendsetter.
+                </p>
+
+                <h3 class="text-xl font-semibold text-blue-400 mt-6">Digital Transformation</h3>
+                <p class="text-lg leading-relaxed">
+                  Recognizing the importance of e-commerce early on, H&M invested heavily in its online platform. The brand&rsquo;s mobile app and website offer seamless shopping
+                  experiences, featuring user-friendly interfaces, personalized recommendations, and virtual styling tools. H&M&rsquo;s embrace of technology has ensured its
+                  relevance in an increasingly digital world.
+                </p>
+              </section>
+            </section>
+          </div>
+        ),
         imageSrc: "/invention-images/handm.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Erling Persson"
