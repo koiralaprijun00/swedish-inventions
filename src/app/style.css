@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Oi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Oi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 
 /* Add any additional styles here */
 .custom-font {
@@ -9,7 +11,7 @@
 
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Rubik, sans-serif;
   margin: 0 auto;
   padding: 20px;
   color: #0f3a56;
@@ -34,7 +36,7 @@ header h1 {
   font-weight: 700; /* Bold font weight */
   margin-bottom: 20px;
   line-height: 1.2; /* Slightly tighter line-height */
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Clean, modern font */
+  font-family: Rubik, Helvetica, Arial, sans-serif; /* Clean, modern font */
 }
 
 header p {

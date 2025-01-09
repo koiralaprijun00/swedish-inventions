@@ -7,7 +7,7 @@ const inventionsData = [
       {
         name: "Oatly Oat Milk",
         description:
-          "Oatly Oat Milk is a plant-based milk alternative made from oats. It is known for its creamy texture and mild, slightly sweet flavor. Oatly is a popular choice for those who are lactose intolerant, vegan, or looking to reduce their dairy consumption. It is often used in coffee, smoothies, and baking, and is fortified with vitamins and minerals to provide a nutritious alternative to cow's milk.",
+          "Oatly Oat Milk is a plant-based alternative to dairy milk made from oats. With its creamy texture and subtly sweet flavor, it has become a favorite among vegans, the lactose-intolerant, and those reducing dairy intake. Commonly used in coffee, smoothies, and baking, Oatly is also fortified with essential vitamins and minerals, offering a nutritious substitute for cow's milk.",
         imageSrc: "/invention-images/oatly.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Rickard Öste"
@@ -44,7 +44,7 @@ const inventionsData = [
       {
         name: "Adjustable Wrench",
         description:
-          "ohan Petter Johansson, a Swedish inventor, created the adjustable wrench in 1892. This tool allows users to adjust the size of the opening to fit various nuts and bolts, eliminating the need for multiple wrenches.",
+          "The adjustable wrench, invented by Swedish innovator Johan Petter Johansson in 1892, is a versatile hand tool. It features an adjustable jaw that can fit nuts and bolts of various sizes, reducing the need for multiple wrenches. This practical invention has become a staple in toolboxes worldwide. Its simplicity and efficiency revolutionized how mechanical tasks are performed.",
         imageSrc: "/invention-images/wrench.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Johan Petter Johansson"
@@ -88,7 +88,7 @@ const inventionsData = [
       {
         name: "Bluetooth Technology",
         description:
-          "Bluetooth technology was developed by Swedish engineers Jaap Haartsen and Sven Mattisson while working at Ericsson in the 1990s. It allows for short-range wireless communication between devices, enabling the creation of wireless personal area networks.",
+          "Bluetooth technology, created by Swedish engineers Jaap Haartsen and Sven Mattisson at Ericsson in the 1990s, enables short-range wireless communication between devices. This innovation laid the foundation for wireless personal area networks, transforming connectivity across phones, computers, and other gadgets. Today, Bluetooth is widely used in headphones, speakers, and countless other applications.",
         imageSrc: "/invention-images/blueetooth.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Jaap Haartsen and Sven Mattisson"
