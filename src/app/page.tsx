@@ -4,137 +4,51 @@ import inventionsData from "./inventionsData"
 import Image from "next/image"
 import "./style.css"
 
-// 1. Drawer component (define once)
-function Drawer({
-  isOpen,
-  onClose,
-  imageSrc,
-  name,
-  inventorName,
-  description
-}: {
-  isOpen: boolean;
-  onClose: () => void;
-  imageSrc?: string;
-  name?: string;
-  inventorName?: string;
-  description?: string;
-}) {
+// InfoBox Component
+function InfoBox({ imageSrc, title, description, tags, bgColor }: { imageSrc: string; title: string; description: string; tags: string[]; bgColor: string }) {
   return (
-    <>
-      {/* Semi-Transparent Backdrop */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30"
-          onClick={onClose}
-        />
-      )}
-      <div
-        className={`
-          fixed top-0 right-0 z-40 h-screen px-12 pt-36 overflow-y-auto bg-white dark:bg-gray-800
-          w-full sm:w-[40%]
-          transform transition-transform duration-300 ease-in-out
-          ${isOpen ? "translate-x-0" : "translate-x-full"}
-        `}
-      >
-        {/* Close Button */}
-        <button
-          type="button"
-          className="absolute top-4 right-4 mb-4 text-white bg-red-500 hover:bg-red-600 font-bold py-2 px-4"
-          onClick={onClose}
-        >
-          Close
-        </button>
-
-        {/* Drawer Content */}
-        <div className="flex flex-col px-2">
-          {/* Image Container */}
-          {imageSrc && (
-            <div className="drawer-image-container w-full mb-4">
-              <Image
-                src={imageSrc}
-                alt={name ?? ""}
-                width={1200}
-                height={700}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          )}
-
-          <h3 className="text-lg font-semibold mb-1 text-regalBlue">{name}</h3>
-          <h4 className="text-sm text-gray-600 mb-4">
-            Inventor: <span className="font-medium">{inventorName || " "}</span>
-          </h4>
-          <p className="text-sm text-gray-800 leading-relaxed text-justify">
-            {description}
-          </p>
-        </div>
+    <div className="info-box shadow-md rounded-md p-4 hover:shadow-lg transition-shadow" style={{ backgroundColor: bgColor }}>
+      <div className="image-container mb-3" style={{ width: '400px', height: '300px', overflow: 'hidden' }}>
+        <Image src={imageSrc} alt={title} width={400} height={200} className="rounded-md object-cover" />
       </div>
-    </>
-  )
-}
-
-// 2. InventionCard - Just a simple card that calls parent’s openDrawer
-interface InventionCardProps {
-  name: string
-  description: string | React.ReactNode
-  imageSrc: string
-  inventorName?: string
-  onClick: () => void
-}
-
-function InventionCard({
-  name,
-  imageSrc,
-  inventorName,
-  onClick
-}: InventionCardProps) {
-  return (
-    <div className="invention-card  shadow-sm shadow-gray-50 border-solid border-2 hover:border-cyan-950 hover:border-2">
-      <div className="invention-card-content">
-        <Image
-          src={imageSrc}
-          alt={name}
-          width={300}
-          height={200}
-        />
-        <h3>{name}</h3>
-        <h4>Inventor: {inventorName || " "}</h4>
-      </div>
-      <div className="two-links flex-column content-between">
-        <a
-          href="#"
-          onClick={e => {
-            e.preventDefault()
-            onClick()  // <--- Just call the parent’s function
-          }}
-          className="right-arrow-button"
-        >
-          <Image
-            src="/right-arrow.svg"
-            alt="Go to another page"
-            width={200}
-            height={200}
-          />
-        </a>
+      <h3 className="text-lg font-semibold mb-2">
+        {title}
+      </h3>
+      <p className="text-gray-600 text-sm mb-3">
+        {description}
+      </p>
+      <div className="flex gap-2 flex-wrap">
+        {tags.map((tag, idx) =>
+          <span key={idx} className="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full">
+            {tag}
+          </span>
+        )}
       </div>
     </div>
   )
 }
 
-// 3. Section Component
-function Section({
-  title,
-  children
-}: {
-  title: string
-  children: React.ReactNode
-}) {
+// InventionCard Component
+interface InventionCardProps {
+  name: string
+  description: string
+  imageSrc: string
+  inventorName?: string
+}
+
+function InventionCard({ name, imageSrc, inventorName }: InventionCardProps) {
   return (
-    <section>
-      <h2 className="text-xl font-bold mb-4">{title}</h2>
-      <div className="grid-container">{children}</div>
-    </section>
+    <div className="invention-card shadow-sm shadow-gray-50 border-solid border-2 hover:border-cyan-950 hover:border-2">
+      <div className="invention-card-content">
+        <Image src={imageSrc} alt={name} width={300} height={200} />
+        <h3>
+          {name}
+        </h3>
+        <h4>
+          Inventor: {inventorName || " "}
+        </h4>
+      </div>
+    </div>
   )
 }
 
@@ -163,30 +77,15 @@ function CategoryFilter({
   )
 }
 
-// 4. Main Home component - Our single default export
+// Main Home Component
 export default function Home() {
-  const [selectedItem, setSelectedItem] = useState<{
-    name: string
-    description: string
-    imageSrc: string
-    inventorName?: string
-  } | null>(null)
+  const [selectedCategory, setSelectedCategory] = useState<string>("All")
 
-   // -- NEW: We’ll store the currently selected category --
-   const [selectedCategory, setSelectedCategory] = useState<string>("All")
+  // Gather all unique categories from inventionsData
+  const allCategories = ["All", ...Array.from(new Set(inventionsData.map(cat => cat.category)))]
 
-   // 1. Gather all unique categories from your inventionsData
-   //    (plus "All" at the start).
-   const allCategories = ["All", ...inventionsData.map((cat) => cat.category)]
- 
-   // 2. Filter the data based on selectedCategory.
-   //    If "All" is selected, show everything.
-   const filteredData =
-     selectedCategory === "All"
-       ? inventionsData
-       : inventionsData.filter(
-           (cat) => cat.category === selectedCategory
-         )
+  // Filter the data based on selectedCategory
+  const filteredData = selectedCategory === "All" ? inventionsData : inventionsData.filter(cat => cat.category === selectedCategory)
 
   return (
     <div className="mt-24">
@@ -194,52 +93,39 @@ export default function Home() {
       <header className="text-start mb-8">
         <h1>
           Famous Swedish{" "}
-          <span
-            className="bg-amber-300 p-2 text-regalBlue"
-            style={{ fontFamily: "Libre Franklin", fontSize: "1.3em", fontWeight: 1000 }}
-          >
+          <span className="bg-amber-300 p-2 text-regalBlue" style={{ fontFamily: "Libre Franklin", fontSize: "1.3em", fontWeight: "1000" }}>
             Inventions
           </span>{" "}
           and{" "}
-          <span
-            className="bg-amber-300 p-2 text-regalBlue"
-            style={{ fontFamily: "Libre Franklin", fontSize: "1.3em", fontWeight: 1000 }}
-          >
+          <span className="bg-amber-300 p-2 text-regalBlue" style={{ fontFamily: "Libre Franklin", fontSize: "1.3em", fontWeight: "1000" }}>
             Innovations
           </span>
         </h1>
         <p>
-          Discovering Sweden&#39;s Contributions to the World from the{" "}
-          <span className="md:text-regalBlue md:font-bold p-2 bg-amber-300">
-            People of Sweden.
-          </span>
+          Discovering Sweden&#39;s Contributions to the World from the <span className="md:text-regalBlue md:font-bold p-2 bg-amber-300">People of Sweden.</span>
         </p>
       </header>
 
-      {/* NEW: Category Filter Chips (just below the heading) */}
-      <CategoryFilter
-        categories={Array.from(new Set(allCategories))}
-        selectedCategory={selectedCategory}
-        onSelectCategory={(cat) => setSelectedCategory(cat)}
-      />
+      {/* Info Boxes */}
+      <div className="info-boxes-container grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12">
+        {inventionsData
+          .slice(0, 3)
+          .map((category, idx) =>
+            <InfoBox
+              key={idx}
+              imageSrc={category.items[0].imageSrc}
+              title={category.items[0].name}
+              description={typeof category.items[0].description === "string" ? category.items[0].description : ""}
+              tags={[category.category, category.items[0].inventorName || "Unknown"]}
+              bgColor={idx === 0 ? "#f8f9fa" : idx === 1 ? "#e9ecef" : "#dee2e6"} // Different background colors
+            />
+          )}
+      </div>
+
+      {/* Category Filter Chips */}
+      <CategoryFilter categories={allCategories} selectedCategory={selectedCategory} onSelectCategory={cat => setSelectedCategory(cat)} />
 
       {/* Main Content */}
-      <main>
-      {filteredData.map((category, index) => (
-            <Section key={index} title={category.category}>
-            {category.items.map((item, idx) => (
-              <InventionCard
-              key={idx}
-              name={item.name}
-              description={item.description}
-              imageSrc={item.imageSrc}
-              inventorName={item.inventorName}
-              onClick={() => {}}
-              />
-            ))}
-            </Section>
-        ))}
-      </main>
     </div>
   )
 }
