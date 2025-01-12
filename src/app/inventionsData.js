@@ -7,7 +7,7 @@ const inventionsData = [
       {
         name: "Oatly Oat Milk",
         description:
-          "Oatly Oat Milk is a plant-based milk alternative made from oats. It is known for its creamy texture and mild, slightly sweet flavor. Oatly is a popular choice for those who are lactose intolerant, vegan, or looking to reduce their dairy consumption. It is often used in coffee, smoothies, and baking, and is fortified with vitamins and minerals to provide a nutritious alternative to cow's milk.",
+          "Oatly Oat Milk is a plant-based milk alternative made from oats. It is known for its creamy texture and mild, slightly sweet flavor. Oatly is a popular choice for those who are lactose intolerant, vegan, or looking to reduce their dairy consumption. It is often used in coffee, smoothies, and baking, and is fortified with vitamins and minerals to provide a nutritious alternative to cow&rsquo;s milk.",
         imageSrc: "/invention-images/oatly.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Rickard Öste"
@@ -170,7 +170,7 @@ const inventionsData = [
       {
         name: "Hövding (Invisible Bicycle Helmet)",
         description:
-          "The Hövding is an innovative bicycle helmet designed by Swedish inventors Anna Haupt and Terese Alstin. Unlike traditional helmets, the Hövding is worn as a collar around the neck and inflates like an airbag upon impact to protect the cyclist's head. This design provides both safety and comfort, making it a popular choice among urban cyclists.",
+          "The Hövding is an innovative bicycle helmet designed by Swedish inventors Anna Haupt and Terese Alstin. Unlike traditional helmets, the Hövding is worn as a collar around the neck and inflates like an airbag upon impact to protect the cyclist&apos;s head. This design provides both safety and comfort, making it a popular choice among urban cyclists.",
         imageSrc: "/invention-images/hovding.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Anna Haupt and Terese Alstin"
@@ -203,7 +203,7 @@ const inventionsData = [
                 <h2 class="text-xl font-semibold text-blue-500">Humble Beginnings: The Birth of H&M</h2>
                 <p class="text-lg leading-relaxed">
                   H&M was founded in 1947 by Erling Persson in the small Swedish town of Västerås. Originally named Hennes (Swedish for “hers”), the store focused exclusively on
-                  women&rsquo;s clothing. Persson's inspiration came from a trip to the United States, where he observed the efficiency and popularity of mass-produced clothing.
+                  women&rsquo;s clothing. Persson&rsquo;s inspiration came from a trip to the United States, where he observed the efficiency and popularity of mass-produced clothing.
                   Persson envisioned a store that offered fashionable, affordable clothing to the everyday consumer.
                 </p>
                 <p class="text-lg leading-relaxed">
@@ -261,7 +261,7 @@ const inventionsData = [
       {
         name: "IKEA",
         description:
-          "IKEA is a Swedish multinational furnishing company founded by Ingvar Kamprad in 1943. It is renowned for its affordable, flat-pack furniture and innovative home designs. IKEA's products are designed to be easily assembled by the consumer, making stylish and functional home furnishings accessible to a wide audience. The company has grown to become one of the largest furniture retailers in the world, with a strong focus on sustainability and customer experience.",
+          "IKEA is a Swedish multinational furnishing company founded by Ingvar Kamprad in 1943. It is renowned for its affordable, flat-pack furniture and innovative home designs. IKEA&apos;s products are designed to be easily assembled by the consumer, making stylish and functional home furnishings accessible to a wide audience. The company has grown to become one of the largest furniture retailers in the world, with a strong focus on sustainability and customer experience.",
         imageSrc: "/invention-images/ikea.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Ingvar Kamprad"

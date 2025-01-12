@@ -77,7 +77,7 @@ function Drawer({
 // 2. InventionCard - Just a simple card that calls parent’s openDrawer
 interface InventionCardProps {
   name: string
-  description: string
+  description: string | React.ReactNode
   imageSrc: string
   inventorName?: string
   onClick: () => void
@@ -165,7 +165,6 @@ function CategoryFilter({
 
 // 4. Main Home component - Our single default export
 export default function Home() {
-  const [drawerOpen, setDrawerOpen] = useState(false)
   const [selectedItem, setSelectedItem] = useState<{
     name: string
     description: string
@@ -188,20 +187,6 @@ export default function Home() {
        : inventionsData.filter(
            (cat) => cat.category === selectedCategory
          )
-
-  const openDrawer = (item: {
-    name: string
-    description: string
-    imageSrc: string
-    inventorName?: string
-  }) => {
-    setSelectedItem(item)
-    setDrawerOpen(true)
-  }
-
-  const closeDrawer = () => {
-    setDrawerOpen(false)
-  }
 
   return (
     <div className="mt-24">
@@ -241,31 +226,20 @@ export default function Home() {
       {/* Main Content */}
       <main>
       {filteredData.map((category, index) => (
-          <Section key={index} title={category.category}>
+            <Section key={index} title={category.category}>
             {category.items.map((item, idx) => (
               <InventionCard
-                key={idx}
-                name={item.name}
-                description={item.description}
-                imageSrc={item.imageSrc}
-                inventorName={item.inventorName}
-                // Pass a function that sets the selected item and opens the drawer
-                onClick={() => openDrawer(item)}
+              key={idx}
+              name={item.name}
+              description={item.description}
+              imageSrc={item.imageSrc}
+              inventorName={item.inventorName}
+              onClick={() => {}}
               />
             ))}
-          </Section>
+            </Section>
         ))}
       </main>
-
-      {/* The shared Drawer (visible if drawerOpen === true) */}
-      <Drawer
-        isOpen={drawerOpen}
-        onClose={closeDrawer}
-        imageSrc={selectedItem?.imageSrc}
-        name={selectedItem?.name}
-        inventorName={selectedItem?.inventorName}
-        description={selectedItem?.description}
-      />
     </div>
   )
 }
