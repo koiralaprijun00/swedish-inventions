@@ -27,15 +27,15 @@ const inventionsData = [
         imageSrc: "/invention-images/absolut-vodka.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Lars Olsson Smith"
-      },
-      {
-        name: "Peepoo Bag",
-        description:
-          "nders Wilhelmson, a Swedish architect and professor, invented the Peepoo Bag. It is a single-use, self-sanitizing toilet designed to provide safe sanitation in areas lacking proper facilities.",
-        imageSrc: "/invention-images/peepoo-bag.jpg",
-        link: "https://example.com/oatmeal",
-        inventorName: "Anders Wilhelmson"
       }
+      // {
+      //   name: "Peepoo Bag",
+      //   description:
+      //     "nders Wilhelmson, a Swedish architect and professor, invented the Peepoo Bag. It is a single-use, self-sanitizing toilet designed to provide safe sanitation in areas lacking proper facilities.",
+      //   imageSrc: "/invention-images/peepoo-bag.jpg",
+      //   link: "https://example.com/oatmeal",
+      //   inventorName: "Anders Wilhelmson"
+      // }
     ]
   },
   {
@@ -89,7 +89,7 @@ const inventionsData = [
         name: "Bluetooth Technology",
         description:
           "Bluetooth technology was developed by Swedish engineers Jaap Haartsen and Sven Mattisson while working at Ericsson in the 1990s. It allows for short-range wireless communication between devices, enabling the creation of wireless personal area networks.",
-        imageSrc: "/invention-images/blueetooth.jpg",
+        imageSrc: "/invention-images/bluetooth.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Jaap Haartsen and Sven Mattisson"
       },
@@ -160,6 +160,13 @@ const inventionsData = [
         inventorName: "Alfred Nobel"
       },
       {
+        name: "Celsius Temperature Scale (1742)",
+        description: "Developed by Anders Celsius, this scale is widely used around the world for measuring temperature.",
+        imageSrc: "/invention-images/celsius.jpg",
+        link: "https://example.com/oatmeal",
+        inventorName: "Prijun Koirala"
+      },
+      {
         name: "First Oral Cholera Vaccine, Drokal",
         description:
           "Jan Holmgren, a Swedish scientist, developed the first effective oral cholera vaccine known as Drokal. This vaccine has been crucial in combating the deadly disease by providing an easy-to-administer and effective method of immunization, significantly reducing the incidence of cholera in affected regions.",
@@ -178,7 +185,7 @@ const inventionsData = [
       {
         name: "Life-Saving Drones",
         description: "Swedish innovations in drone technology have been applied in healthcare for delivering medical supplies quickly and efficiently.",
-        imageSrc: "/invention-images/drones.jpg",
+        imageSrc: "/invention-images/drone.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Prijun Koirala"
       }
@@ -267,19 +274,13 @@ const inventionsData = [
         inventorName: "Ingvar Kamprad"
       }
     ]
-  },
-  {
-    category: "Miscellaneous",
-    items: [
-      {
-        name: "Celsius Temperature Scale (1742)",
-        description: "Developed by Anders Celsius, this scale is widely used around the world for measuring temperature.",
-        imageSrc: "/invention-images/celsius.jpg",
-        link: "https://example.com/oatmeal",
-        inventorName: "Prijun Koirala"
-      }
-    ]
   }
+  // {
+  //   category: "Miscellaneous",
+  //   items: [
+     
+  //   ]
+  // }
 ]
 
 export default inventionsData

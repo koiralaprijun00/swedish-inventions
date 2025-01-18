@@ -8,8 +8,8 @@ import "./style.css"
 function InfoBox({ imageSrc, title, description, tags, bgColor }: { imageSrc: string; title: string; description: string; tags: string[]; bgColor: string }) {
   return (
     <div className="info-box shadow-md rounded-md p-4 hover:shadow-lg transition-shadow" style={{ backgroundColor: bgColor }}>
-      <div className="image-container mb-3" style={{ width: "400px", height: "300px", overflow: "hidden" }}>
-        <Image src={imageSrc} alt={title} width={400} height={200} className="rounded-md object-cover" />
+      <div className="image-container mb-3" style={{ width: "400px", height: "250px", overflow: "hidden" }}>
+        <Image src={imageSrc} alt={title} width={400} height={250} className="rounded-md object-cover" />
       </div>
       <h3 className="text-lg font-semibold mb-2">
         {title}
