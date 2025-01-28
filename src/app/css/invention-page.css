@@ -1,0 +1,53 @@
+.invention-page-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #f9f9f2;
+  border: 1px solid #ddd;
+}
+
+.invention-page-content {
+  max-width: 80%;
+}
+
+.invention-page-content h1 {
+  font-size: 32px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.invention-page-content p {
+  font-size: 16px;
+  color: #444;
+  line-height: 2;
+}
+
+.invention-page-category{
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.invention-page-image-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.invention-page-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.invention-page-meta {
+  padding-left: 20px;
+  border-left: 2px solid #ccc;
+}
+
+.invention-page-meta div {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}

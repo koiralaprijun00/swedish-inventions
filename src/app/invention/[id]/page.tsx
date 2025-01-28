@@ -1,4 +1,5 @@
 import inventionsData from "../../inventionsData"
+import "../../css/invention-page.css"
 
 export default function InventionPage({ params }: { params: { id: string } }) {
   const { id } = params // Get the dynamic route parameter
@@ -15,20 +16,33 @@ export default function InventionPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2 style={{ fontSize: "1.5rem", marginBottom: "10px" }}>
-        {invention.category}
-      </h2>
-      <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>
+    <div className="invention-page-container">
+      <div className="invention-page-content">
+        <p className="invention-page-category">
+          {invention.category}
+        </p>
+        <h1>
         {invention.name}
-      </h1>
-      <p>
-        <strong>Inventor:</strong> {invention.inventorName || "Unknown"}
-      </p>
-      <img src={invention.imageSrc} alt={invention.name} style={{ width: "300px", height: "200px", objectFit: "cover" }} />
-      <p>
-        {invention.description}
-      </p>
+        </h1>
+        <p className="invention-page-description">
+          {invention.description}
+        </p>
+        <div className="invention-page-image-container">
+          <img src={invention.imageSrc} alt={invention.name} className="invention-page-image" />
+        </div>
+      </div>
+      <div className="invention-page-meta">
+        <div>
+          <strong>Inventor</strong>
+          <br />
+          {invention.inventorName || "Unknown"}
+        </div>
+        <div>
+          <strong>Category</strong>
+          <br />
+          {invention.category}
+        </div>
+      </div>
     </div>
   )
 }
