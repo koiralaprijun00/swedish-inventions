@@ -1,7 +1,9 @@
 "use client"
+
 import React, { useState } from "react"
 import inventionsData from "./inventionsData"
 import Image from "next/image"
+import Link from "next/link"
 import "./style.css"
 
 // InfoBox Component
@@ -37,32 +39,42 @@ interface InventionCardProps {
   onClick: () => void
 }
 
-function InventionCard({ name, imageSrc, inventorName, onClick }: InventionCardProps) {
+function InventionCard({
+  name,
+  imageSrc,
+  inventorName,
+  onClick,
+}: {
+  name: string;
+  imageSrc: string;
+  inventorName?: string;
+  onClick: () => void;
+}) {
   return (
     <div className="invention-card shadow-sm shadow-gray-50 border-solid border-2 hover:border-cyan-950 hover:border-2">
-      <div className="invention-card-content">
-        <Image src={imageSrc} alt={name} width={300} height={200} />
-        <h3>
-          {name}
-        </h3>
-        <h4>
-          Inventor: {inventorName || " "}
+      {/* Content Section */}
+      <div className="invention-card-content" onClick={onClick}>
+        <Image
+          src={imageSrc}
+          alt={name}
+          width={300}
+          height={200}
+          className="rounded-md object-cover"
+        />
+        <h3 className="font-bold text-lg mt-2">{name}</h3>
+        <h4 className="text-gray-600 mt-1">
+          Inventor: {inventorName || "Unknown"}
         </h4>
       </div>
-      <div className="two-links flex-column content-between">
-        <a
-          href="#"
-          onClick={e => {
-            e.preventDefault()
-            onClick()
-          }}
-          className="right-arrow-button"
-        >
-          <Image src="/right-arrow.svg" alt="Go to another page" width={200} height={200} />
-        </a>
+
+      {/* Link Section */}
+      <div className="two-links flex-column content-between mt-4">
+        <Link href={`/invention/${encodeURIComponent(name)}`} className="right-arrow-button">
+          <Image src="/right-arrow.svg" alt="Go to another page" width={40} height={40} />
+        </Link>
       </div>
     </div>
-  )
+  );
 }
 
 // CategoryFilter Component
@@ -152,7 +164,6 @@ export default function Home() {
               <InventionCard
                 key={item.name}
                 name={item.name}
-                description={typeof item.description === "string" ? item.description : ""}
                 imageSrc={item.imageSrc}
                 inventorName={item.inventorName}
                 onClick={() => console.log(item.name)}

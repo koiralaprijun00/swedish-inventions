@@ -1,5 +1,3 @@
-"use client"
-
 const inventionsData = [
   {
     category: "Food & Beverage",
