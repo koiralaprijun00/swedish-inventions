@@ -15,18 +15,18 @@ export default function Footer() {
           </Link>
           <Link href="/contact" className="text-gray-500 hover:text-gray-700">
             Contact
-          </Link>   
+          </Link>
         </nav>
 
         {/* Social Media Icons */}
         <div className="mb-4 flex space-x-4">
-          <a href="https://www.youtube.com/@swedishinventions" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-red-600">
+          <a href="https://www.youtube.com/@allswedish" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-red-600">
             <FaYoutube size={20} />
           </a>
-          <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-500">
+          <a href="https://x.com/allthingssweden" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-500">
             <FaTwitter size={20} />
           </a>
-          <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-pink-500">
+          <a href="https://www.instagram.com/allfromsweden/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-pink-500">
             <FaInstagram size={20} />
           </a>
         </div>
