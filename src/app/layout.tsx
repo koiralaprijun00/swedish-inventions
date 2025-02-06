@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GoogleTagManager } from '@next/third-parties/google'
 import { Geist, Geist_Mono } from "next/font/google";
+import ContactForm from "./ContactForm";
 import Navbar from "./Navbar";
 import "./globals.css";
 import Footer from "./Footer";
@@ -36,6 +37,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <ContactForm />
         <Footer />
       </body>
       
