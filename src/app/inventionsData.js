@@ -4,6 +4,7 @@ const inventionsData = [
     items: [
       {
         name: "Oatly Oat Milk",
+        shortDescription: "Oatly: The Creamy Oat Milk Taking Over the World!",
         description:
           "Oatly Oat Milk is a plant-based milk alternative made from oats. It is known for its creamy texture and mild, slightly sweet flavor. Oatly is a popular choice for those who are lactose intolerant, vegan, or looking to reduce their dairy consumption. It is often used in coffee, smoothies, and baking, and is fortified with vitamins and minerals to provide a nutritious alternative to cow&rsquo;s milk.",
         imageSrc: "/invention-images/oatly.jpg",
@@ -195,9 +196,9 @@ const inventionsData = [
       {
         name: "H&M",
         description: (
-          <div class="container">
-            <section class="space-y-8 mb-8">
-              <p class="text-lg leading-relaxed">
+          <div className="container">
+            <section className="space-y-8 mb-8">
+              <p className="text-lg leading-relaxed">
                 Sweden, renowned for its breathtaking landscapes and innovative spirit, has given the world numerous groundbreaking contributions. Among these is Hennes & Mauritz,
                 better known as H&M, a global fashion giant that has revolutionized the retail clothing industry. As part of Sweden&lsquo;s rich legacy of innovation, H&M has
                 established itself not only as a fashion leader but also as a pioneer in sustainable practices and accessible style. This blog explores the story, growth, and
@@ -205,13 +206,13 @@ const inventionsData = [
               </p>
 
               <section>
-                <h2 class="text-xl font-semibold text-blue-500">Humble Beginnings: The Birth of H&M</h2>
-                <p class="text-lg leading-relaxed">
+                <h2 className="text-xl font-semibold text-blue-500">Humble Beginnings: The Birth of H&M</h2>
+                <p className="text-lg leading-relaxed">
                   H&M was founded in 1947 by Erling Persson in the small Swedish town of Västerås. Originally named Hennes (Swedish for “hers”), the store focused exclusively on
-                  women&rsquo;s clothing. Persson&rsquo;s inspiration came from a trip to the United States, where he observed the efficiency and popularity of mass-produced clothing.
-                  Persson envisioned a store that offered fashionable, affordable clothing to the everyday consumer.
+                  women&rsquo;s clothing. Persson&rsquo;s inspiration came from a trip to the United States, where he observed the efficiency and popularity of mass-produced
+                  clothing. Persson envisioned a store that offered fashionable, affordable clothing to the everyday consumer.
                 </p>
-                <p class="text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed">
                   In 1968, Persson acquired Mauritz Widforss, a retailer specializing in men&rsquo;s and outdoor clothing, leading to the rebranding of the company as Hennes &
                   Mauritz—H&M. With this merger, H&M began offering a wide array of clothing for women, men, and eventually children, catering to a diverse audience and laying the
                   foundation for its global expansion.
@@ -219,38 +220,38 @@ const inventionsData = [
               </section>
 
               <section>
-                <h2 class="text-xl font-semibold text-blue-500">Global Expansion: Becoming a Fashion Empire</h2>
-                <p class="text-lg leading-relaxed">
+                <h2 className="text-xl font-semibold text-blue-500">Global Expansion: Becoming a Fashion Empire</h2>
+                <p className="text-lg leading-relaxed">
                   H&M&rsquo;sjourney from a single store in Sweden to a global fashion empire is a testament to its innovative business model and relentless pursuit of excellence.
                   The company&rsquo;s first international store opened in Norway in 1964, and by the 1970s, it had expanded to Denmark and the United Kingdom.
                 </p>
-                <p class="text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed">
                   H&M&rsquo;sappeal lies in its ability to merge affordability with trend-focused designs. The brand embraced the concept of fast fashion, ensuring that
                   high-quality, fashionable clothing reached stores quickly after appearing on runways. This model not only democratized fashion but also cemented H&M as a go-to
                   destination for consumers seeking style without breaking the bank.
                 </p>
-                <p class="text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed">
                   By the 2000s, H&M had firmly established itself on every continent, with flagship stores in major cities like New York, Paris, and Tokyo. Today, H&M operates in
                   over 75 markets with thousands of stores and a robust online presence.
                 </p>
               </section>
 
               <section>
-                <h2 class="text-xl font-semibold text-blue-500">Innovations in the Retail Industry</h2>
-                <p class="text-lg leading-relaxed">
+                <h2 className="text-xl font-semibold text-blue-500">Innovations in the Retail Industry</h2>
+                <p className="text-lg leading-relaxed">
                   H&M&rsquo;s success can be attributed to its innovative approach to retail. The brand has consistently stayed ahead of industry trends, leveraging technology and
                   design to enhance the shopping experience.
                 </p>
 
-                <h3 class="text-xl font-semibold text-blue-400 mt-6">Collaborations with Designers and Celebrities</h3>
-                <p class="text-lg leading-relaxed">
+                <h3 className="text-xl font-semibold text-blue-400 mt-6">Collaborations with Designers and Celebrities</h3>
+                <p className="text-lg leading-relaxed">
                   H&M pioneered the concept of designer collaborations, bridging the gap between high fashion and mainstream retail. Partnerships with industry icons like Karl
                   Lagerfeld, Stella McCartney, and Alexander Wang brought haute couture designs to the masses at affordable prices. These limited-edition collections generated
                   global buzz, attracting millions of shoppers and solidifying H&M&rsquo;sstatus as a trendsetter.
                 </p>
 
-                <h3 class="text-xl font-semibold text-blue-400 mt-6">Digital Transformation</h3>
-                <p class="text-lg leading-relaxed">
+                <h3 className="text-xl font-semibold text-blue-400 mt-6">Digital Transformation</h3>
+                <p className="text-lg leading-relaxed">
                   Recognizing the importance of e-commerce early on, H&M invested heavily in its online platform. The brand&rsquo;s mobile app and website offer seamless shopping
                   experiences, featuring user-friendly interfaces, personalized recommendations, and virtual styling tools. H&M&rsquo;s embrace of technology has ensured its
                   relevance in an increasingly digital world.
@@ -276,7 +277,7 @@ const inventionsData = [
   // {
   //   category: "Miscellaneous",
   //   items: [
-     
+
   //   ]
   // }
 ]
