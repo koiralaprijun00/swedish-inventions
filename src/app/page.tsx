@@ -30,38 +30,15 @@ function InfoBox({ imageSrc, title, description, tags, bgColor }: { imageSrc: st
   )
 }
 
-// InventionCard Component
-interface InventionCardProps {
-  name: string
-  description: string | React.ReactNode
-  imageSrc: string
-  inventorName?: string
-  onClick: () => void
-}
-
-function InventionCard({
-  name,
-  imageSrc,
-  inventorName,
-  onClick,
-}: {
-  name: string;
-  imageSrc: string;
-  inventorName?: string;
-  onClick: () => void;
-}) {
+function InventionCard({ name, imageSrc, inventorName, onClick }: { name: string; imageSrc: string; inventorName?: string; onClick: () => void }) {
   return (
     <div className="invention-card shadow-sm shadow-gray-50 border-solid border-2 hover:border-cyan-950 hover:border-2">
       {/* Content Section */}
       <div className="invention-card-content" onClick={onClick}>
-        <Image
-          src={imageSrc}
-          alt={name}
-          width={300}
-          height={200}
-          className="rounded-md object-cover"
-        />
-        <h3 className="font-bold text-lg mt-2">{name}</h3>
+        <Image src={imageSrc} alt={name} width={300} height={200} className="rounded-md object-cover" />
+        <h3 className="font-bold text-lg mt-2">
+          {name}
+        </h3>
         <h4 className="text-gray-600 mt-1">
           Inventor: {inventorName || "Unknown"}
         </h4>
@@ -74,7 +51,7 @@ function InventionCard({
         </Link>
       </div>
     </div>
-  );
+  )
 }
 
 // CategoryFilter Component
@@ -160,15 +137,7 @@ export default function Home() {
             {category.category}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {category.items.map(item =>
-              <InventionCard
-                key={item.name}
-                name={item.name}
-                imageSrc={item.imageSrc}
-                inventorName={item.inventorName}
-                onClick={() => console.log(item.name)}
-              />
-            )}
+            {category.items.map(item => <InventionCard key={item.name} name={item.name} imageSrc={item.imageSrc} inventorName={item.inventorName} onClick={() => {}} />)}
           </div>
         </div>
       )}
