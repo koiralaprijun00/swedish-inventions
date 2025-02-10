@@ -1,42 +1,43 @@
 'use client'
 
-import { useState } from "react"
+import { useState } from "react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
-  })
-  const [status, setStatus] = useState("")
+    message: "",
+  });
+  const [status, setStatus] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value })
-  }
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
-      })
+        body: JSON.stringify(formData),
+      });
 
       if (response.ok) {
-        setStatus("Email sent successfully!")
-        setFormData({ name: "", email: "", message: "" })
+        setStatus("Email sent successfully!");
+        setFormData({ name: "", email: "", message: "" }); // Clear the form
       } else {
-        setStatus("Failed to send email. Please try again later.")
+        const errorData = await response.json(); // Try to parse error message
+        setStatus(errorData.message || "Failed to send email"); // Display error
       }
     } catch (error) {
-      console.error(error)
-      setStatus("An error occurred. Please try again later.")
+      console.error("Error sending email:", error);
+      setStatus("Failed to send email");
     }
-  }
+  };
 
   return (
     <form className="max-w-3xl rounded-lg" onSubmit={handleSubmit}>
@@ -52,6 +53,7 @@ const ContactForm = () => {
           onChange={handleChange}
           className="w-full border-b border-gray-300 p-2 focus:outline-none focus:ring-0 focus:border-gray-500"
           placeholder="Your Name"
+          required // Add validation
         />
       </div>
       <div>
@@ -65,6 +67,7 @@ const ContactForm = () => {
           onChange={handleChange}
           className="w-full border-b border-gray-300 p-2 focus:outline-none focus:ring-0 focus:border-gray-500"
           placeholder="Your Email"
+          required // Add validation
         />
       </div>
       <div>
@@ -78,17 +81,17 @@ const ContactForm = () => {
           onChange={handleChange}
           className="w-full border-b border-gray-300 p-2 focus:outline-none focus:ring-0 focus:border-gray-500"
           placeholder="Your Message"
+          required // Add validation
         />
       </div>
       <button type="submit" className="bg-gray-500 text-white py-2 px-6 rounded-lg font-medium hover:bg-gray-600 transition duration-300">
         Submit
       </button>
-      {status &&
-        <p className="text-sm text-green-600 mt-2">
+      {status && <p className={`text-sm ${status.startsWith("Email sent") ? "text-green-600" : "text-red-600"} mt-2`}>
           {status}
         </p>}
     </form>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;
