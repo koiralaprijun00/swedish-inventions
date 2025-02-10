@@ -1,10 +1,13 @@
-'use client'
+"use client"
 
+import { useParams } from "next/navigation"
 import inventionsData from "../../inventionsData"
 import "../../css/invention-page.css"
 
-export default function InventionPage({ params }: { params: { id: string } }) {
-  const { id } = params
+export default function InventionPage() {
+  // Get route parameters using the useParams hook
+  const { id } = useParams() as { id: string }
+
   const decodedId = decodeURIComponent(id)
 
   const allInventions = inventionsData.map(category => category.items.map(item => ({ ...item, category: category.category }))).flat()
