@@ -1,3 +1,5 @@
+'use client'
+
 import inventionsData from "../../inventionsData"
 import "../../css/invention-page.css"
 
