@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from "react"
 
 const ContactForm = () => {
@@ -37,8 +39,9 @@ const ContactForm = () => {
   }
 
   return (
-    <form className="max-w-3xl rounded-lg p-6 md:p-8 space-y-6" onSubmit={handleSubmit}>
+    <form className="max-w-3xl rounded-lg" onSubmit={handleSubmit}>
       <div>
+        <h2 className="text-4xl font-bold mb-4">Do you know some Inventions?</h2>
         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
           Name
         </label>

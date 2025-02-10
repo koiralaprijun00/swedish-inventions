@@ -2,8 +2,6 @@
   display: flex;
   justify-content: space-between;
   padding: 40px;
-  background-color: #f9f9f2;
-  border: 1px solid #ddd;
 }
 
 .invention-page-content {
@@ -11,9 +9,10 @@
 }
 
 .invention-page-content h1 {
-  font-size: 32px;
-  color: #222;
+  font-size: 48px;
+  color: #0838bc;
   margin-bottom: 20px;
+  font-family: 'Asgard Trial';
 }
 
 .invention-page-content p {
