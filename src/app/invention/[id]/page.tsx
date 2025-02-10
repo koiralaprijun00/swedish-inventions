@@ -1,14 +1,12 @@
 import inventionsData from "../../inventionsData"
 import "../../css/invention-page.css"
 
-export default async function InventionPage({ params }: { params: { id: string } }) {
-  const { id } = params // Get the dynamic route parameter
-  const decodedId = decodeURIComponent(id) // Decode special characters
+export default function InventionPage({ params }: { params: { id: string } }) {
+  const { id } = params
+  const decodedId = decodeURIComponent(id)
 
-  // Flatten the inventionsData using map + flat
-  const allInventions = inventionsData.map(category => category.items.map(item => ({ ...item, category: category.category }))).flat() // Flatten the nested arrays
+  const allInventions = inventionsData.map(category => category.items.map(item => ({ ...item, category: category.category }))).flat()
 
-  // Find the specific invention
   const invention = allInventions.find(item => item.name === decodedId)
 
   if (!invention) {
