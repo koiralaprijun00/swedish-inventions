@@ -12,9 +12,6 @@ function InfoBox({
   transparentImage,
   title,
   inventorName,
-  description,
-  tags,
-  bgColor
 }: {
   name: string
   inventorName?: string

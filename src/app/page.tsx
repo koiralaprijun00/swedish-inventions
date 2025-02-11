@@ -51,8 +51,6 @@ function InfoBox({
 }
 
 function InventionCard({ name, imageSrc, inventorName }: { name: string; imageSrc: string; inventorName?: string }) {
-  
-  const t = useTranslations("Translations");
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
 
   return (

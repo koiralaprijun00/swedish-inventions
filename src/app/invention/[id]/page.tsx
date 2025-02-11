@@ -1,6 +1,7 @@
 "use client"
 
 import { useParams } from "next/navigation"
+import Image from "next/image"
 import inventionsData from "../../inventionsData"
 import "../../css/invention-page.css"
 
@@ -27,7 +28,7 @@ export default function InventionPage() {
         </h1>
         {invention.description}
         <div className="invention-page-image-container">
-          <img src={invention.imageSrc} alt={invention.name} className="invention-page-image" />
+          <Image src={invention.imageSrc} alt={invention.name} className="invention-page-image" />
         </div>
       </div>
       <div className="invention-page-meta">
