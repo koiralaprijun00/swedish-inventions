@@ -81,7 +81,7 @@ export default function Home() {
   return (
     <div className="mt-24">
       {/* Header */}
-      <header className="text-start mb-8">
+      <header className="text-start mb-8 w-3/4">
         <h1>
           Famous Swedish{" "}
           <span
@@ -106,7 +106,7 @@ export default function Home() {
             Innovations
           </span>
         </h1>
-        <p>
+        <p className="text-gray-600 mt-12">
           Discovering Sweden&#39;s Contributions to the World from the <span className="md:text-regalBlue md:font-bold p-2 bg-amber-300">People of Sweden.</span>
         </p>
       </header>
