@@ -8,8 +8,8 @@ const Tabs = () => {
   const [activeTab, setActiveTab] = useState(inventionsData[0]?.category);
 
   return (
-    <div>
-      <h2 className="text-md font-bold mt-16 mb-8">Explore swedishinventions.com</h2>
+    <div className='mb-16'>
+      <h2 className="text-md font-bold mt-16">Explore swedishinventions.com</h2>
       <div className=" text-sm flex border-b border-gray-300 overflow-x-auto whitespace-nowrap gap-12">
         {inventionsData.map((category) => (
           <div

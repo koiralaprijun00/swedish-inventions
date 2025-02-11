@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import inventionsData from "./inventionsData"
 import Image from "next/image"
 import Link from "next/link"
-import "./style.css"
+import "./globals.css"
 
 // InfoBox Component
 function InfoBox({ imageSrc, title, description, tags, bgColor }: { imageSrc: string; title: string; description: string; tags: string[]; bgColor: string }) {
