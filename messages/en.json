@@ -1,0 +1,34 @@
+{
+  "Translations": {
+    "home": "Home",
+    "about": "About",
+    "title": "Famous Swedish",
+    "inventions": "Inventions",
+    "and": "and",
+    "innovations": "Innovations",
+    "headerText": "Discovering Sweden's Contributions to the World from the",
+    "peopleOfSweden": "People of Sweden.",
+    "categoryTitle": "Inventions.",
+    "categorySubtitle": "As if destined to change the world.",
+    "details": "Details",
+    "unknownInventor": "Unknown",
+    "categoryAll": "All",
+    "categories": {
+      "all": "All",
+      "foodBeverage": "Food & Beverage",
+      "engineeringTechnology": "Engineering & Technology",
+      "digitalTechnology": "Digital Technology",
+      "gaming": "Gaming",
+      "scienceInnovation": "Science & Innovation",
+      "designRetail": "Design & Retail",
+      "mapping": {
+        "Food & Beverage": "foodBeverage",
+        "Engineering & Technology": "engineeringTechnology",
+        "Digital Technology": "digitalTechnology",
+        "Gaming": "gaming",
+        "Science & Innovation": "scienceInnovation",
+        "Design & Retail": "designRetail"
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "Translations": {
+    "home": "Hem",
+    "about": "Om Hemsida",
+    "title": "Berömda Svenska",
+    "inventions": "Uppfinningar",
+    "and": "och",
+    "innovations": "Innovationer",
+    "headerText": "Upptäcka Sveriges bidrag till världen från",
+    "peopleOfSweden": "Sveriges folk.",
+    "categoryTitle": "Uppfinningar.",
+    "categorySubtitle": "Som om de var avsedda att förändra världen.",
+    "details": "Detaljer",
+    "unknownInventor": "Okänd",
+    "categoryAll": "Alla",
+    "categories": {
+      "all": "Alla",
+      "foodBeverage": "Mat & Dryck",
+      "engineeringTechnology": "Teknik",
+      "digitalTechnology": "Digital Teknik",
+      "gaming": "Spel",
+      "scienceInnovation": "Vetenskap & Innovation",
+      "designRetail": "Design & Handel",
+      "mapping": {
+        "Food & Beverage": "foodBeverage",
+        "Engineering & Technology": "engineeringTechnology",
+        "Digital Technology": "digitalTechnology",
+        "Gaming": "gaming",
+        "Science & Innovation": "scienceInnovation",
+        "Design & Retail": "designRetail"
+      }
+    }
+  }
+}
