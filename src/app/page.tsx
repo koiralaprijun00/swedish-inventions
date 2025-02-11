@@ -3,8 +3,9 @@
 import React, { useState } from "react"
 import inventionsData from "./inventionsData"
 import Image from "next/image"
-import Link from "next/link"
 import "./globals.css"
+import { useTranslations } from "next-intl"
+import { Link } from "../../src/i18n/routing"
 
 function InfoBox({
   name,
@@ -20,6 +21,9 @@ function InfoBox({
   tags: string[]
   bgColor: string
 }) {
+
+  const t = useTranslations("Translations");
+
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
 
   return (
@@ -38,7 +42,7 @@ function InfoBox({
 
       <div className="mb-8 mr-4 flex justify-end">
         <Link href={detailPageURL} passHref className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition-colors">
-          <span>Details</span>
+          <span>{t("details")}</span>
           <span className="ml-1">+</span>
         </Link>
       </div>
@@ -47,6 +51,8 @@ function InfoBox({
 }
 
 function InventionCard({ name, imageSrc, inventorName }: { name: string; imageSrc: string; inventorName?: string }) {
+  
+  const t = useTranslations("Translations");
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
 
   return (
@@ -91,6 +97,10 @@ function CategoryFilter({ categories, selectedCategory, onSelectCategory }: { ca
 
 // Main Home Component
 export default function Home() {
+
+
+  const t = useTranslations("Translations");
+
   // Store the currently selected category
   const [selectedCategory, setSelectedCategory] = useState<string>("All")
 
@@ -135,8 +145,8 @@ export default function Home() {
 
       <div>
         <div className="flex justify-start gap-2 min-h-[50px]">
-          <h2 className="text-2xl font-bold text-regalBlue">Inventions.</h2>
-          <h2 className="text-2xl text-gray-400">As if destined to change the world.</h2>
+          <h2 className="text-2xl font-bold text-regalBlue">{t("categoryTitle")}</h2>
+          <h2 className="text-2xl text-gray-400">{t("categorySubtitle")}</h2>
         </div>
         {/* Info Boxes */}
         <div className="flex gap-8 py-12 mb-8 justify-between">
