@@ -1,17 +1,20 @@
 "use client"
 
-import React, { useState } from "react"
-import inventionsData from "./inventionsData"
-import Image from "next/image"
-import "./globals.css"
 import { useTranslations } from "next-intl"
-import { Link } from "../../src/i18n/routing"
+import { Link } from "../../i18n/routing"
+import React, { useState } from "react"
+import inventionsData from "../../../src/app/inventionsData.js"
+import Image from "next/image"
+import "../globals.css"
 
 function InfoBox({
   name,
   transparentImage,
   title,
-  inventorName
+  inventorName,
+  description,
+  tags,
+  bgColor
 }: {
   name: string
   inventorName?: string
@@ -21,28 +24,25 @@ function InfoBox({
   tags: string[]
   bgColor: string
 }) {
-
-  const t = useTranslations("Translations");
-
+  const t = useTranslations("Translations")
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
 
   return (
     <div className="px-4 w-[600px] h-[500px] rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-500 flex flex-col">
-      {/* Top text */}
       <h4 className="text-gray-700 text-sm">
-        {inventorName || "Unknown"}
+        {inventorName || t("unknownInventor")}
       </h4>
       <h3 className="text-xl font-semibold mb-2">
         {title}
       </h3>
-
       <div className="image-container w-full h-[300px] overflow-hidden rounded-lg flex-1">
         <Image src={transparentImage} alt={title} width={600} height={250} className="scale-125 object-contain w-full h-full" />
       </div>
-
       <div className="mb-8 mr-4 flex justify-end">
         <Link href={detailPageURL} passHref className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition-colors">
-          <span>{t("details")}</span>
+          <span>
+            {t("details")}
+          </span>
           <span className="ml-1">+</span>
         </Link>
       </div>
@@ -51,8 +51,6 @@ function InfoBox({
 }
 
 function InventionCard({ name, imageSrc, inventorName }: { name: string; imageSrc: string; inventorName?: string }) {
-  
-  const t = useTranslations("Translations");
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
 
   return (
@@ -70,10 +68,10 @@ function InventionCard({ name, imageSrc, inventorName }: { name: string; imageSr
       >
         <div className="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 rounded-lg" />
         <div className="relative z-10 text-white px-4 py-8">
-          <h3 className="font-bold text-xl text-white">
+          <h3 className="font-bold text-xl">
             {name}
           </h3>
-          <h4 className="text-white">
+          <h4>
             {inventorName || "Unknown"}
           </h4>
         </div>
@@ -82,71 +80,74 @@ function InventionCard({ name, imageSrc, inventorName }: { name: string; imageSr
   )
 }
 
-// CategoryFilter Component
-function CategoryFilter({ categories, selectedCategory, onSelectCategory }: { categories: string[]; selectedCategory: string; onSelectCategory: (cat: string) => void }) {
+function CategoryFilter({
+  categories,
+  selectedCategory,
+  onSelectCategory
+}: {
+  categories: { key: string; label: string }[]
+  selectedCategory: string
+  onSelectCategory: (key: string) => void
+}) {
   return (
-    <div className="category-filter ">
+    <div className="category-filter">
       {categories.map(cat =>
-        <button key={cat} onClick={() => onSelectCategory(cat)} className={`category-chip ${selectedCategory === cat ? "active" : ""}`}>
-          {cat}
+        <button key={cat.key} onClick={() => onSelectCategory(cat.key)} className={`category-chip ${selectedCategory === cat.key ? "active" : ""}`}>
+          {cat.label}
         </button>
       )}
     </div>
   )
 }
 
-// Main Home Component
 export default function Home() {
+  const t = useTranslations("Translations")
+  const [selectedCategory, setSelectedCategory] = useState<string>("all")
 
+  const categories = [
+    { key: "all", label: t("categories.all", { fallback: "All" }) },
+    { key: "foodBeverage", label: t("categories.foodBeverage") },
+    { key: "engineeringTechnology", label: t("categories.engineeringTechnology") },
+    { key: "digitalTechnology", label: t("categories.digitalTechnology") },
+    { key: "gaming", label: t("categories.gaming") },
+    { key: "scienceInnovation", label: t("categories.scienceInnovation") },
+    { key: "designRetail", label: t("categories.designRetail") }
+  ]
 
-  const t = useTranslations("Translations");
+  const normalize = (str: string) => str.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")
 
-  // Store the currently selected category
-  const [selectedCategory, setSelectedCategory] = useState<string>("All")
+  const filteredData = selectedCategory === "all" ? inventionsData : inventionsData.filter(cat => normalize(cat.category) === normalize(selectedCategory))
 
-  // Gather all unique categories from your inventionsData
-  const allCategories = ["All", ...Array.from(new Set(inventionsData.map(cat => cat.category)))]
-
-  // Filter the data based on selectedCategory
-  const filteredData = selectedCategory === "All" ? inventionsData : inventionsData.filter(cat => cat.category === selectedCategory)
+  // Use the mapping from JSON to get the key
+  const getCategoryKey = (category: string) => t(`categories.mapping.${category}`)
 
   return (
     <div className="mt-12">
-      {/* Header */}
       <header className="text-start mb-8 w-3/4">
         <h1>
-          Famous Swedish{" "}
-          <span
-            className="bg-amber-300 p-2 text-regalBlue"
-            style={{
-              fontFamily: "Libre Franklin",
-              fontSize: "1.3em",
-              fontWeight: "1000"
-            }}
-          >
-            Inventions
+          {t("title")}{" "}
+          <span className="bg-amber-300 px-2 py-4 text-regalBlue font-extrabold text-7xl">
+            {t("inventions")}
           </span>{" "}
-          and{" "}
-          <span
-            className="bg-amber-300 p-2 text-regalBlue"
-            style={{
-              fontFamily: "Libre Franklin",
-              fontSize: "1.3em",
-              fontWeight: "1000"
-            }}
-          >
-            Innovations
-          </span>
-        </h1>
+          {t("and")}{" "}
+          </h1>
+          <h1 className="inline-block bg-amber-300 px-2 py-4 text-regalBlue text-7xl">
+            {t("innovations")}
+          </h1>
+        
         <p className="text-gray-600 mt-12">
-          Discovering Sweden&#39;s Contributions to the World from the <span className="md:text-regalBlue md:font-bold p-2 bg-amber-300">People of Sweden.</span>
+          {t("headerText")} <span className="md:text-regalBlue md:font-bold p-2 bg-amber-300">{t("peopleOfSweden")}</span>
         </p>
       </header>
 
       <div>
         <div className="flex justify-start gap-2 min-h-[50px]">
-          <h2 className="text-2xl font-bold text-regalBlue">{t("categoryTitle")}</h2>
-          <h2 className="text-2xl text-gray-400">{t("categorySubtitle")}</h2>
+          <h2 className="text-2xl font-bold text-regalBlue">
+            {t("categoryTitle")}
+          </h2>
+          <h2 className="text-2xl text-gray-400">
+            {t("categorySubtitle")}
+          </h2>
         </div>
         {/* Info Boxes */}
         <div className="flex gap-8 py-12 mb-8 justify-between">
@@ -165,14 +166,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Category Filter Chips */}
-      <CategoryFilter categories={allCategories} selectedCategory={selectedCategory} onSelectCategory={cat => setSelectedCategory(cat)} />
+      <CategoryFilter categories={categories} selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
 
-      {/* Filtered Categories and Items */}
       {filteredData.map(category =>
         <div key={category.category} className="mb-8">
           <h2 className="text-xl font-bold mb-4">
-            {category.category}
+            {t(`categories.${getCategoryKey(category.category)}`)}
           </h2>
           <div className="flex gap-12 flex-wrap">
             {category.items.map(item => <InventionCard key={item.name} name={item.name} imageSrc={item.imageSrc} inventorName={item.inventorName} />)}

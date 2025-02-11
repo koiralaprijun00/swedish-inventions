@@ -1,4 +1,7 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./messages'); // Provide the path to your translation files
 
 const nextConfig: NextConfig = {
   images: {
@@ -11,9 +14,9 @@ const nextConfig: NextConfig = {
     ],
   },
   i18n: {
-    locales: ['en', 'sv'],  // English and Swedish
-    defaultLocale: 'en',    // Default to English
+    locales: ['en', 'sv'],
+    defaultLocale: 'en',
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
