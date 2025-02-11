@@ -27,11 +27,13 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
   // Ensure the incoming `locale` is valid and set a fallback
   const validLocale = routing.locales.includes(locale as "en" | "sv") ? (locale as "en" | "sv") : "en";
   if (!routing.locales.includes(validLocale)) {
