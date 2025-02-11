@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
     remotePatterns: [
-
       {
         protocol: 'https',
         hostname: 'via.placeholder.com',
@@ -12,7 +10,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  i18n: {
+    locales: ['en', 'sv'],  // English and Swedish
+    defaultLocale: 'en',    // Default to English
+  },
 };
 
 export default nextConfig;
-

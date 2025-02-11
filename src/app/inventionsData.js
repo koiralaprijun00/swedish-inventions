@@ -8,11 +8,12 @@ const inventionsData = [
         description:
           "Oatly Oat Milk is a plant-based milk alternative made from oats. It is known for its creamy texture and mild, slightly sweet flavor. Oatly is a popular choice for those who are lactose intolerant, vegan, or looking to reduce their dairy consumption. It is often used in coffee, smoothies, and baking, and is fortified with vitamins and minerals to provide a nutritious alternative to cow&rsquo;s milk.",
         imageSrc: "/invention-images/oatly.jpg",
+        transparentImage: "/invention-images/oatly-png.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Rickard Öste"
       },
       {
-        name: "Coca-Cola Bottle (1916)",
+        name: "Coca-Cola Bottle",
         description:
           "The iconic contoured Coca-Cola bottle was designed by Swedish-born Alexander Samuelson in 1915. He was working for the Root Glass Company in Indiana, USA, at the time.",
         imageSrc: "/invention-images/coca-cola.jpg",
@@ -43,8 +44,9 @@ const inventionsData = [
       {
         name: "Adjustable Wrench",
         description:
-          "ohan Petter Johansson, a Swedish inventor, created the adjustable wrench in 1892. This tool allows users to adjust the size of the opening to fit various nuts and bolts, eliminating the need for multiple wrenches.",
+          "Johan Petter Johansson, a Swedish inventor, created the adjustable wrench in 1892. This tool allows users to adjust the size of the opening to fit various nuts and bolts, eliminating the need for multiple wrenches.",
         imageSrc: "/invention-images/wrench.jpg",
+        transparentImage: "/invention-images/wrench-png.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Johan Petter Johansson"
       },
@@ -57,7 +59,7 @@ const inventionsData = [
         inventorName: "Gustaf Erik Pasch"
       },
       {
-        name: "Tetra Pak (1940s)",
+        name: "Tetra Pak",
         description:
           "Erik Wallenberg, a Swedish engineer, invented the Tetra Pak packaging method in the 1940s. This innovative packaging allows liquids to be stored without refrigeration, revolutionizing food storage and distribution.",
         imageSrc: "/invention-images/tetra-pak.jpg",
@@ -69,10 +71,10 @@ const inventionsData = [
         description: "Pioneered in Sweden, ultrasound imaging has become a vital tool in medical diagnostics.",
         imageSrc: "/invention-images/ultrasound.jpg",
         link: "https://example.com/oatmeal",
-        inventorName: "Prijun Koirala"
+        inventorName: "Hellmuth Hertz and Inge Edler "
       },
       {
-        name: "Three-Point Seatbelt (1959)",
+        name: "Three-Point Seatbelt",
         description:
           "Nils Bohlin, a Swedish engineer working for Volvo, invented the three-point seatbelt in 1959. This design significantly improved car safety by securing both the upper and lower body with a single continuous belt. It has since become a standard safety feature in vehicles worldwide.",
         imageSrc: "/invention-images/seatbelt.jpg",
@@ -89,11 +91,12 @@ const inventionsData = [
         description:
           "Bluetooth technology was developed by Swedish engineers Jaap Haartsen and Sven Mattisson while working at Ericsson in the 1990s. It allows for short-range wireless communication between devices, enabling the creation of wireless personal area networks.",
         imageSrc: "/invention-images/bluetooth.jpg",
+        transparentImage: "/invention-images/bluetooth-png.jpg",
         link: "https://example.com/oatmeal",
         inventorName: "Jaap Haartsen and Sven Mattisson"
       },
       {
-        name: "Automatic Identification Systems (AIS)",
+        name: "Automatic Identification Systems",
         description:
           "Håkan Lans, a Swedish inventor, created the Automatic Identification System (AIS). This system enhances maritime navigation by tracking vessels using GPS technology, improving safety and efficiency in maritime operations.",
         imageSrc: "/invention-images/ais.jpg",
@@ -159,11 +162,11 @@ const inventionsData = [
         inventorName: "Alfred Nobel"
       },
       {
-        name: "Celsius Temperature Scale (1742)",
+        name: "Celsius Temperature Scale",
         description: "Developed by Anders Celsius, this scale is widely used around the world for measuring temperature.",
         imageSrc: "/invention-images/celsius.jpg",
         link: "https://example.com/oatmeal",
-        inventorName: "Prijun Koirala"
+        inventorName: "Anders Celsius"
       },
       {
         name: "First Oral Cholera Vaccine, Drokal",
@@ -174,7 +177,7 @@ const inventionsData = [
         inventorName: "Jan Holmgren"
       },
       {
-        name: "Hövding (Invisible Bicycle Helmet)",
+        name: "Hövding - Bicycle Helmet",
         description:
           "The Hövding is an innovative bicycle helmet designed by Swedish inventors Anna Haupt and Terese Alstin. Unlike traditional helmets, the Hövding is worn as a collar around the neck and inflates like an airbag upon impact to protect the cyclist&apos;s head. This design provides both safety and comfort, making it a popular choice among urban cyclists.",
         imageSrc: "/invention-images/hovding.jpg",
@@ -186,7 +189,7 @@ const inventionsData = [
         description: "Swedish innovations in drone technology have been applied in healthcare for delivering medical supplies quickly and efficiently.",
         imageSrc: "/invention-images/drone.jpg",
         link: "https://example.com/oatmeal",
-        inventorName: "Prijun Koirala"
+        inventorName: "EverDrone"
       }
     ]
   },

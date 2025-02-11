@@ -1,51 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Oi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Oi&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
-  --background: #ffffff;
+  --background: #f8f8f8;
   --foreground: #171717;
+  font-family: 'Libre Franklin', Arial, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    font-family: 'Libre Franklin', Arial, sans-serif;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-
-/* Add any additional styles here */
-.custom-font {
-  font-family: 'Oi', cursive;
-  font-size: 2em; /* Adjust the size as needed */
-}
-
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
   margin: 0 auto;
   padding: 20px;
   color: #0f3a56;
   max-width: 90%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #0f3a56;
+
+input,
+textarea {
+  background-color: var(--backgroundGray);
 }
 
 header {
@@ -58,7 +41,6 @@ header h1 {
   font-weight: 700; /* Bold font weight */
   margin-bottom: 20px;
   line-height: 1.2; /* Slightly tighter line-height */
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Clean, modern font */
 }
 
 header p {
@@ -66,97 +48,12 @@ header p {
   font-weight: 300; /* Lighter subheading text */
 }
 
-/* General Section Grid */
-.grid-container {
-  display: grid;
-  /* Use auto-fill and minmax to create a responsive grid */
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 20px; /* Space between cards */
-  padding: 10px;
-}
-
-/* Invention Card */
-.invention-card {
-  color: #0f3a56;
-  display: flex; /* Flex layout for left and right sections */
-  align-items: flex-start; /* Align items at the top (instead of 'top', use 'flex-start') */
-  justify-content: space-between; /* Space between content and arrow */
-  padding: 20px 26px;
-  text-align: left;
-  margin-bottom: 30px;
-}
-
-.invention-card-content {
-  flex: 1; /* Occupy available space on the left */
-}
-
-/* Image */
-.invention-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border-radius: 8px;
-}
-
-/* Card Content */
-.invention-card h3 {
-  font-weight: bolder;
-  font-size: 1.2rem;
-  margin: 20px 0 0 0;
-}
-
-.invention-card p {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin: 0;
-  padding: 40px 0 0 0;
-}
-
-/* Right Column (Arrow, Wiki Link) */
-.two-links {
-  display: flex;
-  flex-direction: column; /* Arrange children vertically */
-  justify-content: space-between; /* Space between top and bottom */
-  height: 100%; /* Ensure container takes full height */
-  align-items: center; /* Center items horizontally */
-}
-
-.wikipedia-link img,
-.right-arrow-button img {
-  width: 25px; /* Adjust size as needed */
-  height: auto;
-}
-.right-arrow-button img {
-  opacity: 0.5; /* Slightly transparent */
-  transition: all 0.3s ease;
-  border-radius: 0;
-}
-
-.right-arrow-button img:hover {
-  opacity: 1; /* Fully visible */
-  transform: scale(1.2);
-  transform: translate(5px, 0);
-  color: #0f3a56;
-}
-
-.right-arrow-button {
-  margin-top: auto; /* Push to the bottom */
-}
-
-/* Drawer Image Container */
-.drawer-image-container img {
-  max-height: 300px;
-  object-fit: cover;
-}
-
-
 /* Container for category chips */
 .category-filter {
   display: flex;
-  flex-wrap: wrap;      /* Wrap to next line if too many */
-  gap: 12px;            /* Space between chips */
-  margin-bottom: 2rem;  /* Some spacing below the chips */
+  flex-wrap: wrap; /* Wrap to next line if too many */
+  gap: 12px; /* Space between chips */
+  margin-bottom: 2.2rem; /* Some spacing below the chips */
 }
 
 /* Basic chip style */
@@ -166,8 +63,8 @@ header p {
   cursor: pointer;
   background-color: #f1f1f1;
   color: #0f3a56;
-  border-radius: 20px;  
-  padding: 8px 16px;
+  border-radius: 6px;
+  padding: 8px 24px;
   font-size: 0.9rem;
   transition: background-color 0.2s ease;
 }
@@ -182,4 +79,3 @@ header p {
   background-color: #0f3a56; /* or your brand color */
   color: #fff;
 }
-

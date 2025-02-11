@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         regalBlue: '#243c5a',
+        backgroundGray: '#f8f8f8',
         swedishYellow: 'rgb(252 211 77 / var(--tw-bg-opacity, 1))'
       },
       borderWidth: {

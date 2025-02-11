@@ -6,58 +6,80 @@ import Image from "next/image"
 import Link from "next/link"
 import "./globals.css"
 
-// InfoBox Component
-function InfoBox({ imageSrc, title, description, tags, bgColor }: { imageSrc: string; title: string; description: string; tags: string[]; bgColor: string }) {
+function InfoBox({
+  name,
+  transparentImage,
+  title,
+  inventorName
+}: {
+  name: string
+  inventorName?: string
+  transparentImage: string
+  title: string
+  description: string
+  tags: string[]
+  bgColor: string
+}) {
+  const detailPageURL = `/invention/${encodeURIComponent(name)}`
+
   return (
-    <div className="info-box shadow-md rounded-md p-4 hover:shadow-lg transition-shadow" style={{ backgroundColor: bgColor }}>
-      <div className="image-container mb-3" style={{ width: "400px", height: "250px", overflow: "hidden" }}>
-        <Image src={imageSrc} alt={title} width={400} height={250} className="rounded-md object-cover" />
-      </div>
-      <h3 className="text-lg font-semibold mb-2">
+    <div className="px-4 w-[600px] h-[500px] rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-500 flex flex-col">
+      {/* Top text */}
+      <h4 className="text-gray-700 text-sm">
+        {inventorName || "Unknown"}
+      </h4>
+      <h3 className="text-xl font-semibold mb-2">
         {title}
       </h3>
-      <p className="text-gray-600 text-sm mb-3">
-        {description}
-      </p>
-      <div className="flex gap-2 flex-wrap">
-        {tags.map((tag, idx) =>
-          <span key={idx} className="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full">
-            {tag}
-          </span>
-        )}
-      </div>
-    </div>
-  )
-}
 
-function InventionCard({ name, imageSrc, inventorName, onClick }: { name: string; imageSrc: string; inventorName?: string; onClick: () => void }) {
-  return (
-    <div className="invention-card shadow-sm shadow-gray-50 border-solid border-2 hover:border-cyan-950 hover:border-2">
-      {/* Content Section */}
-      <div className="invention-card-content" onClick={onClick}>
-        <Image src={imageSrc} alt={name} width={300} height={200} className="rounded-md object-cover" />
-        <h3 className="font-bold text-lg mt-2">
-          {name}
-        </h3>
-        <h4 className="text-gray-600 mt-1">
-          Inventor: {inventorName || "Unknown"}
-        </h4>
+      <div className="image-container w-full h-[300px] overflow-hidden rounded-lg flex-1">
+        <Image src={transparentImage} alt={title} width={600} height={250} className="scale-125 object-contain w-full h-full" />
       </div>
 
-      {/* Link Section */}
-      <div className="two-links flex-column content-between mt-4">
-        <Link href={`/invention/${encodeURIComponent(name)}`} className="right-arrow-button">
-          <Image src="/right-arrow.svg" alt="Go to another page" width={40} height={40} />
+      <div className="mb-8 mr-4 flex justify-end">
+        <Link href={detailPageURL} passHref className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition-colors">
+          <span>Details</span>
+          <span className="ml-1">+</span>
         </Link>
       </div>
     </div>
   )
 }
 
+function InventionCard({ name, imageSrc, inventorName }: { name: string; imageSrc: string; inventorName?: string }) {
+  const detailPageURL = `/invention/${encodeURIComponent(name)}`
+
+  return (
+    <Link href={detailPageURL} passHref>
+      <div
+        className="shadow-sm shadow-gray-50 cursor-pointer relative rounded-lg transition duration-500 ease-in-out transform hover:scale-105"
+        style={{
+          backgroundImage: `url(${imageSrc})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          height: "420px",
+          width: "350px"
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 rounded-lg" />
+        <div className="relative z-10 text-white px-4 py-8">
+          <h3 className="font-bold text-xl text-white">
+            {name}
+          </h3>
+          <h4 className="text-white">
+            {inventorName || "Unknown"}
+          </h4>
+        </div>
+      </div>
+    </Link>
+  )
+}
+
 // CategoryFilter Component
 function CategoryFilter({ categories, selectedCategory, onSelectCategory }: { categories: string[]; selectedCategory: string; onSelectCategory: (cat: string) => void }) {
   return (
-    <div className="category-filter">
+    <div className="category-filter ">
       {categories.map(cat =>
         <button key={cat} onClick={() => onSelectCategory(cat)} className={`category-chip ${selectedCategory === cat ? "active" : ""}`}>
           {cat}
@@ -79,7 +101,7 @@ export default function Home() {
   const filteredData = selectedCategory === "All" ? inventionsData : inventionsData.filter(cat => cat.category === selectedCategory)
 
   return (
-    <div className="mt-24">
+    <div className="mt-12">
       {/* Header */}
       <header className="text-start mb-8 w-3/4">
         <h1>
@@ -111,20 +133,26 @@ export default function Home() {
         </p>
       </header>
 
-      {/* Info Boxes */}
-      <div className="info-boxes-container grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12">
-        {inventionsData
-          .slice(0, 3)
-          .map((category, idx) =>
+      <div>
+        <div className="flex justify-start gap-2 min-h-[50px]">
+          <h2 className="text-2xl font-bold text-regalBlue">Inventions.</h2>
+          <h2 className="text-2xl text-gray-400">As if destined to change the world.</h2>
+        </div>
+        {/* Info Boxes */}
+        <div className="flex gap-8 py-12 mb-8 justify-between">
+          {inventionsData.slice(0, 3).map((category, idx) =>
             <InfoBox
               key={idx}
-              imageSrc={category.items[0].imageSrc}
+              name={category.items[0].name}
+              transparentImage={"transparentImage" in category.items[0] ? category.items[0].transparentImage || "" : ""}
               title={category.items[0].name}
-              description={typeof category.items[0].description === "string" ? category.items[0].description : ""}
-              tags={[category.category, category.items[0].inventorName || "Unknown"]}
+              description={typeof category.items[0].description === "string" ? category.items[0].description : ""} // Ensure description is a string
+              inventorName={category.items[0].inventorName} // Pass inventorName
+              tags={[category.category, category.items[0].inventorName || "Unknown"]} // Correctly pass tags
               bgColor={idx === 0 ? "#f8f9fa" : idx === 1 ? "#e9ecef" : "#dee2e6"}
             />
           )}
+        </div>
       </div>
 
       {/* Category Filter Chips */}
@@ -136,8 +164,8 @@ export default function Home() {
           <h2 className="text-xl font-bold mb-4">
             {category.category}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {category.items.map(item => <InventionCard key={item.name} name={item.name} imageSrc={item.imageSrc} inventorName={item.inventorName} onClick={() => {}} />)}
+          <div className="flex gap-12 flex-wrap">
+            {category.items.map(item => <InventionCard key={item.name} name={item.name} imageSrc={item.imageSrc} inventorName={item.inventorName} />)}
           </div>
         </div>
       )}
