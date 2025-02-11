@@ -1,5 +1,8 @@
 // .eslintrc.js
 module.exports = {
-  root: true // Important: Tells ESLint to stop searching upwards
-  // You can add more later, but start with just this.
+  // ...
+  parserOptions: {
+    parser: "@babel/eslint-parser" // Or any other parser you want to use
+  }
+  // ...
 }
