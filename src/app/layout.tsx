@@ -2,12 +2,6 @@ import type { Metadata } from "next";
 import { GoogleTagManager } from '@next/third-parties/google'
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-<<<<<<< Updated upstream
-import Footer from "./Footer";
-import Tabs from "./Tabs";
-=======
-
->>>>>>> Stashed changes
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

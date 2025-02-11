@@ -51,10 +51,6 @@ function InfoBox({
 }
 
 function InventionCard({ name, imageSrc, inventorName }: { name: string; imageSrc: string; inventorName?: string }) {
-<<<<<<< Updated upstream
-=======
-  
->>>>>>> Stashed changes
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
 
   return (
