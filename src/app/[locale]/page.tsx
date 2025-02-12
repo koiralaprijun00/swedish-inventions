@@ -1,6 +1,7 @@
 "use client"
 
 import { useTranslations } from "next-intl"
+import { useParams } from "next/navigation"
 import { Link } from "../../i18n/routing"
 import React, { useState } from "react"
 import inventionsData from "../../../src/app/inventionsData.js"
@@ -12,14 +13,16 @@ function InfoBox({
   transparentImage,
   title,
   inventorName,
+  locale
 }: {
-  name: string
+  name: string // Keep name as string (it will be the localized name)
   inventorName?: string
   transparentImage: string
-  title: string
+  title: string // Keep title as string
   description: string
   tags: string[]
   bgColor: string
+  locale: string
 }) {
   const t = useTranslations("Translations")
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
@@ -36,7 +39,7 @@ function InfoBox({
         <Image src={transparentImage} alt={title} width={600} height={250} className="scale-125 object-contain w-full h-full" />
       </div>
       <div className="mb-8 mr-4 flex justify-end">
-        <Link href={detailPageURL} passHref className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition-colors">
+        <Link href={detailPageURL} locale={locale} className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition-colors">
           <span>
             {t("details")}
           </span>
@@ -47,11 +50,21 @@ function InfoBox({
   )
 }
 
-function InventionCard({ name, imageSrc, inventorName }: { name: string; imageSrc: string; inventorName?: string }) {
+function InventionCard({
+  name,
+  imageSrc,
+  inventorName,
+  locale
+}: {
+  name: string // Keep name as string
+  imageSrc: string
+  inventorName?: string
+  locale: string
+}) {
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
 
   return (
-    <Link href={detailPageURL} passHref>
+    <Link href={detailPageURL} locale={locale}>
       <div
         className="shadow-sm shadow-gray-50 cursor-pointer relative rounded-lg transition duration-500 ease-in-out transform hover:scale-105"
         style={{
@@ -98,8 +111,19 @@ function CategoryFilter({
 }
 
 export default function Home() {
+  const { locale } = useParams() as { locale: string }
   const t = useTranslations("Translations")
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
+
+  // Helper function to get localized names
+  const getLocalizedName = (item: any) => {
+    if (typeof item.name === "string") {
+      return item.name
+    } else if (item.name && typeof item.name === "object" && item.name[locale]) {
+      return item.name[locale]
+    }
+    return ""
+  }
 
   const categories = [
     { key: "all", label: t("categories.all", { fallback: "All" }) },
@@ -115,23 +139,20 @@ export default function Home() {
 
   const filteredData = selectedCategory === "all" ? inventionsData : inventionsData.filter(cat => normalize(cat.category) === normalize(selectedCategory))
 
-  // Use the mapping from JSON to get the key
-  const getCategoryKey = (category: string) => t(`categories.mapping.${category}`)
-
+  // Localize category names (assuming you have translations for them)
+  const getLocalizedCategory = (category: string) => {
+    return t(`categories.${category}`)
+  }
   return (
     <div className="mt-12">
       <header className="text-start mb-8 w-3/4">
         <h1>
-          {t("title")}{" "}
-          <span className="bg-amber-300 px-2 py-4 text-regalBlue font-extrabold text-7xl">
-            {t("inventions")}
-          </span>{" "}
-          {t("and")}{" "}
-          </h1>
-          <h1 className="inline-block bg-amber-300 px-2 py-4 text-regalBlue text-7xl">
-            {t("innovations")}
-          </h1>
-        
+          {t("title")} <span className="bg-amber-300 px-2 py-4 text-regalBlue font-extrabold text-7xl">{t("inventions")}</span> {t("and")}{" "}
+        </h1>
+        <h1 className="inline-block bg-amber-300 px-2 py-4 text-regalBlue text-7xl">
+          {t("innovations")}
+        </h1>
+
         <p className="text-gray-600 mt-12">
           {t("headerText")} <span className="md:text-regalBlue md:font-bold p-2 bg-amber-300">{t("peopleOfSweden")}</span>
         </p>
@@ -151,13 +172,14 @@ export default function Home() {
           {inventionsData.slice(0, 3).map((category, idx) =>
             <InfoBox
               key={idx}
-              name={category.items[0].name}
+              name={getLocalizedName(category.items[0])} // Use helper function
               transparentImage={"transparentImage" in category.items[0] ? category.items[0].transparentImage || "" : ""}
-              title={category.items[0].name}
-              description={typeof category.items[0].description === "string" ? category.items[0].description : ""} // Ensure description is a string
-              inventorName={category.items[0].inventorName} // Pass inventorName
-              tags={[category.category, category.items[0].inventorName || "Unknown"]} // Correctly pass tags
+              title={getLocalizedName(category.items[0])} // Use helper function
+              description={typeof category.items[0].description === "string" ? category.items[0].description : ""}
+              inventorName={category.items[0].inventorName}
+              tags={[category.category, category.items[0].inventorName || "Unknown"]}
               bgColor={idx === 0 ? "#f8f9fa" : idx === 1 ? "#e9ecef" : "#dee2e6"}
+              locale={locale}
             />
           )}
         </div>
@@ -168,10 +190,18 @@ export default function Home() {
       {filteredData.map(category =>
         <div key={category.category} className="mb-8">
           <h2 className="text-xl font-bold mb-4">
-            {t(`categories.${getCategoryKey(category.category)}`)}
+            {getLocalizedCategory(category.category)} {/* Localized category */}
           </h2>
           <div className="flex gap-12 flex-wrap">
-            {category.items.map(item => <InventionCard key={item.name} name={item.name} imageSrc={item.imageSrc} inventorName={item.inventorName} />)}
+            {category.items.map(item =>
+              <InventionCard
+                key={getLocalizedName(item)} // Use localized name as a key
+                name={getLocalizedName(item)} // Pass localized name
+                imageSrc={item.imageSrc}
+                inventorName={item.inventorName}
+                locale={locale}
+              />
+            )}
           </div>
         </div>
       )}

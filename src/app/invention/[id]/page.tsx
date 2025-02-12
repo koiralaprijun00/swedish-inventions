@@ -13,7 +13,7 @@ export default function InventionPage() {
 
   const allInventions = inventionsData.map(category => category.items.map(item => ({ ...item, category: category.category }))).flat()
 
-  const invention = allInventions.find(item => item.name === decodedId)
+  const invention = allInventions.find(item => item.name.en === decodedId || item.name.sv === decodedId)
 
   if (!invention) {
     return <p>Invention not found!</p>
@@ -24,11 +24,11 @@ export default function InventionPage() {
       <div className="invention-page-content">
         {invention.category}
         <h1>
-          {invention.name}
+          {invention.name.en}
         </h1>
-        {invention.description}
+        {invention.description.en}
         <div className="invention-page-image-container">
-          <Image src={invention.imageSrc} alt={invention.name} className="invention-page-image" />
+          <Image src={invention.imageSrc} alt={invention.name.en} width={600} height={400} className="invention-page-image" />
         </div>
       </div>
       <div className="invention-page-meta">
