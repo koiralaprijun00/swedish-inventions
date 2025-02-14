@@ -3,8 +3,9 @@
 import React, { useState } from "react"
 import inventionsData from "./inventionsData"
 import Image from "next/image"
-import "./globals.css"
+import "./styles/globals.css"
 import { useTranslations } from "next-intl"
+import { useParams } from "next/navigation"
 import { Link } from "../../src/i18n/routing"
 import { useParams } from 'next/navigation';
 
@@ -97,9 +98,13 @@ function CategoryFilter({ categories, selectedCategory, onSelectCategory }: { ca
 // Main Home Component
 export default function Home() {
 
-  const { locale } = useParams(); // Get locale using useParams()
+
+  const params = useParams();
+  const locale = Array.isArray(params?.locale) ? params.locale[0] : params?.locale || "en";
   const t = useTranslations("Translations");
   
+
+  console.log("Current locale:", locale);
 
   // Store the currently selected category
   const [selectedCategory, setSelectedCategory] = useState<string>("All")
@@ -153,6 +158,7 @@ export default function Home() {
           {inventionsData.slice(0, 3).map((category, idx) =>
             <InfoBox
               key={idx}
+
               name={category.items[0].name.en}
               transparentImage={"transparentImage" in category.items[0] ? category.items[0].transparentImage || "" : ""}
               title={typeof locale === 'string' && category.items[0].name && typeof category.items[0].name === 'object' ? (category.items[0].name as { [key: string]: string })[locale] : "Unknown"}
@@ -175,10 +181,9 @@ export default function Home() {
             {category.category}
           </h2>
           <div className="flex gap-12 flex-wrap">
-            {category.items.map(item => {
-              const itemName = item.name && typeof item.name === 'object' && typeof locale === 'string' ? (item.name as { [key: string]: string })[locale] : "Unknown";
-              return <InventionCard key={item.name?.en || itemName} name={itemName} imageSrc={item.imageSrc} inventorName={item.inventorName} />
-            })}
+
+            {category.items.map(item => <InventionCard key={item.name.en} name={(item.name as { [key: string]: string })[locale]} imageSrc={item.imageSrc} inventorName={item.inventorName} />)}
+
           </div>
         </div>
       )}

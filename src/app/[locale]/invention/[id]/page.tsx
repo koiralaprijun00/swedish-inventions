@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation"
 import Image from "next/image"
 import inventionsData from "../../../inventionsData"
-import "../../../css/invention-page.css"
+import "../../../styles/invention-page.css"
 
 export default function InventionPage() {
   // Get both locale and id from the URL
@@ -30,7 +30,7 @@ export default function InventionPage() {
           {invention.description[locale]}
         </p>
         <div>
-          <Image src={invention.imageSrc} alt={invention.name[locale]}  layout="intrinsic" width={600} height={100} className="w-full object-contain" />
+          <Image src={invention.imageSrc} alt={invention.name[locale]} width={600} height={100} className="w-full object-contain" />
         </div>
       </div>
       <div className="invention-page-meta w-1/3">
