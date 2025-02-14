@@ -34,7 +34,7 @@ function InfoBox({
         {inventorName || "Unknown"}
       </h4>
       <h3 className="text-xl font-semibold mb-2">
-        {title}
+      {String(title)}
       </h3>
 
       <div className="image-container w-full h-[300px] overflow-hidden rounded-lg flex-1">
