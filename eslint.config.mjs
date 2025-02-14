@@ -1,4 +1,4 @@
 /** @type {import('eslint').ESLintConfig} */
-module.exports = {
+export default {
   extends: ["next"]
 }
