@@ -7,7 +7,6 @@ import "./styles/globals.css"
 import { useTranslations } from "next-intl"
 import { useParams } from "next/navigation"
 import { Link } from "../../src/i18n/routing"
-import { useParams } from 'next/navigation';
 
 
 function InfoBox({
