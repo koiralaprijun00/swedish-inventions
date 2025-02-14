@@ -11,7 +11,7 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
         {/* Left Side: Logo */}
         <div>
           <Link href="/" className="inline-block">
-            <Image src="/main-logo.png" alt="Swedish Inventions" width={80} height={40} className="object-contain" priority />
+            <Image src="/main-logo.png" style={{ width: "auto", height: "auto" }} alt="Swedish Inventions" width={80} height={40} className="object-contain" priority />
           </Link>
         </div>
 
@@ -20,7 +20,7 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
           <Link href="/" className="text-gray-600 hover:text-gray-900">
             {t("home")}
           </Link>
-          <Link href="/about" className="text-gray-600 hover:text-gray-900">
+          <Link href={`/${currentLocale}/about`} className="text-gray-600 hover:text-gray-900">
             {t("about")}
           </Link>
           <LocaleSwitcher currentLocale={currentLocale} />
