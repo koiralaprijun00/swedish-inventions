@@ -9,7 +9,7 @@ import ContactForm from "../ContactForm";
 import Navbar from "../Navbar";
 import Tabs from '../[locale]/components/Tabs.js'
 import Footer from "../Footer";
-import "../globals.css";
+import "../styles/globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

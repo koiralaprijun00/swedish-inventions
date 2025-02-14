@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation"
 import Image from "next/image"
 import inventionsData from "../../../inventionsData"
-import "../../../css/invention-page.css"
+import "../../../styles/invention-page.css"
 
 export default function InventionPage() {
   // Get both locale and id from the URL

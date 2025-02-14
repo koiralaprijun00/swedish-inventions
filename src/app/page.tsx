@@ -3,7 +3,7 @@
 import React, { useState } from "react"
 import inventionsData from "./inventionsData"
 import Image from "next/image"
-import "./globals.css"
+import "./styles/globals.css"
 import { useTranslations } from "next-intl"
 import { Link } from "../../src/i18n/routing"
 
@@ -96,8 +96,17 @@ function CategoryFilter({ categories, selectedCategory, onSelectCategory }: { ca
 // Main Home Component
 export default function Home() {
 
+<<<<<<< Updated upstream
 
   const t = useTranslations("Translations");
+=======
+  const params = useParams();
+const locale = params?.locale || "en";
+  const t = useTranslations("Translations");
+
+  console.log("Current locale:", locale);
+  
+>>>>>>> Stashed changes
 
   // Store the currently selected category
   const [selectedCategory, setSelectedCategory] = useState<string>("All")

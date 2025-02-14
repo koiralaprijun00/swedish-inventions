@@ -6,7 +6,7 @@ import { Link } from "../../i18n/routing"
 import React, { useState } from "react"
 import inventionsData from "../../../src/app/inventionsData.js"
 import Image from "next/image"
-import "../globals.css"
+import "../styles/globals.css"
 
 function InfoBox({
   name,
