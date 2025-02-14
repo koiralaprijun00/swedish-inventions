@@ -7,6 +7,8 @@ import "./styles/globals.css"
 import { useTranslations } from "next-intl"
 import { useParams } from "next/navigation"
 import { Link } from "../../src/i18n/routing"
+import { useParams } from 'next/navigation';
+
 
 function InfoBox({
   name,
@@ -29,12 +31,11 @@ function InfoBox({
 
   return (
     <div className="px-4 w-[600px] h-[500px] rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-500 flex flex-col">
-      {/* Top text */}
       <h4 className="text-gray-700 text-sm">
         {inventorName || "Unknown"}
       </h4>
       <h3 className="text-xl font-semibold mb-2">
-        {title}
+      {String(title)}
       </h3>
 
       <div className="image-container w-full h-[300px] overflow-hidden rounded-lg flex-1">
@@ -97,9 +98,11 @@ function CategoryFilter({ categories, selectedCategory, onSelectCategory }: { ca
 // Main Home Component
 export default function Home() {
 
+
   const params = useParams();
   const locale = Array.isArray(params?.locale) ? params.locale[0] : params?.locale || "en";
   const t = useTranslations("Translations");
+  
 
   console.log("Current locale:", locale);
 
@@ -155,9 +158,10 @@ export default function Home() {
           {inventionsData.slice(0, 3).map((category, idx) =>
             <InfoBox
               key={idx}
-              name={(category.items[0].name as { [key: string]: string })[locale]}
+
+              name={category.items[0].name.en}
               transparentImage={"transparentImage" in category.items[0] ? category.items[0].transparentImage || "" : ""}
-              title={(category.items[0].name as { [key: string]: string })[locale]}
+              title={typeof locale === 'string' && category.items[0].name && typeof category.items[0].name === 'object' ? (category.items[0].name as { [key: string]: string })[locale] : "Unknown"}
               description={typeof category.items[0].description === "string" ? category.items[0].description : ""} // Ensure description is a string
               inventorName={category.items[0].inventorName} // Pass inventorName
               tags={[category.category, category.items[0].inventorName || "Unknown"]} // Correctly pass tags
@@ -177,7 +181,9 @@ export default function Home() {
             {category.category}
           </h2>
           <div className="flex gap-12 flex-wrap">
+
             {category.items.map(item => <InventionCard key={item.name.en} name={(item.name as { [key: string]: string })[locale]} imageSrc={item.imageSrc} inventorName={item.inventorName} />)}
+
           </div>
         </div>
       )}
