@@ -6,6 +6,8 @@ import Image from "next/image"
 import "./globals.css"
 import { useTranslations } from "next-intl"
 import { Link } from "../../src/i18n/routing"
+import { useParams } from 'next/navigation';
+
 
 function InfoBox({
   name,
@@ -28,7 +30,6 @@ function InfoBox({
 
   return (
     <div className="px-4 w-[600px] h-[500px] rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-500 flex flex-col">
-      {/* Top text */}
       <h4 className="text-gray-700 text-sm">
         {inventorName || "Unknown"}
       </h4>
@@ -96,8 +97,9 @@ function CategoryFilter({ categories, selectedCategory, onSelectCategory }: { ca
 // Main Home Component
 export default function Home() {
 
-
+  const { locale } = useParams(); // Get locale using useParams()
   const t = useTranslations("Translations");
+  
 
   // Store the currently selected category
   const [selectedCategory, setSelectedCategory] = useState<string>("All")
@@ -151,9 +153,9 @@ export default function Home() {
           {inventionsData.slice(0, 3).map((category, idx) =>
             <InfoBox
               key={idx}
-              name={category.items[0].name}
+              name={category.items[0].name.en}
               transparentImage={"transparentImage" in category.items[0] ? category.items[0].transparentImage || "" : ""}
-              title={category.items[0].name}
+              title={typeof locale === 'string' && category.items[0].name && typeof category.items[0].name === 'object' ? (category.items[0].name as { [key: string]: string })[locale] : "Unknown"}
               description={typeof category.items[0].description === "string" ? category.items[0].description : ""} // Ensure description is a string
               inventorName={category.items[0].inventorName} // Pass inventorName
               tags={[category.category, category.items[0].inventorName || "Unknown"]} // Correctly pass tags
@@ -173,7 +175,10 @@ export default function Home() {
             {category.category}
           </h2>
           <div className="flex gap-12 flex-wrap">
-            {category.items.map(item => <InventionCard key={item.name} name={item.name} imageSrc={item.imageSrc} inventorName={item.inventorName} />)}
+            {category.items.map(item => {
+              const itemName = item.name && typeof item.name === 'object' && typeof locale === 'string' ? (item.name as { [key: string]: string })[locale] : "Unknown";
+              return <InventionCard key={item.name?.en || itemName} name={itemName} imageSrc={item.imageSrc} inventorName={item.inventorName} />
+            })}
           </div>
         </div>
       )}
