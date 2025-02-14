@@ -35,8 +35,8 @@ function InfoBox({
       <h3 className="text-xl font-semibold mb-2">
         {title}
       </h3>
-      <div className="image-container w-full h-[300px] overflow-hidden rounded-lg flex-1">
-        <Image src={transparentImage} alt={title} width={600} height={250} className="scale-125 object-contain w-full h-full" />
+      <div className="image-container overflow-hidden rounded-lg flex-1">
+        <Image src={transparentImage} alt={title} width={600} height={250} className="scale-100 w-full h-auto" />
       </div>
       <div className="mb-8 mr-4 flex justify-end">
         <Link href={detailPageURL} locale={locale} className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition-colors">

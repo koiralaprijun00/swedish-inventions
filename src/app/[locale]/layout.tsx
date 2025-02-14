@@ -7,6 +7,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { Geist, Geist_Mono } from "next/font/google";
 import ContactForm from "../ContactForm";
 import Navbar from "../Navbar";
+import Tabs from '../[locale]/components/Tabs.js'
 import Footer from "../Footer";
 import "../globals.css";
 
@@ -43,19 +44,15 @@ export default async function LocaleLayout({
   const messages = await getMessages({ locale: validLocale });
 
   return (
-    <html lang={validLocale}>
-      <head>
-        <meta name="google-adsense-account" content="ca-pub-4708248697764153" />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <>
         <GoogleTagManager gtmId="G-WJ47ZHVZ27" />
         <NextIntlClientProvider locale={validLocale} messages={messages}>
           <Navbar currentLocale={validLocale} />
           {children}
           <ContactForm />
+          <Tabs />
           <Footer />
         </NextIntlClientProvider>
-      </body>
-    </html>
+    </>
   );
 }
