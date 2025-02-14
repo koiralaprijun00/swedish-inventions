@@ -97,12 +97,18 @@ function CategoryFilter({ categories, selectedCategory, onSelectCategory }: { ca
 export default function Home() {
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
   const t = useTranslations("Translations");
 =======
   const params = useParams();
 const locale = params?.locale || "en";
   const t = useTranslations("Translations");
+=======
+  const params = useParams();
+const locale = params?.locale || "en";
+  const t = useTranslations("Translations");
+>>>>>>> Stashed changes
 
   console.log("Current locale:", locale);
   
