@@ -30,7 +30,7 @@ export default function InventionPage() {
           {invention.description[locale]}
         </p>
         <div>
-          <Image src={invention.imageSrc} alt={invention.name[locale]}  layout="intrinsic" width={600} height={100} className="w-full object-contain" />
+          <Image src={invention.imageSrc} alt={invention.name[locale]} width={600} height={100} className="w-full object-contain" />
         </div>
       </div>
       <div className="invention-page-meta w-1/3">
