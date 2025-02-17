@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GoogleTagManager } from '@next/third-parties/google'
 import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
+import Script from 'next/script'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <head>
-      <meta name="google-adsense-account" content="ca-pub-4708248697764153"></meta>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4708248697764153"
+     crossOrigin="anonymous"></script>
+      <meta name="google-adsense-account" content="ca-pub-4708248697764153" />
       </head>
       <GoogleTagManager gtmId="G-WJ47ZHVZ27" />
       <body
