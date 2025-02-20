@@ -4,22 +4,11 @@ import { notFound } from "next/navigation";
 import { routing } from "../../i18n/routing";
 import type { Metadata } from "next";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { Geist, Geist_Mono } from "next/font/google";
 import ContactForm from "../ContactForm";
 import Navbar from "../Navbar";
 import Tabs from '../[locale]/components/Tabs.js'
 import Footer from "../Footer";
 import "../styles/globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Swedish Inventions",

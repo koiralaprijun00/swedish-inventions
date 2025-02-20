@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 
 // import React, { useState } from "react"
 // import inventionsData from "./inventionsData"
@@ -185,11 +185,9 @@
 //   )
 // }
 
-"use client"
-
-import React from "react"
-import "./styles/globals.css"
 
 export default function Home() {
   return <div>This is root Page.tsx. The main file is inside locale folder.</div>
 }
+
+
