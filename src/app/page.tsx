@@ -9,6 +9,7 @@ import { useParams } from "next/navigation"
 import { Link } from "../../src/i18n/routing"
 
 
+
 function InfoBox({
   name,
   transparentImage,

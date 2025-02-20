@@ -4,6 +4,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin('./messages'); // Provide the path to your translation files
 
 const nextConfig: NextConfig = {
+  
   images: {
     remotePatterns: [
       {

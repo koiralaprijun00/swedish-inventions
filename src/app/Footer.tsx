@@ -1,3 +1,5 @@
+'use client'
+
 // Footer.tsx
 import Link from "next/link"
 import { FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa"

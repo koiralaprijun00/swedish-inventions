@@ -110,6 +110,8 @@ function CategoryFilter({
   )
 }
 
+export const dynamic = "force-static" // Ensure static prerendering
+
 export default function Home() {
   const { locale } = useParams() as { locale: string }
   const t = useTranslations("Translations")

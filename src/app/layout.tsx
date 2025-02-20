@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { GoogleTagManager } from '@next/third-parties/google'
 import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
-import Script from 'next/script'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +23,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang='en' suppressHydrationWarning>
       <head>
