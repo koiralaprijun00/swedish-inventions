@@ -17,4 +17,16 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+   <url>
+    <loc>https://swedishinventions.com/en/about</loc>
+    <lastmod>2023-04-06T15:02:24.021Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://swedishinventions.com/sv/about</loc>
+    <lastmod>2023-04-06T15:02:24.021Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
