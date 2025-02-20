@@ -5,10 +5,13 @@ import Image from "next/image"
 import inventionsData from "../../../inventionsData"
 import "../../../styles/invention-page.css"
 
+
+
 export default function InventionPage() {
   // Get both locale and id from the URL
   const { locale, id } = useParams() as { locale: "en" | "sv"; id: string }
   const decodedId = decodeURIComponent(id)
+  console.log({ locale, id, decodedId});
 
   const allInventions = inventionsData.map(category => category.items.map(item => ({ ...item, category: category.category }))).flat()
 

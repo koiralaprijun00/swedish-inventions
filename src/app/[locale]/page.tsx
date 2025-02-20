@@ -8,6 +8,8 @@ import inventionsData from "../../../src/app/inventionsData.js"
 import Image from "next/image"
 import "../styles/globals.css"
 
+
+
 function InfoBox({
   name,
   transparentImage,
@@ -36,7 +38,7 @@ function InfoBox({
         {title}
       </h3>
       <div className="image-container overflow-hidden rounded-lg flex-1">
-        <Image src={transparentImage} alt={title} width={600} height={250} className="scale-100 w-full h-auto" />
+        <Image priority={true} src={transparentImage} alt={title} width={600} height={250} className="scale-100 w-full h-auto" />
       </div>
       <div className="mb-8 mr-4 flex justify-end">
         <Link href={detailPageURL} locale={locale} className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition-colors">

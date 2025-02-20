@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { useState } from "react"
 import inventionsData from "./inventionsData"
@@ -7,8 +7,6 @@ import "./styles/globals.css"
 import { useTranslations } from "next-intl"
 import { useParams } from "next/navigation"
 import { Link } from "../../src/i18n/routing"
-
-
 
 function InfoBox({
   name,
@@ -103,8 +101,6 @@ export default function Home() {
   const locale = Array.isArray(params?.locale) ? params.locale[0] : params?.locale || "en";
   const t = useTranslations("Translations");
   
-
-  console.log("Current locale:", locale);
 
   // Store the currently selected category
   const [selectedCategory, setSelectedCategory] = useState<string>("All")

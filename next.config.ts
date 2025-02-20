@@ -1,10 +1,12 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import path from 'path';
 
-const withNextIntl = createNextIntlPlugin('./messages'); // Provide the path to your translation files
+const messagesPath = path.resolve(process.cwd(), 'messages');
+
+const withNextIntl = createNextIntlPlugin(messagesPath);
 
 const nextConfig: NextConfig = {
-  
   images: {
     remotePatterns: [
       {
@@ -13,10 +15,6 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-  },
-  i18n: {
-    locales: ['en', 'sv'],
-    defaultLocale: 'en',
   },
 };
 

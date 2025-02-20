@@ -3,6 +3,7 @@ const inventionsData = [
     category: "foodBeverage",
     items: [
       {
+        id: 1,
         name: {
           en: "Oatly Oat Milk",
           sv: "Oatly Havremjölk"
@@ -17,6 +18,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
+        id: 2,
         name: {
           en: "Coca-Cola Bottle",
           sv: "Coca-Cola Flaska"
@@ -30,6 +32,7 @@ const inventionsData = [
         link: "https://www.coca-colacompany.com/about-us/history/the-history-of-the-coca-cola-contour-bottle"
       },
       {
+        id: 3,
         name: {
           en: "Absolut Vodka",
           sv: "Absolut Vodka"
@@ -48,6 +51,7 @@ const inventionsData = [
     category: "engineeringTechnology",
     items: [
       {
+        id: 4,
         name: {
           en: "Adjustable Wrench",
           sv: "Skiftnyckel"
@@ -62,6 +66,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
+        id: 5,
         name: {
           en: "Safety Matches",
           sv: "Säkerhetständstickor"
@@ -75,6 +80,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
+        id: 6,
         name: {
           en: "Tetra Pak",
           sv: "Tetra Pak"
@@ -88,6 +94,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
+        id: 7,
         name: {
           en: "Ultrasound Technology",
           sv: "Ultraljudsteknik"
@@ -101,6 +108,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
+        id: 8,
         name: {
           en: "Three-Point Seatbelt",
           sv: "Tre-punkts säkerhetsbälte"
@@ -119,6 +127,7 @@ const inventionsData = [
     category: "digitalTechnology",
     items: [
       {
+        id: 9,
         name: {
           en: "Bluetooth Technology",
           sv: "Bluetooth-teknik"
@@ -133,6 +142,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
+        id: 10,
         name: {
           en: "Automatic Identification Systems (AIS)",
           sv: "Automatiskt Identifieringssystem (AIS)"
@@ -146,6 +156,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
+        id: 11,
         name: {
           en: "Skype",
           sv: "Skype"
@@ -159,6 +170,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
+        id: 12,
         name: {
           en: "Spotify",
           sv: "Spotify"
@@ -177,6 +189,7 @@ const inventionsData = [
     category: "gaming",
     items: [
       {
+        id: 13,
         name: {
           en: "Minecraft",
           sv: "Minecraft"
@@ -190,6 +203,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
+        id: 14,
         name: {
           en: "Candy Crush",
           sv: "Candy Crush"
@@ -208,6 +222,7 @@ const inventionsData = [
     category: "scienceInnovation",
     items: [
       {
+        id: 15,
         name: {
           en: "Nobel Prize",
           sv: "Nobelpriset"
@@ -221,6 +236,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
+        id: 16,
         name: {
           en: "Celsius Temperature Scale",
           sv: "Celsius temperaturskala"
@@ -234,6 +250,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
+        id: 17,
         name: {
           en: "First Oral Cholera Vaccine, Drokal",
           sv: "Första orala koleravaccinet, Drokal"
