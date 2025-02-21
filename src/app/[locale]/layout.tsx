@@ -10,8 +10,8 @@ import Footer from "../Footer";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Swedish Inventions",
-  description: "Created by Prijun Koirala",
+  title: "Swedish Inventions – Innovations That Changed the World",
+  description: "Explore groundbreaking Swedish inventions that shaped technology, medicine, and everyday life. Discover Sweden’s legacy of innovation."
 };
 
 export default async function LocaleLayout({

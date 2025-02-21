@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
   i18n: {
     locales: ["en", "sv"],
     defaultLocale: "en",
-    localeDetection: false,
   },
   images: { // Images config goes here, outside i18n
     remotePatterns: [
