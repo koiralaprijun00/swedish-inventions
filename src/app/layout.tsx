@@ -4,6 +4,7 @@ import Link from "next/link";
 import "./styles/globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://swedishinventions.com'),
   title: "Swedish Inventions – Innovations That Changed the World",
   description: "Explore groundbreaking Swedish inventions that shaped technology, medicine, and everyday life. Discover Sweden’s legacy of innovation.",
   openGraph: {
@@ -44,7 +45,7 @@ export default function RootLayout({
         {/* Open Graph (Facebook, LinkedIn) */}
         <meta property="og:title" content="Swedish Inventions – Innovations That Changed the World" />
         <meta property="og:description" content="Explore groundbreaking Swedish inventions that shaped technology, medicine, and everyday life." />
-        <meta property="og:image" content="/images/swedish-inventions-thumbnail.jpg" />
+        <meta property="og:image" content="/swedish-inventions-thumbnail.jpg" />
         <meta property="og:url" content="https://swedishinventions.com" />
         <meta property="og:type" content="website" />
 
