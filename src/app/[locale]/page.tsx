@@ -1,7 +1,8 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { useParams } from "next/navigation"
+import { useParams, useSearchParams } from "next/navigation";
+import Head from "next/head"
 import { Link } from "../../i18n/routing"
 import React, { useState } from "react"
 import inventionsData from "../../../src/app/inventionsData.js"
@@ -114,8 +115,13 @@ export const dynamic = "force-static" // Ensure static prerendering
 
 export default function Home() {
   const { locale } = useParams() as { locale: string }
+  const searchParams = useSearchParams(); // Get search params
   const t = useTranslations("Translations")
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
+
+  // *** Construct the canonical URL ***
+  const baseUrl = `https://swedishinventions.com/${locale}`; // ***REPLACE with your domain***
+  const canonicalUrl = searchParams ? `${baseUrl}?${searchParams}` : baseUrl;
 
   // Helper function to get localized names (improved)
   const getLocalizedName = (item: any) => {
@@ -147,6 +153,11 @@ export default function Home() {
     return t(`categories.${category}`)
   }
   return (
+    <>
+    <Head>
+        <link rel="canonical" href={canonicalUrl} key="canonical" />
+        {/* other head elements */}
+      </Head>
     <div className="mt-12">
       <header className="text-start mb-8 w-3/4">
         <h1>
@@ -209,5 +220,6 @@ export default function Home() {
         </div>
       )}
     </div>
+    </>
   )
 }
