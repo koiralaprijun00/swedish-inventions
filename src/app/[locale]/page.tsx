@@ -8,8 +8,6 @@ import inventionsData from "../../../src/app/inventionsData.js"
 import Image from "next/image"
 import "../styles/globals.css"
 
-
-
 function InfoBox({
   name,
   transparentImage,
@@ -119,16 +117,17 @@ export default function Home() {
   const t = useTranslations("Translations")
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
 
-  // Helper function to get localized names
+  // Helper function to get localized names (improved)
   const getLocalizedName = (item: any) => {
     if (typeof item.name === "string") {
       return item.name
-    } else if (item.name && typeof item.name === "object" && item.name[locale]) {
-      return item.name[locale]
+    } else if (item.name && typeof item.name === "object") {
+      return item.name[locale] || item.name.en || item.name.sv || "" // Fallback to en/sv
     }
     return ""
   }
 
+  
   const categories = [
     { key: "all", label: t("categories.all", { fallback: "All" }) },
     { key: "foodBeverage", label: t("categories.foodBeverage") },
