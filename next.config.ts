@@ -1,12 +1,15 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
-import path from 'path';
 
-const messagesPath = path.resolve(process.cwd(), 'messages');
-const withNextIntl = createNextIntlPlugin(messagesPath);
+const withNextIntl = createNextIntlPlugin('./messages');
 
 const nextConfig: NextConfig = {
-  images: {
+  i18n: {
+    locales: ["en", "sv"],
+    defaultLocale: "en",
+    localeDetection: false,
+  },
+  images: { // Images config goes here, outside i18n
     remotePatterns: [
       {
         protocol: 'https',
@@ -14,11 +17,6 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-  },
-  webpack: (config, options) => {
-    // Log the entire webpack configuration for inspection.
-    console.log(JSON.stringify(config, null, 2));
-    return config;
   },
 };
 

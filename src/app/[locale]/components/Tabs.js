@@ -1,10 +1,10 @@
 "use client"
 
 import React, { useState } from "react"
-import inventionsData from "../../inventionsData" // Justera sökväg vid behov
+import inventionsData from "../../inventionsData" 
 import Link from "next/link"
 import { useParams } from "next/navigation"
-import { useTranslations } from "next-intl" // Importera useTranslations
+import { useTranslations } from "next-intl" 
 
 const Tabs = () => {
   // Find the "foodBeverage" category object from inventionsData
@@ -23,11 +23,10 @@ const Tabs = () => {
         {inventionsData.map(category =>
           <div
             key={category.category}
-            className={`px-4 py-2 cursor-pointer ${activeTab === category ? "border-b-2 border-black font-bold" : "" // Jämför nu med hela kategoriobjektet
-            }`}
-            onClick={() => setActiveTab(category)} // Sätt activeTab till hela kategoriobjektet
+            className={`px-4 py-2 cursor-pointer ${activeTab === category ? "border-b-2 border-black font-bold" : ""}`}
+            onClick={() => setActiveTab(category)}
           >
-            {t(`categories.${category.category}`)} {/* Använd t() för översatt kategorinamn */}
+            {t(`categories.${category.category}`)}
           </div>
         )}
       </div>

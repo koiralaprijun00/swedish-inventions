@@ -3,7 +3,6 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "../../i18n/routing";
 import type { Metadata } from "next";
-import { GoogleTagManager } from "@next/third-parties/google";
 import ContactForm from "../ContactForm";
 import Navbar from "../Navbar";
 import Tabs from '../[locale]/components/Tabs.js'
@@ -33,8 +32,6 @@ export default async function LocaleLayout({
   const messages = await getMessages({ locale: validLocale });
 
   return (
-    <>
-        <GoogleTagManager gtmId="G-WJ47ZHVZ27" />
         <NextIntlClientProvider locale={validLocale} messages={messages}>
           <Navbar currentLocale={validLocale} />
           {children}
@@ -42,6 +39,5 @@ export default async function LocaleLayout({
           <Tabs />
           <Footer />
         </NextIntlClientProvider>
-    </>
   );
 }

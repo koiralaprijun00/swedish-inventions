@@ -1,51 +1,58 @@
 "use client"
 
 import { useParams } from "next/navigation"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 import inventionsData from "../../../inventionsData"
 import "../../../styles/invention-page.css"
 
-
-
 export default function InventionPage() {
-  // Get both locale and id from the URL
   const { locale, id } = useParams() as { locale: "en" | "sv"; id: string }
+  const t = useTranslations("Translations")
   const decodedId = decodeURIComponent(id)
-  console.log({ locale, id, decodedId});
 
-  const allInventions = inventionsData.map(category => category.items.map(item => ({ ...item, category: category.category }))).flat()
+  const allInventions = inventionsData.flatMap(category => category.items.map(item => ({ ...item, category: category.category })))
 
-  // Find the invention using either language's name
-  const invention = allInventions.find(item => item.name.en === decodedId || item.name.sv === decodedId)
+  const invention = allInventions.find(item => [item.name.en.toLowerCase(), item.name.sv.toLowerCase()].includes(decodedId.toLowerCase()))
 
   if (!invention) {
-    return <p>Invention not found!</p>
+    return (
+      <p className="text-center text-red-500 font-bold">
+        {t("inventionNotFound")}
+      </p>
+    )
   }
 
   return (
     <div className="flex justify-between p-4 gap-48">
       <div className="invention-page-content w-2/3 h-auto">
-        {invention.category}
-        <h1>
+        <h1 className="text-3xl font-bold">
           {invention.name[locale]}
         </h1>
-        <p>
+        <p className="mt-2">
           {invention.description[locale]}
         </p>
-        <div>
-          <Image src={invention.imageSrc} alt={invention.name[locale]} width={600} height={100} className="w-full object-contain" />
+        <div className="mt-4">
+          <Image
+            src={invention.imageSrc || "/fallback-image.jpg"}
+            alt={invention.name[locale]}
+            width={600}
+            height={400}
+            className="w-full object-contain"
+            onError={e => console.error("Image load error:", e)}
+          />
         </div>
       </div>
       <div className="invention-page-meta w-1/3">
-        <div>
-          <strong>Inventor</strong>
+        <div className="mb-4">
+          <strong>{t("inventor")}:</strong> {/* Translate "Inventor" */}
           <br />
-          {invention.inventorName || "Unknown"}
+          {invention.inventorName || t("unknown")} {/* Translate "Unknown" */}
         </div>
         <div>
-          <strong>Category</strong>
+          <strong>{t("category")}:</strong> {/* Translate "Category" */}
           <br />
-          {invention.category}
+          {t(`categories.${invention.category}`)} {/* Correctly translate the category */}
         </div>
       </div>
     </div>
