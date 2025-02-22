@@ -56,7 +56,7 @@ export default function RootLayout({
         <meta name="twitter:image" content="/swedish-inventions-thumbnail.jpg" />
 
         {/* Canonical URL to Prevent Duplicate Content */}
-        <link rel="canonical" href="https://swedishinventions.com" />
+        <link rel="canonical" href="https://swedishinventions.com/en" />
 
         {/* Google Adsense */}
         <meta name="google-adsense-account" content="ca-pub-4708248697764153" />
@@ -68,4 +68,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+} 
