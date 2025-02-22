@@ -63,6 +63,7 @@ function InventionCard({
   locale: string
 }) {
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
+  const t = useTranslations("Translations");
 
   return (
     <Link href={detailPageURL} locale={locale}>
@@ -159,18 +160,27 @@ export default function Home() {
         {/* other head elements */}
       </Head>
     <div className="mt-12">
-      <header className="text-start mb-8 w-3/4">
-        <h1>
-          {t("title")} <span className="bg-amber-300 px-2 py-4 text-regalBlue font-extrabold text-7xl">{t("inventions")}</span> {t("and")}{" "}
-        </h1>
-        <h1 className="inline-block bg-amber-300 px-2 py-4 text-regalBlue text-7xl">
-          {t("innovations")}
-        </h1>
+    <header className="text-start mb-8 w-full max-w-4xl">
+  <div className="space-y-4 md:space-y-6 lg:space-y-8">
+    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight md:leading-snug lg:leading-normal">
+      {t("title")}{" "}
+      <span className="bg-amber-300 px-2 py-1 md:px-3 md:py-2 text-regalBlue inline-block leading-tight md:leading-snug lg:leading-normal">
+        {t("inventions")}
+      </span>{" "}
+      {t("and")}{" "}
+      <span className="mt-2 md:mt-6 bg-amber-300 px-2 py-1 md:px-3 md:py-2 text-regalBlue inline-block leading-tight md:leading-snug lg:leading-normal">
+        {t("innovations")}
+      </span>
+    </h1>
+  </div>
 
-        <p className="text-gray-600 mt-12">
-          {t("headerText")} <span className="md:text-regalBlue md:font-bold p-2 bg-amber-300">{t("peopleOfSweden")}</span>
-        </p>
-      </header>
+  <p className="text-gray-600 mt-6 md:mt-10 lg:mt-12 text-base sm:text-lg md:text-xl leading-relaxed md:leading-loose">
+    {t("headerText")}{" "}
+    <span className="bg-amber-300 p-1 md:p-2 text-regalBlue font-bold leading-relaxed md:leading-loose">
+      {t("peopleOfSweden")}
+    </span>
+  </p>
+</header>
 
       <div>
         <div className="flex justify-start gap-2 min-h-[50px]">
