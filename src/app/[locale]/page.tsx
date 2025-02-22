@@ -6,50 +6,8 @@ import Head from "next/head"
 import { Link } from "../../i18n/routing"
 import React, { useState } from "react"
 import inventionsData from "../../../src/app/inventionsData.js"
-import Image from "next/image"
+import InfoBox from "./components/InfoBox";
 import "../styles/globals.css"
-
-function InfoBox({
-  name,
-  transparentImage,
-  title,
-  inventorName,
-  locale
-}: {
-  name: string // Keep name as string (it will be the localized name)
-  inventorName?: string
-  transparentImage: string
-  title: string // Keep title as string
-  description: string
-  tags: string[]
-  bgColor: string
-  locale: string
-}) {
-  const t = useTranslations("Translations")
-  const detailPageURL = `/invention/${encodeURIComponent(name)}`
-
-  return (
-    <div className="px-4 w-[600px] h-[500px] rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-500 flex flex-col">
-      <h4 className="text-gray-700 text-sm">
-        {inventorName || t("unknownInventor")}
-      </h4>
-      <h3 className="text-xl font-semibold mb-2">
-        {title}
-      </h3>
-      <div className="image-container overflow-hidden rounded-lg flex-1">
-        <Image priority={true} src={transparentImage} alt={title} width={600} height={250} className="scale-100 w-full h-auto" />
-      </div>
-      <div className="mb-8 mr-4 flex justify-end">
-        <Link href={detailPageURL} locale={locale} className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition-colors">
-          <span>
-            {t("details")}
-          </span>
-          <span className="ml-1">+</span>
-        </Link>
-      </div>
-    </div>
-  )
-}
 
 function InventionCard({
   name,
@@ -57,7 +15,7 @@ function InventionCard({
   inventorName,
   locale
 }: {
-  name: string // Keep name as string
+  name: string
   imageSrc: string
   inventorName?: string
   locale: string
@@ -134,7 +92,6 @@ export default function Home() {
     return ""
   }
 
-  
   const categories = [
     { key: "all", label: t("categories.all", { fallback: "All" }) },
     { key: "foodBeverage", label: t("categories.foodBeverage") },
@@ -193,19 +150,22 @@ export default function Home() {
         </div>
         {/* Info Boxes */}
         <div className="flex gap-8 py-12 mb-8 justify-between">
-          {inventionsData.slice(0, 3).map((category, idx) =>
-            <InfoBox
-              key={idx}
-              name={getLocalizedName(category.items[0])} // Use helper function
-              transparentImage={"transparentImage" in category.items[0] ? category.items[0].transparentImage || "" : ""}
-              title={getLocalizedName(category.items[0])} // Use helper function
-              description={typeof category.items[0].description === "string" ? category.items[0].description : ""}
-              inventorName={category.items[0].inventorName}
-              tags={[category.category, category.items[0].inventorName || "Unknown"]}
-              bgColor={idx === 0 ? "#f8f9fa" : idx === 1 ? "#e9ecef" : "#dee2e6"}
-              locale={locale}
-            />
-          )}
+        {inventionsData.slice(0, 3).map((category, idx) => (
+  <InfoBox
+    key={idx}
+    name={getLocalizedName(category.items[0])}
+    transparentImage={category.items[0].transparentImage || ""}
+    title={getLocalizedName(category.items[0])}
+    description={
+      typeof category.items[0].description === "string"
+        ? category.items[0].description
+        : ""
+    }
+    inventorName={category.items[0].inventorName}
+    tags={[category.category, category.items[0].inventorName || "Unknown"]}
+    locale={locale}
+  />
+))}
         </div>
       </div>
 
