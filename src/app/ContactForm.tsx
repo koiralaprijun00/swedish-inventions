@@ -1,8 +1,10 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 
 const ContactForm = () => {
+  const t = useTranslations("Translations")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,9 +45,11 @@ const ContactForm = () => {
     <div className="flex flex-col md:flex-row md:items-start gap-8 mt-32 mb-32">
       {/* Left Section - Heading */}
       <div className="md:w-1/2">
-        <h2 className="text-4xl md:text-8xl md:font-thin">Say hello!</h2>
+        <h2 className="text-4xl md:text-8xl md:font-thin">
+          {t("sayHello")}
+        </h2>
         <p className="text-sm md:font-thin mt-2 md:mt-6">
-          Feel free to drop us an email anytime. <br /> We would love to hear from you.
+        {t("contact-one")}<br /> {t("contact-two")}
         </p>
       </div>
 
@@ -54,14 +58,14 @@ const ContactForm = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-              Name
+              {t("formlabelname")}
             </label>
             <input
               type="text"
               id="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your Name"
+              placeholder={t("yourName")}
               required
               className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-gray-500 transition"
             />
@@ -69,14 +73,14 @@ const ContactForm = () => {
 
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email
+              {t("formlabelemail")}
             </label>
             <input
               type="email"
               id="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Your Email"
+              placeholder={t("yourEmail")}
               required
               className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-gray-500 transition"
             />
@@ -84,21 +88,21 @@ const ContactForm = () => {
 
           <div className="mb-4">
             <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-              Message
+              {t("formlabelmessage")}
             </label>
             <textarea
               id="message"
               rows={5}
               value={formData.message}
               onChange={handleChange}
-              placeholder="Your Message"
+              placeholder={t("yourMessage")}
               required
               className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-gray-500 transition"
             />
           </div>
 
           <button type="submit" className="bg-gray-800 text-white py-2 px-6 rounded hover:bg-gray-700 transition">
-            Submit
+            {t("formlabelsubmit")}
           </button>
 
           {status &&

@@ -1,33 +1,70 @@
-'use client'
+'use client';
 
-// Footer.tsx
-import Link from "next/link"
-import { FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa"
+import Link from 'next/link';
+import { FaYoutube, FaInstagram } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import SocialShare from './[locale]/components/SocialShare';
+import { useTranslations } from "next-intl"
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+
+  const t = useTranslations("Translations")
 
   return (
-    <footer className="w-full py-6 mt-4">
-      <div className="container mx-auto  flex flex-col items-center">
-        {/* Social Media Icons */}
-        <div className="mb-4 flex space-x-4">
-          <Link href="https://www.youtube.com/@allswedish" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-red-600">
+    <footer>
+      <div className="w-full mx-auto pt-10 pb-16">
+        <div className="flex items-center space-x-4 mb-8 justify-center sm:justify-start"> {/* Center on smaller screens */}
+          <p className="text-gray-700 font-semibold">
+            {t("followUs")}
+          </p>
+          <Link
+            href="https://www.youtube.com/@allswedish" // Replace with actual URL
+            aria-label="YouTube"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-red-600 transition-colors"
+          >
             <FaYoutube size={20} />
           </Link>
-          <Link href="https://x.com/allthingssweden" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-500">
-            <FaTwitter size={20} />
+          <Link
+            href="https://x.com/allthingssweden" // Replace with actual URL
+            aria-label="Twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-blue-500 transition-colors"
+          >
+            <FontAwesomeIcon icon={faXTwitter} size="lg" /> {/* Use FontAwesomeIcon */}
           </Link>
-          <Link href="https://www.instagram.com/allfromsweden/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-pink-500">
+          <Link
+            href="https://www.instagram.com/allfromsweden/" // Replace with actual URL
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-pink-500 transition-colors"
+          >
             <FaInstagram size={20} />
           </Link>
         </div>
 
-        {/* Copyright */}
-        <p className="text-xs text-gray-400">
-          © {currentYear} Swedish Inventions. All rights reserved.
-        </p>
+        {/* Bottom row: back to top and share */}
+        <div className="flex flex-col sm:flex-row items-center justify-between border-t border-gray-200 pt-4 px-4 sm:px-0"> {/* Add padding */}
+          <div className="mb-4 sm:mb-0 order-2 md:order-1 mt-12 md:mt-0">
+            <Link href="#" className="text-sm text-gray-600 hover:underline">
+              {t("Back to top")}
+            </Link>
+          </div>
+          <div className="flex items-center space-x-2 order-1 md:order-2">
+            <p className="text-gray-700 font-semibold">
+              {t("share")}:
+            </p>
+            <SocialShare
+              url="https://swedishinventions.com" // Replace with actual URL
+              title="Check out this awesome website!"
+            />
+          </div>
+        </div>
       </div>
     </footer>
-  )
+  );
 }
