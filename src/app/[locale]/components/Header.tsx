@@ -27,8 +27,6 @@ export default function Header() {
   </h1>
 </div>
 
-
-
       <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed md:leading-loose">
         {t("headerText")} <span className="bg-amber-300 p-1 md:p-2 text-primaryBlue font-bold leading-relaxed md:leading-loose">{t("peopleOfSweden")}</span>
       </p>
