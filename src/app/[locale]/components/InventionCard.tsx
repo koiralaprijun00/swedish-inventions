@@ -18,17 +18,13 @@ export default function InventionCard({ name, imageSrc, inventorName, locale }: 
   return (
     <Link href={detailPageURL} locale={locale}>
       <div
-        className="shadow-sm shadow-gray-50 cursor-pointer relative rounded-lg transition duration-500 ease-in-out transform hover:scale-105"
+        className="shadow-sm shadow-gray-50 cursor-pointer relative rounded-lg transition duration-500 ease-in-out transform hover:scale-105 p-0 h-[220px] md:h-[420px] w-[350px] bg-cover bg-center"
         style={{
           backgroundImage: `url(${imageSrc})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          height: "420px",
-          width: "350px"
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 rounded-lg" />
+        <div className="absolute inset-0 bg-black bg-opacity-50 hover:bg-opacity-10 rounded-lg" />
         <div className="relative z-10 text-white px-4 py-8">
           <h3 className="font-bold text-xl">
             {name}
