@@ -35,7 +35,7 @@ export default function InventionPage() {
         <p className="mt-2 w-full md:w-3/4">
           {invention.description[locale]}
         </p>
-        <div className="mt-4 relative w-full h-96">
+        <div className="mt-4 relative w-full h-48 md:h-96">
           <Image
             src={invention.imageSrc || "/fallback-image.jpg"}
             alt={invention.name[locale]}
