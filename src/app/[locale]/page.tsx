@@ -3,52 +3,13 @@
 import { useTranslations } from "next-intl"
 import { useParams, useSearchParams } from "next/navigation";
 import Head from "next/head"
-import { Link } from "../../i18n/routing"
 import React, { useState } from "react"
 import inventionsData from "../../../src/app/inventionsData.js"
 import InfoBox from "./components/InfoBox";
+import InventionCard from "./components/InventionCard"; // Adjust the path as needed
+import Header from "./components/Header"; // Adjust the path as needed
+
 import "../styles/globals.css"
-
-function InventionCard({
-  name,
-  imageSrc,
-  inventorName,
-  locale
-}: {
-  name: string
-  imageSrc: string
-  inventorName?: string
-  locale: string
-}) {
-  const detailPageURL = `/invention/${encodeURIComponent(name)}`
-  const t = useTranslations("Translations");
-
-  return (
-    <Link href={detailPageURL} locale={locale}>
-      <div
-        className="shadow-sm shadow-gray-50 cursor-pointer relative rounded-lg transition duration-500 ease-in-out transform hover:scale-105"
-        style={{
-          backgroundImage: `url(${imageSrc})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          height: "420px",
-          width: "350px"
-        }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 rounded-lg" />
-        <div className="relative z-10 text-white px-4 py-8">
-          <h3 className="font-bold text-xl">
-            {name}
-          </h3>
-          <h4>
-            {inventorName || "Unknown"}
-          </h4>
-        </div>
-      </div>
-    </Link>
-  )
-}
 
 function CategoryFilter({
   categories,
@@ -79,7 +40,7 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
 
   // *** Construct the canonical URL ***
-  const baseUrl = `https://swedishinventions.com/${locale}`; // ***REPLACE with your domain***
+  const baseUrl = locale === "en" ? "https://swedishinventions.com" : `https://swedishinventions.com/${locale}`;
   const canonicalUrl = searchParams ? `${baseUrl}?${searchParams}` : baseUrl;
 
   // Helper function to get localized names (improved)
@@ -117,27 +78,7 @@ export default function Home() {
         {/* other head elements */}
       </Head>
     <div className="mt-12">
-    <header className="text-start mb-8 w-full max-w-4xl">
-  <div className="space-y-4 md:space-y-6 lg:space-y-8">
-    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight md:leading-snug lg:leading-normal">
-      {t("title")}{" "}
-      <span className="bg-amber-300 px-2 py-1 md:px-3 md:py-2 text-regalBlue inline-block leading-tight md:leading-snug lg:leading-normal">
-        {t("inventions")}
-      </span>{" "}
-      {t("and")}{" "}
-      <span className="mt-2 md:mt-6 bg-amber-300 px-2 py-1 md:px-3 md:py-2 text-regalBlue inline-block leading-tight md:leading-snug lg:leading-normal">
-        {t("innovations")}
-      </span>
-    </h1>
-  </div>
-
-  <p className="text-gray-600 mt-6 md:mt-10 lg:mt-12 text-base sm:text-lg md:text-xl leading-relaxed md:leading-loose">
-    {t("headerText")}{" "}
-    <span className="bg-amber-300 p-1 md:p-2 text-regalBlue font-bold leading-relaxed md:leading-loose">
-      {t("peopleOfSweden")}
-    </span>
-  </p>
-</header>
+    <Header />
 
       <div>
         <div className="flex justify-start gap-2 min-h-[50px]">
