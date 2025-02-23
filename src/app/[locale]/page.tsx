@@ -83,7 +83,7 @@ export default function Home() {
 
       <div>
         <div className="flex justify-start gap-2 min-h-[50px]">
-          <h2 className="text-2xl font-bold text-regalBlue">
+          <h2 className="text-2xl font-bold text-primaryBlue">
             {t("categoryTitle")}
           </h2>
           <h2 className="text-2xl text-gray-400">
