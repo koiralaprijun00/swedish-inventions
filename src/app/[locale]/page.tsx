@@ -22,11 +22,19 @@ function CategoryFilter({
   onSelectCategory: (key: string) => void
 }) {
   return (
-    <div className="category-filter">
+    <div className="flex flex-wrap gap-4 mt-8 mb-8">
       {categories.map(cat =>
-        <button key={cat.key} onClick={() => onSelectCategory(cat.key)} className={`category-chip ${selectedCategory === cat.key ? "active" : ""}`}>
-          {cat.label}
-        </button>
+       <button
+       key={cat.key}
+       onClick={() => onSelectCategory(cat.key)}
+       className={`cursor-pointer outline-none border-0 rounded-[6px] px-6 py-2 text-[0.9rem] transition-colors duration-200 ease-in-out ${
+         selectedCategory === cat.key
+           ? "bg-primaryBlue text-white"
+           : "bg-[#f1f1f1] text-[#0f3a56] hover:bg-primaryBlue hover:text-white"
+       }`}
+     >
+       {cat.label}
+     </button>     
       )}
     </div>
   )
