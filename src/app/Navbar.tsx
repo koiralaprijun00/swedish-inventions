@@ -19,10 +19,10 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
 
         {/* Right Side: Nav Links and Locale Switcher */}
         <div className="flex space-x-6 items-center">
-          <Link href="/" className="text-gray-600 hover:text-gray-900">
+          <Link href="/" className="p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900  focus:border-primaryBlue active:border-primaryBlue">
             {t("home")}
           </Link>
-          <Link href={`/${currentLocale}/about`} className="text-gray-600 hover:text-gray-900">
+          <Link href={`/${currentLocale}/about`} className="p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900  focus:border-primaryBlue active:border-primaryBlue">
             {t("about")}
           </Link>
           <LocaleSwitcher currentLocale={currentLocale} />

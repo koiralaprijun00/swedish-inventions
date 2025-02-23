@@ -8,6 +8,7 @@ import inventionsData from "../../../src/app/inventionsData.js"
 import InfoBox from "./components/InfoBox";
 import InventionCard from "./components/InventionCard"; // Adjust the path as needed
 import Header from "./components/Header"; // Adjust the path as needed
+import Link from "next/link"
 
 import "../styles/globals.css"
 
@@ -74,7 +75,7 @@ export default function Home() {
   return (
     <>
     <Head>
-        <link rel="canonical" href={canonicalUrl} key="canonical" />
+        <Link rel="canonical" href={canonicalUrl} key="canonical" />
         {/* other head elements */}
       </Head>
     <div className="mt-12">
@@ -82,7 +83,7 @@ export default function Home() {
 
       <div>
         <div className="flex justify-start gap-2 min-h-[50px]">
-          <h2 className="text-2xl font-bold text-regalBlue">
+          <h2 className="text-2xl font-bold text-primaryBlue">
             {t("categoryTitle")}
           </h2>
           <h2 className="text-2xl text-gray-400">
@@ -90,7 +91,7 @@ export default function Home() {
           </h2>
         </div>
         {/* Info Boxes */}
-        <div className="flex gap-8 py-12 mb-8 justify-between">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center sm:justify-items-start">
         {inventionsData.slice(0, 3).map((category, idx) => (
   <InfoBox
     key={idx}
