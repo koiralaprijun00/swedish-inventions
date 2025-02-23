@@ -8,6 +8,7 @@ import inventionsData from "../../../src/app/inventionsData.js"
 import InfoBox from "./components/InfoBox";
 import InventionCard from "./components/InventionCard"; // Adjust the path as needed
 import Header from "./components/Header"; // Adjust the path as needed
+import Link from "next/link"
 
 import "../styles/globals.css"
 
@@ -74,7 +75,7 @@ export default function Home() {
   return (
     <>
     <Head>
-        <link rel="canonical" href={canonicalUrl} key="canonical" />
+        <Link rel="canonical" href={canonicalUrl} key="canonical" />
         {/* other head elements */}
       </Head>
     <div className="mt-12">

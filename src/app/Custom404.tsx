@@ -15,18 +15,16 @@ export default function Custom404() {
       We're working on getting things back on track. In the meantime...
       </p>
 
-      <Link href="/">
-        <a className="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded">
+      <Link href="/" className="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded">
           Back to the Workshop
-        </a>
       </Link>
 
       <p className="text-lg text-gray-600 mt-4">
         Or, if you need some inspiration while you wait... how about some ABBA?
       </p>
-      <a href="https://open.spotify.com/artist/0LcJLqbBmaguU1xlIracnL" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+      <Link href="https://open.spotify.com/artist/0LcJLqbBmaguU1xlIracnL" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
         Listen to ABBA on Spotify
-      </a>
+      </Link>
     </div>
   );
 }
