@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Apple Touch Icon */}
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <Link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
         {/* Viewport for Responsive Design */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -55,14 +55,11 @@ export default function RootLayout({
         <meta name="twitter:description" content="Discover famous Swedish innovations that shaped industries worldwide." />
         <meta name="twitter:image" content="/swedish-inventions-thumbnail.jpg" />
 
-        {/* Canonical URL to Prevent Duplicate Content */}
-        <link rel="canonical" href="https://swedishinventions.com/en" />
-
         {/* Google Adsense */}
         <meta name="google-adsense-account" content="ca-pub-4708248697764153" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4708248697764153" crossOrigin="anonymous"></script>
       </head>
-      <GoogleAnalytics gaId="G-WJ47ZHVZ27" />
+      <GoogleAnalytics gaId="G-SZZPBRPWY5" />
       <body className="antialiased">
         {children}
       </body>
