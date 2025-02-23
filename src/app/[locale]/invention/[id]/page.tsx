@@ -24,12 +24,18 @@ export default function InventionPage() {
   }
 
   return (
+<<<<<<< Updated upstream
     <div className="flex justify-between p-4 gap-48">
       <div className="invention-page-content w-2/3 h-auto">
         <h1 className="text-3xl font-bold">
+=======
+    <div className="flex flex-col md:flex-row justify-between p-4 gap-2 md:gap-12">
+      <div className="invention-page-content w-4/5 h-auto order-2 md:order-1">
+        <h1 className="text-5xl mt-6 w-full font-bold text-primaryBlue">
+>>>>>>> Stashed changes
           {invention.name[locale]}
         </h1>
-        <p className="mt-2">
+        <p className="mt-2 w-full md:w-3/4">
           {invention.description[locale]}
         </p>
         <div className="mt-4">
