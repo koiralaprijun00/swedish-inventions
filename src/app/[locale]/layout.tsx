@@ -5,7 +5,7 @@ import { routing } from "../../i18n/routing";
 import type { Metadata } from "next";
 import ContactForm from "../ContactForm";
 import Navbar from "../Navbar";
-import Tabs from '../[locale]/components/Tabs.js'
+import Tabs from '../[locale]/components/Tabs'
 import Footer from "../Footer";
 import "../styles/globals.css";
 

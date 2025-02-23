@@ -13,16 +13,29 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
         {/* Left Side: Logo */}
         <div>
           <Link href="/" className="inline-block">
-            <Image src="/main-logo.png" style={{ width: "auto", height: "auto" }} alt="Swedish Inventions" width={80} height={40} className="object-contain" priority />
+            <Image 
+              src="/main-logo.png" 
+              alt="Swedish Inventions" 
+              width={80} 
+              height={40} 
+              className="object-contain w-16 md:w-20" 
+              priority 
+            />
           </Link>
         </div>
 
         {/* Right Side: Nav Links and Locale Switcher */}
-        <div className="flex space-x-6 items-center">
-          <Link href="/" className="p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900  focus:border-primaryBlue active:border-primaryBlue">
+        <div className="flex space-x-2 md:space-x-6 items-center">
+          <Link 
+            href="/" 
+            className="p-1 md:p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900 focus:border-primaryBlue active:border-primaryBlue"
+          >
             {t("home")}
           </Link>
-          <Link href={`/${currentLocale}/about`} className="p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900  focus:border-primaryBlue active:border-primaryBlue">
+          <Link 
+            href={`/${currentLocale}/about`} 
+            className="p-1 md:p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900 focus:border-primaryBlue active:border-primaryBlue"
+          >
             {t("about")}
           </Link>
           <LocaleSwitcher currentLocale={currentLocale} />

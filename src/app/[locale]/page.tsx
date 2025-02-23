@@ -86,7 +86,7 @@ export default function Home() {
         <Link rel="canonical" href={canonicalUrl} key="canonical" />
         {/* other head elements */}
       </Head>
-    <div className="mt-12">
+    <div className="mt-2 md:mt-12">
     <Header />
 
       <div>
