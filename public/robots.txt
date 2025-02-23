@@ -1,5 +1,9 @@
-User-Agent: *
+# *
+User-agent: *
 Allow: /
-Disallow: /private/
 
+# Host
+Host: https://swedishinventions.com
+
+# Sitemaps
 Sitemap: https://swedishinventions.com/sitemap.xml
