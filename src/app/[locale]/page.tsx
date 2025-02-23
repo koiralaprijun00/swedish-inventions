@@ -122,12 +122,13 @@ export default function Home() {
       <CategoryFilter categories={categories} selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
 
       {filteredData.map(category =>
-        <div key={category.category} className="mb-8">
-          <h2 className="text-xl font-bold mb-4">
+        <div key={category.category} className="">
+          <h2 className="text-xl font-bold mb-1 mt-8">
             {getLocalizedCategory(category.category)} {/* Localized category */}
           </h2>
-          <div className="flex gap-12 flex-wrap">
+          <div className="flex gap-4 flex-wrap w-full">
             {category.items.map(item =>
+              <div key={getLocalizedName(item)} className="w-full md:w-[350px]"> {/* Use a key */}
               <InventionCard
                 key={getLocalizedName(item)} // Use localized name as a key
                 name={getLocalizedName(item)} // Pass localized name
@@ -135,6 +136,7 @@ export default function Home() {
                 inventorName={item.inventorName}
                 locale={locale}
               />
+              </div>
             )}
           </div>
         </div>
