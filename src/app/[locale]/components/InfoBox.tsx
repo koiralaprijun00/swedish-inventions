@@ -40,7 +40,7 @@ export default function InfoBox({ name, transparentImage, title, inventorName, l
           </span>
           <span className="ml-1">+</span>
         </Link>
-      </div>
+    </div>
     </div>
   )
 }

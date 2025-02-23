@@ -91,7 +91,7 @@ export default function Home() {
           </h2>
         </div>
         {/* Info Boxes */}
-        <div className="flex gap-8 py-12 mb-8 justify-between">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center sm:justify-items-start">
         {inventionsData.slice(0, 3).map((category, idx) => (
   <InfoBox
     key={idx}
