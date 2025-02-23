@@ -43,8 +43,8 @@ const ContactForm = () => {
     <div className="flex flex-col md:flex-row md:items-start gap-8 mt-32 mb-32">
       {/* Left Section - Heading */}
       <div className="md:w-1/2">
-        <h2 className="text-8xl font-thin">Say hello!</h2>
-        <p className="text-sm font-thin mt-6">
+        <h2 className="text-4xl md:text-8xl md:font-thin">Say hello!</h2>
+        <p className="text-sm md:font-thin mt-2 md:mt-6">
           Feel free to drop us an email anytime. <br /> We would love to hear from you.
         </p>
       </div>
