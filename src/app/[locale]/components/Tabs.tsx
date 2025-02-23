@@ -26,7 +26,7 @@ const Tabs: React.FC = () => {
   const t = useTranslations("Translations");
 
   return (
-    <div className="mb-16 w-3/4"> {/* Adjusted margin for responsiveness */}
+    <div className="mb-16 w-full md:w-3/4"> {/* Adjusted margin for responsiveness */}
       <h2 className="text-md font-bold mt-16 mb-8">
         {t("exploreSwedishInventions")} {/* Added translation key */}
       </h2>
