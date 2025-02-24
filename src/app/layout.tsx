@@ -24,9 +24,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@allthingssweden",       // Update with your Twitter handle
+    creator: "@allthingssweden",    // Update with the content creator's Twitter handle
     title: "Swedish Inventions – Innovations That Changed the World",
     description: "Discover famous Swedish innovations that shaped industries worldwide.",
-    images: ["/swedish-inventions-thumbnail.jpg"],
+    images: ["../../public/swedish-inventions-thumbnail.jpg"],
   }
 };
 
