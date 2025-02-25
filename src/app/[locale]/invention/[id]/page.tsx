@@ -28,15 +28,27 @@ export default function InventionPage() {
   const [currentUrl, setCurrentUrl] = useState("");
   const [fullDescription, setFullDescription] = useState<string>("");
 
-  // Normalize the ID to match file naming convention (lowercase, hyphens)
-  const normalizeFileName = (str: string) =>
-    str.toLowerCase().replace(/\s+/g, "-");
+ // Updated normalizeFileName with Swedish character handling
+ const normalizeFileName = (str: string) =>
+  str
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/ö/g, "o")
+    .replace(/å/g, "a")
+    .replace(/ä/g, "a");
 
   useEffect(() => {
     setCurrentUrl(window.location.href);
 
     const fetchFullDescription = async () => {
-      const fileName = normalizeFileName(decodedId);
+      if (!invention) return;
+
+      // Use locale-specific name from inventionsData to match the correct file
+      const fileName =
+        locale === "sv" && invention.name.sv
+          ? normalizeFileName(invention.name.sv)
+          : normalizeFileName(invention.name.en);
+
       try {
         const response = await fetch(`/content/${locale}/${fileName}.md`);
         if (response.ok) {
@@ -53,7 +65,7 @@ export default function InventionPage() {
     };
 
     fetchFullDescription();
-  }, [locale, decodedId]);
+  }, [locale, decodedId, invention]);
 
   if (!invention) {
     return (
