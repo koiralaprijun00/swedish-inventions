@@ -35,3 +35,11 @@ header p {
   font-weight: 300; /* Lighter subheading text */
 }
 
+
+/* Ensure prose styles aren't overridden */
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
