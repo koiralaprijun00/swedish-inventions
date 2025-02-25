@@ -77,8 +77,8 @@ export default function InventionPage() {
     <div className="flex flex-col md:flex-row justify-between p-4 gap-2 md:gap-12">
       <div className="invention-page-content w-full md:w-4/5 h-auto order-2 md:order-1">
         <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center mb-8">
-          <h1 className="text-5xl mt-6 font-bold text-primaryBlue order-2 md:order-1">
-            {invention.name[locale]}
+          <h1 className="text-md md:text-4xl pr-2 md:pr-0 md:text-4xl w-full md:w-3/4 mt-6 font-bold text-primaryBlue order-2 md:order-1 leading-[1.5]">
+            {invention.oneLineHeading[locale]}
           </h1>
           {currentUrl && (
             <div className="mt-4 order-2 md:order-1">
@@ -90,7 +90,7 @@ export default function InventionPage() {
           )}
         </div>
         {/* Summary from inventionsData */}
-        <p className="text-gray-600 mb-4 w-2/4 font-sm mt-12 mb-12 ml-12 py-2 pl-4 border-l-2 border-primaryBlue ">{invention.description[locale]}</p>
+        <p className="text-gray-600 mb-4 w-full md:w-2/4 font-sm mt-0 md:mt-12 mb-8 md:mb-12 ml-0 md:ml-12 py-0 md:py-2 pl-2 md:pl-4 border-l-2 border-primaryBlue ">{invention.description[locale]}</p>
         <div className="mt-4">
           <div className="relative w-full h-48 md:h-96">
             <Image
