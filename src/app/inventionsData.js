@@ -271,14 +271,68 @@ const inventionsData = [
         },
         imageSrc: "/invention-images/candy-crush.jpg",
         link: "https://example.com/oatmeal"
-      }
+      },
+        {
+          "id": 15,
+          "name": {
+            "en": "Battlefield",
+            "sv": "Battlefield"
+          },
+          "inventorName": "Lars Gustavsson",
+          "oneLineHeading": {
+            "en": "Epic Battles: Why Battlefield is Sweden’s Ultimate Action Gaming Masterpiece",
+            "sv": "Episka Slag: Varför Battlefield är Sveriges Ultimata Actionspelsmästerverk"
+          },
+          "description": {
+            "en": "Action gaming has redefined entertainment with intense, immersive experiences that thrill players globally. Among the most iconic action games is Battlefield, a dynamic first-person shooter that pits teams against each other in sprawling, realistic battlefields. Developed by Swedish studio DICE, Battlefield has become a global phenomenon, showcasing Sweden’s prowess in creating cutting-edge gaming experiences. With millions of players and critically acclaimed titles, Battlefield remains a powerhouse in the gaming world.",
+            "sv": "Actionspel har omdefinierat underhållning med intensiva, immersiva upplevelser som thrillrar spelare globalt. Ett av de mest ikoniska actionspelen är Battlefield, ett dynamiskt förstapersonsskjutspel där team möts i stora, realistiska slagfält. Utvecklat av det svenska studion DICE har Battlefield blivit ett globalt fenomen och visar Sveriges styrka i att skapa avancerade spelupplevelser. Med miljontals spelare och kritiskt hyllade titlar förblir Battlefield en kraft i spelvärlden."
+          },
+          "imageSrc": "/invention-images/battlefield.jpg",
+          "link": "https://example.com/battlefield"
+        },
+        {
+          "id": 16,
+          "name": {
+            "en": "Geometry Dash",
+            "sv": "Geometry Dash"
+          },
+          "inventorName": "Robert Topala",
+          "oneLineHeading": {
+            "en": "Rhythmic Thrills: Why Geometry Dash is Sweden’s Addictive Rhythm Game Sensation",
+            "sv": "Rytmspänning: Varför Geometry Dash är Sveriges Beroendeframkallande Rytmspelsensation"
+          },
+          "description": {
+            "en": "Mobile and rhythm gaming have brought fast-paced, addictive fun to players everywhere, revolutionizing casual gaming. One standout title is Geometry Dash, a vibrant, rhythm-based platformer that challenges players with tricky levels and catchy beats. Created by Swedish developer Robert Topala, Geometry Dash has taken the world by storm, proving Sweden’s innovation in creating engaging digital games. With millions of downloads and a dedicated fanbase, it’s a must-play for gaming enthusiasts.",
+            "sv": "Mobil- och rytmspel har fört snabbfotad, beroendeframkallande kul till spelare överallt och revolutionerat vardagligt spelande. En framträdande titel är Geometry Dash, ett färgstarkt, rytmbaserat plattformsspel som utmanar spelare med knepiga nivåer och fängslande beats. Skapat av den svenska utvecklaren Robert Topala har Geometry Dash tagit världen med storm och bevisar Sveriges innovation i att skapa engagerande digitala spel. Med miljontals nedladdningar och en hängiven fanbase är det ett måste för spelentusiaster."
+          },
+          "imageSrc": "/invention-images/geometry-dash.jpg",
+          "link": "https://example.com/geometry-dash"
+        },
+        {
+          "id": 17,
+          "name": {
+            "en": "The Goat Simulator",
+            "sv": "Get Simulatorn"
+          },
+          "inventorName": "Armin Ibrisagic",
+          "oneLineHeading": {
+            "en": "Unleashing Chaos: Why The Goat Simulator is the Funniest Swedish Game You’ll Ever Play",
+            "sv": "Släppa Kaos: Varför Get Simulatorn är det Roligaste Svenska Spelet Du Någonsin Spelat"
+          },
+          "description": {
+            "en": "Humor and gaming have merged to create unforgettable, lighthearted fun for players worldwide, transforming the industry. A standout example is The Goat Simulator, a quirky, physics-based game where players control a mischievous goat causing hilarious mayhem. Developed by Swedish studio Coffee Stain Studios, this game has won hearts globally, highlighting Sweden’s creativity in digital entertainment. With its absurd humor and massive popularity, The Goat Simulator remains a beloved title for casual gamers.",
+            "sv": "Humor och spelande har slagits samman för att skapa oförglömlig, lättsam kul för spelare världen över och transformerat industrin. Ett framträdande exempel är Get Simulatorn, ett knäppt, fysikbaserat spel där spelare kontrollerar en busig get som orsakar häftigt kaos. Utvecklat av det svenska studion Coffee Stain Studios har detta spel vunnit hjärtan globalt och belyser Sveriges kreativitet inom digital underhållning. Med sin absurda humor och enorma popularitet förblir Get Simulatorn en älskad titel för vardagliga spelare."
+          },
+          "imageSrc": "/invention-images/goat-simulator.jpg",
+          "link": "https://example.com/goat-simulator"
+        }
     ]
   },
   {
     category: "scienceInnovation",
     items: [
       {
-        id: 15,
+        id: 18,
         name: {
           en: "Nobel Prize",
           sv: "Nobelpriset"
@@ -296,7 +350,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
-        id: 16,
+        id: 19,
         name: {
           en: "Celsius Temperature Scale",
           sv: "Celsius temperaturskala"
@@ -314,7 +368,7 @@ const inventionsData = [
         link: "https://example.com/oatmeal"
       },
       {
-        id: 17,
+        id: 20,
         name: {
           en: "First Oral Cholera Vaccine Drokal",
           sv: "Första orala koleravaccinet, Drokal"
