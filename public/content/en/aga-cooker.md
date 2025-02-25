@@ -1,0 +1,5 @@
+The Aga Cooker, invented by Swedish physicist Gustaf Dalén in 1922, isn’t just a stove—it’s a lifestyle. Known for its cast-iron design and constant heat, this cooker transformed kitchens with its efficiency and charm. Dalén, a Nobel Prize winner for his work on lighthouse tech, brought that same ingenuity home.
+
+Blinded in an accident, Dalén still dreamed up the Aga while recovering. His goal? A stove that cooked evenly without wasting fuel. The Aga uses radiant heat, staying warm 24/7, perfect for roasting, baking, or just cozying up a room. It hit the UK big-time in the 1930s and became a countryside icon.
+
+Why’s this Swedish invention special? It’s a blend of science and soul, still loved by chefs and homeowners today. Curious about the Aga’s magic? It’s a warm slice of Swedish history that keeps on cooking.

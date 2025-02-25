@@ -1,0 +1,5 @@
+Few inventions are as famous—or infamous—as dynamite, created by Swedish chemist Alfred Nobel in 1867. Before dynamite, nitroglycerin was a dangerously unstable explosive. Nobel tamed it by mixing it with a stabilizer, turning a wild substance into a controlled blast. The result? A tool that reshaped mining, construction, and unfortunately, warfare.
+
+Nobel’s story is as explosive as his invention. Born in Stockholm in 1833, he was driven by curiosity and tragedy—his brother died in a nitroglycerin accident. His solution, dynamite, made him rich but also haunted him. Later, he funded the Nobel Prizes to leave a positive legacy. Talk about a plot twist!
+
+Dynamite’s impact is undeniable. It carved tunnels, built railways, and changed the world—for better or worse. This Swedish invention shows how one idea can shake things up. Want to learn more about Nobel? His life’s a rollercoaster of brilliance and redemption.

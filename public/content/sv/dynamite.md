@@ -1,0 +1,5 @@
+Få uppfinningar är så kända – eller ökända – som dynamiten, skapad av svenske kemisten Alfred Nobel 1867. Innan dynamiten var nitroglycerin farligt ostabilt. Nobel tämjde det genom att blanda det med ett stabiliserande ämne, vilket gjorde explosionerna kontrollerbara. Resultatet? Ett verktyg som förändrade gruvdrift, byggen och, tyvärr, krig.
+
+Nobels historia är lika explosiv som hans uppfinning. Född i Stockholm 1833 drevs han av nyfikenhet och tragedi – hans bror dog i en nitroglycerinolycka. Dynamiten gjorde honom rik men plågade honom också. Senare finansierade han Nobelprisen för att lämna ett positivt arv. Snacka om vändning!
+
+Dynamitens påverkan är enorm. Den sprängde tunnlar, byggde järnvägar och förändrade världen – på gott och ont. Denna svenska uppfinning visar hur en idé kan skaka om allt. Vill du veta mer om Nobel? Hans liv är en berg-och-dalbana av genialitet och eftertanke.

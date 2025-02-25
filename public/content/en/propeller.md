@@ -1,0 +1,5 @@
+Sailing got a major upgrade thanks to John Ericsson, a Swedish inventor who perfected the ship propeller in the 1830s. Before Ericsson, ships relied on paddles or sails—slow and unreliable. His propeller, a spinning blade underwater, pushed vessels faster and more efficiently. It’s the reason ships today zip across oceans.
+
+Born in Sweden in 1803, Ericsson took his talents to America, where he built the USS Princeton, a propeller-driven warship. In 1844, it outraced a paddle steamer, sealing the propeller’s fate as a maritime must-have. He didn’t stop there—Ericsson also designed the iconic USS Monitor during the Civil War, proving his Swedish ingenuity on a global stage.
+
+The propeller’s legacy? It revolutionized travel and trade, shrinking the world long before airplanes. This Swedish invention remains a cornerstone of modern shipping. Want to know more about Ericsson’s story? It’s a tale of adventure, war, and one brilliant idea that changed the seas forever.

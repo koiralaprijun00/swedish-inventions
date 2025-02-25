@@ -1,0 +1,5 @@
+In 1958, Swedish doctor Rune Elmqvist gave the world a heartbeat with the first implantable pacemaker. This tiny, battery-powered device regulates the heart, saving millions of lives. Teamed with surgeon Åke Senning, Elmqvist tested it on patient Arne Larsson, who lived until 2001—outlasting his doctors!
+
+Early pacemakers were bulky, but Elmqvist’s design shrank them down, slipping under the skin to send electric pulses. It was a risky idea that paid off, turning a medical dream into reality. Today, over 600,000 pacemakers are implanted yearly, all tracing back to this Swedish breakthrough.
+
+This invention’s legacy? It’s a lifeline, pure and simple. Sweden’s knack for innovation shines here, blending tech and compassion. Want to know more about pacemaker history? It’s a pulse-pounding story of courage and care.

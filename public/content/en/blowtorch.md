@@ -1,0 +1,5 @@
+Need to weld metal or sear a steak? The blowtorch, invented by Swedish engineer Carl Richard Nyberg in 1882, has you covered. This handheld flamethrower mixes fuel with air to create a hot, focused flame—perfect for everything from plumbing to cooking. Nyberg’s creation sparked a Swedish success story that still burns bright.
+
+Nyberg was a tinkerer, obsessed with heat and machines. His blowtorch design was simple but brilliant, using kerosene to fuel a steady blaze. It caught on fast, and soon he teamed up with Max Sievert to sell it worldwide. Beyond torches, Nyberg even dabbled in aviation, but it’s his fiery tool that left a lasting mark.
+
+Today, blowtorches are everywhere—construction sites, kitchens, even art studios. This Swedish invention proves practical ideas can ignite big change. Curious about its evolution? From Nyberg’s workshop to your toolbox, the blowtorch is a hot piece of history worth exploring.

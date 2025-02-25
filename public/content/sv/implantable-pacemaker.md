@@ -1,0 +1,5 @@
+1958 gav svenske doktorn Rune Elmqvist världen ett hjärtslag med den första implanterbara pacemakern. Denna lilla, batteridrivna pryl reglerar hjärtat och har räddat miljontals liv. Tillsammans med kirurgen Åke Senning testade han den på patienten Arne Larsson, som levde till 2001 – längre än sina läkare!
+
+Tidiga pacemakers var stora, men Elmqvists design krympte dem till något som kunde glida under huden och skicka elektriska pulser. Det var en riskabel idé som lönade sig och blev verklighet. Idag sätts över 600 000 pacemakers in varje år, alla med rötter i detta svenska genombrott.
+
+Vad är arvet? Den är en livlina, punkt slut. Sveriges innovationskraft lyser här, med teknik och medkänsla i perfekt mix. Vill du veta mer om pacemakerns historia? Det är en pulshöjande berättelse om mod och omsorg.

@@ -30,6 +30,7 @@
     "yourName": "Your name",
     "yourEmail": "Your email",
     "yourMessage": "Your message",
+    "inventionNotFound": "Invention not found",
     "categories": {
       "all": "All",
       "foodBeverage": "Food & Beverage",

@@ -1,0 +1,5 @@
+Nästa gång din bil rullar tyst eller din skateboard glider, tacka Sven Wingquist, den svenske ingenjören bakom det självjusterande kullagret. Uppfunnet 1907 minskar det friktion i maskiner, så att allt från motorer till apparater håller längre. Wingquist grundade också SKF, ett företag som fortfarande leder lagerbranschen.
+
+Före hans genombrott var lager stela och gick ofta sönder. Wingquist, som jobbade på en svensk fabrik, löste problemet med ett lager som kunde anpassa sig självt. Tänk dig små stålkulor som rullar mellan ringar och håller allt stabilt under tryck. Det är hans magi. Uppfinningen spreds snabbt och drev 1900-talets industriella boom.
+
+Varför är detta en stor svensk uppfinning? Kullager finns i nästan alla rörliga maskiner – bilar, flygplan, till och med din mixer. Wingquist satte Sverige på kartan som ingenjörsnation. Nyfiken på hur kullager funkar? De är vardagens tysta hjältar.

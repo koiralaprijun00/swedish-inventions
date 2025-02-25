@@ -1,0 +1,5 @@
+Behöver du svetsa metall eller bränna en stek? Blåslampan, uppfunnen av svenske ingenjören Carl Richard Nyberg 1882, fixar det. Denna handhållna eldkastare blandar bränsle med luft för en het, fokuserad låga – perfekt för VVS eller matlagning. Nybergs skapelse är en svensk succé som fortfarande lyser.
+
+Nyberg var en fixare, besatt av värme och maskiner. Hans blåslampa var enkel men briljant och använde fotogen för en stadig flamma. Den sålde stort, och han slog sig ihop med Max Sievert för att sprida den globalt. Utöver lampor testade Nyberg även flyg, men det är hans eldiga verktyg som lever kvar.
+
+Idag används blåslampor överallt – på byggen, i kök och i konststudior. Denna svenska uppfinning visar att praktiska idéer kan tända förändring. Nyfiken på dess historia? Från Nybergs verkstad till din verktygslåda är blåslampan en het bit svensk historia.    

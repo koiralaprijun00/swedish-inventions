@@ -1,0 +1,5 @@
+Sjöfarten fick ett lyft tack vare John Ericsson, en svensk uppfinnare som fulländade fartygspropellern på 1830-talet. Innan dess var det paddlar eller segel – långsamt och opålitligt. Hans propeller, en roterande skiva under vattnet, drev fartyg snabbare och smartare. Det är därför skepp idag korsar haven så lätt.
+
+Född i Sverige 1803 tog Ericsson med sig sin talang till USA, där han byggde USS Princeton, ett propellerdrivet krigsfartyg. 1844 slog det en paddleångare i en tävling, och propellerns framtid var säkrad. Han designade också USS Monitor under inbördeskriget, vilket visar hans svenska genialitet.
+
+Propellerns arv? Den krympte världen genom att revolutionera resor och handel. Denna svenska uppfinning är en hörnsten i modern sjöfart. Vill du veta mer om Ericssons liv? Det är en historia om äventyr och en idé som förändrade haven.

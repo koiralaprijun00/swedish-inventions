@@ -1,0 +1,5 @@
+Next time your car rolls quietly or your skateboard glides, thank Sven Wingquist, the Swedish engineer behind the self-aligning ball bearing. Invented in 1907, this clever device reduces friction in machines, making everything from engines to appliances run smoother and last longer. Wingquist didn’t just stop there—he founded SKF, a company still dominating the bearing world today.
+
+Before his breakthrough, bearings were rigid and prone to breaking. Wingquist, working at a Swedish factory, saw the problem and designed a bearing that could adjust itself. Picture tiny steel balls rolling between rings, keeping things steady even under pressure. That’s the magic of his invention. It hit the market fast, powering the industrial boom of the 20th century.
+
+Why’s this Swedish invention a big deal? Ball bearings are in almost every moving machine—cars, planes, even your blender. Wingquist’s idea turned Sweden into an engineering powerhouse, proving innovation can come from anywhere. Curious about how ball bearings work? They’re the unsung heroes keeping our world spinning.

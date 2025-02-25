@@ -152,6 +152,43 @@ const inventionsData = [
         },
         imageSrc: "/invention-images/seatbelt.jpg",
         link: "https://example.com/oatmeal"
+      },
+      {
+        id: 21,
+        name: { en: "Zipper", sv: "Blixtlås" },
+        inventorName: "Gideon Sundbäck",
+        oneLineHeading: { en: "Fasten Up: The Zipper That Stitched the World Together", sv: "Fäst Upp: Blixtlåset Som Sydde Ihop Världen" },
+        description: { en: "The modern zipper, widely used in clothing, bags, and footwear, was perfected by the Swedish-American inventor Gideon Sundbäck in 1913. His design improved earlier fastening devices, making them more reliable and practical. Today, zippers are indispensable in everyday life, demonstrating the power of Swedish ingenuity.",
+           sv: "Den moderna dragkedjan, som används flitigt i kläder, väskor och skor, fulländades av den svensk-amerikanske uppfinnaren Gideon Sundbäck år 1913. Hans design förbättrade tidigare fästanordningar och gjorde dem mer pålitliga och praktiska. Idag är dragkedjor oumbärliga i vardagen och visar på den svenska uppfinningsrikedomen." },
+        imageSrc: "/invention-images/zipper.jpg",
+        link: "https://example.com/oatmeal"
+      },
+      {
+        id: 22,
+        name: { en: "Ball Bearing", sv: "Kullager" },
+        inventorName: "Sven Wingquist",
+        oneLineHeading: { en: "Smooth Moves: The Bearing That Powers Machines", sv: "Mjuka Rörelser: Kullagret Som Driver Maskiner" },
+        description: { en: "Invented by Swedish engineer Sven Wingquist in 1907, the self-aligning ball bearing transformed machinery and transportation. It reduced friction, extended the lifespan of mechanical parts, and boosted efficiency in industries such as automotive, aerospace, and manufacturing. The invention remains crucial in modern engineering and mechanics.", sv: "Uppfunnet av Sven Wingquist 1907 revolutionerade det självjusterande kullagret maskiner genom att minska friktion och slitage. Genom att grunda SKF blev denna svenska innovation en hörnsten i industriell teknik." },
+        imageSrc: "/invention-images/ball-bearing.jpg",
+        link: "https://example.com/oatmeal"
+      },
+      {
+        id: 23,
+        name: { en: "Propeller", sv: "Propeller" },
+        inventorName: "John Ericsson",
+        oneLineHeading: { en: "Sail On: The Propeller That Steered the Seas", sv: "Segla Vidare: Propellern Som Styrde Haven" },
+        description: { en: "John Ericsson’s adjustable-pitch propeller, developed in the 19th century, transformed maritime travel with its efficiency and adaptability. This Swedish invention powered ships and naval breakthroughs worldwide.", sv: "John Ericssons propeller med justerbar stigning, utvecklad på 1800-talet, förändrade sjöfarten med sin effektivitet och anpassningsbarhet. Denna svenska uppfinning drev fartyg och marina genombrott världen över." },
+        imageSrc: "/invention-images/propeller.jpg",
+        link: "https://example.com/oatmeal"
+      },
+      {
+        id: 24,
+        name: { en: "Blowtorch", sv: "Blåslampa" },
+        inventorName: "Carl Richard Nyberg",
+        oneLineHeading: { en: "Flame On: The Torch That Lit Up Industry", sv: "Flamma På: Lampan Som Lyste Upp Industrin" },
+        description: { en: "Carl Richard Nyberg’s blowtorch, invented in 1882, became a vital tool for welding and metalwork. This Swedish creation fueled industrial progress and even early aviation experiments.", sv: "Carl Richard Nybergs blåslampa, uppfunnen 1882, blev ett viktigt verktyg för svetsning och metallarbete. Denna svenska uppfinning drev industriella framsteg och till och med tidiga flygexperiment." },
+        imageSrc: "/invention-images/blowtorch.jpg",
+        link: "https://example.com/oatmeal"
       }
     ]
   },
@@ -383,6 +420,42 @@ const inventionsData = [
           sv: "Kolera är en akut diarrésjukdom orsakad av bakterien Vibrio cholerae. Den sprids huvudsakligen genom förorenat vatten och mat, ofta i områden med dålig sanitet och begränsad tillgång till rent dricksvatten. Sjukdomen orsakar svår uttorkning och kan, utan snabb behandling, vara dödlig inom några timmar."
         },
         imageSrc: "/invention-images/cholera-vaccine.jpeg",
+        link: "https://example.com/oatmeal"
+      },
+      {
+        id: 25,
+        name: { en: "Dynamite", sv: "Dynamit" },
+        inventorName: "Alfred Nobel",
+        oneLineHeading: { en: "Boom Time: Dynamite Blasts Through History", sv: "Bommens Tid: Dynamit Spränger Genom Historien" },
+        description: { en: "Invented by Alfred Nobel in 1867, dynamite reshaped construction and mining with its controlled explosive power. This Swedish breakthrough left a lasting mark—both literally and figuratively—on the world.", sv: "Uppfunnet av Alfred Nobel 1867 omformade dynamit byggnation och gruvdrift med sin kontrollerade sprängkraft. Detta svenska genombrott lämnade ett bestående avtryck – bokstavligt och bildligt – på världen." },
+        imageSrc: "/invention-images/dynamite.jpg",
+        link: "https://example.com/oatmeal"
+      },
+      {
+        id: 26,
+        name: { en: "AGA Cooker", sv: "AGA-spis" },
+        inventorName: "Gustaf Dalén",
+        oneLineHeading: { en: "Warm Heart: The Cooker That Heated Homes", sv: "Varmt Hjärta: Spisen Som Värmde Hem" },
+        description: { en: "Gustaf Dalén’s AGA Cooker, invented in 1922, brought efficient, heat-retaining cooking to households worldwide. This Swedish innovation blended practicality with elegance, earning a lasting place in kitchens.", sv: "Gustaf Daléns AGA-spis, uppfunnen 1922, förde effektiv, värmehållande matlagning till hushåll världen över. Denna svenska innovation blandade praktik med elegans och fick en beständig plats i kök." },
+        imageSrc: "/invention-images/aga-cooker.jpg",
+        link: "https://example.com/oatmeal"
+      },
+      {
+        id: 27,
+        name: { en: "Implantable Pacemaker", sv: "Pacemaker" },
+        inventorName: "Rune Elmqvist",
+        oneLineHeading: { en: "Heartbeat Hero: The Pacemaker Saves Lives", sv: "Hjärteslagshjälte: Pacemakern Räddar Liv" },
+        description: { en: "Developed by Rune Elmqvist in 1958, the first implantable pacemaker revolutionized cardiac care. This Swedish invention has since kept millions of hearts beating steadily around the globe.", sv: "Utvecklad av Rune Elmqvist 1958 revolutionerade den första implanterbara pacemakern hjärtvården. Denna svenska uppfinning har sedan dess hållit miljontals hjärtan slående stadigt världen över." },
+        imageSrc: "/invention-images/pacemaker.jpg",
+        link: "https://example.com/oatmeal"
+      },
+      {
+        id: 28,
+        name: { en: "Absorption Refrigerator", sv: "Absorption Kylskåpet" },
+        inventorName: "Carl Munters & Baltzar von Platen",
+        oneLineHeading: { en: "Cool Idea: The Fridge That Changed Food Forever", sv: "Sval Idé: Kylskåpet Som Förändrade Mat För Alltid" },
+        description: { en: "In the 1920s, Carl Munters and Baltzar von Platen invented a gas-absorption refrigerator with no moving parts. This Swedish breakthrough transformed food storage, making freshness a global reality.", sv: "På 1920-talet uppfann Carl Munters och Baltzar von Platen ett gasabsorptionskylskåp utan rörliga delar. Detta svenska genombrott förändrade matförvaring och gjorde färskhet till en global verklighet." },
+        imageSrc: "/invention-images/refrigerator.jpg",
         link: "https://example.com/oatmeal"
       }
     ]

@@ -1,0 +1,5 @@
+Aga-spisen, uppfunnen av svenske fysikern Gustaf Dalén 1922, är inte bara en spis – det är en livsstil. Känd för sin gjutjärnsdesign och konstanta värme förvandlade den kök med sin effektivitet och charm. Dalén, som vann Nobelpriset för sitt arbete med fyrar, tog samma genialitet hem.
+
+Efter att ha blivit blind i en olycka drömde Dalén fram Aga-spisen under sin återhämtning. Målet? En spis som lagar mat jämnt utan att slösa bränsle. Aga använder strålningsvärme och är alltid varm, perfekt för att steka, baka eller värma ett rum. Den blev en hit i Storbritannien på 1930-talet och en landsbygdsikon.
+
+Varför är denna svenska uppfinning speciell? Den blandar vetenskap och själ och älskas fortfarande av kockar och hemmafixare. Nyfiken på Agans magi? Det är en varm bit svensk historia som fortsätter laga mat.

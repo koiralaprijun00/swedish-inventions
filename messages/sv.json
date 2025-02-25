@@ -30,6 +30,7 @@
     "yourName": "Ditt namn",
     "yourEmail": "Din e-post",
     "yourMessage": "Ditt meddelande",
+    "inventionNotFound": "Uppfinning hittades inte",
     "categories": {
       "all": "Alla",
       "foodBeverage": "Mat & Dryck",
