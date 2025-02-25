@@ -28,14 +28,14 @@ export default function InventionPage() {
   const [currentUrl, setCurrentUrl] = useState("");
   const [fullDescription, setFullDescription] = useState<string>("");
 
- // Updated normalizeFileName with Swedish character handling
- const normalizeFileName = (str: string) =>
-  str
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/ö/g, "o")
-    .replace(/å/g, "a")
-    .replace(/ä/g, "a");
+  // Normalize file name (always based on English name since files use English naming)
+  const normalizeFileName = (str: string) =>
+    str
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/ö/g, "o")
+      .replace(/å/g, "a")
+      .replace(/ä/g, "a");
 
   useEffect(() => {
     setCurrentUrl(window.location.href);
@@ -43,14 +43,12 @@ export default function InventionPage() {
     const fetchFullDescription = async () => {
       if (!invention) return;
 
-      // Use locale-specific name from inventionsData to match the correct file
-      const fileName =
-        locale === "sv" && invention.name.sv
-          ? normalizeFileName(invention.name.sv)
-          : normalizeFileName(invention.name.en);
+      // Always use the English name for the file name, regardless of locale
+      const fileName = normalizeFileName(invention.name.en);
 
       try {
         const response = await fetch(`/content/${locale}/${fileName}.md`);
+        console.log(`Fetching: /content/${locale}/${fileName}.md`); // Debugging
         if (response.ok) {
           const text = await response.text();
           setFullDescription(text);
