@@ -90,7 +90,7 @@ export default function InventionPage() {
           )}
         </div>
         {/* Summary from inventionsData */}
-        <p className="text-gray-700 mb-4">{invention.description[locale]}</p>
+        <p className="text-gray-600 mb-4 w-2/4 font-sm mt-12 mb-12 ml-12 py-2 pl-4 border-l-2 border-primaryBlue ">{invention.description[locale]}</p>
         <div className="mt-4">
           <div className="relative w-full h-48 md:h-96">
             <Image
