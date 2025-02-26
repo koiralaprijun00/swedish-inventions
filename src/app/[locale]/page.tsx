@@ -69,7 +69,9 @@ export default function Home() {
     { key: "digitalTechnology", label: t("categories.digitalTechnology") },
     { key: "gaming", label: t("categories.gaming") },
     { key: "scienceInnovation", label: t("categories.scienceInnovation") },
-    { key: "designRetail", label: t("categories.designRetail") }
+    // { key: "designRetail", label: t("categories.designRetail") },
+    { key: "artsCulture", label: t("categories.artsCulture") },
+    
   ]
 
   const normalize = (str: string) => str.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")

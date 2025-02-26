@@ -39,13 +39,16 @@
       "gaming": "Gaming",
       "scienceInnovation": "Science & Innovation",
       "designRetail": "Design & Retail",
+      "artsCulture": "Arts & Culture",
       "mapping": {
         "Food & Beverage": "foodBeverage",
         "Engineering & Technology": "engineeringTechnology",
         "Digital Technology": "digitalTechnology",
         "Gaming": "gaming",
         "Science & Innovation": "scienceInnovation",
-        "Design & Retail": "designRetail"
+        "Design & Retail": "designRetail",
+        "Arts & Culture": "artsCulture"
+        
       }
     }
   }

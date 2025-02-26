@@ -39,13 +39,15 @@
       "gaming": "Spel",
       "scienceInnovation": "Vetenskap & Innovation",
       "designRetail": "Design & Handel",
+      "artsCulture": "Konst & Kultur",
       "mapping": {
         "Food & Beverage": "foodBeverage",
         "Engineering & Technology": "engineeringTechnology",
         "Digital Technology": "digitalTechnology",
         "Gaming": "gaming",
         "Science & Innovation": "scienceInnovation",
-        "Design & Retail": "designRetail"
+        "Design & Retail": "designRetail",
+        "Arts & Culture": "artsCulture"
       }
     }
   }

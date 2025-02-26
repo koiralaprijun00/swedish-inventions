@@ -1,0 +1,7 @@
+När rörligheten blir tuff kliver den moderna gåramen in – och vi har svenska uppfinnaren Aina Wifalk att tacka. Född 1928 skapade Wifalk denna praktiska hjälp på slutet av 1970-talet och förvandlade en personlig kamp till en global lösning. Hennes uppfinning har gett otaliga människor självförtroende att röra sig, och visar hur svenska uppfinningar kan förändra liv på tysta, viktiga sätt.
+
+Wifalk var inte bara en innovatör; hon löste problem. Efter en ryggskada som ung sjuksköterska blev hon beroende av kryckor och såg deras brister. Kryckor var ostabila, och gamla gåstöd var klumpiga. Så 1978 ritade hon en lätt, fyrbent ram med handtag – stabil men enkel. Hennes design fångade svenska handikapporganisationers intresse, och snart fanns den moderna gåramen.
+
+Vad gör den speciell? Till skillnad från kryckor ger den balans utan ansträngning. Gjord i aluminium eller stål är den lätt att lyfta men tål att luta sig mot. Wifalks uppfinning kom precis när äldre blev fler, en perfekt tajmad gåva till världen. Idag använder miljontals människor gåramar dagligen, från sjukhus till hem, allt tack vare hennes smarta idé.
+
+Denna svenska uppfinning lyser med sin praktik och hjärta. Wifalk, som dog 1983, sökte aldrig berömmelse – bara bättre liv för andra. Nyfiken på den moderna gåramens påverkan? Det är ett litet steg som burit miljontals framåt, ett bevis på Sveriges känsla för omsorgsfull design.

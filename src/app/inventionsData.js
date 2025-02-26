@@ -56,7 +56,7 @@ const inventionsData = [
         },
         imageSrc: "/invention-images/absolut-vodka.jpg",
         link: "https://example.com/oatmeal"
-      }
+      },
     ]
   },
   {
@@ -189,6 +189,51 @@ const inventionsData = [
         description: { en: "Carl Richard Nyberg’s blowtorch, invented in 1882, became a vital tool for welding and metalwork. This Swedish creation fueled industrial progress and even early aviation experiments.", sv: "Carl Richard Nybergs blåslampa, uppfunnen 1882, blev ett viktigt verktyg för svetsning och metallarbete. Denna svenska uppfinning drev industriella framsteg och till och med tidiga flygexperiment." },
         imageSrc: "/invention-images/blowtorch.jpg",
         link: "https://example.com/oatmeal"
+      },
+      {
+        id: 2,
+        name: {
+          en: "The Re-washable Dishcloth",
+          sv: "Den Tvättbara Disktrasan"
+        },
+        inventorName: "Curt Lindquist",
+        oneLineHeading: {
+          en: "Wipe Smart: The Cloth That Cleans Forever",
+          sv: "Torka Smart: Trasan Som Håller För Evigt"
+        },
+        description: {
+          en: "The rewashable Wettex dishcloth, invented in 1949 by Curt Lindquist, transformed kitchen chores with its ability to absorb up to 15 times its weight in liquids. Made from a blend of regenerated cellulose and cotton fibre, this durable, eco-friendly innovation can be washed and reused endlessly without losing shape or quality. From Sweden to over 50 countries, it’s a household staple that proves small ideas can spark big change.",
+          sv: "Den tvättbara Wettex-disktrasan, uppfunnen 1949 av Curt Lindquist, förvandlade köksarbete med sin förmåga att absorbera upp till 15 gånger sin vikt i vätska. Tillverkad av en blandning av regenererad cellulosa och bomullsfiber är denna hållbara, miljövänliga uppfinning tvättbar och återanvändbar i oändlighet utan att förlora form eller kvalitet. Från Sverige till över 50 länder är det en hushållsklassiker som visar att små idéer kan tända stora förändringar."
+        },
+        imageSrc: "/invention-images/dishcloth.jpg",
+        link: "https://example.com/dishcloth"
+      },
+      {
+        id: 25,
+        name: { en: "Modern Walking Frame", sv: "Modern Gåstol" },
+        inventorName: "Aina Wifalk",
+        oneLineHeading: { en: "The Modern Walking Frame: A Swedish Step Forward", sv: "Den Moderna Gåstolen: Ett Svenskt Steg Framåt" },
+        description: { en: "Aina Wifalk’s modern walking frame, designed in the 1960s, revolutionized mobility aids for the elderly and disabled. This Swedish invention improved quality of life and independence for millions of people worldwide.", sv: "Aina Wifalks moderna gåstol, designad på 1960-talet, revolutionerade rörlighetsstöd för äldre och funktionshindrade. Denna svenska uppfinning förbättrade livskvaliteten och självständigheten för miljontals människor världen över." },
+        imageSrc: "/invention-images/walking-frame.jpg",
+        link: "https://example.com/oatmeal"
+      },
+      {
+        id: 5,
+        name: {
+          en: "The First Bolt Cutter",
+          sv: "Den Första Bultsaxen"
+        },
+        inventorName: "Jonas Jönsson Byman",
+        oneLineHeading: {
+          en: "Cut Through: The Tool That Broke Barriers",
+          sv: "Klipp Igenom: Verktyget Som Bröt Barriärer"
+        },
+        description: {
+          en: "The first bolt cutter was designed in 1866 by Jonas Jönsson Byman in a small village in Jämtland, Sweden, empowering anyone to slice through bolts, chains, padlocks, and wires with ease. This iconic tool, still in use 150+ years later, hit a snag when a shady metalworker stole Byman’s design and patented it first. Despite the betrayal, Byman’s legacy endures in workshops worldwide, a testament to Swedish grit and ingenuity.",
+          sv: "Den första bultsaxen designades 1866 av Jonas Jönsson Byman i en liten by i Jämtland, Sverige, och gav vem som helst möjlighet att klippa genom bultar, kedjor, hänglås och trådar med lätthet. Detta ikoniska verktyg, fortfarande i bruk över 150 år senare, stötte på problem när en skum metallarbetare stal Bymans design och patenterade den först. Trots sveket lever Bymans arv vidare i verkstäder världen över, ett bevis på svensk envishet och uppfinningsrikedom."
+        },
+        imageSrc: "/invention-images/bolt-cutter.jpg",
+        link: "https://example.com/bolt-cutter"
       }
     ]
   },
@@ -267,6 +312,24 @@ const inventionsData = [
         },
         imageSrc: "/invention-images/spotify.jpg",
         link: "https://example.com/oatmeal"
+      },
+      {
+        id: 4,
+        name: {
+          en: "The First Telephone Handset",
+          sv: "Den Första Telefonluren"
+        },
+        inventorName: "Lars Magnus Ericsson",
+        oneLineHeading: {
+          en: "Voice of Connection: The Handset That Rang the World",
+          sv: "Röst av Förbindelse: Luren Som Ringde Världen"
+        },
+        description: {
+          en: "Alexander Graham Bell might have patented the telephone, but the first telephone handset was invented in Sweden in 1876 by Lars Magnus Ericsson, exploiting the fact that Bell’s patent didn’t cover the Nordic countries. (Though, fun fact: Italian Antonio Meucci beat them both to the punch!) Ericsson’s clever design birthed the world’s first public telephone exchange in Stockholm, paving the way for a telecom revolution that still echoes today.",
+          sv: "Alexander Graham Bell kanske patenterade telefonen, men den första telefonluren uppfanns i Sverige 1876 av Lars Magnus Ericsson, som utnyttjade att Bells patent inte täckte Norden. (Roligt nog: Italiens Antonio Meucci hann före dem båda!) Ericssons smarta design födde världens första offentliga telefonväxel i Stockholm och banade väg för en telekomrevolution som fortfarande ekar idag."
+        },
+        imageSrc: "/invention-images/first-telephone.jpg",
+        link: "https://example.com/telephone"
       }
     ]
   },
@@ -457,9 +520,50 @@ const inventionsData = [
         description: { en: "In the 1920s, Carl Munters and Baltzar von Platen invented a gas-absorption refrigerator with no moving parts. This Swedish breakthrough transformed food storage, making freshness a global reality.", sv: "På 1920-talet uppfann Carl Munters och Baltzar von Platen ett gasabsorptionskylskåp utan rörliga delar. Detta svenska genombrott förändrade matförvaring och gjorde färskhet till en global verklighet." },
         imageSrc: "/invention-images/refrigerator.jpg",
         link: "https://example.com/oatmeal"
+      },
+      {
+        id: 3,
+        name: {
+          en: "The Gamma Knife",
+          sv: "Gammakniven"
+        },
+        inventorName: "Lars Leksell",
+        oneLineHeading: {
+          en: "Precision Strike: Targeting Tumors with Radiance",
+          sv: "Precisionsslag: Riktar In sig på Tumörer med Strålglans"
+        },
+        description: {
+          en: "The Gamma Knife, a Swedish invention developed by Professor Lars Leksell at Karolinska Hospital, redefined brain tumor treatment with its debut in 1968. Active from 1960 to 1974, Leksell crafted a tool that delivers pinpoint radiation to destroy tumors while sparing healthy tissue. Over 100,000 patients worldwide have benefited from this non-invasive marvel, showcasing Sweden’s leadership in medical innovation.",
+          sv: "Gammakniven, en svensk uppfinning utvecklad av professor Lars Leksell vid Karolinska sjukhuset, omdefinierade behandling av hjärntumörer med sin debut 1968. Aktiv mellan 1960 och 1974 skapade Leksell ett verktyg som levererar exakt strålning för att förstöra tumörer samtidigt som det skonar frisk vävnad. Över 100 000 patienter världen över har gynnats av detta icke-invasiva underverk, vilket visar Sveriges ledarskap inom medicinsk innovation."
+        },
+        imageSrc: "/invention-images/gamma-knife.jpg",
+        link: "https://example.com/gamma-knife"
+      }
+    ],
+  },
+  {
+    category: "artsCulture",
+    items: [
+      {
+        id: 1,
+        name: {
+          en: "The First Abstract Paintings",
+          sv: "De Första Abstrakta Målningarna"
+        },
+        inventorName: "Hilma af Klint",
+        oneLineHeading: {
+          en: "Visionary Canvas: The Birth of Abstract Art",
+          sv: "Visionär Duk: Abstrakt Konsts Födelse"
+        },
+        description: {
+          en: "Hilma af Klint was a Swedish artist who pioneered abstract painting around 1906, long before it became a mainstream movement. Influenced by theosophy and spiritualism, she believed her vibrant, symbolic works channeled higher truths, creating a revolutionary art form that reshaped creative expression. Hidden for decades, her paintings stunned the world when showcased at the Guggenheim in 2018, cementing her legacy as a trailblazer in art history.",
+          sv: "Hilma af Klint var en svensk konstnär som banade väg för abstrakt måleri runt 1906, långt innan det blev en mainstreamrörelse. Påverkad av teosofi och spiritualism trodde hon att hennes livfulla, symboliska verk förmedlade högre sanningar, och skapade en revolutionerande konstform som omformade kreativt uttryck. Gömd i årtionden chockade hennes målningar världen när de visades på Guggenheim 2018, och befäste hennes arv som en pionjär i konsthistorien."
+        },
+        imageSrc: "/invention-images/abstract-paintings.jpg",
+        link: "https://example.com/abstract-art"
       }
     ]
   }
-]
+];
 
-export default inventionsData
+export default inventionsData;
