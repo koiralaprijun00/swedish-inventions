@@ -32,9 +32,9 @@ export default function InfoBox({ name, transparentImage, title, inventorName, l
     priority={isAboveFold} // Keep for above-the-fold images
     src={transparentImage}
     alt={title}
-    width={600}
+    width={150}
     height={250}
-    className="w-full h-auto object-cover"
+    className="mx-auto"
   />
 </div>
       <div className="mt-3 sm:mt-4 mb-4 sm:mb-6 mr-4 flex justify-end">
