@@ -15,7 +15,7 @@ interface InfoBoxProps {
   isAboveFold?: boolean; // New prop
 }
 
-export default function InfoBox({ name, transparentImage, title, inventorName, locale, isAboveFold = false }: InfoBoxProps) {
+export default function InfoBox({ name, transparentImage, title, inventorName, locale, isAboveFold = true }: InfoBoxProps) {
   const t = useTranslations("Translations")
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
 
