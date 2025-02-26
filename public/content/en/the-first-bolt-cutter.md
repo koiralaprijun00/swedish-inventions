@@ -1,0 +1,5 @@
+In 1866, a Swedish villager named Jonas Jönsson Byman dreamed up a tool that could slice through metal like butter: the bolt cutter. From a tiny Jämtland workshop, he changed how we cut chains, padlocks, and wires. But his story has a twist—let’s cut to it.
+
+Byman’s wooden prototype was a stroke of genius, designed to make tough jobs easy. With a lever and sharp jaws, it empowered farmers, blacksmiths, and laborers. But when he took it to a metalworker to forge, betrayal struck: the craftsman stole the design and patented it at the Swedish patent office. Ouch! Still, Byman’s idea lived on, becoming an iconic tool used worldwide 150+ years later.
+
+Today, bolt cutters are a DIY and rescue staple—firefighters even use them to save lives. Byman never got the credit he deserved, but his legacy cuts deep. Sweden’s rural roots birthed a tool that’s still breaking barriers.

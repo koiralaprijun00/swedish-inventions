@@ -1,0 +1,5 @@
+Alexander Graham Bell kanske patenterade telefonen, men Sveriges Lars Magnus Ericsson gav den en röst – och en lur – år 1876. Denna svenska innovatör uppfann inte telefonen från grunden, men han gjorde den praktisk, snygg och nordiskt cool. Här är hur han ringde in historien.
+
+Bells patent täckte inte Skandinavien, så Ericsson tog chansen. Från en verkstad i Stockholm skapade han den första telefonluren – en enda del som kombinerade högtalare och mikrofon. Innan dess var telefoner klumpiga, med separata hörsnäckor och munstycken. Ericssons design? Snygg, användarvänlig och banbrytande. Och en rolig twist: italienaren Antonio Meucci hann faktiskt före Bell med telefonidén, men Ericsson äger ändå lurens krona.
+
+Hans företag, Ericsson, exploderade därifrån och blev en telekomjätte som fortfarande frodas idag. På sent 1800-tal kopplade hans lurar samman Sverige och världen, och banade väg för moderna telefoner. Nästa gång du håller i din smartphone, tacka Lars Magnus – han gjorde pratandet stiligt.

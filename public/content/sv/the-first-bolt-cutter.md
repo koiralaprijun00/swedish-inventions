@@ -1,0 +1,5 @@
+År 1866 drömde en svensk bybo vid namn Jonas Jönsson Byman fram ett verktyg som kunde klippa genom metall som smör: bultsaxen. Från en liten verkstad i Jämtland förändrade han hur vi klipper kedjor, hänglås och trådar. Men hans historia har en tvist – låt oss gå rakt på sak.
+
+Bymans träprototyp var ett genidrag, designat för att göra tuffa jobb enkla. Med en hävarm och vassa käftar gav den bönder, smeder och arbetare ny kraft. Men när han tog den till en metallarbetare för att gjuta den i metall, slog sveket till: hantverkaren stal designen och patenterade den hos Patentverket. Aj! Ändå levde Bymans idé vidare och blev ett ikoniskt verktyg som används världen över 150+ år senare.
+
+Idag är bultsaxen ett måste för både gör-det-själv och räddningsarbete – brandmän använder den till och med för att rädda liv. Byman fick aldrig den ära han förtjänade, men hans arv skär djupt. Sveriges landsbygdsrötter födde ett verktyg som fortfarande bryter barriärer.

@@ -1,0 +1,5 @@
+Imagine treating a brain tumor without a single incision. That’s the magic of the Gamma Knife, invented by Swedish neurosurgeon Lars Leksell in the 1960s. This isn’t a knife at all—it’s a precision radiation tool that’s saved countless lives. Ready to geek out over this medical marvel?
+
+Leksell, a professor at Karolinska Hospital in Stockholm, spent years perfecting non-invasive brain surgery. By 1968, the first Gamma Knife unit was zapping tumors with focused gamma rays, targeting them with pinpoint accuracy while sparing healthy tissue. Unlike traditional surgery, patients walk away with no scars, less risk, and faster recovery. From 1960 to 1974, Leksell refined this tech, turning sci-fi into reality.
+
+Today, the Gamma Knife treats everything from tumors to epilepsy, with over a million patients worldwide benefiting. Fun fact: it’s so precise, it’s been called "surgery without a scalpel." Leksell’s legacy lives on at Karolinska, where his invention still shapes neurosurgery. Sweden didn’t just give us pop music—it gave us a brain-saving revolution.

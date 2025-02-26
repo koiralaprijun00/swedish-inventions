@@ -1,0 +1,5 @@
+Alexander Graham Bell may have patented the telephone, but Sweden’s Lars Magnus Ericsson gave it a voice—and a handset—in 1876. This Swedish innovator didn’t invent the phone from scratch, but he made it practical, stylish, and Nordic-cool. Here’s how he dialed up history.
+
+Bell’s patent didn’t cover Scandinavia, so Ericsson seized the chance. Working from a Stockholm workshop, he crafted the first telephone handset—a single piece combining the speaker and microphone. Before that, phones were clunky, with separate earpieces and mouthpieces. Ericsson’s design? Sleek, user-friendly, and a game-changer. Oh, and fun twist: Italian Antonio Meucci actually beat Bell to the telephone idea, but Ericsson still owns the handset crown.
+
+His company, Ericsson, exploded from there, becoming a telecom giant still thriving today. By the late 1800s, his handsets connected Sweden and beyond, paving the way for modern phones. Next time you cradle your smartphone, thank Lars Magnus—he made talking stylish.

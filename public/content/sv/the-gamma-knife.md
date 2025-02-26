@@ -1,0 +1,5 @@
+Föreställ dig att behandla en hjärntumör utan ett enda snitt. Det är magin med Gammakniven, uppfunnen av den svenske neurokirurgen Lars Leksell på 1960-talet. Det här är ingen kniv – det är ett precisionsverktyg med strålning som har räddat otaliga liv. Redo att fascineras av detta medicinska under?
+
+Leksell, professor vid Karolinska sjukhuset i Stockholm, ägnade år åt att perfektionera icke-invasiv hjärnkirurgi. År 1968 började den första Gammakniven behandla tumörer med fokuserade gammastrålar, som träffade dem med exakt precision utan att skada frisk vävnad. Till skillnad från traditionell kirurgi går patienterna därifrån utan ärr, mindre risk och snabbare återhämtning. Mellan 1960 och 1974 finslipade Leksell tekniken och gjorde science fiction till verklighet.
+
+Idag behandlar Gammakniven allt från tumörer till epilepsi, med över en miljon patienter världen över som haft nytta av den. Kul fakta: den är så exakt att den kallats "kirurgi utan skalpell." Leksells arv lever vidare på Karolinska, där hans uppfinning fortfarande formar neurokirurgin. Sverige gav oss inte bara popmusik – det gav oss en hjärnräddande revolution.

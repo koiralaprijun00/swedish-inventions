@@ -33,7 +33,7 @@ export default function InfoBox({ name, transparentImage, title, inventorName, l
         <Link
           href={detailPageURL}
           locale={locale}
-          className="inline-flex items-center px-3 py-1 text-gray-700 text-xs sm:text-sm md:text-base sm:px-4 sm:py-2 rounded-lg hover:bg-gray-200 transition-colors"
+          className="inline-flex items-center px-3 py-1 text-gray-700 text-xs sm:text-sm md:text-base sm:px-4 sm:py-2 rounded-lg bg-gray-200 hover:bg-primaryBlue hover:text-white transition-colors"
         >
           <span>
             {t("details")}
