@@ -43,19 +43,19 @@ const Tabs: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="mt-8 fle flex-col md:flex md:flex-row gap-16">
-        {activeTab.items &&
-          activeTab.items.map((item, index) => (
-            <div key={index}> {/* Removed inline style */}
-              <Link
-                href={`/${locale}/invention/${encodeURIComponent(item.name.en)}`}
-                className="mb-8 text-blue-600 hover:text-blue-800 transition-colors inline-block" 
-              >
-                <h3>{item.name[locale] || item.name['en']}</h3>
-              </Link>
-            </div>
-          ))}
+      <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"> {/* Adjusted gap for responsiveness */} 
+  {activeTab.items &&
+    activeTab.items.map((item, index) => (
+      <div key={index}>
+        <Link
+          href={`/${locale}/invention/${encodeURIComponent(item.name.en)}`}
+          className=" text-gray-600 hover:text-primaryBlue hover:font-bold transition-colors inline-block"
+        >
+          <h3>{item.name[locale] || item.name['en']}</h3>
+        </Link>
       </div>
+    ))}
+</div>
     </div>
   );
 };
