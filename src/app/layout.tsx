@@ -79,14 +79,6 @@ export default function RootLayout({
           content="Discover famous Swedish innovations that shaped industries worldwide."
         />
         <meta name="twitter:image" content="/swedish-inventions-thumbnail.jpg" />
-
-        {/* Google AdSense */}
-        <meta name="google-adsense-account" content="ca-pub-4708248697764153" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4708248697764153"
-          crossOrigin="anonymous"
-        ></script>
       </head>
       <GoogleAnalytics gaId="G-SZZPBRPWY5" />
       <body className={`${libreFranklin.className} antialiased`}>
