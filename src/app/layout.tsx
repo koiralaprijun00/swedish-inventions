@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Libre_Franklin } from "next/font/google";
 import "./styles/globals.css";
+import ScrollToTop from "./[locale]/components/ScrollToTop";
 
 // Configure Libre Franklin font
 const libreFranklin = Libre_Franklin({
@@ -45,6 +46,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -82,6 +84,7 @@ export default function RootLayout({
       </head>
       <GoogleAnalytics gaId="G-SZZPBRPWY5" />
       <body className={`${libreFranklin.className} antialiased`}>
+      <ScrollToTop />
         {children}
       </body>
     </html>

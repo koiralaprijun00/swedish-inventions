@@ -1,7 +1,7 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import Head from "next/head"
 import React, { useState } from "react"
 import inventionsData from "../../../src/app/inventionsData.js"
@@ -9,6 +9,8 @@ import InfoBox from "./components/InfoBox";
 import InventionCard from "./components/InventionCard"; // Adjust the path as needed
 import Header from "./components/Header"; // Adjust the path as needed
 import Link from "next/link"
+import { useEffect } from "react"
+import { usePathname, useSearchParams } from 'next/navigation';
 
 import "../styles/globals.css"
 
@@ -44,13 +46,18 @@ export const dynamic = "force-static" // Ensure static prerendering
 
 export default function Home() {
   const { locale } = useParams() as { locale: string }
-  const searchParams = useSearchParams(); // Get search params
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const t = useTranslations("Translations")
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
 
   // *** Construct the canonical URL ***
   const baseUrl = locale === "en" ? "https://swedishinventions.com" : `https://swedishinventions.com/${locale}`;
   const canonicalUrl = searchParams ? `${baseUrl}?${searchParams}` : baseUrl;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname, searchParams]);
 
   // Helper function to get localized names (improved)
   const getLocalizedName = (item: any) => {
