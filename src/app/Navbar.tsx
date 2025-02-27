@@ -34,12 +34,6 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
           </Link>
           
           <Link 
-            href={`/${currentLocale}/blog`} 
-            className="p-1 md:p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900 focus:border-primaryBlue active:border-primaryBlue">
-            {t("blog")}
-          </Link>
-          
-          <Link 
             href={`/${currentLocale}/about`} 
             className="p-1 md:p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900 focus:border-primaryBlue active:border-primaryBlue"
           >
