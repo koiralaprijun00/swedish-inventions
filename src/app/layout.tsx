@@ -49,8 +49,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Apple Touch Icon */}
-        <link rel="preload" href="/apple-touch-icon.png" />
-        <link rel="preload" href="/favicon.ico" sizes="any" />
+        <link rel="preload" href="/apple-touch-icon.png" as="image" />
+<link rel="preload" href="/favicon.ico" as="image" sizes="any" />
 
         {/* Viewport for Responsive Design */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />

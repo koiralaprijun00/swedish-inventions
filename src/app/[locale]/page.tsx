@@ -69,7 +69,6 @@ export default function Home() {
     { key: "digitalTechnology", label: t("categories.digitalTechnology") },
     { key: "gaming", label: t("categories.gaming") },
     { key: "scienceInnovation", label: t("categories.scienceInnovation") },
-    // { key: "designRetail", label: t("categories.designRetail") },
     { key: "artsCulture", label: t("categories.artsCulture") },
     
   ]
@@ -148,3 +147,5 @@ export default function Home() {
     </>
   )
 }
+
+

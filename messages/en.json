@@ -31,6 +31,7 @@
     "yourEmail": "Your email",
     "yourMessage": "Your message",
     "inventionNotFound": "Invention not found",
+    "blog": "Blog",
     "categories": {
       "all": "All",
       "foodBeverage": "Food & Beverage",
@@ -48,7 +49,14 @@
         "Science & Innovation": "scienceInnovation",
         "Design & Retail": "designRetail",
         "Arts & Culture": "artsCulture"
-        
+      },
+     "Blog": {
+        "heading": "Blog",
+        "subheading": "Latest posts",
+        "readMore": "Read more →",
+        "notFound": "Post not found",
+        "notFoundMessage": "We couldn’t find a blog post for this slug.",
+        "backToBlog": "Back to blog"
       }
     }
   }
