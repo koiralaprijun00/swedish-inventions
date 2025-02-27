@@ -2,14 +2,15 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { allPosts } from 'content-collections';
 import { getTranslations } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
-// Define Props with params as a plain object, not a Promise
-interface Props {
+// Simplify the approach - use the exact structure Next.js/Vercel expects
+export default async function SinglePostPage({
+  params,
+}: {
   params: { locale: string; slug: string };
-}
-
-export default async function SinglePostPage({ params }: Props) {
-  const { locale, slug } = params; // No need to await params, it’s already resolved
+}) {
+  const { locale, slug } = params;
 
   // Construct the expected path based on locale and slug
   const expectedPath = `${locale}/${slug}`;
@@ -20,9 +21,10 @@ export default async function SinglePostPage({ params }: Props) {
     return (
       <div className="max-w-3xl mx-auto my-24 px-4">
         <h1 className="text-3xl font-bold">{t('notFound', { defaultMessage: 'Post not found' })}</h1>
-        <p>{t('notFoundMessage', { defaultMessage: 'We couldn’t find a blog post for this slug.' })}</p>
+        <p>{t('notFoundMessage', { defaultMessage: 'We cannot find a blog post for this slug.' })}</p>
       </div>
     );
+    // Alternatively: notFound();
   }
 
   return (
@@ -34,4 +36,12 @@ export default async function SinglePostPage({ params }: Props) {
       </article>
     </div>
   );
+}
+
+// Add generateStaticParams for Vercel static generation
+export async function generateStaticParams() {
+  return allPosts.map((post) => ({
+    locale: post.locale,
+    slug: post._meta.path.split('/')[1], // Adjust if your path structure differs
+  }));
 }
