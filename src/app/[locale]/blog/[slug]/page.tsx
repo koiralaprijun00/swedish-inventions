@@ -3,13 +3,13 @@ import ReactMarkdown from 'react-markdown';
 import { allPosts } from 'content-collections';
 import { getTranslations } from 'next-intl/server';
 
+// Define Props with params as a plain object, not a Promise
 interface Props {
-  params: Promise<{ locale: string; slug: string }>;
+  params: { locale: string; slug: string };
 }
 
-export default async function SinglePostPage(props: Props) {
-  const params = await props.params;
-  const { locale, slug } = params;
+export default async function SinglePostPage({ params }: Props) {
+  const { locale, slug } = params; // No need to await params, it’s already resolved
 
   // Construct the expected path based on locale and slug
   const expectedPath = `${locale}/${slug}`;
