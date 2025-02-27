@@ -3,8 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { allPosts } from 'content-collections';
 import { getTranslations } from 'next-intl/server';
-import { promises as fs } from 'fs';
-import path from 'path';
 
 type Props = {
   params: {
@@ -16,23 +14,7 @@ export default async function BlogListPage({ params }: Props) {
   const resolvedParams = await params;
   const { locale } = resolvedParams;
 
-  // Log the current working directory
-  console.log("Current Working Directory:", process.cwd());
-
-  // Check if the posts directory exists and list files
-  const postsDir = path.join(process.cwd(), "src/posts", locale);
-  try {
-    const files = await fs.readdir(postsDir);
-    console.log(`Files in ${locale} directory:`, files);
-  } catch (error) {
-    console.error(`Error reading ${locale} directory:`, error);
-  }
-
-  console.log("All Posts:", allPosts);
-  console.log("Locale:", locale);
-
   const posts = allPosts.filter((post) => post.locale === locale);
-  console.log("Filtered Posts Raw:", posts);
 
   const t = await getTranslations('Translations.categories.Blog');
   return (

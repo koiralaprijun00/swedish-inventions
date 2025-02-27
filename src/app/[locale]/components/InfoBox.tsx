@@ -28,14 +28,15 @@ export default function InfoBox({ name, transparentImage, title, inventorName, l
         {title}
       </h3>
       <div className="image-container overflow-hidden rounded-lg">
-  <Image
-    priority={isAboveFold} // Keep for above-the-fold images
-    src={transparentImage}
-    alt={title}
-    width={150}
-    height={250}
-    className="mx-auto"
-  />
+      <Image
+  priority={isAboveFold}
+  src={transparentImage}
+  alt={title}
+  width={160} // Set your desired width
+  height={200} // Remove explicit height
+  style={{ width: "150px", height: "auto" }}
+  className="mx-auto"
+/>
 </div>
       <div className="mt-3 sm:mt-4 mb-4 sm:mb-6 mr-4 flex justify-end">
         <Link
