@@ -31,6 +31,7 @@
     "yourEmail": "Din e-post",
     "yourMessage": "Ditt meddelande",
     "inventionNotFound": "Uppfinning hittades inte",
+    "blog": "Blogg",
     "categories": {
       "all": "Alla",
       "foodBeverage": "Mat & Dryck",
@@ -48,6 +49,14 @@
         "Science & Innovation": "scienceInnovation",
         "Design & Retail": "designRetail",
         "Arts & Culture": "artsCulture"
+      },
+      "Blog":{
+            "heading": "Blogg",
+            "subheading": "Senaste inläggen",
+            "readMore": "Läs mer →",
+            "notFound": "Inlägg hittades inte",
+            "notFoundMessage": "Vi kunde inte hitta ett blogginlägg för denna slug.",
+            "backToBlog": "Tillbaka till blogg"
       }
     }
   }

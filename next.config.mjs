@@ -1,3 +1,4 @@
+import { withContentCollections } from '@content-collections/next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
@@ -11,4 +12,5 @@ const withBundleAnalyzer = bundleAnalyzer({
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 
-export default withNextIntl(withBundleAnalyzer(nextConfig));
+// withContentCollections must be the outermost plugin
+export default withContentCollections(withNextIntl(withBundleAnalyzer(nextConfig)));
