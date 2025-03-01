@@ -326,24 +326,27 @@ const QuizComponent: React.FC = () => {
 
   if (!quizStarted) {
     return (
-      <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto my-24">
-        <h1 className="text-3xl md:text-4xl font-bold text-primaryBlue mb-4">
+      <div className="bg-white border border-gray-100 rounded-lg shadow-sm p-8 max-w-2xl mx-auto my-24">
+      <div className="text-center">
+        <h1 className="text-3xl font-semibold text-gray-800 mb-4">
           {locale === "en"
             ? "Swedish Inventions Quiz"
             : "Quiz om Svenska Uppfinningar"}
         </h1>
-        <p className="text-gray-600 mb-8 max-w-3xl">
+        <div className="w-16 h-1 bg-primaryBlue/30 mx-auto mb-6"></div>
+        <p className="text-gray-600 mb-10 max-w-lg mx-auto leading-relaxed">
           {locale === "en"
             ? "Test your knowledge about famous Swedish inventions and innovations! Answer 10 questions and see how much you know about Sweden's contributions to the world."
             : "Testa dina kunskaper om berömda svenska uppfinningar och innovationer! Svara på 10 frågor och se hur mycket du vet om Sveriges bidrag till världen."}
         </p>
         <button
           onClick={startQuiz}
-          className="w-full bg-primaryBlue text-white py-3 rounded-md font-medium hover:bg-blue-700 transition duration-200"
+          className="px-10 py-3 bg-white border border-primaryBlue text-primaryBlue rounded-full font-medium hover:bg-primaryBlue hover:text-white transition-all duration-300"
         >
           {uiText.startButton}
         </button>
       </div>
+    </div>
     );
   }
 

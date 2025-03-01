@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
 import { useParams, useRouter } from "next/navigation";
-import { FaQuestionCircle } from "react-icons/fa";
+import { FaClipboardCheck } from "react-icons/fa";
 
 const QuizFloatingButton: React.FC = () => {
   const { locale } = useParams() as { locale: string };
@@ -41,12 +40,15 @@ const QuizFloatingButton: React.FC = () => {
     <>
       {/* Floating button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-4 right-4 bg-primaryBlue text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all z-40"
-        aria-label={locale === "en" ? "Take Swedish Inventions Quiz" : "Ta Svenska Uppfinningar Quiz"}
-      >
-        <FaQuestionCircle size={24} />
-      </button>
+  onClick={() => setIsOpen(!isOpen)}
+  className="fixed bottom-4 right-4 bg-primaryBlue text-white rounded-full px-4 py-3 flex items-center justify-center shadow-lg hover:bg-primaryBlue hover:text-white transition-all duration-300 z-40 border border-primaryBlue gap-2 group"
+  aria-label={locale === "en" ? "Take Swedish Inventions Quiz" : "Ta Svenska Uppfinningar Quiz"}
+>
+<FaClipboardCheck size={20} className="group-hover:animate-pulse" />
+  <span className="font-medium text-sm whitespace-nowrap">
+    {locale === "en" ? "Take Quiz" : "Gör Quiz"}
+  </span>
+</button>
 
       {/* Mini promo popup */}
       {isOpen && (
@@ -79,19 +81,19 @@ const QuizFloatingButton: React.FC = () => {
           </div>
 
           {/* Content */}
-          <div className="p-3">
-            <p className="text-gray-700 text-sm mb-3">
-              {locale === "en"
-                ? "Test your knowledge about famous Swedish inventions!"
-                : "Testa dina kunskaper om berömda svenska uppfinningar!"}
-            </p>
-            <button
-              onClick={handleStartQuiz}
-              className="w-full bg-primaryBlue text-white py-2 rounded text-sm font-medium hover:bg-blue-700 transition"
-            >
-              {locale === "en" ? "Start Quiz" : "Starta Quiz"}
-            </button>
-          </div>
+          <div className="p-5">
+  <p className="text-gray-600 text-center text-sm mb-5 leading-relaxed">
+    {locale === "en"
+      ? "Test your knowledge about famous Swedish inventions!"
+      : "Testa dina kunskaper om berömda svenska uppfinningar!"}
+  </p>
+  <button
+    onClick={handleStartQuiz}
+    className="w-full border border-primaryBlue text-primaryBlue py-2.5 rounded-full text-sm font-medium hover:bg-primaryBlue hover:text-white transition-all duration-300"
+  >
+    {locale === "en" ? "Start Quiz" : "Starta Quiz"}
+  </button>
+</div>
         </div>
       )}
     </>
