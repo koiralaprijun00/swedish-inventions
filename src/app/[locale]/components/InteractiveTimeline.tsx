@@ -21,7 +21,7 @@ interface TimelineItem {
   };
   imageSrc: string;
   slug: string;
-  century: string; // Add century property
+  century: string;
 }
 
 const VerticalTimeline: React.FC = () => {
@@ -33,7 +33,7 @@ const VerticalTimeline: React.FC = () => {
 
   // Convert year to century string (e.g., 1742 -> "1700s")
   const getCenturyFromYear = (year: number): string => {
-    // Get the century by taking the first two digits and adding 1 if needed
+    // Get the century by taking the first two digits
     const centuryNumber = Math.floor(year / 100);
     // Convert to format like "1700s"
     return `${centuryNumber}00s`;
@@ -75,13 +75,6 @@ const VerticalTimeline: React.FC = () => {
     
     const validItems = sortedItems.filter(item => item !== null) as TimelineItem[];
     setTimelineData(validItems);
-
-    // Log the items for debugging
-    console.log("Timeline items:", validItems.map(item => ({
-      year: item.year,
-      century: item.century,
-      name: item.name.en
-    })));
   }, []);
 
   const handleNavigateToItem = (slug: string) => {
@@ -90,7 +83,6 @@ const VerticalTimeline: React.FC = () => {
 
   const filterByCentury = (century: string) => {
     setFilterCentury(century);
-    console.log("Filtering by century:", century);
   };
 
   // Filter items based on selected century
@@ -99,28 +91,13 @@ const VerticalTimeline: React.FC = () => {
     : timelineData.filter(item => item.century === filterCentury);
 
   // Get unique centuries from the timeline data
-  const centuries = [
-    "all",
-    ...Array.from(new Set(timelineData.map(item => item.century)))
-      .sort((a, b) => parseInt(a) - parseInt(b))
-  ];
-
-  // Debug: Log filtered items when they change
-  useEffect(() => {
-    console.log("Filtered items:", filteredItems.map(item => ({
-      year: item.year,
-      century: item.century,
-      name: item.name.en
-    })));
-  }, [filteredItems]);
+  const centuries = ["all", ...Array.from(new Set(timelineData.map(item => item.century)))].sort();
 
   return (
     <div className="my-16 px-4 max-w-5xl mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-primaryBlue mb-4">{t("timelineTitle")}</h2>
         <p className="text-gray-600 mb-10 max-w-2xl mx-auto">{t("timelineSubtitle")}</p>
-        <p className="text-gray-600 mb-8  max-w-2xl mx-auto">{t("timelineDescription")}</p>
-        
         
         {/* Century filter buttons - more minimal and modern */}
         <div className="inline-flex flex-wrap justify-center gap-1 p-1 bg-gray-50 rounded-full shadow-sm mb-16">

@@ -3,11 +3,11 @@
 import { useTranslations } from "next-intl"
 import { useParams } from "next/navigation";
 import Head from "next/head"
-import React, { useState } from "react"
+import React, { useState, Suspense } from "react"
 import inventionsData from "../../../src/app/inventionsData.js"
 import InfoBox from "./components/InfoBox";
-import InventionCard from "./components/InventionCard"; // Adjust the path as needed
-import Header from "./components/Header"; // Adjust the path as needed
+import InventionCard from "./components/InventionCard";
+import Header from "./components/Header";
 import Link from "next/link"
 import { useEffect } from "react"
 import { usePathname, useSearchParams } from 'next/navigation';
@@ -42,9 +42,7 @@ function CategoryFilter({
   )
 }
 
-export const dynamic = "force-static" // Ensure static prerendering
-
-export default function Home() {
+function HomeContent() {
   const { locale } = useParams() as { locale: string }
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -155,4 +153,14 @@ export default function Home() {
   )
 }
 
+export const dynamic = "force-static" // Ensure static prerendering
 
+export default function Home() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primaryBlue"></div>
+    </div>}>
+      <HomeContent />
+    </Suspense>
+  )
+}
