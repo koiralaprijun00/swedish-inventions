@@ -32,6 +32,13 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
           >
             {t("home")}
           </Link>
+
+          <Link 
+            href={`/${currentLocale}/timeline`} 
+            className="p-1 md:p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900 focus:border-primaryBlue active:border-primaryBlue"
+          >
+            {t("timeline")}
+          </Link>
           
           <Link 
             href={`/${currentLocale}/about`} 
