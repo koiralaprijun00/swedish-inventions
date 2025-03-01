@@ -39,3 +39,94 @@ header p {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
+
+
+/* ------------------------ TIMELINE ------------------------  */
+
+
+/* Timeline specific styles */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.timeline-item {
+  animation: fadeIn 0.6s ease forwards;
+  opacity: 0;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s; }
+.timeline-item:nth-child(6) { animation-delay: 0.6s; }
+.timeline-item:nth-child(7) { animation-delay: 0.7s; }
+.timeline-item:nth-child(8) { animation-delay: 0.8s; }
+.timeline-item:nth-child(9) { animation-delay: 0.9s; }
+.timeline-item:nth-child(10) { animation-delay: 1s; }
+
+/* Timeline line gradient */
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, #e5e7eb 10%, #e5e7eb 90%, transparent);
+}
+
+/* Modern dot styles */
+.timeline-dot {
+  position: relative;
+}
+
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(59, 130, 246, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.timeline-dot:hover::before,
+.timeline-dot.active::before {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Card hover effects */
+.timeline-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Cenury filter buttons */
+.century-filter-button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.century-filter-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(59, 130, 246, 0.1);
+  transition: height 0.3s ease;
+  z-index: -1;
+}
+
+.century-filter-button:hover::after {
+  height: 100%;
+}
+
+
+/* ------------------------ TIMELINE ------------------------  */
+
