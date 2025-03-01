@@ -86,6 +86,28 @@
             "notFound": "Inlägg hittades inte",
             "notFoundMessage": "Vi kunde inte hitta ett blogginlägg för denna slug.",
             "backToBlog": "Tillbaka till blogg"
+      },
+      "quiz": {
+        "title": "Quiz om Svenska Uppfinningar",
+        "intro": "Testa dina kunskaper om berömda svenska uppfinningar och innovationer!",
+        "description": "Hur väl känner du till Sveriges innovativa historia? Testa dina kunskaper om berömda svenska uppfinningar och innovationer med vårt interaktiva quiz. Utmana dig själv, lär dig intressanta fakta och dela dina resultat med vänner!",
+        "nextButton": "Nästa Fråga",
+        "resultsButton": "Se Resultat",
+        "tryAgainButton": "Försök Igen",
+        "questionCount": "Fråga {current}/{total}",
+        "explanation": "Förklaring:",
+        "results": "Quizresultat",
+        "scoreMessage": "Du fick {score} av {total} poäng!",
+        "perfect": "Grattis! Du är en svensk uppfinningsexpert!",
+        "great": "Bra jobbat! Du vet mycket om svenska uppfinningar!",
+        "good": "Bra försök! Det finns mer att lära om Sveriges fantastiska innovationer.",
+        "shareResults": "Dela dina resultat:",
+        "learnMore": "Lär dig mer om {invention}",
+        "shareText": "Jag fick {score} av {total} poäng på Svenska Uppfinningar Quiz! Testa dina kunskaper du också!",
+        "takeChallengeMessage": "Utmana dina vänner att slå ditt resultat!",
+        "testYourKnowledge": "Testa Dina Kunskaper!",
+        "promoText": "Visste du att Sverige har uppfunnit några av världens viktigaste innovationer? Gör vårt quiz för att upptäcka hur mycket du vet om svensk kreativitet!",
+        "startButton": "Starta Quiz"
       }
     }
   }

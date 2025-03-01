@@ -86,7 +86,29 @@
         "notFound": "Post not found",
         "notFoundMessage": "We couldn’t find a blog post for this slug.",
         "backToBlog": "Back to blog"
-      }
+      },
+      "quiz": {
+      "title": "Swedish Inventions Quiz",
+      "intro": "Test your knowledge about famous Swedish inventions and innovations!",
+      "description": "How well do you know Sweden's innovative history? Test your knowledge about famous Swedish inventions and innovations with our interactive quiz. Challenge yourself, learn interesting facts, and share your results with friends!",
+      "startButton": "Start Quiz",
+      "nextButton": "Next Question",
+      "resultsButton": "See Results",
+      "tryAgainButton": "Try Again",
+      "questionCount": "Question {current}/{total}",
+      "explanation": "Explanation:",
+      "results": "Quiz Results",
+      "scoreMessage": "You scored {score} out of {total}!",
+      "perfect": "Congratulations! You're a Swedish invention expert!",
+      "great": "Great job! You know a lot about Swedish inventions!",
+      "good": "Good try! There's more to learn about Sweden's amazing innovations.",
+      "shareResults": "Share your results:",
+      "learnMore": "Learn more about {invention}",
+      "shareText": "I scored {score} out of {total} on the Swedish Inventions Quiz! Test your knowledge too!",
+      "takeChallengeMessage": "Challenge your friends to beat your score!",
+      "testYourKnowledge": "Test Your Knowledge!",
+      "promoText": "Did you know Sweden has invented some of the world's most important innovations? Take our quiz to discover how much you know about Swedish creativity!"
+    }
     }
   }
 }

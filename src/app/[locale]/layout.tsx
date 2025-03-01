@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import ContactForm from "../ContactForm";
 import Navbar from "../Navbar";
 import Tabs from '../[locale]/components/Tabs'
+import QuizFloatingButton from '../[locale]/components/QuizFloatingButton';
 import Footer from "../Footer";
 import "../styles/globals.css";
 
@@ -42,6 +43,7 @@ export default async function LocaleLayout({
           <ContactForm />
           <Tabs />
           <Footer />
+          <QuizFloatingButton />
         </NextIntlClientProvider>
   );
 }
