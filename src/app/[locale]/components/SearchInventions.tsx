@@ -38,8 +38,9 @@ const SearchInventions: React.FC = () => {
   useEffect(() => {
     const inventions = inventionsData.flatMap(category => 
       category.items.map(item => {
-        // Generate a slug from the English name
-        const slug = item.name.en.replace(/\s+/g, "-").toLowerCase();
+        // Generate a slug for the URL - maintain original capitalization
+        // This matches the format your site expects
+        const slug = encodeURIComponent(item.name.en);
         
         return {
           id: item.id,
@@ -155,7 +156,7 @@ const SearchInventions: React.FC = () => {
       
       {/* Search Results Dropdown */}
       {showResults && searchTerm && (
-        <div className="absolute mt-2 w-full bg-white rounded-lg shadow-lg max-h-96 overflow-y-auto z-50">
+        <div className="absolute p-4 mt-2 w-[400px] left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-lg max-h-96 overflow-y-auto z-50 border-2 border-primaryBlue">
           {isSearching ? (
             <div className="py-4 px-4 text-center text-gray-500">
               <div className="animate-spin inline-block w-5 h-5 border-2 border-gray-300 border-t-primaryBlue rounded-full mr-2"></div>
@@ -186,16 +187,13 @@ const SearchInventions: React.FC = () => {
                           className="object-cover"
                         />
                       </div>
-                      <div className="flex-1 min-w-0">
+                      <div className="flex-1 w-[30rem]">
                         <h4 className="text-sm font-medium text-gray-900 truncate">
                           {item.name[locale]}
                         </h4>
                         <p className="text-xs text-gray-500 truncate">
                           {item.inventorName}
                         </p>
-                      </div>
-                      <div className="text-xs text-primaryBlue bg-blue-50 px-2 py-0.5 rounded-full">
-                        {t(`categories.${item.category}`)}
                       </div>
                     </button>
                   </li>

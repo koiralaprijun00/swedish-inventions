@@ -91,7 +91,11 @@ const VerticalTimeline: React.FC = () => {
     : timelineData.filter(item => item.century === filterCentury);
 
   // Get unique centuries from the timeline data
-  const centuries = ["all", ...Array.from(new Set(timelineData.map(item => item.century)))].sort();
+  const centuries = [
+    "all",
+    ...Array.from(new Set(timelineData.map(item => item.century)))
+      .sort((a, b) => parseInt(a) - parseInt(b))
+  ];
 
   return (
     <div className="my-16 px-4 max-w-5xl mx-auto">
