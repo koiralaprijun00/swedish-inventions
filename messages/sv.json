@@ -32,6 +32,13 @@
     "yourMessage": "Ditt meddelande",
     "inventionNotFound": "Uppfinning hittades inte",
     "blog": "Blogg",
+    "searchPlaceholder": "Sök uppfinningar, uppfinnare...",
+"searching": "Söker",
+"noResultsFound": "Inga resultat hittades",
+"resultsFound": "{count} resultat hittades",
+"closeResults": "Stäng",
+"search": "Sök",
+"searchInventions": "Sök Svenska Uppfinningar",
     "categories": {
       "all": "Alla",
       "foodBeverage": "Mat & Dryck",
