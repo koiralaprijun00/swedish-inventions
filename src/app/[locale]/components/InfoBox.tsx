@@ -6,55 +6,65 @@ import Image from "next/image"
 
 interface InfoBoxProps {
   name: string;
-  transparentImage: string;
+  transparentImage?: string;
+  fallbackImage?: string;
   title: string;
-  description: string;
-  tags: string[];
+  headline?: string;
+  categoryLabel?: string;
   inventorName?: string;
   locale: string;
   isAboveFold?: boolean;
 }
 
-export default function InfoBox({ name, transparentImage, title, inventorName, locale, isAboveFold = true }: InfoBoxProps) {
+export default function InfoBox({
+  name,
+  transparentImage,
+  fallbackImage,
+  title,
+  headline,
+  categoryLabel,
+  inventorName,
+  locale,
+  isAboveFold = true
+}: InfoBoxProps) {
   const t = useTranslations("Translations")
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
+  const imageSrc = transparentImage || fallbackImage || ""
+  const hasImage = Boolean(imageSrc)
 
   return (
     <Link href={detailPageURL} locale={locale} className="group block">
-      <article className="border border-border bg-background hover:border-accent transition-all duration-200 h-full">
-        <div className="grid grid-12 h-full">
-          {/* Content */}
-          <div className="col-span-8 p-4">
-            <div className="space-y-2 h-full flex flex-col">
-              <div className="space-y-1">
-                <div className="text-xs text-muted uppercase tracking-wide">
-                  {inventorName || t("unknownInventor")}
-                </div>
-                
-                <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-tight">
-                  {title}
-                </h3>
-              </div>
-              
-              <div className="flex-1 flex items-center">
-                <div className="text-xs text-secondary group-hover:text-accent transition-colors">
-                  {t("details")} →
-                </div>
-              </div>
-            </div>
+      <article className="swiss-feature-card">
+        <div className="swiss-feature-card__body">
+          <header className="swiss-feature-card__header">
+            <span className="swiss-feature-card__flag">{t("featuredToday")}</span>
+            {categoryLabel && <span className="swiss-feature-card__meta">{categoryLabel}</span>}
+          </header>
+
+          <div className="swiss-feature-card__content">
+            <p className="swiss-feature-card__inventor">
+              {inventorName || t("unknownInventor")}
+            </p>
+            <h3 className="swiss-feature-card__title">{title}</h3>
+            {headline && <p className="swiss-feature-card__headline">{headline}</p>}
           </div>
-          
-          {/* Image */}
-          <div className="col-span-4 border-l border-border">
-            <div className="aspect-square relative p-2">
+
+          <span className="swiss-feature-card__cta">{t("details")} →</span>
+        </div>
+
+        <div className="swiss-feature-card__image">
+          <div className="swiss-feature-card__image-inner">
+            {hasImage ? (
               <Image
                 priority={isAboveFold}
-                src={transparentImage}
+                src={imageSrc}
                 alt={title}
                 fill
                 className="object-contain"
               />
-            </div>
+            ) : (
+              <span className="swiss-feature-card__image-placeholder" aria-hidden="true" />
+            )}
           </div>
         </div>
       </article>

@@ -24,20 +24,20 @@ function CategoryFilter({
   onSelectCategory: (key: string) => void
 }) {
   return (
-    <div className="flex flex-wrap gap-2 mb-12">
-      {categories.map(cat =>
-       <button
-       key={cat.key}
-       onClick={() => onSelectCategory(cat.key)}
-       className={`px-4 py-2 text-sm font-medium transition-colors ${
-         selectedCategory === cat.key
-           ? "bg-primary text-background"
-           : "border border-border text-primary hover:bg-muted"
-       }`}
-     >
-       {cat.label}
-     </button>     
-      )}
+    <div className="swiss-filter">
+      {categories.map((cat, index) => (
+        <button
+          type="button"
+          key={cat.key}
+          onClick={() => onSelectCategory(cat.key)}
+          className={`swiss-filter__item ${
+            selectedCategory === cat.key ? "swiss-filter__item--active" : ""
+          }`}
+        >
+          <span className="swiss-filter__number">{String(index + 1).padStart(2, "0")}</span>
+          <span className="swiss-filter__label">{cat.label}</span>
+        </button>
+      ))}
     </div>
   )
 }
@@ -51,7 +51,8 @@ function HomeContent() {
 
   // *** Construct the canonical URL ***
   const baseUrl = locale === "en" ? "https://swedishinventions.com" : `https://swedishinventions.com/${locale}`;
-  const canonicalUrl = searchParams ? `${baseUrl}?${searchParams}` : baseUrl;
+  const searchQuery = searchParams?.toString()
+  const canonicalUrl = searchQuery ? `${baseUrl}?${searchQuery}` : baseUrl;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -74,18 +75,42 @@ function HomeContent() {
     { key: "digitalTechnology", label: t("categories.digitalTechnology") },
     { key: "gaming", label: t("categories.gaming") },
     { key: "scienceInnovation", label: t("categories.scienceInnovation") },
-    { key: "artsCulture", label: t("categories.artsCulture") },
-    
+    { key: "artsCulture", label: t("categories.artsCulture") }
   ]
 
   const normalize = (str: string) => str.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")
 
   const filteredData = selectedCategory === "all" ? inventionsData : inventionsData.filter(cat => normalize(cat.category) === normalize(selectedCategory))
 
-  // Localize category names (assuming you have translations for them)
   const getLocalizedCategory = (category: string) => {
     return t(`categories.${category}`)
   }
+
+  const getLocalizedCopy = (value: any) => {
+    if (!value) return ""
+    if (typeof value === "string") return value
+    if (typeof value === "object") {
+      return value[locale] || value.en || value.sv || ""
+    }
+    return ""
+  }
+
+  const featuredCandidates = inventionsData.flatMap(category =>
+    category.items.map(item => ({
+      ...item,
+      category: category.category
+    }))
+  )
+
+  const today = new Date()
+  const startOfYear = new Date(today.getFullYear(), 0, 1)
+  const dayIndex = Math.floor((today.getTime() - startOfYear.getTime()) / (1000 * 60 * 60 * 24))
+  const featuredInvention = featuredCandidates.length
+    ? featuredCandidates[dayIndex % featuredCandidates.length]
+    : null
+  const featuredName = featuredInvention ? getLocalizedName(featuredInvention) : ""
+  const featuredHeadline = getLocalizedCopy(featuredInvention?.oneLineHeading)
+  const featuredCategoryLabel = featuredInvention?.category ? getLocalizedCategory(featuredInvention.category) : ""
   return (
     <>
     <Head>
@@ -94,89 +119,69 @@ function HomeContent() {
     
     <Header />
 
-    <main className="container py-8 w-full">
-      {/* Featured Section */}
-      <section className="space-section">
-        <div className="grid grid-12">
-          <div className="col-span-6">
-            <div className="section-number">02</div>
-            <h2 className="text-2xl font-bold text-primary mb-3">
-              {t("categoryTitle")}
-            </h2>
-            <p className="text-base text-secondary leading-relaxed">
-              {t("categorySubtitle")}
-            </p>
+    <main className="swiss-main">
+      <section className="swiss-section container">
+        <div className="swiss-grid swiss-section__heading">
+          <div className="col-span-12 md:col-span-4">
+            <span className="swiss-section__label">Featured</span>
+            <h2 className="swiss-section__title">{t("categoryTitle")}</h2>
           </div>
-          <div className="col-span-6">
-            <div className="divider-line"></div>
-            <div className="space-y-2">
-              <div className="text-xs text-muted uppercase tracking-wide">
-                Featured Inventions
-              </div>
-              <div className="text-sm text-secondary">
-                Discover the most influential Swedish innovations that shaped our world
-              </div>
+          <div className="col-span-12 md:col-span-8">
+            <div className="swiss-section__description">
+              <p>{t("categorySubtitle")}</p>
+              <p>Discover the most influential Swedish innovations that shaped our world.</p>
             </div>
           </div>
         </div>
-        
-        {/* Featured Inventions Grid */}
-        <div className="grid grid-12 mt-6">
-          {inventionsData.slice(0, 3).map((category, idx) => (
-            <div key={idx} className="col-span-4">
+
+        <div className="swiss-featured-grid">
+          {featuredInvention && (
+            <div className="swiss-featured-grid__item">
               <InfoBox
-                name={getLocalizedName(category.items[0])}
-                transparentImage={category.items[0].transparentImage || ""}
-                title={getLocalizedName(category.items[0])}
-                description={
-                  typeof category.items[0].description === "string"
-                    ? category.items[0].description
-                    : ""
-                }
-                inventorName={category.items[0].inventorName}
-                tags={[category.category, category.items[0].inventorName || "Unknown"]}
+                name={featuredName}
+                transparentImage={featuredInvention?.transparentImage}
+                fallbackImage={featuredInvention?.imageSrc}
+                title={featuredName}
+                headline={featuredHeadline}
+                categoryLabel={featuredCategoryLabel}
+                inventorName={featuredInvention?.inventorName}
                 locale={locale}
               />
             </div>
-          ))}
+          )}
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="space-large">
-        <div className="grid grid-12">
-          <div className="col-span-3">
-            <div className="section-number">03</div>
-            <h3 className="text-lg font-semibold text-primary mb-2">
-              Categories
-            </h3>
+      <section className="swiss-section container">
+        <div className="swiss-grid swiss-section__heading">
+          <div className="col-span-12 md:col-span-4">
+            <span className="swiss-section__label">Catalogue</span>
+            <h3 className="swiss-section__subtitle">Categories</h3>
           </div>
-          <div className="col-span-9">
-            <CategoryFilter categories={categories} selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
+          <div className="col-span-12 md:col-span-8">
+            <div className="swiss-filter-wrapper">
+              <CategoryFilter categories={categories} selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Inventions by Category */}
-      <section className="space-section">
-        <div className="space-y-8">
-          {filteredData.map((category, categoryIdx) =>
-            <div key={category.category}>
-              <div className="grid grid-12 mb-4">
-                <div className="col-span-1">
-                  <div className="numbered-element">{categoryIdx + 1}</div>
+      <section className="swiss-section container">
+        <div className="swiss-stack">
+          {filteredData.map((category, categoryIdx) => (
+            <div key={category.category} className="swiss-category-block">
+              <div className="swiss-grid swiss-category-block__header">
+                <div className="col-span-12 md:col-span-3">
+                  <span className="swiss-category-block__index">{String(categoryIdx + 1).padStart(2, "0")}</span>
+                  <span className="swiss-category-block__name">{getLocalizedCategory(category.category)}</span>
                 </div>
-                <div className="col-span-11">
-                  <h2 className="text-xl font-semibold text-primary mb-1">
-                    {getLocalizedCategory(category.category)}
-                  </h2>
-                  <div className="divider-line"></div>
+                <div className="col-span-12 md:col-span-9">
+                  <div className="swiss-divider" aria-hidden="true" />
                 </div>
               </div>
-              
-              {/* Multi-column responsive grid for inventions */}
-              <div className="inventions-grid">
-                {category.items.map(item =>
+
+              <div className="swiss-catalog-grid">
+                {category.items.map(item => (
                   <InventionCard
                     key={getLocalizedName(item)}
                     name={getLocalizedName(item)}
@@ -185,10 +190,10 @@ function HomeContent() {
                     year={item.year}
                     locale={locale}
                   />
-                )}
+                ))}
               </div>
             </div>
-          )}
+          ))}
         </div>
       </section>
     </main>

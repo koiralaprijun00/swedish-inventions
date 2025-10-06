@@ -19,49 +19,32 @@ export default function InventionCard({ name, imageSrc, inventorName, year, loca
 
   return (
     <Link href={detailPageURL} locale={locale} className="group block">
-      <article className="border border-border bg-background hover:border-accent transition-all duration-200 h-full">
-        <div className="flex flex-col h-full">
-          {/* Image */}
-          <div className="aspect-square relative border-b border-border">
-            <Image
-              src={imageSrc}
-              alt={name}
-              fill
-              className="object-cover"
-            />
-          </div>
-          
-          {/* Text Content */}
-          <div className="p-3 flex-1 flex flex-col">
-            <div className="space-y-2 flex-1">
-              <div className="flex items-start justify-between">
-                <h3 className="text-sm font-semibold text-primary group-hover:text-accent transition-colors leading-tight">
-                  {name}
-                </h3>
-                <div className="text-xs text-muted font-mono ml-2 flex-shrink-0">
-                  {year}
-                </div>
-              </div>
-              
-              {inventorName && (
-                <div className="space-y-1">
-                  <div className="text-xs text-muted uppercase tracking-wide">
-                    Inventor
-                  </div>
-                  <p className="text-xs text-secondary">
-                    {inventorName}
-                  </p>
-                </div>
-              )}
-            </div>
-            
-            <div className="pt-2 mt-auto">
-              <div className="text-xs text-muted group-hover:text-accent transition-colors">
-                View details →
-              </div>
-            </div>
-          </div>
+      <article className="swiss-tile">
+        <header className="swiss-tile__header">
+          <span className="swiss-tile__eyebrow">{year || "—"}</span>
+          <span className="swiss-tile__arrow" aria-hidden="true">↗</span>
+        </header>
+
+        <div className="swiss-tile__image">
+          <Image
+            src={imageSrc}
+            alt={name}
+            fill
+            className="object-cover"
+          />
         </div>
+
+        <div className="swiss-tile__body">
+          <h3 className="swiss-tile__title">{name}</h3>
+          {inventorName && (
+            <p className="swiss-tile__meta">
+              <span>Inventor</span>
+              <span>{inventorName}</span>
+            </p>
+          )}
+        </div>
+
+        <footer className="swiss-tile__footer">{t("details")} →</footer>
       </article>
     </Link>
   )
