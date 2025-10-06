@@ -51,7 +51,8 @@ function HomeContent() {
 
   // *** Construct the canonical URL ***
   const baseUrl = locale === "en" ? "https://swedishinventions.com" : `https://swedishinventions.com/${locale}`;
-  const canonicalUrl = searchParams ? `${baseUrl}?${searchParams}` : baseUrl;
+  const searchQuery = searchParams?.toString()
+  const canonicalUrl = searchQuery ? `${baseUrl}?${searchQuery}` : baseUrl;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -74,18 +75,42 @@ function HomeContent() {
     { key: "digitalTechnology", label: t("categories.digitalTechnology") },
     { key: "gaming", label: t("categories.gaming") },
     { key: "scienceInnovation", label: t("categories.scienceInnovation") },
-    { key: "artsCulture", label: t("categories.artsCulture") },
-    
+    { key: "artsCulture", label: t("categories.artsCulture") }
   ]
 
   const normalize = (str: string) => str.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")
 
   const filteredData = selectedCategory === "all" ? inventionsData : inventionsData.filter(cat => normalize(cat.category) === normalize(selectedCategory))
 
-  // Localize category names (assuming you have translations for them)
   const getLocalizedCategory = (category: string) => {
     return t(`categories.${category}`)
   }
+
+  const getLocalizedCopy = (value: any) => {
+    if (!value) return ""
+    if (typeof value === "string") return value
+    if (typeof value === "object") {
+      return value[locale] || value.en || value.sv || ""
+    }
+    return ""
+  }
+
+  const featuredCandidates = inventionsData.flatMap(category =>
+    category.items.map(item => ({
+      ...item,
+      category: category.category
+    }))
+  )
+
+  const today = new Date()
+  const startOfYear = new Date(today.getFullYear(), 0, 1)
+  const dayIndex = Math.floor((today.getTime() - startOfYear.getTime()) / (1000 * 60 * 60 * 24))
+  const featuredInvention = featuredCandidates.length
+    ? featuredCandidates[dayIndex % featuredCandidates.length]
+    : null
+  const featuredName = featuredInvention ? getLocalizedName(featuredInvention) : ""
+  const featuredHeadline = getLocalizedCopy(featuredInvention?.oneLineHeading)
+  const featuredCategoryLabel = featuredInvention?.category ? getLocalizedCategory(featuredInvention.category) : ""
   return (
     <>
     <Head>

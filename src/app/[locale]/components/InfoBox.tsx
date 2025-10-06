@@ -6,18 +6,31 @@ import Image from "next/image"
 
 interface InfoBoxProps {
   name: string;
-  transparentImage: string;
+  transparentImage?: string;
+  fallbackImage?: string;
   title: string;
-  description: string;
-  tags: string[];
+  headline?: string;
+  categoryLabel?: string;
   inventorName?: string;
   locale: string;
   isAboveFold?: boolean;
 }
 
-export default function InfoBox({ name, transparentImage, title, inventorName, locale, isAboveFold = true }: InfoBoxProps) {
+export default function InfoBox({
+  name,
+  transparentImage,
+  fallbackImage,
+  title,
+  headline,
+  categoryLabel,
+  inventorName,
+  locale,
+  isAboveFold = true
+}: InfoBoxProps) {
   const t = useTranslations("Translations")
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
+  const imageSrc = transparentImage || fallbackImage || ""
+  const hasImage = Boolean(imageSrc)
 
   return (
     <Link href={detailPageURL} locale={locale} className="group block">
