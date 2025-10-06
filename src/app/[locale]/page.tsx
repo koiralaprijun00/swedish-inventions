@@ -135,20 +135,22 @@ function HomeContent() {
         </div>
 
         <div className="swiss-featured-grid">
-          {featuredInvention && (
-            <div className="swiss-featured-grid__item">
-              <InfoBox
-                name={featuredName}
-                transparentImage={featuredInvention?.transparentImage}
-                fallbackImage={featuredInvention?.imageSrc}
-                title={featuredName}
-                headline={featuredHeadline}
-                categoryLabel={featuredCategoryLabel}
-                inventorName={featuredInvention?.inventorName}
-                locale={locale}
-              />
-            </div>
-          )}
+          {inventionsData.slice(0, 3).map((category, idx) => (
+            <InfoBox
+              key={`${category.category}-${idx}`}
+              name={getLocalizedName(category.items[0])}
+              transparentImage={category.items[0].transparentImage || ""}
+              title={getLocalizedName(category.items[0])}
+              description={
+                typeof category.items[0].description === "string"
+                  ? category.items[0].description
+                  : ""
+              }
+              inventorName={category.items[0].inventorName}
+              tags={[category.category, category.items[0].inventorName || "Unknown"]}
+              locale={locale}
+            />
+          ))}
         </div>
       </section>
 
@@ -159,9 +161,7 @@ function HomeContent() {
             <h3 className="swiss-section__subtitle">Categories</h3>
           </div>
           <div className="col-span-12 md:col-span-8">
-            <div className="swiss-filter-wrapper">
-              <CategoryFilter categories={categories} selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
-            </div>
+            <CategoryFilter categories={categories} selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
           </div>
         </div>
       </section>

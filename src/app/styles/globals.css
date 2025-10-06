@@ -389,109 +389,64 @@ button:focus {
 .swiss-featured-grid {
   margin-top: clamp(2rem, 4vw, 3.5rem);
   display: grid;
-  gap: clamp(1.75rem, 3vw, 3rem);
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  align-items: stretch;
-}
-
-.swiss-featured-grid__item {
-  grid-column: 1 / -1;
-}
-
-@media (min-width: 1200px) {
-  .swiss-featured-grid__item {
-    grid-column: span 10;
-  }
+  gap: clamp(1.5rem, 2.25vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .swiss-feature-card {
   border: 1px solid var(--swiss-border);
   background: #ffffff;
   display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  min-height: clamp(320px, 38vw, 420px);
-  transition: transform 0.25s ease, border 0.25s ease, box-shadow 0.25s ease;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  min-height: 260px;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border 0.25s ease;
   overflow: hidden;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .swiss-feature-card {
     grid-template-columns: 1fr;
   }
 }
 
 .swiss-feature-card__body {
-  padding: clamp(2rem, 3vw, 3rem);
+  padding: clamp(1.5rem, 2.5vw, 2.5rem);
   display: flex;
   flex-direction: column;
-  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  gap: clamp(1.2rem, 2vw, 2rem);
 }
 
-.swiss-feature-card__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-
-.swiss-feature-card__flag {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.34em;
-  color: var(--swiss-accent);
-}
-
-.swiss-feature-card__meta {
-  font-size: 0.65rem;
+.swiss-feature-card__label {
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.28em;
-  color: rgba(15, 15, 15, 0.5);
-}
-
-.swiss-feature-card__content {
-  display: grid;
-  gap: clamp(0.85rem, 1.6vw, 1.4rem);
-}
-
-.swiss-feature-card__inventor {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  color: rgba(15, 15, 15, 0.55);
+  color: rgba(15, 15, 15, 0.45);
 }
 
 .swiss-feature-card__title {
-  font-size: clamp(2.4rem, 4.6vw, 3.75rem);
-  font-weight: 700;
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 0.95;
-}
-
-.swiss-feature-card__headline {
-  font-size: clamp(1rem, 1.6vw, 1.35rem);
-  line-height: 1.6;
-  color: rgba(15, 15, 15, 0.7);
-  max-width: 50ch;
+  letter-spacing: -0.015em;
 }
 
 .swiss-feature-card__cta {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.32em;
-  color: rgba(15, 15, 15, 0.65);
+  color: rgba(15, 15, 15, 0.6);
   margin-top: auto;
 }
 
 .swiss-feature-card__image {
   border-left: 1px solid var(--swiss-border);
-  background: linear-gradient(135deg, rgba(15, 15, 15, 0.04), rgba(15, 15, 15, 0));
+  background: var(--swiss-muted);
   display: flex;
   align-items: stretch;
   justify-content: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .swiss-feature-card__image {
     border-left: none;
     border-top: 1px solid var(--swiss-border);
@@ -500,9 +455,8 @@ button:focus {
 
 .swiss-feature-card__image-inner {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   width: 100%;
-  padding: clamp(1.5rem, 3vw, 3rem);
 }
 
 .swiss-feature-card__image-inner img {
@@ -510,37 +464,22 @@ button:focus {
   mix-blend-mode: multiply;
 }
 
-.swiss-feature-card__image-placeholder {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(15, 15, 15, 0.08),
-    rgba(15, 15, 15, 0.08) 12px,
-    transparent 12px,
-    transparent 24px
-  );
-}
-
 .swiss-feature-card:hover {
-  transform: translateY(-10px);
-  border-color: var(--swiss-accent);
-  box-shadow: 0 24px 40px rgba(15, 15, 15, 0.12);
+  transform: translateY(-8px);
+  background: #0f0f0f;
+  color: #ffffff;
+  border-color: #0f0f0f;
 }
 
-.swiss-feature-card:hover .swiss-feature-card__flag {
-  color: var(--swiss-accent);
+.swiss-feature-card:hover .swiss-feature-card__label,
+.swiss-feature-card:hover .swiss-feature-card__cta {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .swiss-filter {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-}
-
-.swiss-filter-wrapper {
-  padding-block: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .swiss-filter__item {
@@ -623,7 +562,7 @@ button:focus {
   padding: clamp(1.25rem, 2.25vw, 1.85rem);
   background: rgba(255, 255, 255, 0.92);
   min-height: 100%;
-  transition: transform 0.25s ease, background 0.25s ease, border 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, background 0.25s ease, border 0.25s ease, color 0.25s ease;
 }
 
 .swiss-tile__header {
@@ -689,15 +628,15 @@ button:focus {
 
 .swiss-tile:hover {
   transform: translateY(-6px);
-  background: #ffffff;
-  border-color: rgba(15, 15, 15, 0.45);
-  box-shadow: 0 18px 30px rgba(15, 15, 15, 0.1);
+  background: #0f0f0f;
+  color: #ffffff;
+  border-color: #0f0f0f;
 }
 
 .swiss-tile:hover .swiss-tile__header,
 .swiss-tile:hover .swiss-tile__meta,
 .swiss-tile:hover .swiss-tile__footer {
-  color: rgba(15, 15, 15, 0.65);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Utility palette retained for other sections */
