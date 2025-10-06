@@ -24,15 +24,15 @@ function CategoryFilter({
   onSelectCategory: (key: string) => void
 }) {
   return (
-    <div className="flex flex-wrap gap-4 mt-8 mb-8">
+    <div className="flex flex-wrap gap-2 mb-12">
       {categories.map(cat =>
        <button
        key={cat.key}
        onClick={() => onSelectCategory(cat.key)}
-       className={`cursor-pointer outline-none border-0 rounded-[6px] px-6 py-2 text-[0.9rem] transition-colors duration-200 ease-in-out ${
+       className={`px-4 py-2 text-sm font-medium transition-colors ${
          selectedCategory === cat.key
-           ? "bg-primaryBlue text-white"
-           : "bg-[#f1f1f1] text-[#0f3a56] hover:bg-primaryBlue hover:text-white"
+           ? "bg-primary text-background"
+           : "border border-border text-primary hover:bg-muted"
        }`}
      >
        {cat.label}
@@ -90,64 +90,108 @@ function HomeContent() {
     <>
     <Head>
         <Link rel="canonical" href={canonicalUrl} key="canonical" />
-        {/* other head elements */}
       </Head>
-    <div className="mt-2 md:mt-12">
+    
     <Header />
 
-      <div>
-        <div className="flex justify-start gap-2 min-h-[50px]">
-          <h2 className="text-2xl font-bold text-primaryBlue">
-            {t("categoryTitle")}
-          </h2>
-          <h2 className="text-2xl text-gray-400">
-            {t("categorySubtitle")}
-          </h2>
-        </div>
-        {/* Info Boxes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center sm:justify-items-start">
-        {inventionsData.slice(0, 3).map((category, idx) => (
-  <InfoBox
-    key={idx}
-    name={getLocalizedName(category.items[0])}
-    transparentImage={category.items[0].transparentImage || ""}
-    title={getLocalizedName(category.items[0])}
-    description={
-      typeof category.items[0].description === "string"
-        ? category.items[0].description
-        : ""
-    }
-    inventorName={category.items[0].inventorName}
-    tags={[category.category, category.items[0].inventorName || "Unknown"]}
-    locale={locale}
-  />
-))}
-        </div>
-      </div>
-
-      <CategoryFilter categories={categories} selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
-
-      {filteredData.map(category =>
-        <div key={category.category} className="">
-          <h2 className="text-xl font-bold mb-1 mt-8">
-            {getLocalizedCategory(category.category)} {/* Localized category */}
-          </h2>
-          <div className="flex gap-4 flex-wrap w-full">
-            {category.items.map(item =>
-              <div key={getLocalizedName(item)} className="w-full md:w-[350px]"> {/* Use a key */}
-              <InventionCard
-                key={getLocalizedName(item)} // Use localized name as a key
-                name={getLocalizedName(item)} // Pass localized name
-                imageSrc={item.imageSrc}
-                inventorName={item.inventorName}
-                locale={locale}
-              />
+    <main className="container py-8 w-full">
+      {/* Featured Section */}
+      <section className="space-section">
+        <div className="grid grid-12">
+          <div className="col-span-6">
+            <div className="section-number">02</div>
+            <h2 className="text-2xl font-bold text-primary mb-3">
+              {t("categoryTitle")}
+            </h2>
+            <p className="text-base text-secondary leading-relaxed">
+              {t("categorySubtitle")}
+            </p>
+          </div>
+          <div className="col-span-6">
+            <div className="divider-line"></div>
+            <div className="space-y-2">
+              <div className="text-xs text-muted uppercase tracking-wide">
+                Featured Inventions
               </div>
-            )}
+              <div className="text-sm text-secondary">
+                Discover the most influential Swedish innovations that shaped our world
+              </div>
+            </div>
           </div>
         </div>
-      )}
-    </div>
+        
+        {/* Featured Inventions Grid */}
+        <div className="grid grid-12 mt-6">
+          {inventionsData.slice(0, 3).map((category, idx) => (
+            <div key={idx} className="col-span-4">
+              <InfoBox
+                name={getLocalizedName(category.items[0])}
+                transparentImage={category.items[0].transparentImage || ""}
+                title={getLocalizedName(category.items[0])}
+                description={
+                  typeof category.items[0].description === "string"
+                    ? category.items[0].description
+                    : ""
+                }
+                inventorName={category.items[0].inventorName}
+                tags={[category.category, category.items[0].inventorName || "Unknown"]}
+                locale={locale}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Category Filter */}
+      <section className="space-large">
+        <div className="grid grid-12">
+          <div className="col-span-3">
+            <div className="section-number">03</div>
+            <h3 className="text-lg font-semibold text-primary mb-2">
+              Categories
+            </h3>
+          </div>
+          <div className="col-span-9">
+            <CategoryFilter categories={categories} selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
+          </div>
+        </div>
+      </section>
+
+      {/* Inventions by Category */}
+      <section className="space-section">
+        <div className="space-y-8">
+          {filteredData.map((category, categoryIdx) =>
+            <div key={category.category}>
+              <div className="grid grid-12 mb-4">
+                <div className="col-span-1">
+                  <div className="numbered-element">{categoryIdx + 1}</div>
+                </div>
+                <div className="col-span-11">
+                  <h2 className="text-xl font-semibold text-primary mb-1">
+                    {getLocalizedCategory(category.category)}
+                  </h2>
+                  <div className="divider-line"></div>
+                </div>
+              </div>
+              
+              {/* Multi-column responsive grid for inventions */}
+              <div className="inventions-grid">
+                {category.items.map(item =>
+                  <InventionCard
+                    key={getLocalizedName(item)}
+                    name={getLocalizedName(item)}
+                    imageSrc={item.imageSrc}
+                    inventorName={item.inventorName}
+                    year={item.year}
+                    locale={locale}
+                  />
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    </main>
     
     </>
   )

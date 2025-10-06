@@ -12,7 +12,7 @@ interface InfoBoxProps {
   tags: string[];
   inventorName?: string;
   locale: string;
-  isAboveFold?: boolean; // New prop
+  isAboveFold?: boolean;
 }
 
 export default function InfoBox({ name, transparentImage, title, inventorName, locale, isAboveFold = true }: InfoBoxProps) {
@@ -20,36 +20,44 @@ export default function InfoBox({ name, transparentImage, title, inventorName, l
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
 
   return (
-    <div className="px-4 pt-4 w-full max-w-[600px] rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-500 flex flex-col mb-4 sm:px-6 sm:pt-6 sm:mb-6">
-      <h4 className="text-gray-700 text-xs sm:text-sm md:text-base">
-        {inventorName || t("unknownInventor")}
-      </h4>
-      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-3">
-        {title}
-      </h3>
-      <div className="image-container overflow-hidden rounded-lg">
-      <Image
-  priority={isAboveFold}
-  src={transparentImage}
-  alt={title}
-  width={160} // Set your desired width
-  height={200} // Remove explicit height
-  style={{ width: "150px", height: "auto" }}
-  className="mx-auto"
-/>
-</div>
-      <div className="mt-3 sm:mt-4 mb-4 sm:mb-6 mr-4 flex justify-end">
-        <Link
-          href={detailPageURL}
-          locale={locale}
-          className="inline-flex items-center px-3 py-1 text-gray-700 text-xs sm:text-sm md:text-base sm:px-4 sm:py-2 rounded-lg bg-gray-200 hover:bg-primaryBlue hover:text-white transition-colors"
-        >
-          <span>
-            {t("details")}
-          </span>
-          <span className="ml-1">+</span>
-        </Link>
-    </div>
-    </div>
+    <Link href={detailPageURL} locale={locale} className="group block">
+      <article className="border border-border bg-background hover:border-accent transition-all duration-200 h-full">
+        <div className="grid grid-12 h-full">
+          {/* Content */}
+          <div className="col-span-8 p-4">
+            <div className="space-y-2 h-full flex flex-col">
+              <div className="space-y-1">
+                <div className="text-xs text-muted uppercase tracking-wide">
+                  {inventorName || t("unknownInventor")}
+                </div>
+                
+                <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-tight">
+                  {title}
+                </h3>
+              </div>
+              
+              <div className="flex-1 flex items-center">
+                <div className="text-xs text-secondary group-hover:text-accent transition-colors">
+                  {t("details")} →
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Image */}
+          <div className="col-span-4 border-l border-border">
+            <div className="aspect-square relative p-2">
+              <Image
+                priority={isAboveFold}
+                src={transparentImage}
+                alt={title}
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </article>
+    </Link>
   )
 }

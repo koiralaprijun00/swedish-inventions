@@ -7,27 +7,45 @@ const Header = memo(function Header() {
   const t = useTranslations("Translations")
 
   return (
-    <header className="text-start mb-24 w-full max-w-5xl text-primaryBlue">
-    <div className="py-2 md:py-8 text-left">
-  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
-    {t("title")}{" "}
-    <span
-      className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#005293] to-[#fecb00]"
-    >
-      {t("inventions")}
-    </span>{" "}
-    {t("and")}{" "}
-    <span
-      className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#005293] to-[#fecb00]"
-    >
-      {t("innovations")}
-    </span>
-  </h1>
-</div>
-
-      <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed md:leading-loose">
-        {t("headerText")} <span className="bg-amber-300 p-1 md:p-2 text-primaryBlue font-bold leading-relaxed md:leading-loose">{t("peopleOfSweden")}</span>
-      </p>
+    <header className="container py-8 w-full">
+      <div className="grid grid-12">
+        <div className="col-span-8">
+          <div className="section-number">01</div>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 leading-tight">
+            {t("title")}{" "}
+            <span className="text-accent">
+              {t("inventions")}
+            </span>{" "}
+            {t("and")}{" "}
+            <span className="text-accent">
+              {t("innovations")}
+            </span>
+          </h1>
+        </div>
+        
+        <div className="col-span-4">
+          <div className="space-y-3">
+            <div className="divider-line"></div>
+            <p className="text-base text-secondary leading-relaxed">
+              {t("headerText")}{" "}
+              <span className="font-semibold text-primary">
+                {t("peopleOfSweden")}
+              </span>
+            </p>
+            <div className="flex space-x-4">
+              <div className="text-xs text-muted uppercase tracking-wide">
+                Discover
+              </div>
+              <div className="text-xs text-muted uppercase tracking-wide">
+                Explore
+              </div>
+              <div className="text-xs text-muted uppercase tracking-wide">
+                Learn
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   )
 })

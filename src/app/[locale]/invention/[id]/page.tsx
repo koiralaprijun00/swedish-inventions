@@ -74,53 +74,97 @@ export default function InventionPage() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row justify-between p-4 gap-2 md:gap-12">
-      <div className="invention-page-content w-full md:w-4/5 h-auto order-2 md:order-1">
-        <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center mb-8">
-          <h1 className="text-md md:text-4xl pr-2 md:pr-0 md:text-4xl w-full md:w-3/4 mt-6 font-bold text-primaryBlue order-2 md:order-1 leading-[1.5]">
-            {invention.oneLineHeading[locale]}
-          </h1>
-          {currentUrl && (
-            <div className="mt-4 order-2 md:order-1">
-              <p className="text-gray-700 font-semibold mb-1 hidden md:block">
-                {t("share")}
-              </p>
-              <SocialShare url={currentUrl} title={invention.name[locale]} />
+    <div className="container py-8 w-full">
+      <div className="grid grid-12">
+        {/* Main Content */}
+        <div className="col-span-8">
+          <header className="mb-8">
+            <div className="grid grid-12">
+              <div className="col-span-8">
+                <div className="section-number">01</div>
+                <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4 leading-tight">
+                  {invention.oneLineHeading[locale]}
+                </h1>
+                <p className="text-lg text-secondary leading-relaxed">
+                  {invention.description[locale]}
+                </p>
+              </div>
+              <div className="col-span-4">
+                <div className="divider-line"></div>
+                {currentUrl && (
+                  <div className="space-y-2">
+                    <div className="text-xs text-muted uppercase tracking-wide">
+                      {t("share")}
+                    </div>
+                    <SocialShare url={currentUrl} title={invention.name[locale]} />
+                  </div>
+                )}
+              </div>
             </div>
-          )}
+          </header>
+
+          <main className="space-y-8">
+            <div>
+              <div className="relative w-full h-64 border border-border">
+                <Image
+                  src={invention.imageSrc || "/fallback-image.jpg"}
+                  alt={invention.name[locale]}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            
+            {fullDescription && (
+              <div className="prose prose-lg max-w-none">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {fullDescription}
+                </ReactMarkdown>
+              </div>
+            )}
+          </main>
         </div>
-        {/* Summary from inventionsData */}
-        <p className="text-gray-600 mb-4 w-full md:w-2/4 font-sm mt-0 md:mt-12 mb-8 md:mb-12 ml-0 md:ml-12 py-0 md:py-2 pl-2 md:pl-4 border-l-2 border-primaryBlue ">{invention.description[locale]}</p>
-        <div className="mt-4">
-          <div className="relative w-full h-48 md:h-96">
-            <Image
-              src={invention.imageSrc || "/fallback-image.jpg"}
-              alt={invention.name[locale]}
-              fill
-              style={{ objectFit: "cover" }}
-            />
+
+        {/* Sidebar */}
+        <aside className="col-span-4">
+          <div className="sticky top-8">
+            <div className="border border-border p-6 space-y-6">
+              <div>
+                <div className="text-xs text-muted uppercase tracking-wide mb-1">
+                  {t("inventor")}
+                </div>
+                <p className="text-base text-primary font-medium">
+                  {invention.inventorName || t("unknown")}
+                </p>
+              </div>
+              
+              <div className="divider-line"></div>
+              
+              <div>
+                <div className="text-xs text-muted uppercase tracking-wide mb-1">
+                  {t("category")}
+                </div>
+                <p className="text-base text-primary font-medium">
+                  {t(`categories.${invention.category}`)}
+                </p>
+              </div>
+
+              {invention.year && (
+                <>
+                  <div className="divider-line"></div>
+                  <div>
+                    <div className="text-xs text-muted uppercase tracking-wide mb-1">
+                      Year
+                    </div>
+                    <p className="text-xl text-primary font-mono font-bold">
+                      {invention.year}
+                    </p>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
-          {/* Full Markdown description below the image */}
-          {fullDescription && (
-            <div className="prose prose-lg mt-6 text-gray-800 overflow-hidden">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {fullDescription}
-              </ReactMarkdown>
-            </div>
-          )}
-        </div>
-      </div>
-      <div className="border-0 md:border-l border-primaryBlue pl-0 md:pl-4 w-full md:w-1/5 invention-page-meta order-1 md:order-2 mt-4 md:mt-0">
-        <div className="mb-4">
-          <strong>{t("inventor")}</strong>
-          <br />
-          {invention.inventorName || t("unknown")}
-        </div>
-        <div>
-          <strong>{t("category")}</strong>
-          <br />
-          {t(`categories.${invention.category}`)}
-        </div>
+        </aside>
       </div>
     </div>
   );

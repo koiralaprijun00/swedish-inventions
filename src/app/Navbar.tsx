@@ -32,119 +32,117 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
   }, [showSearch]);
   
   return (
-    <div className="border-b">
-      <nav className="container flex items-center justify-between py-3">
-        {/* Left Side: Logo */}
-        <div>
-          <Link href="/" className="inline-block">
+    <header className="border-b border-border bg-background">
+      <nav className="container">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
             <Image 
               src="/main-logo.png" 
               alt="Swedish Inventions" 
-              width={80} 
-              height={40} 
-              className="object-contain w-16 md:w-20" 
+              width={120} 
+              height={32} 
+              className="h-8 w-auto" 
               priority 
             />
           </Link>
-        </div>
-        
-        {/* Mobile controls - LocaleSwitcher and hamburger */}
-        <div className="flex items-center space-x-2 md:hidden">
-          <LocaleSwitcher currentLocale={currentLocale} />
           
-          <button 
-            className="p-2 text-primaryBlue"
-            onClick={() => setShowMobileMenu(!showMobileMenu)}
-          >
-            {showMobileMenu ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
-
-        {/* Desktop Nav Links, Search and Locale Switcher */}
-        <div className="hidden md:flex space-x-4 items-center">          
-          <Link 
-            href="/" 
-            className="p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900 focus:border-primaryBlue active:border-primaryBlue"
-          >
-            {t("home")}
-          </Link>
-
-          <Link 
-            href={`/${currentLocale}/timeline`} 
-            className="p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900 focus:border-primaryBlue active:border-primaryBlue"
-          >
-            {t("timeline")}
-          </Link>
-          
-          <Link 
-            href={`/${currentLocale}/about`} 
-            className="p-2 text-primaryBlue transition-all duration-100 ease-in-out hover:text-primaryBlue-900 active:text-primaryBlue-900 border-b border-transparent hover:border-primaryBlue-900 focus:border-primaryBlue active:border-primaryBlue"
-          >
-            {t("about")}
-          </Link>
-          
-          {/* Inline Search or Search Icon */}
-          <div ref={searchRef} className="relative">
-            {showSearch ? (
-              <div className="w-56 md:w-80 lg:w-96 transform-gpu transition-all duration-200 ease-in-out origin-right">
-                <SearchInventions />
-              </div>
-            ) : (
-              <button 
-                className="p-2 text-primaryBlue"
-                onClick={() => setShowSearch(true)}
-                aria-label={t("search")}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </button>
-            )}
-          </div>
-          
-          <LocaleSwitcher currentLocale={currentLocale} />
-        </div>
-      </nav>
-
-      {/* Mobile menu */}
-      {showMobileMenu && (
-        <div className="md:hidden py-2 border-t border-gray-100">
-          <div className="flex flex-col space-y-2">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
             <Link 
               href="/" 
-              className="px-4 py-2 text-primaryBlue"
-              onClick={() => setShowMobileMenu(false)}
+              className="text-sm font-medium text-primary hover:text-accent transition-colors"
             >
               {t("home")}
             </Link>
             <Link 
               href={`/${currentLocale}/timeline`} 
-              className="px-4 py-2 text-primaryBlue"
-              onClick={() => setShowMobileMenu(false)}
+              className="text-sm font-medium text-primary hover:text-accent transition-colors"
             >
               {t("timeline")}
             </Link>
             <Link 
               href={`/${currentLocale}/about`} 
-              className="px-4 py-2 text-primaryBlue"
-              onClick={() => setShowMobileMenu(false)}
+              className="text-sm font-medium text-primary hover:text-accent transition-colors"
             >
               {t("about")}
             </Link>
-            <div className="px-4 py-2">
-              <SearchInventions />
+            
+            {/* Search */}
+            <div ref={searchRef} className="relative">
+              {showSearch ? (
+                <div className="w-80">
+                  <SearchInventions />
+                </div>
+              ) : (
+                <button 
+                  className="p-2 text-primary hover:text-accent transition-colors"
+                  onClick={() => setShowSearch(true)}
+                  aria-label={t("search")}
+                >
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </button>
+              )}
             </div>
+            
+            <LocaleSwitcher currentLocale={currentLocale} />
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center space-x-4">
+            <LocaleSwitcher currentLocale={currentLocale} />
+            <button 
+              className="p-2 text-primary"
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+              aria-label="Toggle menu"
+            >
+              {showMobileMenu ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
         </div>
-      )}
-    </div>
+
+        {/* Mobile Menu */}
+        {showMobileMenu && (
+          <div className="md:hidden border-t border-border">
+            <div className="py-4 space-y-4">
+              <Link 
+                href="/" 
+                className="block text-sm font-medium text-primary hover:text-accent transition-colors"
+                onClick={() => setShowMobileMenu(false)}
+              >
+                {t("home")}
+              </Link>
+              <Link 
+                href={`/${currentLocale}/timeline`} 
+                className="block text-sm font-medium text-primary hover:text-accent transition-colors"
+                onClick={() => setShowMobileMenu(false)}
+              >
+                {t("timeline")}
+              </Link>
+              <Link 
+                href={`/${currentLocale}/about`} 
+                className="block text-sm font-medium text-primary hover:text-accent transition-colors"
+                onClick={() => setShowMobileMenu(false)}
+              >
+                {t("about")}
+              </Link>
+              <div className="pt-2">
+                <SearchInventions />
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
   )
 }
