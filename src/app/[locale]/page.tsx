@@ -5,7 +5,6 @@ import { useParams } from "next/navigation";
 import Head from "next/head"
 import React, { useState, Suspense } from "react"
 import inventionsData from "../../../src/app/inventionsData.js"
-import InfoBox from "./components/InfoBox";
 import InventionCard from "./components/InventionCard";
 import Header from "./components/Header";
 import Link from "next/link"
@@ -24,20 +23,23 @@ function CategoryFilter({
   onSelectCategory: (key: string) => void
 }) {
   return (
-    <div className="swiss-filter">
-      {categories.map((cat, index) => (
-        <button
-          type="button"
-          key={cat.key}
-          onClick={() => onSelectCategory(cat.key)}
-          className={`swiss-filter__item ${
-            selectedCategory === cat.key ? "swiss-filter__item--active" : ""
-          }`}
-        >
-          <span className="swiss-filter__number">{String(index + 1).padStart(2, "0")}</span>
-          <span className="swiss-filter__label">{cat.label}</span>
-        </button>
-      ))}
+    <div className="swiss-filter-panel">
+      <div className="swiss-filter">
+        {categories.map((cat, index) => (
+          <button
+            type="button"
+            key={cat.key}
+            onClick={() => onSelectCategory(cat.key)}
+            className={`swiss-filter__item ${
+              selectedCategory === cat.key ? "swiss-filter__item--active" : ""
+            }`}
+            aria-pressed={selectedCategory === cat.key}
+          >
+            <span className="swiss-filter__number">{String(index + 1).padStart(2, "0")}</span>
+            <span className="swiss-filter__label">{cat.label}</span>
+          </button>
+        ))}
+      </div>
     </div>
   )
 }
@@ -86,31 +88,6 @@ function HomeContent() {
     return t(`categories.${category}`)
   }
 
-  const getLocalizedCopy = (value: any) => {
-    if (!value) return ""
-    if (typeof value === "string") return value
-    if (typeof value === "object") {
-      return value[locale] || value.en || value.sv || ""
-    }
-    return ""
-  }
-
-  const featuredCandidates = inventionsData.flatMap(category =>
-    category.items.map(item => ({
-      ...item,
-      category: category.category
-    }))
-  )
-
-  const today = new Date()
-  const startOfYear = new Date(today.getFullYear(), 0, 1)
-  const dayIndex = Math.floor((today.getTime() - startOfYear.getTime()) / (1000 * 60 * 60 * 24))
-  const featuredInvention = featuredCandidates.length
-    ? featuredCandidates[dayIndex % featuredCandidates.length]
-    : null
-  const featuredName = featuredInvention ? getLocalizedName(featuredInvention) : ""
-  const featuredHeadline = getLocalizedCopy(featuredInvention?.oneLineHeading)
-  const featuredCategoryLabel = featuredInvention?.category ? getLocalizedCategory(featuredInvention.category) : ""
   return (
     <>
     <Head>
@@ -120,41 +97,7 @@ function HomeContent() {
     <Header />
 
     <main className="swiss-main">
-      <section className="swiss-section container">
-        <div className="swiss-grid swiss-section__heading">
-          <div className="col-span-12 md:col-span-4">
-            <span className="swiss-section__label">Featured</span>
-            <h2 className="swiss-section__title">{t("categoryTitle")}</h2>
-          </div>
-          <div className="col-span-12 md:col-span-8">
-            <div className="swiss-section__description">
-              <p>{t("categorySubtitle")}</p>
-              <p>Discover the most influential Swedish innovations that shaped our world.</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="swiss-featured-grid">
-          {inventionsData.slice(0, 3).map((category, idx) => (
-            <InfoBox
-              key={`${category.category}-${idx}`}
-              name={getLocalizedName(category.items[0])}
-              transparentImage={category.items[0].transparentImage || ""}
-              title={getLocalizedName(category.items[0])}
-              description={
-                typeof category.items[0].description === "string"
-                  ? category.items[0].description
-                  : ""
-              }
-              inventorName={category.items[0].inventorName}
-              tags={[category.category, category.items[0].inventorName || "Unknown"]}
-              locale={locale}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="swiss-section container">
+      <section id="catalogue" className="swiss-section swiss-section--catalogue container">
         <div className="swiss-grid swiss-section__heading">
           <div className="col-span-12 md:col-span-4">
             <span className="swiss-section__label">Catalogue</span>

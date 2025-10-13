@@ -26,7 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Add homepage & static pages
   const staticUrls = locales.flatMap(locale => [
     { url: `${baseUrl}/${locale}`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/${locale}/about`, lastModified: new Date().toISOString() },
   ])
 
   return [...urls, ...staticUrls]

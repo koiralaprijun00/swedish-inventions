@@ -1,48 +1,59 @@
 "use client"
 
-import React, { memo } from "react"
+import React, { memo, useEffect, useState } from "react"
 import { useTranslations } from "next-intl"
+import { Link } from "../../../i18n/routing"
 
 const Header = memo(function Header() {
   const t = useTranslations("Translations")
+  const [stockholmTime, setStockholmTime] = useState<string>("")
+
+  useEffect(() => {
+    const formatter = new Intl.DateTimeFormat("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: "Europe/Stockholm"
+    })
+
+    const updateTime = () => setStockholmTime(formatter.format(new Date()))
+    updateTime()
+
+    const timer = window.setInterval(updateTime, 60_000)
+    return () => window.clearInterval(timer)
+  }, [])
+
+  const heroLead = `${t("headerText")} ${t("peopleOfSweden")}`
+  const heroTitle = `${t("title")} ${t("inventions")}`
+  const currentYear = new Date().getFullYear()
 
   return (
-    <header className="container swiss-section">
-      <div className="swiss-grid swiss-grid--intro">
-        <div className="col-span-2 md:col-span-1">
-          <span className="swiss-tag">{t("title")}</span>
-        </div>
-
-        <div className="col-span-10 md:col-span-7">
-          <h1 className="swiss-hero-heading">
-            <span className="swiss-hero-heading__line">{t("peopleOfSweden")}</span>
-            <span className="swiss-hero-heading__line swiss-hero-heading__line--accent">
-              {t("inventions")}
+    <header id="top" className="swiss-hero">
+      <div className="container swiss-hero__inner">
+        <div className="swiss-hero__layout">
+          <div className="swiss-hero__col swiss-hero__col--intro">
+            <span className="swiss-hero__micro">Swedish Inventions</span>
+            <span className="swiss-hero__micro-sub">
+              Archive 1844 — {currentYear}
             </span>
-            <span className="swiss-hero-heading__line">{t("and")}</span>
-            <span className="swiss-hero-heading__line swiss-hero-heading__line--accent">
-              {t("innovations")}
-            </span>
-          </h1>
-        </div>
+            <p className="swiss-hero__tagline">{t("categorySubtitle")}</p>
+          </div>
 
-        <div className="col-span-12 md:col-span-4">
-          <div className="swiss-meta-panel">
-            <p className="swiss-meta-panel__lead">{t("headerText")}</p>
-            <div className="swiss-meta-panel__grid">
-              <div>
-                <span className="swiss-meta-panel__label">Archive Volume</span>
-                <span className="swiss-meta-panel__value">70+ entries</span>
-              </div>
-              <div>
-                <span className="swiss-meta-panel__label">Time Span</span>
-                <span className="swiss-meta-panel__value">1844 — 2024</span>
-              </div>
-              <div>
-                <span className="swiss-meta-panel__label">Discipline</span>
-                <span className="swiss-meta-panel__value">Science · Culture · Life</span>
-              </div>
+          <div className="swiss-hero__col swiss-hero__col--main">
+            <h1 className="swiss-hero__heading">{heroTitle}</h1>
+            <p className="swiss-hero__lead">{heroLead}</p>
+          </div>
+
+          <div className="swiss-hero__col swiss-hero__col--meta">
+            <div className="swiss-hero__meta-block">
+              <span className="swiss-hero__meta-label">Stockholm, Sweden</span>
+              <span className="swiss-hero__meta-value">
+                {stockholmTime ? `${stockholmTime} (CET)` : "—"}
+              </span>
             </div>
+            <Link href="#catalogue" className="swiss-hero__cta">
+              {t("exploreSwedishInventions")}
+            </Link>
           </div>
         </div>
       </div>

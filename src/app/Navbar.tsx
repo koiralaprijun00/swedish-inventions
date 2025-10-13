@@ -55,18 +55,6 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
             >
               {t("home")}
             </Link>
-            <Link 
-              href={`/${currentLocale}/timeline`} 
-              className="text-sm font-medium text-primary hover:text-accent transition-colors"
-            >
-              {t("timeline")}
-            </Link>
-            <Link 
-              href={`/${currentLocale}/about`} 
-              className="text-sm font-medium text-primary hover:text-accent transition-colors"
-            >
-              {t("about")}
-            </Link>
             
             {/* Search */}
             <div ref={searchRef} className="relative">
@@ -121,20 +109,6 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
                 onClick={() => setShowMobileMenu(false)}
               >
                 {t("home")}
-              </Link>
-              <Link 
-                href={`/${currentLocale}/timeline`} 
-                className="block text-sm font-medium text-primary hover:text-accent transition-colors"
-                onClick={() => setShowMobileMenu(false)}
-              >
-                {t("timeline")}
-              </Link>
-              <Link 
-                href={`/${currentLocale}/about`} 
-                className="block text-sm font-medium text-primary hover:text-accent transition-colors"
-                onClick={() => setShowMobileMenu(false)}
-              >
-                {t("about")}
               </Link>
               <div className="pt-2">
                 <SearchInventions />
