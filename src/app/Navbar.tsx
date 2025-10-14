@@ -6,13 +6,10 @@ import { useState, useRef, useEffect } from "react"
 import LocaleSwitcher from "./LocalSwitcher"
 import { useTranslations } from "next-intl"
 import SearchInventions from "./[locale]/components/SearchInventions"
-import { useRouter } from "next/navigation"
 
 export default function Navbar({ currentLocale }: { currentLocale: string }) {
   const t = useTranslations("Translations")
-  const router = useRouter()
   const [showSearch, setShowSearch] = useState(false);
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   
   // Handle click outside of search to close it
@@ -47,13 +44,12 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
             />
           </Link>
           
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 gap-4">
-            
+          {/* Navigation Controls */}
+          <div className="flex items-center gap-4 md:gap-8">
             {/* Search */}
             <div ref={searchRef} className="relative">
               {showSearch ? (
-                <div className="w-80">
+                <div className="w-72 max-w-[80vw] sm:w-80">
                   <SearchInventions />
                 </div>
               ) : (
@@ -71,45 +67,7 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
             
             <LocaleSwitcher currentLocale={currentLocale} />
           </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
-            <LocaleSwitcher currentLocale={currentLocale} />
-            <button 
-              className="p-2 text-primary"
-              onClick={() => setShowMobileMenu(!showMobileMenu)}
-              aria-label="Toggle menu"
-            >
-              {showMobileMenu ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-          </div>
         </div>
-
-        {/* Mobile Menu */}
-        {showMobileMenu && (
-          <div className="md:hidden border-t border-border">
-            <div className="py-4 space-y-4">
-              <Link 
-                href="/" 
-                className="block text-sm font-medium text-primary hover:text-accent transition-colors"
-                onClick={() => setShowMobileMenu(false)}
-              >
-                {t("home")}
-              </Link>
-              <div className="pt-2">
-                <SearchInventions />
-              </div>
-            </div>
-          </div>
-        )}
       </nav>
     </header>
   )
