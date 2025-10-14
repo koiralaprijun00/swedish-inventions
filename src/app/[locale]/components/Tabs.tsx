@@ -68,57 +68,73 @@ const Tabs: React.FC = () => {
             </p>
           </div>
 
-          <div className="swiss-explore__tabs" role="tablist" aria-label={t("exploreSwedishInventions")}>
-          {categories.map((category) => {
-            const isActive = category.category === activeCategoryKey;
+          <div className="swiss-explore__content">
+            <div
+              className="swiss-explore__tabs"
+              role="tablist"
+              aria-label={t("exploreSwedishInventions")}
+            >
+              {categories.map((category) => {
+                const isActive = category.category === activeCategoryKey;
 
-            return (
-              <button
-                key={category.category}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                aria-controls={`swiss-explore-panel-${category.category}`}
-                className={`swiss-explore__tab ${isActive ? "swiss-explore__tab--active" : ""}`}
-                onClick={() => setActiveCategoryKey(category.category)}
-              >
-                <span className="swiss-explore__tab-label">
-                  {t(`categories.${category.category}`)}
-                </span>
-              </button>
-            );
-          })}
+                return (
+                  <button
+                    key={category.category}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls={`swiss-explore-panel-${category.category}`}
+                    className={`swiss-explore__tab ${
+                      isActive ? "swiss-explore__tab--active" : ""
+                    }`}
+                    onClick={() => setActiveCategoryKey(category.category)}
+                  >
+                    <span className="swiss-explore__tab-label">
+                      {t(`categories.${category.category}`)}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="swiss-explore__divider" aria-hidden="true" />
+
+            <div
+              className="swiss-explore__list"
+              id={`swiss-explore-panel-${activeCategory?.category ?? "all"}`}
+              role="tabpanel"
+              aria-live="polite"
+            >
+              {activeCategory?.items.slice(0, 12).map((item, index) => {
+                const localizedName = getLocalizedName(item);
+                const slug =
+                  typeof item.name === "string"
+                    ? item.name
+                    : item.name?.en || localizedName;
+
+                return (
+                  <article
+                    key={`${activeCategory?.category}-${localizedName}-${index}`}
+                    className="swiss-explore__item"
+                  >
+                    <Link
+                      href={`/${locale}/invention/${encodeURIComponent(
+                        slug || ""
+                      )}`}
+                      className="swiss-explore__item-link"
+                    >
+                      {localizedName}
+                    </Link>
+                    <div className="swiss-explore__item-meta">
+                      <span>{item.year ?? "—"}</span>
+                      <span>{item.inventorName ?? t("unknownInventor")}</span>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
           </div>
         </div>
-
-        <div className="swiss-explore__divider" aria-hidden="true" />
-      </div>
-
-      <div
-        className="container swiss-explore__list"
-        id={`swiss-explore-panel-${activeCategory?.category ?? "all"}`}
-        role="tabpanel"
-        aria-live="polite"
-      >
-        {activeCategory?.items.slice(0, 12).map((item, index) => {
-          const localizedName = getLocalizedName(item);
-          const slug = typeof item.name === "string" ? item.name : item.name?.en || localizedName;
-
-          return (
-            <article key={`${activeCategory?.category}-${localizedName}-${index}`} className="swiss-explore__item">
-              <Link
-                href={`/${locale}/invention/${encodeURIComponent(slug || "")}`}
-                className="swiss-explore__item-link"
-              >
-                {localizedName}
-              </Link>
-              <div className="swiss-explore__item-meta">
-                <span>{item.year ?? "—"}</span>
-                <span>{item.inventorName ?? t("unknownInventor")}</span>
-              </div>
-            </article>
-          );
-        })}
       </div>
     </section>
   );
