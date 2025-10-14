@@ -68,6 +68,7 @@
       "digitalTechnology": "Digital Teknik",
       "gaming": "Spel",
       "scienceInnovation": "Vetenskap & Innovation",
+      "artificialIntelligence": "Artificiell Intelligens",
       "designRetail": "Design & Handel",
       "artsCulture": "Konst & Kultur",
       "mapping": {
@@ -76,6 +77,7 @@
         "Digital Technology": "digitalTechnology",
         "Gaming": "gaming",
         "Science & Innovation": "scienceInnovation",
+        "Artificial Intelligence": "artificialIntelligence",
         "Design & Retail": "designRetail",
         "Arts & Culture": "artsCulture"
       },

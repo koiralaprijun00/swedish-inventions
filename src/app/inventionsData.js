@@ -532,6 +532,155 @@ const inventionsData = [
             },
         ],
     },
+    {
+        category: "artificialIntelligence",
+        items: [
+            {
+                id: 201,
+                name: { en: "Lovable", sv: "Lovable" },
+                inventorName: "Lovable Team",
+                year: 2024,
+                oneLineHeading: {
+                    en: "Describe the product, watch the app appear.",
+                    sv: "Beskriv produkten, se appen ta form."
+                },
+                description: {
+                    en: "Lovable turns natural language prompts into production-ready web apps, uniting AI-assisted design, coding, and product management in a single Swedish-made tool.",
+                    sv: "Lovable förvandlar naturliga språkprompter till färdiga webbappar och förenar AI-stödd design, kodning och produktledning i ett svenskt verktyg."
+                },
+                imageSrc: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
+                link: "https://www.lovable.so/"
+            },
+            {
+                id: 202,
+                name: { en: "Sana Labs", sv: "Sana Labs" },
+                inventorName: "Joel Hellermark",
+                year: 2016,
+                oneLineHeading: {
+                    en: "Personalized learning for teams at scale.",
+                    sv: "Personanpassat lärande för team i stor skala."
+                },
+                description: {
+                    en: "Sana Labs uses deep learning to tailor corporate learning experiences, adapting content to every employee's pace and skill level.",
+                    sv: "Sana Labs använder djupinlärning för att skräddarsy företagslärande och anpassar innehåll efter varje medarbetares takt och kunskap."
+                },
+                imageSrc: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
+                link: "https://www.sanalabs.com/"
+            },
+            {
+                id: 203,
+                name: { en: "Einride", sv: "Einride" },
+                inventorName: "Robert Falck",
+                year: 2016,
+                oneLineHeading: {
+                    en: "Autonomous electric freight, orchestrated by AI.",
+                    sv: "Autonom elektrisk frakt, orkestrerad av AI."
+                },
+                description: {
+                    en: "Einride blends autonomous vehicles with an intelligent logistics platform to cut emissions while moving goods safely.",
+                    sv: "Einride kombinerar autonoma fordon med en intelligent logistikplattform för att minska utsläpp och transportera varor säkert."
+                },
+                imageSrc: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80",
+                link: "https://www.einride.tech/"
+            },
+            {
+                id: 204,
+                name: { en: "Peltarion", sv: "Peltarion" },
+                inventorName: "Luka Crnkovic-Friis & Måns Erlingsson",
+                year: 2004,
+                oneLineHeading: {
+                    en: "No-code AI so anyone can build models.",
+                    sv: "No-code AI som gör att alla kan bygga modeller."
+                },
+                description: {
+                    en: "Peltarion's platform lets teams prototype, train, and deploy AI models without needing expert-level machine learning knowledge.",
+                    sv: "Peltarions plattform låter team prototypa, träna och driftsätta AI-modeller utan expertkunskaper inom maskininlärning."
+                },
+                imageSrc: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
+                link: "https://peltarion.com/"
+            },
+            {
+                id: 205,
+                name: { en: "Soundtrack Your Brand", sv: "Soundtrack Your Brand" },
+                inventorName: "Ola Sars & Andreas Liffgarden",
+                year: 2013,
+                oneLineHeading: {
+                    en: "AI-curated music that sounds like your brand.",
+                    sv: "AI-kurerad musik som låter som ditt varumärke."
+                },
+                description: {
+                    en: "Soundtrack Your Brand uses machine learning to program background music that matches mood, time of day, and customer flow.",
+                    sv: "Soundtrack Your Brand använder maskininlärning för att programmera bakgrundsmusik som matchar stämning, tid på dagen och kundflöde."
+                },
+                imageSrc: "https://images.unsplash.com/photo-1453090927415-5f45085b65c0?auto=format&fit=crop&w=1200&q=80",
+                link: "https://www.soundtrackyourbrand.com/"
+            },
+            {
+                id: 206,
+                name: { en: "Mavenoid", sv: "Mavenoid" },
+                inventorName: "Shahan Lilja & Gintaras Didžiokas",
+                year: 2017,
+                oneLineHeading: {
+                    en: "AI support that solves technical issues instantly.",
+                    sv: "AI-support som löser tekniska problem direkt."
+                },
+                description: {
+                    en: "Mavenoid automates hardware and software troubleshooting with AI-driven guides that learn from every interaction.",
+                    sv: "Mavenoid automatiserar felsökning av hårdvara och mjukvara med AI-styrda guider som lär sig av varje interaktion."
+                },
+                imageSrc: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+                link: "https://www.mavenoid.com/"
+            },
+            {
+                id: 207,
+                name: { en: "Furhat Robotics", sv: "Furhat Robotics" },
+                inventorName: "Samira Shaher, Gabriel Skantze & Sinan Bank",
+                year: 2014,
+                oneLineHeading: {
+                    en: "A human face for conversational AI.",
+                    sv: "Ett mänskligt ansikte för konversationell AI."
+                },
+                description: {
+                    en: "Furhat Robotics creates expressive social robots that communicate naturally, supporting service, education, and care settings.",
+                    sv: "Furhat Robotics skapar uttrycksfulla sociala robotar som kommunicerar naturligt för service, utbildning och vård."
+                },
+                imageSrc: "https://images.unsplash.com/photo-1580894897200-6f3fec48d6f1?auto=format&fit=crop&w=1200&q=80",
+                link: "https://furhatrobotics.com/"
+            },
+            {
+                id: 208,
+                name: { en: "Logical Clocks (Hopsworks)", sv: "Logical Clocks (Hopsworks)" },
+                inventorName: "Jim Dowling & Love Börjeson",
+                year: 2016,
+                oneLineHeading: {
+                    en: "Feature store infrastructure born in Stockholm.",
+                    sv: "Feature store-infrastruktur född i Stockholm."
+                },
+                description: {
+                    en: "Logical Clocks built Hopsworks, an enterprise feature store that powers large-scale machine learning for global companies.",
+                    sv: "Logical Clocks byggde Hopsworks, en enterprise-feature store som driver storskalig maskininlärning för globala företag."
+                },
+                imageSrc: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
+                link: "https://www.hopsworks.ai/"
+            },
+            {
+                id: 209,
+                name: { en: "Volumental", sv: "Volumental" },
+                inventorName: "Alper Aydemir & Caroline Walerud",
+                year: 2012,
+                oneLineHeading: {
+                    en: "Computer vision that finds the perfect fit.",
+                    sv: "Datorseende som hittar perfekt passform."
+                },
+                description: {
+                    en: "Volumental blends 3D scanning with AI to match footwear to shoppers, powering in-store experiences for global brands.",
+                    sv: "Volumental kombinerar 3D-skanning med AI för att matcha skor med kunder och driver butiksupplevelser för globala varumärken."
+                },
+                imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+                link: "https://www.volumental.com/"
+            }
+        ]
+    },
 ];
 
 export default inventionsData;
