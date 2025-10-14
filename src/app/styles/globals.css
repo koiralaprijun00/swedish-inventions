@@ -526,6 +526,222 @@ button:focus {
   gap: 0.75rem;
 }
 
+/* Invention detail page */
+.swiss-invention {
+  padding: clamp(3rem, 10vw, 5.5rem) clamp(1.5rem, 6vw, 4rem);
+  background: #fdfdfc;
+  display: flex;
+  justify-content: center;
+}
+
+.swiss-invention__wrapper {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6vw, 3.75rem);
+}
+
+.swiss-invention__header {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 4vw, 1.75rem);
+}
+
+.swiss-invention__eyebrow {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(15, 15, 15, 0.45);
+}
+
+.swiss-invention__year {
+  font-variant-numeric: tabular-nums;
+}
+
+.swiss-invention__category {
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(15, 15, 15, 0.15);
+  background: rgba(15, 15, 15, 0.04);
+}
+
+.swiss-invention__title {
+  font-size: clamp(2.75rem, 5vw, 3.6rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  max-width: 22ch;
+}
+
+.swiss-invention__lede {
+  max-width: 62ch;
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  line-height: 1.75;
+  color: rgba(15, 15, 15, 0.68);
+}
+
+.swiss-invention__share {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(15, 15, 15, 0.5);
+}
+
+.swiss-invention__share-label {
+  border-bottom: 1px solid rgba(15, 15, 15, 0.25);
+  padding-bottom: 0.25rem;
+}
+
+.swiss-invention__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 1px solid rgba(15, 15, 15, 0.18);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(240, 241, 244, 0.9));
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.swiss-invention__image {
+  object-fit: cover;
+}
+
+.swiss-invention__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.6fr) minmax(220px, 1fr);
+  gap: clamp(2.25rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+.swiss-invention__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.swiss-invention__summary {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(15, 15, 15, 0.78);
+}
+
+.swiss-invention__markdown {
+  display: grid;
+  gap: clamp(1.1rem, 3vw, 1.8rem);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(15, 15, 15, 0.78);
+}
+
+.swiss-invention__markdown h2,
+.swiss-invention__markdown h3 {
+  margin: clamp(1.8rem, 4vw, 2.6rem) 0 0.6rem;
+  font-size: clamp(1.25rem, 2.3vw, 1.75rem);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #0f0f0f;
+}
+
+.swiss-invention__markdown p {
+  margin: 0;
+}
+
+.swiss-invention__markdown ul,
+.swiss-invention__markdown ol {
+  margin: 0;
+  padding-left: 1.6rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.swiss-invention__markdown a {
+  color: #0f0f0f;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.swiss-invention__sidebar {
+  position: sticky;
+  top: clamp(1.5rem, 9vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(15, 15, 15, 0.16);
+  border-radius: 22px;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.98), rgba(244, 246, 248, 0.92));
+  box-shadow: 0 20px 36px rgba(15, 15, 15, 0.06);
+}
+
+.swiss-invention__fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.swiss-invention__fact-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(15, 15, 15, 0.45);
+}
+
+.swiss-invention__fact-value {
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0f0f0f;
+}
+
+.swiss-invention__fact--emphasis .swiss-invention__fact-value {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.swiss-invention__divider {
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(15, 15, 15, 0.18) 45%, transparent 45%);
+  background-size: 16px 1px;
+}
+
+@media (max-width: 1024px) {
+  .swiss-invention__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .swiss-invention__sidebar {
+    position: static;
+    top: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .swiss-invention {
+    padding-inline: clamp(1rem, 5vw, 2rem);
+  }
+
+  .swiss-invention__title {
+    font-size: clamp(2.3rem, 8vw, 2.8rem);
+  }
+
+  .swiss-invention__share {
+    gap: 0.6rem;
+  }
+}
+
 .swiss-featured-grid {
   margin-top: clamp(2rem, 4vw, 3.5rem);
   display: flex;
@@ -571,14 +787,6 @@ button:focus {
   gap: clamp(1.1rem, 1.8vw, 1.8rem);
 }
 
-.swiss-feature-card__label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  color: rgba(15, 15, 15, 0.45);
-  display: block;
-}
-
 .swiss-feature-card__title {
   font-size: clamp(1.5rem, 2.4vw, 2.25rem);
   font-weight: 600;
@@ -595,9 +803,26 @@ button:focus {
 
 .swiss-feature-card__eyebrow {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 0.6rem;
-  align-items: center;
+}
+
+.swiss-feature-card__inventor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+}
+
+.swiss-feature-card__inventor-label {
+  color: rgba(15, 15, 15, 0.45);
+}
+
+.swiss-feature-card__inventor-name {
+  color: rgba(15, 15, 15, 0.7);
 }
 
 .swiss-feature-card__pill {
@@ -670,7 +895,8 @@ button:focus {
   box-shadow: 0 14px 28px rgba(15, 15, 15, 0.08);
 }
 
-.swiss-feature-card:hover .swiss-feature-card__label,
+.swiss-feature-card:hover .swiss-feature-card__inventor-label,
+.swiss-feature-card:hover .swiss-feature-card__inventor-name,
 .swiss-feature-card:hover .swiss-feature-card__cta {
   color: rgba(15, 15, 15, 0.65);
 }
@@ -802,7 +1028,7 @@ button:focus {
 
 .swiss-tile__header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   text-transform: uppercase;
   letter-spacing: 0.28em;
@@ -812,10 +1038,6 @@ button:focus {
 
 .swiss-tile__eyebrow {
   font-variant-numeric: tabular-nums;
-}
-
-.swiss-tile__arrow {
-  font-size: 1rem;
 }
 
 .swiss-tile__image {
@@ -843,14 +1065,24 @@ button:focus {
   line-height: 1.2;
 }
 
-.swiss-tile__meta {
+.
+ {
   display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(15, 15, 15, 0.45);
+}
+
+.swiss-tile__meta-label {
+  color: rgba(15, 15, 15, 0.45);
+}
+
+.swiss-tile__meta-value {
+  color: rgba(15, 15, 15, 0.7);
 }
 
 .swiss-tile__footer {
@@ -870,7 +1102,8 @@ button:focus {
 }
 
 .swiss-tile:hover .swiss-tile__header,
-.swiss-tile:hover .swiss-tile__meta,
+.swiss-tile:hover .swiss-tile__meta-label,
+.swiss-tile:hover .swiss-tile__meta-value,
 .swiss-tile:hover .swiss-tile__footer {
   color: rgba(15, 15, 15, 0.6);
 }
@@ -1144,7 +1377,7 @@ button:focus {
 
   .swiss-explore__content {
     margin-top: clamp(1.75rem, 9vw, 3.25rem);
-    gap: clamp(2rem, 9vw, 3.25rem);
+    gap: clamp(2rem, 9vw, 1rem);
   }
 
   .swiss-explore__tabs {

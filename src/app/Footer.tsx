@@ -13,8 +13,8 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className="w-full mx-auto pt-10 pb-16">
-        <div className="flex items-center space-x-4 mb-8 justify-center sm:justify-start"> {/* Center on smaller screens */}
+      <div className="w-full mx-auto pt-10 pb-16 text-center">
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
           <p className="text-gray-700 font-semibold">
             {t("followUs")}
           </p>
@@ -48,13 +48,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom row: back to top and share */}
-        <div className="flex flex-col sm:flex-row items-center justify-between border-t border-gray-200 pt-4 px-4 sm:px-0"> {/* Add padding */}
-          <div className="mb-4 sm:mb-0 order-2 md:order-1 mt-12 md:mt-0">
+        <div className="flex flex-col items-center justify-center gap-4 border-t border-gray-200 pt-4 px-4 sm:px-0">
+          <div>
             <Link href="#" className="text-sm text-gray-600 hover:underline">
               {t("Back to top")}
             </Link>
           </div>
-          <div className="flex items-center space-x-2 order-1 md:order-2">
+          <div className="flex items-center justify-center gap-2">
             <p className="text-gray-700 font-semibold">
               {t("share")}:
             </p>

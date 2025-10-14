@@ -51,9 +51,6 @@ const Header = memo(function Header() {
                 {stockholmTime ? `${stockholmTime} (CET)` : "—"}
               </span>
             </div>
-            <Link href="#catalogue" className="swiss-hero__cta">
-              {t("exploreSwedishInventions")}
-            </Link>
           </div>
         </div>
       </div>

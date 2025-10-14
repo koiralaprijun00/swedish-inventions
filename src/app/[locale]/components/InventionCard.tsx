@@ -22,7 +22,6 @@ export default function InventionCard({ name, imageSrc, inventorName, year, loca
       <article className="swiss-tile">
         <header className="swiss-tile__header">
           <span className="swiss-tile__eyebrow">{year || "—"}</span>
-          <span className="swiss-tile__arrow" aria-hidden="true">↗</span>
         </header>
 
         <div className="swiss-tile__image">
@@ -37,10 +36,9 @@ export default function InventionCard({ name, imageSrc, inventorName, year, loca
         <div className="swiss-tile__body">
           <h3 className="swiss-tile__title">{name}</h3>
           {inventorName && (
-            <p className="swiss-tile__meta">
-              <span>Inventor</span>
-              <span>{inventorName}</span>
-            </p>
+            <div className="swiss-tile__meta">
+              <span className="swiss-tile__meta-value">{inventorName}</span>
+            </div>
           )}
         </div>
 

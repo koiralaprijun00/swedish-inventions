@@ -130,7 +130,7 @@ function HomeContent() {
                     name={getLocalizedName(item)}
                     imageSrc={item.imageSrc}
                     inventorName={item.inventorName}
-                    year={item.year}
+                    year={item.year?.toString()}
                     locale={locale}
                   />
                 ))}

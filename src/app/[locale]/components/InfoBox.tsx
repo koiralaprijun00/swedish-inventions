@@ -39,9 +39,10 @@ export default function InfoBox({
         <div className="swiss-feature-card__body">
           <div className="swiss-feature-card__eyebrow">
             {categoryLabel && <span className="swiss-feature-card__pill">{categoryLabel}</span>}
-            <span className="swiss-feature-card__label">
-              {t("inventor")}: {inventorLabel}
-            </span>
+            <div className="swiss-feature-card__inventor">
+              <span className="swiss-feature-card__inventor-label">{t("inventor")}</span>
+              <span className="swiss-feature-card__inventor-name">{inventorLabel}</span>
+            </div>
           </div>
           <h3 className="swiss-feature-card__title">{title}</h3>
           {headline && <p className="swiss-feature-card__headline">{headline}</p>}

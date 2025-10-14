@@ -32,7 +32,7 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
   }, [showSearch]);
   
   return (
-    <header className="border-b border-border bg-background">
+    <header className=" bg-background">
       <nav className="container">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -48,13 +48,7 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link 
-              href="/" 
-              className="text-sm font-medium text-primary hover:text-accent transition-colors"
-            >
-              {t("home")}
-            </Link>
+          <div className="hidden md:flex items-center space-x-8 gap-4">
             
             {/* Search */}
             <div ref={searchRef} className="relative">
@@ -64,7 +58,7 @@ export default function Navbar({ currentLocale }: { currentLocale: string }) {
                 </div>
               ) : (
                 <button 
-                  className="p-2 text-primary hover:text-accent transition-colors"
+                  className="p-2 text-primary hover:text-accent transition-colors border-0 bg-transparent focus:outline-offset-2"
                   onClick={() => setShowSearch(true)}
                   aria-label={t("search")}
                 >
