@@ -1,39 +1,49 @@
 "use client"
 
 import React from "react"
+import Image from "next/image"
 import { useTranslations } from "next-intl"
-import { Link } from "../../../i18n/routing" // Adjust the import path as needed
+import { Link } from "../../../i18n/routing"
 
 type InventionCardProps = {
   name: string
   imageSrc: string
   inventorName?: string
+  year?: string
   locale: string
 }
 
-export default function InventionCard({ name, imageSrc, inventorName, locale }: InventionCardProps) {
+export default function InventionCard({ name, imageSrc, inventorName, year, locale }: InventionCardProps) {
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
   const t = useTranslations("Translations")
 
   return (
-    <Link href={detailPageURL} locale={locale}>
-      <div
-        className="shadow-sm shadow-gray-50 cursor-pointer relative rounded-lg transition duration-500 ease-in-out transform hover:scale-105 p-0 h-[220px] md:h-[420px] w-[350px] bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${imageSrc})`,
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-50 hover:bg-opacity-10 rounded-lg" />
-        <div className="relative z-10 text-white px-4 py-8">
-          <h3 className="font-bold text-xl">
-            {name}
-          </h3>
-          <h4>
-            {inventorName || "Unknown"}
-          </h4>
+    <Link href={detailPageURL} locale={locale} className="group block">
+      <article className="swiss-tile">
+        <header className="swiss-tile__header">
+          <span className="swiss-tile__eyebrow">{year || "—"}</span>
+        </header>
+
+        <div className="swiss-tile__image">
+          <Image
+            src={imageSrc}
+            alt={name}
+            fill
+            className="object-cover"
+          />
         </div>
-      </div>
+
+        <div className="swiss-tile__body">
+          <h3 className="swiss-tile__title">{name}</h3>
+          {inventorName && (
+            <div className="swiss-tile__meta">
+              <span className="swiss-tile__meta-value">{inventorName}</span>
+            </div>
+          )}
+        </div>
+
+        <footer className="swiss-tile__footer">{t("details")} →</footer>
+      </article>
     </Link>
   )
 }

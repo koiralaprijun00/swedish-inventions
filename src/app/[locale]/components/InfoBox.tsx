@@ -6,50 +6,68 @@ import Image from "next/image"
 
 interface InfoBoxProps {
   name: string;
-  transparentImage: string;
+  transparentImage?: string;
+  fallbackImage?: string;
   title: string;
-  description: string;
-  tags: string[];
+  headline?: string;
+  categoryLabel?: string;
   inventorName?: string;
   locale: string;
-  isAboveFold?: boolean; // New prop
+  isAboveFold?: boolean;
 }
 
-export default function InfoBox({ name, transparentImage, title, inventorName, locale, isAboveFold = true }: InfoBoxProps) {
+export default function InfoBox({
+  name,
+  transparentImage,
+  fallbackImage,
+  title,
+  headline,
+  categoryLabel,
+  inventorName,
+  locale,
+  isAboveFold = true
+}: InfoBoxProps) {
   const t = useTranslations("Translations")
   const detailPageURL = `/invention/${encodeURIComponent(name)}`
+  const imageSrc = transparentImage || fallbackImage || ""
+  const hasImage = Boolean(imageSrc)
+  const inventorLabel = inventorName || t("unknownInventor")
 
   return (
-    <div className="px-4 pt-4 w-full max-w-[600px] rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-500 flex flex-col mb-4 sm:px-6 sm:pt-6 sm:mb-6">
-      <h4 className="text-gray-700 text-xs sm:text-sm md:text-base">
-        {inventorName || t("unknownInventor")}
-      </h4>
-      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-3">
-        {title}
-      </h3>
-      <div className="image-container overflow-hidden rounded-lg">
-      <Image
-  priority={isAboveFold}
-  src={transparentImage}
-  alt={title}
-  width={160} // Set your desired width
-  height={200} // Remove explicit height
-  style={{ width: "150px", height: "auto" }}
-  className="mx-auto"
-/>
-</div>
-      <div className="mt-3 sm:mt-4 mb-4 sm:mb-6 mr-4 flex justify-end">
-        <Link
-          href={detailPageURL}
-          locale={locale}
-          className="inline-flex items-center px-3 py-1 text-gray-700 text-xs sm:text-sm md:text-base sm:px-4 sm:py-2 rounded-lg bg-gray-200 hover:bg-primaryBlue hover:text-white transition-colors"
-        >
-          <span>
-            {t("details")}
-          </span>
-          <span className="ml-1">+</span>
-        </Link>
-    </div>
-    </div>
+    <Link href={detailPageURL} locale={locale} className="group block">
+      <article className="swiss-feature-card">
+        <div className="swiss-feature-card__body">
+          <div className="swiss-feature-card__eyebrow">
+            {categoryLabel && <span className="swiss-feature-card__pill">{categoryLabel}</span>}
+            <div className="swiss-feature-card__inventor">
+              <span className="swiss-feature-card__inventor-label">{t("inventor")}</span>
+              <span className="swiss-feature-card__inventor-name">{inventorLabel}</span>
+            </div>
+          </div>
+          <h3 className="swiss-feature-card__title">{title}</h3>
+          {headline && <p className="swiss-feature-card__headline">{headline}</p>}
+          <span className="swiss-feature-card__cta">{t("details")} →</span>
+        </div>
+
+        <div className={`swiss-feature-card__image${hasImage ? "" : " swiss-feature-card__image--placeholder"}`}>
+          {hasImage ? (
+            <div className="swiss-feature-card__image-inner">
+              <Image
+                priority={isAboveFold}
+                src={imageSrc}
+                alt={title}
+                fill
+                sizes="(min-width: 1024px) 40vw, 80vw"
+                className="object-contain"
+              />
+            </div>
+          ) : (
+            <div className="swiss-feature-card__placeholder">
+              <span>{t("featuredToday")}</span>
+            </div>
+          )}
+        </div>
+      </article>
+    </Link>
   )
 }

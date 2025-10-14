@@ -1,33 +1,59 @@
 "use client"
 
-import React, { memo } from "react"
+import React, { memo, useEffect, useState } from "react"
 import { useTranslations } from "next-intl"
+import { Link } from "../../../i18n/routing"
 
 const Header = memo(function Header() {
   const t = useTranslations("Translations")
+  const [stockholmTime, setStockholmTime] = useState<string>("")
+
+  useEffect(() => {
+    const formatter = new Intl.DateTimeFormat("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: "Europe/Stockholm"
+    })
+
+    const updateTime = () => setStockholmTime(formatter.format(new Date()))
+    updateTime()
+
+    const timer = window.setInterval(updateTime, 60_000)
+    return () => window.clearInterval(timer)
+  }, [])
+
+  const heroLead = `${t("headerText")} ${t("peopleOfSweden")}`
+  const heroTitle = `${t("title")} ${t("inventions")}`
+  const currentYear = new Date().getFullYear()
 
   return (
-    <header className="text-start mb-24 w-full max-w-5xl text-primaryBlue">
-    <div className="py-2 md:py-8 text-left">
-  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
-    {t("title")}{" "}
-    <span
-      className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#005293] to-[#fecb00]"
-    >
-      {t("inventions")}
-    </span>{" "}
-    {t("and")}{" "}
-    <span
-      className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#005293] to-[#fecb00]"
-    >
-      {t("innovations")}
-    </span>
-  </h1>
-</div>
+    <header id="top" className="swiss-hero">
+      <div className="container swiss-hero__inner">
+        <div className="swiss-hero__layout">
+          <div className="swiss-hero__col swiss-hero__col--intro">
+            <span className="swiss-hero__micro">Swedish Inventions</span>
+            <span className="swiss-hero__micro-sub">
+              Archive 1844 — {currentYear}
+            </span>
+            <p className="swiss-hero__tagline">{t("categorySubtitle")}</p>
+          </div>
 
-      <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed md:leading-loose">
-        {t("headerText")} <span className="bg-amber-300 p-1 md:p-2 text-primaryBlue font-bold leading-relaxed md:leading-loose">{t("peopleOfSweden")}</span>
-      </p>
+          <div className="swiss-hero__col swiss-hero__col--main">
+            <h1 className="swiss-hero__heading">{heroTitle}</h1>
+            <p className="swiss-hero__lead">{heroLead}</p>
+          </div>
+
+          <div className="swiss-hero__col swiss-hero__col--meta">
+            <div className="swiss-hero__meta-block">
+              <span className="swiss-hero__meta-label">Stockholm, Sweden</span>
+              <span className="swiss-hero__meta-value">
+                {stockholmTime ? `${stockholmTime} (CET)` : "—"}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   )
 })

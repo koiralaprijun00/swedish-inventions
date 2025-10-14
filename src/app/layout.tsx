@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Libre_Franklin } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./styles/globals.css";
 import ScrollToTop from "./[locale]/components/ScrollToTop";
 
-// Configure Libre Franklin font
-const libreFranklin = Libre_Franklin({
+// Configure Inter font for Swiss design
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-  variable: "--font-libre-franklin", // Optional: for custom CSS usage
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -83,7 +83,7 @@ export default function RootLayout({
         <meta name="twitter:image" content="/swedish-inventions-thumbnail.jpg" />
       </head>
       <GoogleAnalytics gaId="G-SZZPBRPWY5" />
-      <body className={`${libreFranklin.className} antialiased`}>
+      <body className={`${inter.className} antialiased w-full`}>
       <ScrollToTop />
         {children}
       </body>

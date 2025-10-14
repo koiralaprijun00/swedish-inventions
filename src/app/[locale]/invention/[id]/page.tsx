@@ -73,55 +73,95 @@ export default function InventionPage() {
     );
   }
 
+  const renderedDescription = fullDescription ? (
+    <div className="swiss-invention__markdown">
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        {fullDescription}
+      </ReactMarkdown>
+    </div>
+  ) : (
+    <p className="swiss-invention__summary">
+      {invention.description[locale]}
+    </p>
+  );
+
   return (
-    <div className="flex flex-col md:flex-row justify-between p-4 gap-2 md:gap-12">
-      <div className="invention-page-content w-full md:w-4/5 h-auto order-2 md:order-1">
-        <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center mb-8">
-          <h1 className="text-md md:text-4xl pr-2 md:pr-0 md:text-4xl w-full md:w-3/4 mt-6 font-bold text-primaryBlue order-2 md:order-1 leading-[1.5]">
+    <section className="swiss-invention">
+      <article className="swiss-invention__wrapper">
+        <header className="swiss-invention__header">
+          <div className="swiss-invention__eyebrow">
+            {invention.year && (
+              <span className="swiss-invention__year">{invention.year}</span>
+            )}
+            <span className="swiss-invention__category">
+              {t(`categories.${invention.category}`)}
+            </span>
+          </div>
+          <h1 className="swiss-invention__title">
             {invention.oneLineHeading[locale]}
           </h1>
+          <p className="swiss-invention__lede">
+            {invention.description[locale]}
+          </p>
           {currentUrl && (
-            <div className="mt-4 order-2 md:order-1">
-              <p className="text-gray-700 font-semibold mb-1 hidden md:block">
+            <div className="swiss-invention__share">
+              <span className="swiss-invention__share-label">
                 {t("share")}
-              </p>
+              </span>
               <SocialShare url={currentUrl} title={invention.name[locale]} />
             </div>
           )}
-        </div>
-        {/* Summary from inventionsData */}
-        <p className="text-gray-600 mb-4 w-full md:w-2/4 font-sm mt-0 md:mt-12 mb-8 md:mb-12 ml-0 md:ml-12 py-0 md:py-2 pl-2 md:pl-4 border-l-2 border-primaryBlue ">{invention.description[locale]}</p>
-        <div className="mt-4">
-          <div className="relative w-full h-48 md:h-96">
-            <Image
-              src={invention.imageSrc || "/fallback-image.jpg"}
-              alt={invention.name[locale]}
-              fill
-              style={{ objectFit: "cover" }}
-            />
+        </header>
+
+        <figure className="swiss-invention__media">
+          <Image
+            src={invention.imageSrc || "/fallback-image.jpg"}
+            alt={invention.name[locale]}
+            fill
+            className="swiss-invention__image"
+          />
+        </figure>
+
+        <div className="swiss-invention__layout">
+          <div className="swiss-invention__content">
+            {renderedDescription}
           </div>
-          {/* Full Markdown description below the image */}
-          {fullDescription && (
-            <div className="prose prose-lg mt-6 text-gray-800 overflow-hidden">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {fullDescription}
-              </ReactMarkdown>
+
+          <aside className="swiss-invention__sidebar">
+            <div className="swiss-invention__fact">
+              <span className="swiss-invention__fact-label">
+                {t("inventor")}
+              </span>
+              <span className="swiss-invention__fact-value">
+                {invention.inventorName || t("unknown")}
+              </span>
             </div>
-          )}
+
+            <div className="swiss-invention__divider" aria-hidden="true" />
+
+            <div className="swiss-invention__fact">
+              <span className="swiss-invention__fact-label">
+                {t("category")}
+              </span>
+              <span className="swiss-invention__fact-value">
+                {t(`categories.${invention.category}`)}
+              </span>
+            </div>
+
+            {invention.year && (
+              <>
+                <div className="swiss-invention__divider" aria-hidden="true" />
+                <div className="swiss-invention__fact swiss-invention__fact--emphasis">
+                  <span className="swiss-invention__fact-label">Year</span>
+                  <span className="swiss-invention__fact-value">
+                    {invention.year}
+                  </span>
+                </div>
+              </>
+            )}
+          </aside>
         </div>
-      </div>
-      <div className="border-0 md:border-l border-primaryBlue pl-0 md:pl-4 w-full md:w-1/5 invention-page-meta order-1 md:order-2 mt-4 md:mt-0">
-        <div className="mb-4">
-          <strong>{t("inventor")}</strong>
-          <br />
-          {invention.inventorName || t("unknown")}
-        </div>
-        <div>
-          <strong>{t("category")}</strong>
-          <br />
-          {t(`categories.${invention.category}`)}
-        </div>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 }

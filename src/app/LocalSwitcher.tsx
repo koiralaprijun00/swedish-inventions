@@ -26,7 +26,10 @@ export default function LocaleSwitcher({ currentLocale }: { currentLocale: strin
 
   return (
     <div className="relative">
-      <button onClick={() => setDropdownOpen(!dropdownOpen)} className="p-2 text-sm text-blue-600 hover:bg-gray-200">
+      <button
+        onClick={() => setDropdownOpen(!dropdownOpen)}
+        className="p-2 text-sm text-blue-600 bg-transparent hover:bg-gray-200 border-0"
+      >
         {currentLocale.toUpperCase()} ▼
       </button>
 
@@ -34,13 +37,13 @@ export default function LocaleSwitcher({ currentLocale }: { currentLocale: strin
         <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg z-50">
           <button
             onClick={() => switchLocale("en")}
-            className={`block px-4 py-2 text-sm ${currentLocale === "en" ? "font-bold text-blue-700" : "text-blue-600 hover:underline"}`}
+            className={`block w-full px-4 py-2 text-sm text-left border-0 bg-transparent ${currentLocale === "en" ? "font-bold text-blue-700" : "text-blue-600 hover:underline"}`}
           >
             English
           </button>
           <button
             onClick={() => switchLocale("sv")}
-            className={`block px-4 py-2 text-sm ${currentLocale === "sv" ? "font-bold text-blue-700" : "text-blue-600 hover:underline"}`}
+            className={`block w-full px-4 py-2 text-sm text-left border-0 bg-transparent ${currentLocale === "sv" ? "font-bold text-blue-700" : "text-blue-600 hover:underline"}`}
           >
             Svenska
           </button>

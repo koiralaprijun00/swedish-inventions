@@ -1,62 +1,142 @@
 "use client";
 
-import React, { useState } from "react";
-import inventionsData from "../../inventionsData";
+import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import inventionsData from "../../inventionsData";
 
-interface InventionItem {
-  name: { [key: string]: string };
-}
+type InventionItem = {
+  name: { [key: string]: string } | string;
+  inventorName?: string;
+  year?: number | string;
+};
 
-interface Category {
+type Category = {
   category: string;
   items: InventionItem[];
-}
+};
 
 const Tabs: React.FC = () => {
-  const initialActiveCategory: Category = inventionsData.find(
-    (category) => category.category === "foodBeverage"
-  ) || inventionsData[0];
-
-  const [activeTab, setActiveTab] = useState<Category>(initialActiveCategory);
-
   const { locale } = useParams() as { locale: string };
   const t = useTranslations("Translations");
 
+  const categories = useMemo(
+    () =>
+      inventionsData.map((category, index) => ({
+        ...category,
+        order: index + 1
+      })),
+    []
+  );
+
+  const [activeCategoryKey, setActiveCategoryKey] = useState<string>(
+    categories[0]?.category ?? ""
+  );
+
+  const activeCategory: Category | undefined = categories.find(
+    (category) => category.category === activeCategoryKey
+  );
+
+  const getLocalizedName = (item: InventionItem): string => {
+    if (!item.name) return "";
+    if (typeof item.name === "string") return item.name;
+    return (
+      item.name[locale] ||
+      item.name.en ||
+      item.name.sv ||
+      Object.values(item.name)[0] ||
+      ""
+    );
+  };
+
+  if (categories.length === 0) {
+    return null;
+  }
+
   return (
-    <div className="mb-16 w-full md:w-3/4"> {/* Adjusted margin for responsiveness */}
-      <h2 className="text-md font-bold mt-16 mb-8">
-        {t("exploreSwedishInventions")} {/* Added translation key */}
-      </h2>
-      <div className="text-sm flex border-b border-gray-300 overflow-x-auto whitespace-nowrap gap-4 md:gap-12"> {/* Adjusted gap for responsiveness */}
-        {inventionsData.map((category) => (
-          <div
-            key={category.category}
-            className={`px-0 pt-2 pb-4 ml-4 cursor-pointer ${
-              activeTab === category ? "border-b-2 border-black font-bold" : ""
-            }`}
-            onClick={() => setActiveTab(category)}
-          >
-            {t(`categories.${category.category}`)}
+    <section className="swiss-explore">
+      <div className="container">
+        <div className="swiss-explore__layout">
+          <div className="swiss-explore__header">
+            <span className="swiss-explore__eyebrow">{t("categoryTitle")}</span>
+            <h2 className="swiss-explore__title">
+              {t("exploreSwedishInventions")}
+            </h2>
+            <p className="swiss-explore__lead">
+              {t("categorySubtitle")} {t("peopleOfSweden")}
+            </p>
           </div>
-        ))}
+
+          <div className="swiss-explore__content">
+            <div
+              className="swiss-explore__tabs"
+              role="tablist"
+              aria-label={t("exploreSwedishInventions")}
+            >
+              {categories.map((category) => {
+                const isActive = category.category === activeCategoryKey;
+
+                return (
+                  <button
+                    key={category.category}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls={`swiss-explore-panel-${category.category}`}
+                    className={`swiss-explore__tab ${
+                      isActive ? "swiss-explore__tab--active" : ""
+                    }`}
+                    onClick={() => setActiveCategoryKey(category.category)}
+                  >
+                    <span className="swiss-explore__tab-label">
+                      {t(`categories.${category.category}`)}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="swiss-explore__divider" aria-hidden="true" />
+
+            <div
+              className="swiss-explore__list"
+              id={`swiss-explore-panel-${activeCategory?.category ?? "all"}`}
+              role="tabpanel"
+              aria-live="polite"
+            >
+              {activeCategory?.items.slice(0, 12).map((item, index) => {
+                const localizedName = getLocalizedName(item);
+                const slug =
+                  typeof item.name === "string"
+                    ? item.name
+                    : item.name?.en || localizedName;
+
+                return (
+                  <article
+                    key={`${activeCategory?.category}-${localizedName}-${index}`}
+                    className="swiss-explore__item"
+                  >
+                    <Link
+                      href={`/${locale}/invention/${encodeURIComponent(
+                        slug || ""
+                      )}`}
+                      className="swiss-explore__item-link"
+                    >
+                      {localizedName}
+                    </Link>
+                    <div className="swiss-explore__item-meta">
+                      <span>{item.year ?? "—"}</span>
+                      <span>{item.inventorName ?? t("unknownInventor")}</span>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"> {/* Adjusted gap for responsiveness */} 
-  {activeTab.items &&
-    activeTab.items.map((item, index) => (
-      <div key={index}>
-        <Link
-          href={`/${locale}/invention/${encodeURIComponent(item.name.en)}`}
-          className=" text-gray-600 hover:text-primaryBlue hover:font-bold transition-colors inline-block"
-        >
-          <h3>{item.name[locale] || item.name['en']}</h3>
-        </Link>
-      </div>
-    ))}
-</div>
-    </div>
+    </section>
   );
 };
 

@@ -5,7 +5,6 @@ import { useParams } from "next/navigation";
 import Head from "next/head"
 import React, { useState, Suspense } from "react"
 import inventionsData from "../../../src/app/inventionsData.js"
-import InfoBox from "./components/InfoBox";
 import InventionCard from "./components/InventionCard";
 import Header from "./components/Header";
 import Link from "next/link"
@@ -24,20 +23,23 @@ function CategoryFilter({
   onSelectCategory: (key: string) => void
 }) {
   return (
-    <div className="flex flex-wrap gap-4 mt-8 mb-8">
-      {categories.map(cat =>
-       <button
-       key={cat.key}
-       onClick={() => onSelectCategory(cat.key)}
-       className={`cursor-pointer outline-none border-0 rounded-[6px] px-6 py-2 text-[0.9rem] transition-colors duration-200 ease-in-out ${
-         selectedCategory === cat.key
-           ? "bg-primaryBlue text-white"
-           : "bg-[#f1f1f1] text-[#0f3a56] hover:bg-primaryBlue hover:text-white"
-       }`}
-     >
-       {cat.label}
-     </button>     
-      )}
+    <div className="swiss-filter-panel">
+      <div className="swiss-filter">
+        {categories.map((cat, index) => (
+          <button
+            type="button"
+            key={cat.key}
+            onClick={() => onSelectCategory(cat.key)}
+            className={`swiss-filter__item ${
+              selectedCategory === cat.key ? "swiss-filter__item--active" : ""
+            }`}
+            aria-pressed={selectedCategory === cat.key}
+          >
+            <span className="swiss-filter__number">{String(index + 1).padStart(2, "0")}</span>
+            <span className="swiss-filter__label">{cat.label}</span>
+          </button>
+        ))}
+      </div>
     </div>
   )
 }
@@ -51,7 +53,8 @@ function HomeContent() {
 
   // *** Construct the canonical URL ***
   const baseUrl = locale === "en" ? "https://swedishinventions.com" : `https://swedishinventions.com/${locale}`;
-  const canonicalUrl = searchParams ? `${baseUrl}?${searchParams}` : baseUrl;
+  const searchQuery = searchParams?.toString()
+  const canonicalUrl = searchQuery ? `${baseUrl}?${searchQuery}` : baseUrl;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -74,80 +77,69 @@ function HomeContent() {
     { key: "digitalTechnology", label: t("categories.digitalTechnology") },
     { key: "gaming", label: t("categories.gaming") },
     { key: "scienceInnovation", label: t("categories.scienceInnovation") },
-    { key: "artsCulture", label: t("categories.artsCulture") },
-    
+    { key: "artsCulture", label: t("categories.artsCulture") }
   ]
 
   const normalize = (str: string) => str.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")
 
   const filteredData = selectedCategory === "all" ? inventionsData : inventionsData.filter(cat => normalize(cat.category) === normalize(selectedCategory))
 
-  // Localize category names (assuming you have translations for them)
   const getLocalizedCategory = (category: string) => {
     return t(`categories.${category}`)
   }
+
   return (
     <>
     <Head>
         <Link rel="canonical" href={canonicalUrl} key="canonical" />
-        {/* other head elements */}
       </Head>
-    <div className="mt-2 md:mt-12">
+    
     <Header />
 
-      <div>
-        <div className="flex justify-start gap-2 min-h-[50px]">
-          <h2 className="text-2xl font-bold text-primaryBlue">
-            {t("categoryTitle")}
-          </h2>
-          <h2 className="text-2xl text-gray-400">
-            {t("categorySubtitle")}
-          </h2>
-        </div>
-        {/* Info Boxes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center sm:justify-items-start">
-        {inventionsData.slice(0, 3).map((category, idx) => (
-  <InfoBox
-    key={idx}
-    name={getLocalizedName(category.items[0])}
-    transparentImage={category.items[0].transparentImage || ""}
-    title={getLocalizedName(category.items[0])}
-    description={
-      typeof category.items[0].description === "string"
-        ? category.items[0].description
-        : ""
-    }
-    inventorName={category.items[0].inventorName}
-    tags={[category.category, category.items[0].inventorName || "Unknown"]}
-    locale={locale}
-  />
-))}
-        </div>
-      </div>
-
-      <CategoryFilter categories={categories} selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
-
-      {filteredData.map(category =>
-        <div key={category.category} className="">
-          <h2 className="text-xl font-bold mb-1 mt-8">
-            {getLocalizedCategory(category.category)} {/* Localized category */}
-          </h2>
-          <div className="flex gap-4 flex-wrap w-full">
-            {category.items.map(item =>
-              <div key={getLocalizedName(item)} className="w-full md:w-[350px]"> {/* Use a key */}
-              <InventionCard
-                key={getLocalizedName(item)} // Use localized name as a key
-                name={getLocalizedName(item)} // Pass localized name
-                imageSrc={item.imageSrc}
-                inventorName={item.inventorName}
-                locale={locale}
-              />
-              </div>
-            )}
+    <main className="swiss-main">
+      <section id="catalogue" className="swiss-section swiss-section--catalogue container">
+        <div className="swiss-grid swiss-section__heading">
+          <div className="col-span-12 md:col-span-4">
+            <span className="swiss-section__label">Catalogue</span>
+            <h3 className="swiss-section__subtitle">Categories</h3>
+          </div>
+          <div className="col-span-12 md:col-span-8">
+            <CategoryFilter categories={categories} selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
           </div>
         </div>
-      )}
-    </div>
+      </section>
+
+      <section className="swiss-section container">
+        <div className="swiss-stack">
+          {filteredData.map((category, categoryIdx) => (
+            <div key={category.category} className="swiss-category-block">
+              <div className="swiss-grid swiss-category-block__header">
+                <div className="col-span-12 md:col-span-3">
+                  <span className="swiss-category-block__index">{String(categoryIdx + 1).padStart(2, "0")}</span>
+                  <span className="swiss-category-block__name">{getLocalizedCategory(category.category)}</span>
+                </div>
+                <div className="col-span-12 md:col-span-9">
+                  <div className="swiss-divider" aria-hidden="true" />
+                </div>
+              </div>
+
+              <div className="swiss-catalog-grid">
+                {category.items.map(item => (
+                  <InventionCard
+                    key={getLocalizedName(item)}
+                    name={getLocalizedName(item)}
+                    imageSrc={item.imageSrc}
+                    inventorName={item.inventorName}
+                    year={item.year?.toString()}
+                    locale={locale}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
     
     </>
   )

@@ -3,10 +3,8 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "../../i18n/routing";
 import type { Metadata } from "next";
-import ContactForm from "../ContactForm";
 import Navbar from "../Navbar";
 import Tabs from '../[locale]/components/Tabs'
-import QuizFloatingButton from '../[locale]/components/QuizFloatingButton';
 import Footer from "../Footer";
 import "../styles/globals.css";
 
@@ -40,10 +38,8 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={validLocale} messages={messages}>
           <Navbar currentLocale={validLocale} />
           {children}
-          <ContactForm />
           <Tabs />
           <Footer />
-          <QuizFloatingButton />
         </NextIntlClientProvider>
   );
 }
