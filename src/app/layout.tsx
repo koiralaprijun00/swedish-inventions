@@ -1,91 +1,46 @@
 import type { Metadata } from "next";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
-import "./styles/globals.css";
-import ScrollToTop from "./[locale]/components/ScrollToTop";
+import "./globals.css";
+import { AuthProvider } from "@/components/AuthProvider";
 
-// Configure Inter font for Swiss design
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal"],
-  variable: "--font-inter",
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://swedishinventions.com"),
-  title: "Swedish Inventions – Innovations That Changed the World",
+  title: "BeerCount 🍺",
   description:
-    "Explore groundbreaking Swedish inventions that shaped technology, medicine, and everyday life. Discover Sweden’s legacy of innovation.",
+    "Track every beer you enjoy with BeerCount. Log drinks, explore new beers, and keep your stats in sync across devices.",
+  metadataBase: new URL("https://beercount.example.com"),
   openGraph: {
-    title: "Swedish Inventions – Innovations That Changed the World",
+    title: "BeerCount 🍺",
     description:
-      "Explore groundbreaking Swedish inventions that shaped technology, medicine, and everyday life.",
-    url: "https://swedishinventions.com",
-    siteName: "Swedish Inventions",
+      "Track every beer you enjoy with BeerCount. Log drinks, explore new beers, and keep your stats in sync across devices.",
     images: [
       {
-        url: "/swedish-inventions-thumbnail.jpg",
+        url: "/og-beercount.png",
         width: 1200,
         height: 630,
-        alt: "Swedish Inventions Banner",
+        alt: "BeerCount dashboard preview",
       },
     ],
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@allthingssweden",
-    creator: "@allthingssweden",
-    title: "Swedish Inventions – Innovations That Changed the World",
-    description: "Discover famous Swedish innovations that shaped industries worldwide.",
-    images: ["/swedish-inventions-thumbnail.jpg"], // Fixed path
+    title: "BeerCount 🍺",
+    description:
+      "Track every beer you enjoy with BeerCount. Log drinks, explore new beers, and keep your stats in sync across devices.",
+    images: ["/og-beercount.png"],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-       {/* Favicon and Apple Touch Icon (no preload) */}
-       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        
-        {/* Viewport for Responsive Design */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        {/* Open Graph (Facebook, LinkedIn) */}
-        <meta
-          property="og:title"
-          content="Swedish Inventions – Innovations That Changed the World"
-        />
-        <meta
-          property="og:description"
-          content="Explore groundbreaking Swedish inventions that shaped technology, medicine, and everyday life."
-        />
-        <meta property="og:image" content="/swedish-inventions-thumbnail.jpg" />
-        <meta property="og:url" content="https://swedishinventions.com" />
-        <meta property="og:type" content="website" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Swedish Inventions – Innovations That Changed the World"
-        />
-        <meta
-          name="twitter:description"
-          content="Discover famous Swedish innovations that shaped industries worldwide."
-        />
-        <meta name="twitter:image" content="/swedish-inventions-thumbnail.jpg" />
-      </head>
-      <GoogleAnalytics gaId="G-SZZPBRPWY5" />
-      <body className={`${inter.className} antialiased w-full`}>
-      <ScrollToTop />
-        {children}
+    <html lang="en" className={inter.variable}>
+      <body className="bg-amber-50 text-slate-900 min-h-screen">
+        <AuthProvider>
+          <div className="min-h-screen flex flex-col">
+            {children}
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );
