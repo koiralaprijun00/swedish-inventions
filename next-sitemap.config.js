@@ -1,9 +1,9 @@
 /** @type {import('next-sitemap').IConfig} */
-export default { // Use export default
-  siteUrl: process.env.SITE_URL || 'https://swedishinventions.com',
+export default {
+  siteUrl: process.env.SITE_URL || "https://beer-count.vercel.app",
   generateRobotsTxt: true,
   sitemapSize: 5000,
-  changefreq: 'daily',
+  changefreq: "daily",
   priority: 0.7,
-  exclude: ['/private-page'],
+  exclude: ["/private-page"],
 };
