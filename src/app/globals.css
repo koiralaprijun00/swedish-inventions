@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-inter);
+  background: #fdfaf5;
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+}
+
+.card-shadow {
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.08);
+}
+
+.badge-dot::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  display: inline-block;
+  margin-right: 6px;
+  background-color: currentColor;
+}
