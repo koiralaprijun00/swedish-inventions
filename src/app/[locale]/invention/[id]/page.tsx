@@ -98,12 +98,14 @@ export default function InventionPage() {
         </div>
 
         <h1 className="detail__title">
-          {invention.oneLineHeading[locale]}
+          {invention.name[locale]}
         </h1>
 
-        <p className="detail__lede">
-          {invention.description[locale]}
-        </p>
+        {invention.summary?.[locale] && (
+          <p className="detail__lede">
+            {invention.summary[locale]}
+          </p>
+        )}
 
         {currentUrl && (
           <div className="detail__share">

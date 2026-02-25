@@ -307,10 +307,17 @@ body {
 
 /* Description column */
 .expand-panel__desc {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   line-height: 1.7;
   color: var(--gray-600);
   padding-top: 0.25rem;
+}
+
+.expand-panel__summary {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 0.5rem;
 }
 /* ── Detail Page ── */
 .detail {
@@ -351,7 +358,7 @@ body {
 }
 
 .detail__lede {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   color: var(--gray-600);
   line-height: 1.6;
   max-width: 64ch;
@@ -385,7 +392,7 @@ body {
 }
 
 .detail__content {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   line-height: 1.7;
   color: #222;
 }

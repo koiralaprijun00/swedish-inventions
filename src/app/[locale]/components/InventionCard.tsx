@@ -11,6 +11,7 @@ type InventionCardProps = {
   category?: string
   imageSrc?: string
   description?: string
+  summary?: string
   expanded?: boolean
   onToggle?: () => void
 }
@@ -23,6 +24,7 @@ export default function InventionCard({
   category,
   imageSrc,
   description,
+  summary,
   expanded = false,
   onToggle = () => {},
 }: InventionCardProps) {
@@ -79,6 +81,7 @@ export default function InventionCard({
 
             {/* Description column */}
             <div className="expand-panel__desc">
+              {summary && <p className="expand-panel__summary">{summary}</p>}
               {description && <p>{description}</p>}
             </div>
           </div>
