@@ -45,6 +45,7 @@ function HomeContent() {
   const searchParams = useSearchParams();
   const t = useTranslations("Translations");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [expandedInvention, setExpandedInvention] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -83,6 +84,10 @@ function HomeContent() {
     return t(`categories.${category}`);
   };
 
+  const handleToggle = (inventionName: string) => {
+    setExpandedInvention((prev) => (prev === inventionName ? null : inventionName));
+  };
+
   return (
     <>
       <Header />
@@ -109,15 +114,22 @@ function HomeContent() {
                   </div>
 
                   <div className="inv-grid">
-                    {category.items.map((item) => (
-                      <InventionCard
-                        key={getLocalizedName(item)}
-                        name={getLocalizedName(item)}
-                        inventorName={item.inventorName}
-                        year={item.year?.toString()}
-                        locale={locale}
-                      />
-                    ))}
+                    {category.items.map((item) => {
+                      const localName = getLocalizedName(item);
+                      return (
+                        <InventionCard
+                          key={localName}
+                          name={localName}
+                          inventorName={item.inventorName}
+                          year={item.year?.toString()}
+                          locale={locale}
+                          category={getLocalizedCategory(category.category)}
+                          imageSrc={item.imageSrc}
+                          expanded={expandedInvention === localName}
+                          onToggle={() => handleToggle(localName)}
+                        />
+                      );
+                    })}
                   </div>
                 </div>
               ))}
