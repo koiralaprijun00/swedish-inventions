@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://swedishinventions.com
+Host: https://beer-count.vercel.app
 
 # Sitemaps
-Sitemap: https://swedishinventions.com/sitemap.xml
+Sitemap: https://beer-count.vercel.app/sitemap.xml
