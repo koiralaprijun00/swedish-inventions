@@ -4,7 +4,6 @@ import InventionCard from './InventionCard';
 type Invention = {
   id: string;
   name: string;
-  imageSrc: string;
   inventorName?: string;
   year?: string;
   category?: string;
@@ -20,25 +19,24 @@ type ListLayoutProps = {
 
 const ListLayout = ({ inventions, locale, title = "Swedish Inventions", description }: ListLayoutProps) => {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <header className="mb-12">
-        <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+    <div className="container" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
+      <header style={{ marginBottom: '1.5rem' }}>
+        <h1 style={{ fontSize: '1.5rem', fontWeight: 700, letterSpacing: '-0.02em' }}>
           {title}
         </h1>
         {description && (
-          <p className="text-lg text-secondary max-w-3xl">
+          <p style={{ fontSize: '0.875rem', color: '#555', marginTop: '0.25rem' }}>
             {description}
           </p>
         )}
       </header>
 
       <main>
-        <div className="space-y-1">
+        <div className="inv-grid">
           {inventions.map((invention) => (
             <InventionCard
               key={invention.id}
               name={invention.name}
-              imageSrc={invention.imageSrc}
               inventorName={invention.inventorName}
               year={invention.year}
               locale={locale}

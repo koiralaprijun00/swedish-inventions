@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { routing } from "../../i18n/routing";
 import type { Metadata } from "next";
 import Navbar from "../Navbar";
-import Tabs from '../[locale]/components/Tabs'
 import Footer from "../Footer";
 import "../styles/globals.css";
 
@@ -38,7 +37,6 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={validLocale} messages={messages}>
           <Navbar currentLocale={validLocale} />
           {children}
-          <Tabs />
           <Footer />
         </NextIntlClientProvider>
   );
