@@ -9,8 +9,8 @@ const inventionsData = [
                 year: 2001,
                 oneLineHeading: { en: "Creamy Revolution: Oat Milk Takes the World by Storm", sv: "Krämig Revolution: Havremjölk Tar Världen med Storm" },
                 description: {
-                    en: "Oatly Oat Milk is a plant-based milk alternative made from oats, known for its creamy texture and mild, slightly sweet flavor.",
-                    sv: "Oatly Havremjölk är ett växtbaserat mjölkalternativ gjort av havre, känt för sin krämiga textur och milda, något söta smak.",
+                    en: "Oatly Oat Milk is a plant-based milk alternative made from oats, developed by Swedish food scientist Rickard Öste at Lund University. Born from decades of research into lactose intolerance, Öste discovered that enzymes could transform oats into a creamy, drinkable liquid. Founded in 2001, Oatly struggled for years before a bold rebrand in 2012 turned it into a cultural phenomenon. Today the company sells in over 20 countries and has become a symbol of sustainable food innovation, proving that Swedish ingenuity can reshape what the world drinks.",
+                    sv: "Oatly Havremjölk är ett växtbaserat mjölkalternativ gjort av havre, utvecklat av den svenske livsmedelsforskaren Rickard Öste vid Lunds universitet. Född ur årtionden av forskning om laktosintolerans upptäckte Öste att enzymer kunde förvandla havre till en krämig, drickbar vätska. Grundat 2001 kämpade Oatly i flera år innan en djärv omprofilering 2012 gjorde det till ett kulturellt fenomen. Idag säljer företaget i över 20 länder och har blivit en symbol för hållbar livsmedelsinnovation.",
                 },
                 imageSrc: "/invention-images/oatly.webp",
                 transparentImage: "/invention-images/oatly-png.webp",
@@ -27,7 +27,10 @@ const inventionsData = [
                     sv:
                         "Coca-Cola-flaskan är en av världens mest igenkännliga designer. Med sina unika kurvor och omedelbart identifierbara form har den blivit en symbol för varumärkesexcellens. Men vad många inte vet är att designen av Coca-Cola-flaskan har starka svenska rötter. Flaskan som för alltid förändrade dryckesförpackningar skapades av den svenskfödde innovatören Alexander Samuelson.",
                 },
-                description: { en: "The iconic contoured Coca-Cola bottle was designed by Swedish-born Alexander Samuelson in 1915.", sv: "Den ikoniska konturformade Coca-Cola-flaskan designades av svenskfödde Alexander Samuelson 1915." },
+                description: {
+                    en: "The iconic contoured Coca-Cola bottle was designed by Swedish-born Alexander Samuelson in 1915 at the Root Glass Company in Indiana. Tasked with creating a bottle so distinctive it could be recognized by touch in the dark, Samuelson drew inspiration from the cocoa pod's ribbed shape. His design beat competing entries and was patented on November 16, 1915. The bottle became one of the most recognized objects on Earth, featured in pop art by Andy Warhol and collected by museums worldwide, a lasting testament to Swedish design thinking.",
+                    sv: "Den ikoniska konturformade Coca-Cola-flaskan designades av svenskfödde Alexander Samuelson 1915 vid Root Glass Company i Indiana. Med uppgiften att skapa en flaska så distinkt att den kunde kännas igen i mörkret hämtade Samuelson inspiration från kakaofrukens räfflade form. Hans design slog konkurrerande bidrag och patenterades den 16 november 1915. Flaskan blev ett av världens mest igenkända föremål, förevigad i Andy Warhols popkonst och samlad av museer världen över.",
+                },
                 imageSrc: "/invention-images/coca-cola.webp",
                 link: "https://www.coca-colacompany.com/about-us/history/the-history-of-the-coca-cola-contour-bottle",
             },
@@ -120,9 +123,9 @@ const inventionsData = [
                 oneLineHeading: { en: "Buckle Up: The Belt That Saved Millions", sv: "Spänn Fast: Bältet Som Räddade Miljoner" },
                 description: {
                     en:
-                        "Every time you buckle up in a car, you are using one of the greatest life-saving inventions in automotive history—the three-point seatbelt. This simple yet revolutionary device has saved millions of lives worldwide, and it was invented in Sweden by Volvo engineer Nils Bohlin in 1959.",
+                        "Every time you buckle up in a car, you are using one of the greatest life-saving inventions in automotive history—the three-point seatbelt. Invented by Volvo engineer Nils Bohlin in 1959, the V-shaped design distributes crash forces across the chest, pelvis, and shoulders rather than concentrating them on the abdomen. Volvo made the extraordinary decision to leave the patent open, allowing every car manufacturer to use it for free. The result: an estimated one million lives saved since its introduction, making it perhaps the single most impactful safety device ever created.",
                     sv:
-                        "Varje gång du spänner fast säkerhetsbältet i en bil använder du en av de mest livräddande uppfinningarna i bilhistorien – tre-punktsbältet. Denna enkla men revolutionerande uppfinning har räddat miljontals liv världen över och uppfanns i Sverige av Volvo-ingenjören Nils Bohlin 1959.",
+                        "Varje gång du spänner fast säkerhetsbältet i en bil använder du en av de mest livräddande uppfinningarna i bilhistorien – tre-punktsbältet. Uppfunnet av Volvo-ingenjören Nils Bohlin 1959 fördelar den V-formade designen krockkrafterna över bröstet, bäckenet och axlarna istället för att koncentrera dem på buken. Volvo tog det extraordinära beslutet att lämna patentet öppet, så att alla biltillverkare kunde använda det gratis. Resultatet: uppskattningsvis en miljon räddade liv sedan dess.",
                 },
                 imageSrc: "/invention-images/seatbelt.webp",
                 link: "https://example.com/oatmeal",
@@ -135,9 +138,9 @@ const inventionsData = [
                 oneLineHeading: { en: "Fasten Up: The Zipper That Stitched the World Together", sv: "Fäst Upp: Blixtlåset Som Sydde Ihop Världen" },
                 description: {
                     en:
-                        "The modern zipper, widely used in clothing, bags, and footwear, was perfected by the Swedish-American inventor Gideon Sundbäck in 1913. His design improved earlier fastening devices, making them more reliable and practical. Today, zippers are indispensable in everyday life, demonstrating the power of Swedish ingenuity.",
+                        "The modern zipper was perfected in 1913 by Swedish-American engineer Gideon Sundbäck, who increased the number of interlocking teeth from four to ten per centimetre and created the slider mechanism still used today. Earlier fasteners were clumsy and prone to popping open, but Sundbäck's 'Hookless No. 2' was reliable enough for mass production. The U.S. military adopted it for uniforms and equipment during World War I, accelerating global adoption. Today billions of zippers are manufactured every year for clothing, bags, and aerospace applications, a testament to Swedish precision engineering.",
                     sv:
-                        "Den moderna dragkedjan, som används flitigt i kläder, väskor och skor, fulländades av den svensk-amerikanske uppfinnaren Gideon Sundbäck år 1913. Hans design förbättrade tidigare fästanordningar och gjorde dem mer pålitliga och praktiska. Idag är dragkedjor oumbärliga i vardagen och visar på den svenska uppfinningsrikedomen.",
+                        "Den moderna dragkedjan fulländades 1913 av den svensk-amerikanske ingenjören Gideon Sundbäck, som ökade antalet sammanfogande tänder från fyra till tio per centimeter och skapade den glidmekanism som fortfarande används idag. Tidigare fästanordningar var klumpiga och benägna att gå upp, men Sundbäcks 'Hookless No. 2' var pålitlig nog för massproduktion. Den amerikanska militären införde den till uniformer under första världskriget, vilket accelererade global användning.",
                 },
                 imageSrc: "/invention-images/zipper.webp",
                 link: "https://example.com/oatmeal",
@@ -150,8 +153,9 @@ const inventionsData = [
                 oneLineHeading: { en: "Smooth Moves: The Bearing That Powers Machines", sv: "Mjuka Rörelser: Kullagret Som Driver Maskiner" },
                 description: {
                     en:
-                        "Invented by Swedish engineer Sven Wingquist in 1907, the self-aligning ball bearing transformed machinery and transportation. It reduced friction, extended the lifespan of mechanical parts, and boosted efficiency in industries such as automotive, aerospace, and manufacturing. The invention remains crucial in modern engineering and mechanics.",
-                    sv: "Uppfunnet av Sven Wingquist 1907 revolutionerade det självjusterande kullagret maskiner genom att minska friktion och slitage. Genom att grunda SKF blev denna svenska innovation en hörnsten i industriell teknik.",
+                        "Invented by Swedish engineer Sven Wingquist in 1907, the self-aligning ball bearing solved a critical problem in textile factories: misaligned shafts that caused constant breakdowns. Wingquist's double-row design could compensate for shaft deflection, dramatically reducing friction and extending machine life. He founded SKF the same year, which grew into one of the world's largest bearing manufacturers. Today ball bearings are found in everything from car wheels and hard drives to wind turbines and spacecraft, silently enabling the mechanical world to spin with precision.",
+                    sv:
+                        "Uppfunnet av den svenske ingenjören Sven Wingquist 1907 löste det självjusterande kullagret ett kritiskt problem i textilfabriker: felinriktade axlar som orsakade ständiga haverier. Wingquists dubbelradiga design kunde kompensera för axelavböjning, vilket dramatiskt minskade friktion och förlängde maskinernas livslängd. Han grundade SKF samma år, som växte till en av världens största kullagertillverkare. Idag finns kullager i allt från bilhjul och hårddiskar till vindkraftverk och rymdfarkoster.",
                 },
                 imageSrc: "/invention-images/ball-bearing.webp",
                 link: "https://example.com/oatmeal",
@@ -163,8 +167,8 @@ const inventionsData = [
                 year: 1836,
                 oneLineHeading: { en: "Sail On: The Propeller That Steered the Seas", sv: "Segla Vidare: Propellern Som Styrde Haven" },
                 description: {
-                    en: "John Ericsson's adjustable-pitch propeller, developed in the 19th century, transformed maritime travel with its efficiency and adaptability. This Swedish invention powered ships and naval breakthroughs worldwide.",
-                    sv: "John Ericssons propeller med justerbar stigning, utvecklad på 1800-talet, förändrade sjöfarten med sin effektivitet och anpassningsbarhet. Denna svenska uppfinning drev fartyg och marina genombrott världen över.",
+                    en: "Swedish-born engineer John Ericsson patented a screw propeller in 1836 that would end the age of paddle steamers. His design placed the blades below the waterline, making ships faster, more manoeuvrable, and less vulnerable in battle. Ericsson demonstrated the technology by winning a dramatic tug-of-war between a propeller-driven vessel and a paddle steamer on the Thames. He later designed the ironclad USS Monitor, which changed naval warfare during the American Civil War. The screw propeller remains the standard for marine and aircraft propulsion to this day.",
+                    sv: "Svenskfödde ingenjören John Ericsson patenterade en skruvpropeller 1836 som skulle avsluta hjulångfartygens era. Hans design placerade bladen under vattenlinjen, vilket gjorde fartyg snabbare, smidigare och mindre sårbara i strid. Ericsson demonstrerade tekniken genom att vinna en dramatisk dragkamp mellan ett propellerdrivet fartyg och en hjulångare på Themsen. Han designade senare pansarfartyget USS Monitor som förändrade sjökrigföring under det amerikanska inbördeskriget.",
                 },
                 imageSrc: "/invention-images/propeller.webp",
                 link: "https://example.com/oatmeal",
@@ -176,8 +180,8 @@ const inventionsData = [
                 year: 1882,
                 oneLineHeading: { en: "Flame On: The Torch That Lit Up Industry", sv: "Flamma På: Lampan Som Lyste Upp Industrin" },
                 description: {
-                    en: "Carl Richard Nyberg's blowtorch, invented in 1882, became a vital tool for welding and metalwork. This Swedish creation fueled industrial progress and even early aviation experiments.",
-                    sv: "Carl Richard Nybergs blåslampa, uppfunnen 1882, blev ett viktigt verktyg för svetsning och metallarbete. Denna svenska uppfinning drev industriella framsteg och till och med tidiga flygexperiment.",
+                    en: "In 1882, Swedish inventor Carl Richard Nyberg created the first practical blowtorch by forcing pressurised kerosene through a nozzle and igniting the vapour, producing a concentrated flame hot enough to melt copper and brass. The tool revolutionised plumbing, metalwork, and ship repair, replacing heavy coal-fired forges with a portable device a single worker could carry. Nyberg later used his blowtorch expertise to fund early aviation experiments, building one of Sweden's first powered aircraft. His invention remains a staple in workshops and construction sites worldwide over 140 years later.",
+                    sv: "År 1882 skapade den svenske uppfinnaren Carl Richard Nyberg den första praktiska blåslampan genom att pressa fotogen genom ett munstycke och antända ångan, vilket producerade en koncentrerad låga het nog att smälta koppar och mässing. Verktyget revolutionerade rörarbete, metallarbete och skeppsreparationer och ersatte tunga koleldade smedjor med en bärbar enhet. Nyberg använde senare sin blåslampeexpertis för att finansiera tidiga flygexperiment och byggde ett av Sveriges första motoriserade flygplan.",
                 },
                 imageSrc: "/invention-images/blowtorch.webp",
                 link: "https://example.com/oatmeal",
@@ -205,9 +209,9 @@ const inventionsData = [
                 oneLineHeading: { en: "The Modern Walking Frame: A Swedish Step Forward", sv: "Den Moderna Gåstolen: Ett Svenskt Steg Framåt" },
                 description: {
                     en:
-                        "Aina Wifalk's modern walking frame, designed in the 1960s, revolutionized mobility aids for the elderly and disabled. This Swedish invention improved quality of life and independence for millions of people worldwide.",
+                        "In the 1960s, Swedish polio survivor Aina Wifalk redesigned the walking frame from a rigid, lift-and-place cage into a lightweight rollator with wheels, brakes, and a built-in seat. Drawing on her own experience with limited mobility, she created a device that let users walk naturally rather than shuffling. Her four-wheeled 'rollator' was patented in 1978 and quickly adopted across Scandinavia. Today it is the global standard for walking aids, used by tens of millions of elderly and disabled people, giving them independence and dignity in their daily lives.",
                     sv:
-                        "Aina Wifalks moderna gåstol, designad på 1960-talet, revolutionerade rörlighetsstöd för äldre och funktionshindrade. Denna svenska uppfinning förbättrade livskvaliteten och självständigheten för miljontals människor världen över.",
+                        "På 1960-talet omdesignade den svenska polioöverlevanden Aina Wifalk gåstolen från en stel lyft-och-ställ-bur till en lätt rollator med hjul, bromsar och inbyggd sits. Med utgångspunkt i sin egen erfarenhet av begränsad rörlighet skapade hon en anordning som lät användare gå naturligt istället för att hasa sig fram. Hennes fyrhjuliga rollator patenterades 1978 och antogs snabbt i hela Skandinavien. Idag är den global standard för gånghjälpmedel.",
                 },
                 imageSrc: "/invention-images/walking-frame.webp",
                 link: "https://example.com/oatmeal",
@@ -240,9 +244,9 @@ const inventionsData = [
                 oneLineHeading: { en: "Wires Be Gone: Bluetooth Connects the World", sv: "Sladdar Bort: Bluetooth Kopplar Ihop Världen" },
                 description: {
                     en:
-                        "This game-changing technology was developed by Swedish engineer Jaap Haartsen while working for Ericsson in the 1990s. Today, Bluetooth is used by billions of devices worldwide, proving once again that Swedish innovation is at the forefront of global technology.",
+                        "Bluetooth technology was developed in the 1990s by Swedish engineers Jaap Haartsen and Sven Mattisson while working at Ericsson in Lund. Named after the 10th-century Viking king Harald Bluetooth, who united Scandinavian tribes, the technology was designed to unite communication protocols across devices. The team created a short-range wireless standard that could connect phones, headsets, and computers without cables. Today Bluetooth is embedded in over four billion devices shipped annually, powering everything from wireless earbuds and smart home gadgets to medical instruments and automotive systems.",
                     sv:
-                        "Denna banbrytande teknologi utvecklades av den svenske ingenjören Jaap Haartsen medan han arbetade för Ericsson på 1990-talet. Idag används Bluetooth av miljarder enheter världen över, vilket än en gång bevisar att svensk innovation ligger i framkant av global teknik.",
+                        "Bluetooth-tekniken utvecklades på 1990-talet av de svenska ingenjörerna Jaap Haartsen och Sven Mattisson medan de arbetade på Ericsson i Lund. Uppkallad efter 900-talskungen Harald Blåtand, som förenade skandinaviska stammar, designades tekniken för att förena kommunikationsprotokoll mellan enheter. Teamet skapade en trådlös standard för korta avstånd som kunde ansluta telefoner, headset och datorer utan kablar. Idag är Bluetooth inbyggt i över fyra miljarder enheter som levereras årligen.",
                 },
                 imageSrc: "/invention-images/bluetooth.webp",
                 transparentImage: "/invention-images/bluetooth-png.webp",
@@ -400,8 +404,8 @@ const inventionsData = [
                 year: 2023,
                 oneLineHeading: { en: "Lovable lets anyone ship apps with vibe coding", sv: "Lovable låter vem som helst bygga appar med vibe coding" },
                 description: {
-                    en: "Lovable pairs large language models with opinionated tooling so non-coders can launch software just by describing what they need. The Stockholm startup has raced to SEK 720M in ARR by summer 2025 and is rumoured to be courted at a SEK 17B valuation.",
-                    sv: "Lovable kombinerar stora språkmodeller med smarta verktyg så att personer utan kodkunskaper kan lansera mjukvara genom att beskriva sitt behov. Stockholmsbolaget har rusat till 720 Mkr i återkommande intäkter sommaren 2025 och uppges jagas av investerare runt en värdering på 17 miljarder kronor.",
+                    en: "Lovable pairs large language models with opinionated tooling so non-coders can build and ship software just by describing what they need in plain language. Founded in Stockholm in 2023 by Sigge Labor, Max Junestrand, and August Erséus, the platform generates full-stack web applications from a single prompt, handling everything from design to deployment. By summer 2025 the startup had raced to SEK 720 million in annual recurring revenue, making it one of the fastest-growing AI companies in Europe and a symbol of Sweden's booming generative-AI ecosystem.",
+                    sv: "Lovable kombinerar stora språkmodeller med smarta verktyg så att personer utan kodkunskaper kan bygga och lansera mjukvara genom att beskriva sitt behov i vanligt språk. Grundat i Stockholm 2023 av Sigge Labor, Max Junestrand och August Erséus genererar plattformen fullstack-webbapplikationer från en enda prompt och hanterar allt från design till driftsättning. Sommaren 2025 hade startupen rusat till 720 Mkr i återkommande intäkter, vilket gör den till ett av Europas snabbast växande AI-bolag.",
                 },
                 imageSrc: "/invention-images/ais.webp",
                 link: "https://www.lovable.ai/",
@@ -413,8 +417,8 @@ const inventionsData = [
                 year: 2023,
                 oneLineHeading: { en: "Legora blends legal expertise with AI copilots", sv: "Legora blandar juridisk expertis med AI-kollegor" },
                 description: {
-                    en: "Legora automates research and drafting for legal teams by combining proprietary models with lawyers’ playbooks. The team raised nearly SEK 800M in 2025 and is valued at SEK 6.5B.",
-                    sv: "Legora automatiserar research och utkast för jurister genom att koppla egna modeller till advokaters arbetsmetoder. Bolaget tog in nära 800 Mkr under 2025 och värderas till 6,5 miljarder kronor.",
+                    en: "Legora automates research and drafting for legal teams by combining proprietary language models with the specific playbooks and workflows that law firms already use. Founded in Stockholm by Sigge Labor, Max Junestrand, and August Erséus, the platform can review contracts, flag risks, and generate first drafts in minutes rather than hours. By 2025 the company had raised nearly SEK 800 million and reached a valuation of SEK 6.5 billion, reflecting surging demand for AI tools that can navigate the complexity of legal language across jurisdictions.",
+                    sv: "Legora automatiserar research och utkast för jurister genom att koppla egna språkmodeller till de specifika arbetsmetoder och flöden som advokatbyråer redan använder. Plattformen kan granska avtal, flagga risker och generera förstaversioner på minuter istället för timmar. Under 2025 hade bolaget tagit in nära 800 Mkr och nått en värdering på 6,5 miljarder kronor, vilket speglar den ökande efterfrågan på AI-verktyg som kan navigera juridikens komplexitet.",
                 },
                 imageSrc: "/invention-images/ais.webp",
                 link: "https://www.legora.com/",
@@ -426,8 +430,8 @@ const inventionsData = [
                 year: 2016,
                 oneLineHeading: { en: "Sana builds enterprise AI agents on your knowledge base", sv: "Sana bygger företagsagenter på organisationens kunskap" },
                 description: {
-                    en: "Sana delivers an AI agent that learns from a company’s own documents and workflows while spearheading initiatives like The Swedish AI Reform to broaden access to advanced tooling.",
-                    sv: "Sana levererar en AI-agent som lär sig av företagets egna dokument och arbetsflöden och driver satsningar som The Swedish AI Reform för att ge fler tillgång till avancerade verktyg.",
+                    en: "Sana delivers an AI platform that learns from a company's own documents, knowledge bases, and internal workflows to create intelligent agents that can answer employee questions, automate routine tasks, and surface insights. Founded in 2016 by Joel Hellermark when he was just 18 years old, the Stockholm company has grown into one of Europe's leading enterprise AI players. Sana also spearheads The Swedish AI Reform, an initiative to ensure businesses of all sizes can access advanced AI tooling, reinforcing Sweden's position at the forefront of responsible AI development.",
+                    sv: "Sana levererar en AI-plattform som lär sig av företagets egna dokument, kunskapsbaser och interna arbetsflöden för att skapa intelligenta agenter som kan svara på anställdas frågor, automatisera rutinuppgifter och ta fram insikter. Grundat 2016 av Joel Hellermark när han var bara 18 år har Stockholmsbolaget vuxit till en av Europas ledande aktörer inom enterprise-AI. Sana driver även The Swedish AI Reform för att ge fler tillgång till avancerade AI-verktyg.",
                 },
                 imageSrc: "/invention-images/ais.webp",
                 link: "https://www.sana.ai/",
@@ -439,8 +443,8 @@ const inventionsData = [
                 year: 2023,
                 oneLineHeading: { en: "Tandem Health captures clinical conversations automatically", sv: "Tandem Health fångar kliniska samtal automatiskt" },
                 description: {
-                    en: "Tandem Health assists doctors by transcribing and structuring patient meetings so notes and follow-ups are ready instantly, a service already generating SEK 180M ARR.",
-                    sv: "Tandem Health hjälper läkare genom att transkribera och strukturera patientmöten så att journaler och uppföljningar blir klara direkt, en tjänst som redan genererar 180 Mkr i ARR.",
+                    en: "Tandem Health assists doctors by automatically transcribing and structuring patient consultations so that medical notes, referrals, and follow-up actions are ready the moment a visit ends. Founded in 2023 by Oliver Åstrand, Oscar Boldt-Christmas, and Lukas Saari, the Stockholm startup uses speech recognition and clinical language models trained on Nordic healthcare terminology. By early 2025 the service was already generating SEK 180 million in annual recurring revenue, freeing thousands of doctors across Scandinavia from hours of daily paperwork.",
+                    sv: "Tandem Health hjälper läkare genom att automatiskt transkribera och strukturera patientbesök så att journaler, remisser och uppföljningar är klara direkt när besöket avslutas. Grundat 2023 av Oliver Åstrand, Oscar Boldt-Christmas och Lukas Saari använder Stockholmsstartupen taligenkänning och kliniska språkmodeller tränade på nordisk medicinsk terminologi. I början av 2025 genererade tjänsten redan 180 Mkr i återkommande intäkter.",
                 },
                 imageSrc: "/invention-images/ais.webp",
                 link: "https://www.tandem.health/",
@@ -452,8 +456,8 @@ const inventionsData = [
                 year: 2023,
                 oneLineHeading: { en: "Listen Labs turns voice interviews into customer insight", sv: "Listen Labs gör röstintervjuer till kundinsikt" },
                 description: {
-                    en: "Listen Labs runs AI-led voice interviews and summarises results so product teams get qualitative insight at scale. The company has raised SEK 260M since launch.",
-                    sv: "Listen Labs genomför AI-ledda röstintervjuer och sammanfattar resultatet så att produktteam får kvalitativ insikt i stor skala. Bolaget har tagit in 260 Mkr sedan starten.",
+                    en: "Listen Labs runs AI-led voice interviews at scale, allowing product teams to gather qualitative customer insights without spending weeks on manual research. The platform conducts natural-sounding conversations, transcribes responses, and distills themes and sentiments into actionable summaries. Founded in 2023 by Alfred Wahlforss and Florian Juengermann, the Stockholm company has raised SEK 260 million since launch, attracting clients who want to understand their users deeply but lack the bandwidth for traditional interview processes.",
+                    sv: "Listen Labs genomför AI-ledda röstintervjuer i stor skala, vilket låter produktteam samla in kvalitativa kundinsikter utan att lägga veckor på manuell research. Plattformen för naturliga samtal, transkriberar svar och destillerar teman och sentiment till konkreta sammanfattningar. Grundat 2023 av Alfred Wahlforss och Florian Juengermann har Stockholmsbolaget tagit in 260 Mkr sedan starten.",
                 },
                 imageSrc: "/invention-images/ais.webp",
                 link: "https://www.listenlabs.com/",
@@ -465,8 +469,8 @@ const inventionsData = [
                 year: 2024,
                 oneLineHeading: { en: "Filed streamlines complex US tax returns with AI", sv: "Filed förenklar komplexa amerikanska deklarationer med AI" },
                 description: {
-                    en: "Filed focuses on U.S. tax advisers, using AI workflows to prepare intricate returns faster and with fewer errors. The company raised SEK 170M in May 2025.",
-                    sv: "Filed riktar sig till amerikanska skatterådgivare och använder AI-flöden för att göra avancerade deklarationer snabbare och med färre fel. Bolaget tog in 170 Mkr i maj 2025.",
+                    en: "Filed focuses on U.S. tax advisers, using AI-powered workflows to prepare intricate returns faster and with fewer errors. The platform ingests financial documents, cross-references IRS rules, and generates completed tax forms that human advisers can review and file. Founded by Johannes Schildt, Jakob Olsson, and their team, Filed raised SEK 170 million in May 2025, reflecting the massive opportunity in automating one of the most document-heavy professions. The company aims to cut preparation time by up to 80 percent while maintaining full regulatory compliance.",
+                    sv: "Filed riktar sig till amerikanska skatterådgivare och använder AI-drivna flöden för att göra avancerade deklarationer snabbare och med färre fel. Plattformen tar in finansiella dokument, korsrefererar IRS-regler och genererar färdiga skatteformulär som mänskliga rådgivare kan granska och skicka in. Bolaget tog in 170 Mkr i maj 2025, vilket speglar den enorma möjligheten i att automatisera en av de mest dokumenttunga professionerna.",
                 },
                 imageSrc: "/invention-images/ais.webp",
                 link: "https://www.getfiled.com/",
@@ -478,8 +482,8 @@ const inventionsData = [
                 year: 2024,
                 oneLineHeading: { en: "Lightbringer protects IP with AI-first patent tooling", sv: "Lightbringer skyddar immateriella rättigheter med AI-verktyg" },
                 description: {
-                    en: "Lightbringer builds software that automates patent searches, filing and portfolio strategy so companies can safeguard inventions faster.",
-                    sv: "Lightbringer skapar mjukvara som automatiserar patentsökning, ansökningar och portföljstrategi så att företag kan skydda innovationer snabbare.",
+                    en: "Lightbringer builds AI-powered software that automates patent searches, prior-art analysis, filing preparation, and portfolio strategy so companies can safeguard their inventions faster and at lower cost. Traditional patent work requires expensive specialist attorneys and can take months; Lightbringer condenses the process into days by scanning millions of existing patents and generating structured reports. Founded in 2024 by a team of IP and AI specialists in Stockholm, the company is part of Sweden's growing wave of legal-tech startups that apply language models to complex document-heavy domains.",
+                    sv: "Lightbringer skapar AI-driven mjukvara som automatiserar patentsökning, analys av tidigare teknik, förberedelse av ansökningar och portföljstrategi så att företag kan skydda sina innovationer snabbare och billigare. Traditionellt patentarbete kräver dyra specialistadvokater och kan ta månader; Lightbringer komprimerar processen till dagar genom att skanna miljontals befintliga patent och generera strukturerade rapporter.",
                 },
                 imageSrc: "/invention-images/ais.webp",
                 link: "https://www.lightbringer.ai/",
@@ -491,8 +495,8 @@ const inventionsData = [
                 year: 2023,
                 oneLineHeading: { en: "Talentium hunts talent with autonomous sourcing agents", sv: "Talentium hittar talang med autonoma sourcing-agenter" },
                 description: {
-                    en: "Talentium scouts the open web for candidates, summarising experience and skills for recruiters with minimal manual effort.",
-                    sv: "Talentium söker av öppna källor efter kandidater och sammanfattar erfarenhet och kompetens åt rekryterare med minimalt manuellt arbete.",
+                    en: "Talentium scouts the open web for job candidates using autonomous AI sourcing agents that crawl professional networks, portfolios, and public profiles to identify people who match specific role requirements. Instead of recruiters spending hours manually searching LinkedIn, Talentium's agents summarise each candidate's experience, skills, and cultural fit, then rank them for relevance. Founded in 2023 in Stockholm, the company is part of Sweden's thriving HR-tech scene and addresses one of recruiting's biggest bottlenecks: finding the right people before competitors do.",
+                    sv: "Talentium söker av öppna webben efter jobbkandidater med autonoma AI-sourcing-agenter som crawlar professionella nätverk, portföljer och offentliga profiler för att identifiera personer som matchar specifika rollkrav. Istället för att rekryterare lägger timmar på att manuellt söka på LinkedIn sammanfattar Talentiums agenter varje kandidats erfarenhet, kompetens och kulturell passning och rangordnar dem efter relevans.",
                 },
                 imageSrc: "/invention-images/ais.webp",
                 link: "https://www.talentium.ai/",
@@ -504,8 +508,8 @@ const inventionsData = [
                 year: 2022,
                 oneLineHeading: { en: "AI-Bob reviews construction plans for compliance", sv: "AI-Bob granskar byggplaner för regelverk" },
                 description: {
-                    en: "AI-Bob helps the construction industry by checking drawings against Swedish building codes, reducing costly mistakes on site.",
-                    sv: "AI-Bob hjälper byggbranschen genom att kontrollera ritningar mot svenska byggregler och minskar dyra misstag på byggplatsen.",
+                    en: "AI-Bob helps the construction industry by automatically checking architectural drawings and blueprints against Swedish building codes and regulations, flagging non-compliant elements before construction begins. Founded in 2022 by Elin Mårtensson, the Stockholm-based company uses computer vision and regulatory language models to catch errors that human reviewers might miss under time pressure. By automating compliance checks, AI-Bob reduces costly on-site mistakes, shortens approval timelines, and helps architects and engineers deliver buildings that meet safety standards from the start.",
+                    sv: "AI-Bob hjälper byggbranschen genom att automatiskt kontrollera arkitektritningar och ritningar mot svenska byggregler och föreskrifter, och flaggar icke-kompatibla element innan byggnation börjar. Grundat 2022 av Elin Mårtensson använder Stockholmsbolaget datorseende och regulatoriska språkmodeller för att fånga fel som mänskliga granskare kan missa under tidspress. Genom att automatisera regelkontroller minskar AI-Bob dyra misstag på byggplatsen.",
                 },
                 imageSrc: "/invention-images/ais.webp",
                 link: "https://www.ai-bob.se/",
@@ -558,9 +562,9 @@ const inventionsData = [
                 },
                 description: {
                     en:
-                        "Cholera is an acute diarrheal disease caused by the Vibrio cholerae bacteria. It spreads primarily through contaminated water and food, often in areas with poor sanitation and limited access to clean drinking water. The disease causes severe dehydration and, without rapid treatment, can be fatal within hours.",
+                        "Cholera, caused by the Vibrio cholerae bacterium, spreads through contaminated water and can kill within hours through severe dehydration. In the 1990s, Swedish immunologist Jan Holmgren at the University of Gothenburg developed Dukoral, the world's first effective oral cholera vaccine. Rather than requiring needles and trained medical staff, Dukoral could be administered as a drink, making mass vaccination campaigns feasible in developing countries with limited healthcare infrastructure. The vaccine has since protected millions across Asia, Africa, and Latin America during outbreaks and remains a cornerstone of the WHO's global cholera control strategy.",
                     sv:
-                        "Kolera är en akut diarrésjukdom orsakad av bakterien Vibrio cholerae. Den sprids huvudsakligen genom förorenat vatten och mat, ofta i områden med dålig sanitet och begränsad tillgång till rent dricksvatten. Sjukdomen orsakar svår uttorkning och kan, utan snabb behandling, vara dödlig inom några timmar.",
+                        "Kolera, orsakad av bakterien Vibrio cholerae, sprids genom förorenat vatten och kan döda inom timmar genom svår uttorkning. På 1990-talet utvecklade den svenske immunologen Jan Holmgren vid Göteborgs universitet Dukoral, världens första effektiva orala koleravaccin. Istället för att kräva nålar och utbildad medicinsk personal kunde Dukoral administreras som en dryck, vilket gjorde massvaccinationskampanjer möjliga i utvecklingsländer med begränsad sjukvårdsinfrastruktur. Vaccinet har sedan dess skyddat miljoner i Asien, Afrika och Latinamerika.",
                 },
                 imageSrc: "/invention-images/cholera-vaccine.webp",
                 link: "https://example.com/oatmeal",
@@ -572,8 +576,8 @@ const inventionsData = [
                 year: 1867,
                 oneLineHeading: { en: "Boom Time: Dynamite Blasts Through History", sv: "Bommens Tid: Dynamit Spränger Genom Historien" },
                 description: {
-                    en: "Invented by Alfred Nobel in 1867, dynamite reshaped construction and mining with its controlled explosive power. This Swedish breakthrough left a lasting mark—both literally and figuratively—on the world.",
-                    sv: "Uppfunnet av Alfred Nobel 1867 omformade dynamit byggnation och gruvdrift med sin kontrollerade sprängkraft. Detta svenska genombrott lämnade ett bestående avtryck – bokstavligt och bildligt – på världen.",
+                    en: "Alfred Nobel invented dynamite in 1867 by stabilising volatile nitroglycerin with diatomaceous earth, creating an explosive that could be handled, transported, and detonated safely. The invention transformed mining, tunnelling, and construction, enabling projects like the Panama Canal and transcontinental railways that would have been impossible with black powder alone. The fortune Nobel amassed from dynamite later funded the Nobel Prizes, turning a tool of destruction into the world's most prestigious awards for human achievement in science, literature, and peace.",
+                    sv: "Alfred Nobel uppfann dynamit 1867 genom att stabilisera flyktig nitroglycerin med kiselgur, vilket skapade ett sprängämne som kunde hanteras, transporteras och detoneras säkert. Uppfinningen förvandlade gruvdrift, tunnelbyggen och konstruktion och möjliggjorde projekt som Panamakanalen och transkontinentala järnvägar som hade varit omöjliga med bara krut. Förmögenheten Nobel samlade från dynamit finansierade senare Nobelprisen.",
                 },
                 imageSrc: "/invention-images/dynamite.webp",
                 link: "https://example.com/oatmeal",
@@ -585,8 +589,8 @@ const inventionsData = [
                 year: 1922,
                 oneLineHeading: { en: "Warm Heart: The Cooker That Heated Homes", sv: "Varmt Hjärta: Spisen Som Värmde Hem" },
                 description: {
-                    en: "Gustaf Dalén's AGA Cooker, invented in 1922, brought efficient, heat-retaining cooking to households worldwide. This Swedish innovation blended practicality with elegance, earning a lasting place in kitchens.",
-                    sv: "Gustaf Daléns AGA-spis, uppfunnen 1922, förde effektiv, värmehållande matlagning till hushåll världen över. Denna svenska innovation blandade praktik med elegans och fick en beständig plats i kök.",
+                    en: "Gustaf Dalén's AGA Cooker, invented in 1922, was born from a personal challenge: after losing his sight in a laboratory explosion, the Nobel Prize-winning physicist designed a stove that his wife could operate without constant monitoring. The cast-iron cooker uses heat storage to maintain a steady temperature, cooking food slowly and evenly while consuming far less fuel than conventional ranges. Its elegant, rounded design became an icon of British and Scandinavian country kitchens. Over a century later, AGA cookers are still manufactured and cherished as both practical appliances and design classics.",
+                    sv: "Gustaf Daléns AGA-spis, uppfunnen 1922, föddes ur en personlig utmaning: efter att ha förlorat synen i en laboratorieexplosion designade den Nobelprisbelönade fysikern en spis som hans fru kunde använda utan ständig övervakning. Gjutjärnsspisen använder värmelagring för att hålla en jämn temperatur och lagar mat långsamt och jämnt med mycket mindre bränsle än konventionella spisar. Dess eleganta, rundade design blev en ikon i brittiska och skandinaviska lantkök.",
                 },
                 imageSrc: "/invention-images/aga-cooker.webp",
                 link: "https://example.com/oatmeal",
@@ -598,8 +602,8 @@ const inventionsData = [
                 year: 1958,
                 oneLineHeading: { en: "Heartbeat Hero: The Pacemaker Saves Lives", sv: "Hjärteslagshjälte: Pacemakern Räddar Liv" },
                 description: {
-                    en: "Developed by Rune Elmqvist in 1958, the first implantable pacemaker revolutionized cardiac care. This Swedish invention has since kept millions of hearts beating steadily around the globe.",
-                    sv: "Utvecklad av Rune Elmqvist 1958 revolutionerade den första implanterbara pacemakern hjärtvården. Denna svenska uppfinning har sedan dess hållit miljontals hjärtan slående stadigt världen över.",
+                    en: "In 1958, Swedish engineer Rune Elmqvist and surgeon Åke Senning created and implanted the first pacemaker at Karolinska Hospital in Stockholm. The fist-sized device, encased in epoxy resin and powered by rechargeable nickel-cadmium batteries, kept patient Arne Larsson's heart beating steadily. Though the first unit lasted only three hours, rapid iteration produced reliable devices that transformed cardiac care. Today over a million pacemakers are implanted every year worldwide, many smaller than a coin, giving patients decades of normal life that would otherwise be impossible.",
+                    sv: "År 1958 skapade den svenske ingenjören Rune Elmqvist och kirurgen Åke Senning och implanterade den första pacemakern på Karolinska sjukhuset i Stockholm. Den knytnävsstora enheten, inkapslad i epoxiharts och driven av uppladdningsbara nickel-kadmiumbatterier, höll patienten Arne Larssons hjärta slående stadigt. Även om den första enheten bara höll i tre timmar producerade snabb iteration pålitliga enheter som förvandlade hjärtvården.",
                 },
                 imageSrc: "/invention-images/pacemaker.webp",
                 link: "https://example.com/oatmeal",
@@ -611,8 +615,8 @@ const inventionsData = [
                 year: 1925,
                 oneLineHeading: { en: "Cool Idea: The Fridge That Changed Food Forever", sv: "Sval Idé: Kylskåpet Som Förändrade Mat För Alltid" },
                 description: {
-                    en: "In the 1920s, Carl Munters and Baltzar von Platen invented a gas-absorption refrigerator with no moving parts. This Swedish breakthrough transformed food storage, making freshness a global reality.",
-                    sv: "På 1920-talet uppfann Carl Munters och Baltzar von Platen ett gasabsorptionskylskåp utan rörliga delar. Detta svenska genombrott förändrade matförvaring och gjorde färskhet till en global verklighet.",
+                    en: "In 1922, two Swedish engineering students at the Royal Institute of Technology, Carl Munters and Baltzar von Platen, invented a gas-absorption refrigerator that used heat instead of a compressor to drive the cooling cycle. With no moving parts, their design was silent, virtually maintenance-free, and could run on any heat source including kerosene. The invention was licensed to Electrolux and manufactured globally, bringing reliable refrigeration to homes, hotels, and remote locations. The absorption principle is still used today in RV fridges, hotel minibars, and off-grid cooling systems worldwide.",
+                    sv: "År 1922 uppfann två svenska ingenjörsstudenter vid Kungliga Tekniska Högskolan, Carl Munters och Baltzar von Platen, ett gasabsorptionskylskåp som använde värme istället för en kompressor för att driva kylcykeln. Utan rörliga delar var deras design tyst, nästan underhållsfri och kunde drivas av vilken värmekälla som helst inklusive fotogen. Uppfinningen licensierades till Electrolux och tillverkades globalt, vilket förde pålitlig kylning till hem, hotell och avlägsna platser.",
                 },
                 imageSrc: "/invention-images/refrigerator.webp",
                 link: "https://example.com/oatmeal",

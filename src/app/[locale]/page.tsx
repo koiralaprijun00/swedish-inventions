@@ -125,6 +125,7 @@ function HomeContent() {
                           locale={locale}
                           category={getLocalizedCategory(category.category)}
                           imageSrc={item.imageSrc}
+                          description={item.description?.[locale as "en" | "sv"] || item.description?.en || ""}
                           expanded={expandedInvention === localName}
                           onToggle={() => handleToggle(localName)}
                         />
