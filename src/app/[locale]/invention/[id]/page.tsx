@@ -40,7 +40,7 @@ export default function InventionPage() {
   const normalizeFileName = (str: string) =>
     str
       .toLowerCase()
-      .replace(/\\s+/g, "-")
+      .replace(/\s+/g, "-")
       .replace(/ö/g, "o")
       .replace(/å/g, "a")
       .replace(/ä/g, "a");
