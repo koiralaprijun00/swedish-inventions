@@ -16,7 +16,16 @@ export default function InventionPage() {
   const decodedId = decodeURIComponent(id);
 
   const allInventions = inventionsData.flatMap((category) =>
-    category.items.map((item) => ({ ...item, category: category.category }))
+    category.items.map((item) => ({
+      ...item,
+      creatorName:
+        ("founderName" in item && item.founderName) ||
+        ("inventorName" in item && item.inventorName) ||
+        undefined,
+      imageSrc:
+        ("imageSrc" in item && item.imageSrc) || "/fallback-image.jpg",
+      category: category.category,
+    }))
   );
 
   const invention = allInventions.find((item) =>
@@ -83,7 +92,7 @@ export default function InventionPage() {
     <section className="detail">
       <figure className="detail__hero">
         <Image
-          src={invention.imageSrc || "/fallback-image.jpg"}
+          src={invention.imageSrc}
           alt={invention.name[locale]}
           fill
           className="object-cover"
@@ -123,7 +132,7 @@ export default function InventionPage() {
             <div className="detail__fact">
               <span className="detail__fact-label">{t("inventor")}</span>
               <span className="detail__fact-value">
-                {invention.inventorName || t("unknown")}
+                {invention.creatorName || t("unknown")}
               </span>
             </div>
 
