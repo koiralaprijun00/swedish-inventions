@@ -306,7 +306,6 @@ const inventionsData = [
           "en": "Gustaf de Laval and his business partner Oskar Lamm patented a centrifugal milk separator in 1878. A rapidly rotating bowl used centrifugal force to separate cream from skimmed milk, replacing the slow practice of leaving milk to stand. The machine became widely used on Swedish farms and helped establish the company that became Alfa-Laval.",
           "sv": "Gustaf de Laval och hans affärspartner Oskar Lamm tog patent på en centrifugalseparator för mjölk 1878. En snabbt roterande skål använde centrifugalkraft för att skilja grädde från skummjölk och ersatte den långsamma metoden att låta mjölken stå. Maskinen blev vanlig på svenska gårdar och bidrog till att lägga grunden för företaget som blev Alfa-Laval."
         },
-        "imageSrc": "/invention-images/milk-separator.webp",
         "link": "https://www.tekniskamuseet.se/en/learn-more/swedish-inventors/gustaf-de-laval-milk-cream-separator/",
         "summary": {
           "en": "Gustaf de Laval and Oskar Lamm patented a centrifugal milk-cream separator in 1878.",
@@ -325,7 +324,6 @@ const inventionsData = [
           "en": "Gustaf de Laval patented a high-speed steam turbine in 1883. It converted the energy of steam into rotary motion, and its exceptionally fast rotation made it useful for industrial machinery. English engineer Charles Parsons developed a steam turbine independently around the same time; de Laval's design was a distinct Swedish contribution to the technology.",
           "sv": "Gustaf de Laval tog patent på en höghastighetsångturbin 1883. Den omvandlade ångans energi till rotationsrörelse, och den mycket höga hastigheten gjorde den användbar i industrimaskiner. Den engelske ingenjören Charles Parsons utvecklade en ångturbin oberoende ungefär samtidigt; de Lavals konstruktion var ett självständigt svenskt bidrag till tekniken."
         },
-        "imageSrc": "/invention-images/steam-turbine.webp",
         "link": "https://www.tekniskamuseet.se/lar-dig-mer/svenska-uppfinnare-och-innovatorer/gustaf-de-laval-mjolkseparatorn-och-angturbinen/",
         "summary": {
           "en": "Gustaf de Laval patented his high-speed steam turbine in 1883, independently of Charles Parsons's work.",
@@ -344,7 +342,6 @@ const inventionsData = [
           "en": "Frans Wilhelm Lindqvist patented a soot-free kerosene stove in 1891. By vaporising the fuel before it burned, the stove produced a clean, hot flame. Lindqvist and Johan Viktor Svensson began manufacturing it in Stockholm in 1892 under the Primus name, and it became a widely exported Swedish product.",
           "sv": "Frans Wilhelm Lindqvist tog patent på ett sotfritt fotogenkök 1891. Genom att förånga bränslet före förbränningen fick köket en ren och het låga. Lindqvist och Johan Viktor Svensson började tillverka det i Stockholm 1892 under namnet Primus, och det blev en svensk exportframgång."
         },
-        "imageSrc": "/invention-images/primus-stove.webp",
         "link": "https://www.tekniskamuseet.se/lar-dig-mer/svenska-uppfinnare-och-innovatorer/frans-wilhelm-lindqvist-fotogenkok/",
         "summary": {
           "en": "Frans Wilhelm Lindqvist patented a soot-free kerosene stove in 1891; production under the Primus name began in 1892.",
@@ -897,7 +894,6 @@ const inventionsData = [
           "en": "In September 1946, physician Nils Alwall used his artificial kidney for a clinical dialysis treatment at Lund Hospital. The machine filtered waste products from a patient's blood and returned the cleansed blood to the body. Alwall's work helped establish dialysis as a treatment and later contributed to the development of Gambro's kidney products.",
           "sv": "I september 1946 använde läkaren Nils Alwall sin konstgjorda njure vid en klinisk dialysbehandling på Lunds lasarett. Apparaten filtrerade bort avfallsämnen ur patientens blod och förde tillbaka det renade blodet. Alwalls arbete bidrog till att etablera dialys som behandling och lade senare grund för Gambros njurprodukter."
         },
-        "imageSrc": "/invention-images/artificial-kidney.webp",
         "link": "https://www.medicine.lu.se/faculty-medicine-lund-university/history-faculty/nils-alwall",
         "summary": {
           "en": "Nils Alwall's artificial kidney was used for clinical dialysis at Lund Hospital in 1946.",
@@ -916,7 +912,6 @@ const inventionsData = [
           "en": "Astra-Hässle developed omeprazole, marketed as Losec, at its research centre in Mölndal, Sweden. The drug introduced a new way to reduce stomach acid by inhibiting the proton pump. The base patent was filed in 1979, and Losec's first sales year was 1988. It became one of Sweden's best-known pharmaceutical innovations.",
           "sv": "Astra-Hässle utvecklade omeprazol, som såldes under namnet Losec, vid sitt forskningscentrum i Mölndal. Läkemedlet introducerade ett nytt sätt att minska magsyran genom att hämma protonpumpen. Grundpatentet söktes 1979 och Losecs första försäljningsår var 1988. Det blev en av Sveriges mest kända läkemedelsinnovationer."
         },
-        "imageSrc": "/invention-images/losec.webp",
         "link": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/statens-offentliga-utredningar/patent-och-innovationer-for-tillvaxt-och-valfard_gub380/html/",
         "summary": {
           "en": "Developed by Astra-Hässle in Mölndal, Losec's omeprazole base patent was filed in 1979 before sales began in 1988.",
@@ -946,6 +941,181 @@ const inventionsData = [
           "en": "The First Abstract Paintings is a Swedish invention from 1906 by Hilma af Klint known for practical impact and lasting...",
           "sv": "De Första Abstrakta Målningarna är en svensk uppfinning från 1906 av Hilma af Klint känd för praktisk nytta och..."
         }
+      }
+    ]
+  },
+  {
+    "category": "companiesBrands",
+    "items": [
+      {
+        "id": 300,
+        "name": {
+          "en": "Aarke",
+          "sv": "Aarke"
+        },
+        "founderName": "Jonas Groth and Carl Ljungh",
+        "year": 2013,
+        "link": "https://aarke.com/en-ch/pages/about-aarke",
+        "summary": {
+          "en": "Aarke is a Stockholm-founded Swedish design company known for premium kitchen appliances, including its Carbonator.",
+          "sv": "Aarke är ett svenskt designföretag grundat i Stockholm, känt för köksprodukter som kolsyremaskinen Carbonator."
+        },
+        "description": {
+          "en": "Industrial designers Jonas Groth and Carl Ljungh founded Aarke in 2013. The Stockholm-based company designs kitchen appliances and home essentials, combining product engineering with a distinctive design focus. Its first product was the Aarke Carbonator.",
+          "sv": "Industridesignerna Jonas Groth och Carl Ljungh grundade Aarke 2013. Det Stockholmsbaserade företaget formger köksapparater och produkter för hemmet med fokus på både produktteknik och form. Den första produkten var kolsyremaskinen Aarke Carbonator."
+        },
+        "type": "company"
+      },
+      {
+        "id": 301,
+        "name": {
+          "en": "IKEA",
+          "sv": "IKEA"
+        },
+        "founderName": "Ingvar Kamprad",
+        "year": 1943,
+        "link": "https://www.ikea.com/us/en/this-is-ikea/about-us/from-humble-origins-to-global-brand-a-brief-history-of-ikea-pubad29a981/",
+        "summary": {
+          "en": "Ingvar Kamprad founded IKEA in Småland in 1943; the company began selling furniture in 1948.",
+          "sv": "Ingvar Kamprad grundade IKEA i Småland 1943; företaget började sälja möbler 1948."
+        },
+        "description": {
+          "en": "Ingvar Kamprad founded IKEA in Älmhult, Småland, in 1943 as a small mail-order business. It began selling furniture in 1948. The Swedish retailer later became internationally known for flat-pack furniture, self-assembly and accessible home furnishing.",
+          "sv": "Ingvar Kamprad grundade IKEA i Älmhult i Småland 1943 som ett litet postorderföretag. Möbelförsäljningen började 1948. Den svenska återförsäljaren blev senare internationellt känd för platta paket, möbler för självmontering och prisvärd heminredning."
+        },
+        "type": "company"
+      },
+      {
+        "id": 302,
+        "name": {
+          "en": "Electrolux",
+          "sv": "Electrolux"
+        },
+        "founderName": "Axel Wenner-Gren",
+        "year": 1919,
+        "link": "https://www.electroluxgroup.com/en/history-timeline-1919-1929-26396/",
+        "summary": {
+          "en": "Formed in Sweden in 1919, Electrolux grew into a major maker of household appliances.",
+          "sv": "Electrolux bildades i Sverige 1919 och växte till en stor tillverkare av hushållsapparater."
+        },
+        "description": {
+          "en": "Electrolux took its name in 1919 when Elektromekaniska AB changed its name following an agreement linking it with vacuum-cleaner maker AB Lux. Entrepreneur Axel Wenner-Gren was central to the company's early growth. Electrolux went on to become a major Swedish manufacturer of household appliances.",
+          "sv": "Electrolux fick sitt namn 1919 när Elektromekaniska AB bytte namn efter en överenskommelse med dammsugartillverkaren AB Lux. Entreprenören Axel Wenner-Gren hade en central roll i företagets tidiga utveckling. Electrolux blev senare en stor svensk tillverkare av hushållsapparater."
+        },
+        "type": "company"
+      },
+      {
+        "id": 303,
+        "name": {
+          "en": "Husqvarna",
+          "sv": "Husqvarna"
+        },
+        "year": 1689,
+        "link": "https://www.husqvarnagroup.com/en/our-history",
+        "summary": {
+          "en": "Husqvarna's roots reach back to a Swedish rifle factory established in 1689.",
+          "sv": "Husqvarnas historia började med en svensk gevärsfabrik som grundades 1689."
+        },
+        "description": {
+          "en": "Husqvarna's origins date to a state-owned rifle factory established in Huskvarna, Sweden, in 1689. Over the centuries the business expanded into sewing machines, bicycles, motorcycles and outdoor power products. Today Husqvarna Group serves customers around the world through brands including Husqvarna and Gardena.",
+          "sv": "Husqvarnas historia går tillbaka till en statlig gevärsfabrik som grundades i Huskvarna 1689. Under århundradena breddades verksamheten till bland annat symaskiner, cyklar, motorcyklar och trädgårdsmaskiner. I dag verkar Husqvarna Group internationellt med varumärken som Husqvarna och Gardena."
+        },
+        "type": "company"
+      },
+      {
+        "id": 304,
+        "name": {
+          "en": "Volvo Cars",
+          "sv": "Volvo Cars"
+        },
+        "founderName": "Assar Gabrielsson and Gustaf Larson",
+        "year": 1927,
+        "link": "https://www.volvocars.com/us/our-heritage/",
+        "summary": {
+          "en": "Founded in Gothenburg, Volvo Cars produced its first car in 1927.",
+          "sv": "Volvo Cars grundades i Göteborg och tillverkade sin första bil 1927."
+        },
+        "description": {
+          "en": "Volvo's first car, the ÖV4, left the factory in Gothenburg on 14 April 1927. The company was founded by Assar Gabrielsson and engineer Gustaf Larson, and built a reputation around cars designed for Swedish conditions. Volvo Cars later became known internationally for its focus on automotive safety.",
+          "sv": "Volvos första bil, ÖV4, lämnade fabriken i Göteborg den 14 april 1927. Företaget grundades av Assar Gabrielsson och ingenjören Gustaf Larson och byggde bilar anpassade för svenska förhållanden. Volvo Cars blev senare internationellt känt för sitt fokus på trafiksäkerhet."
+        },
+        "type": "company"
+      },
+      {
+        "id": 305,
+        "name": {
+          "en": "Ericsson",
+          "sv": "Ericsson"
+        },
+        "founderName": "Lars Magnus Ericsson and Carl Johan Andersson",
+        "year": 1876,
+        "link": "https://www.ericsson.com/en/about-us/history/shaping-history",
+        "summary": {
+          "en": "Lars Magnus Ericsson and Carl Johan Andersson started their Stockholm workshop in 1876.",
+          "sv": "Lars Magnus Ericsson och Carl Johan Andersson startade sin verkstad i Stockholm 1876."
+        },
+        "description": {
+          "en": "Lars Magnus Ericsson and Carl Johan Andersson started a small mechanical workshop in Stockholm in 1876, repairing telegraph instruments. As telephones arrived in Sweden, the company began making and improving telephone equipment, and later grew into a global telecommunications company.",
+          "sv": "Lars Magnus Ericsson och Carl Johan Andersson öppnade en liten mekanisk verkstad i Stockholm 1876 för att reparera telegrafutrustning. När telefonen kom till Sverige började företaget tillverka och utveckla telefonutrustning och växte senare till ett globalt telekomföretag."
+        },
+        "type": "company"
+      },
+      {
+        "id": 306,
+        "name": {
+          "en": "H&M",
+          "sv": "H&M"
+        },
+        "founderName": "Erling Persson",
+        "year": 1947,
+        "link": "https://hmgroup.com/about-us/history/",
+        "summary": {
+          "en": "Erling Persson opened the first Hennes store in Västerås in 1947.",
+          "sv": "Erling Persson öppnade den första Hennes-butiken i Västerås 1947."
+        },
+        "description": {
+          "en": "Swedish entrepreneur Erling Persson opened a women's clothing store called Hennes in Västerås in 1947. The company expanded into men's and children's clothing after acquiring Mauritz Widforss in 1968, becoming Hennes & Mauritz. H&M Group has since grown into an international family of fashion brands.",
+          "sv": "Den svenske entreprenören Erling Persson öppnade klädbutiken Hennes i Västerås 1947. Företaget breddade sortimentet till herr- och barnkläder efter förvärvet av Mauritz Widforss 1968 och blev då Hennes & Mauritz. H&M Group har sedan vuxit till en internationell grupp av modemärken."
+        },
+        "type": "company"
+      },
+      {
+        "id": 307,
+        "name": {
+          "en": "Fjällräven",
+          "sv": "Fjällräven"
+        },
+        "founderName": "Åke Nordin",
+        "year": 1960,
+        "link": "https://www.fjallraven.com/us/en-us/about/our-history/",
+        "summary": {
+          "en": "Åke Nordin founded Fjällräven in 1960 after designing a framed backpack in his family's basement.",
+          "sv": "Åke Nordin grundade Fjällräven 1960 efter att ha utvecklat en ryggsäck med ram i familjens källare."
+        },
+        "description": {
+          "en": "Åke Nordin founded Fjällräven in 1960 in Örnsköldsvik, Sweden. The idea grew from a framed backpack he designed as a teenager to carry equipment more comfortably. Fjällräven expanded from backpacks into outdoor clothing, tents and sleeping bags, becoming one of Sweden's best-known outdoor brands.",
+          "sv": "Åke Nordin grundade Fjällräven 1960 i Örnsköldsvik. Idén växte fram ur en ryggsäck med ram som han konstruerade som tonåring för att bära utrustning bekvämare. Fjällräven breddade sortimentet från ryggsäckar till friluftskläder, tält och sovsäckar och blev ett av Sveriges mest kända friluftsvarumärken."
+        },
+        "type": "company"
+      },
+      {
+        "id": 308,
+        "name": {
+          "en": "SKF",
+          "sv": "SKF"
+        },
+        "founderName": "Sven Wingquist",
+        "year": 1907,
+        "link": "https://cdn.skfmediahub.skf.com/api/public/099b2532e4232b46/pdf_preview_medium/099b2532e4232b46_pdf_preview_medium.pdf",
+        "summary": {
+          "en": "SKF was founded in Gothenburg in 1907 after Sven Wingquist's self-aligning ball-bearing invention.",
+          "sv": "SKF grundades i Göteborg 1907 efter Sven Wingquists uppfinning av det självinställande kullagret."
+        },
+        "description": {
+          "en": "Sven Wingquist's self-aligning ball bearing led to the founding of Svenska Kullagerfabriken, SKF, in Gothenburg in 1907. The bearing helped solve alignment problems in machinery and became the basis of a company that grew into an international engineering group.",
+          "sv": "Sven Wingquists självinställande kullager ledde till att Svenska Kullagerfabriken, SKF, grundades i Göteborg 1907. Kullagret löste problem med snedställning i maskiner och blev grunden för ett företag som växte till en internationell industrikoncern."
+        },
+        "type": "company"
       }
     ]
   }
