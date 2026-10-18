@@ -293,6 +293,63 @@ const inventionsData = [
           "en": "The First Bolt Cutter is a Swedish invention from 1866 by Jonas Jönsson Byman known for practical impact and lasting...",
           "sv": "Den Första Bultsaxen är en svensk uppfinning från 1866 av Jonas Jönsson Byman känd för praktisk nytta och långvarig..."
         }
+      },
+      {
+        "id": 77,
+        "name": {
+          "en": "Milk-Cream Separator",
+          "sv": "Mjölkseparator"
+        },
+        "inventorName": "Gustaf de Laval and Oskar Lamm",
+        "year": 1878,
+        "description": {
+          "en": "Gustaf de Laval and his business partner Oskar Lamm patented a centrifugal milk separator in 1878. A rapidly rotating bowl used centrifugal force to separate cream from skimmed milk, replacing the slow practice of leaving milk to stand. The machine became widely used on Swedish farms and helped establish the company that became Alfa-Laval.",
+          "sv": "Gustaf de Laval och hans affärspartner Oskar Lamm tog patent på en centrifugalseparator för mjölk 1878. En snabbt roterande skål använde centrifugalkraft för att skilja grädde från skummjölk och ersatte den långsamma metoden att låta mjölken stå. Maskinen blev vanlig på svenska gårdar och bidrog till att lägga grunden för företaget som blev Alfa-Laval."
+        },
+        "imageSrc": "/invention-images/milk-separator.webp",
+        "link": "https://www.tekniskamuseet.se/en/learn-more/swedish-inventors/gustaf-de-laval-milk-cream-separator/",
+        "summary": {
+          "en": "Gustaf de Laval and Oskar Lamm patented a centrifugal milk-cream separator in 1878.",
+          "sv": "Gustaf de Laval och Oskar Lamm tog patent på en centrifugalseparator för mjölk 1878."
+        }
+      },
+      {
+        "id": 78,
+        "name": {
+          "en": "Steam Turbine",
+          "sv": "Ångturbin"
+        },
+        "inventorName": "Gustaf de Laval",
+        "year": 1883,
+        "description": {
+          "en": "Gustaf de Laval patented a high-speed steam turbine in 1883. It converted the energy of steam into rotary motion, and its exceptionally fast rotation made it useful for industrial machinery. English engineer Charles Parsons developed a steam turbine independently around the same time; de Laval's design was a distinct Swedish contribution to the technology.",
+          "sv": "Gustaf de Laval tog patent på en höghastighetsångturbin 1883. Den omvandlade ångans energi till rotationsrörelse, och den mycket höga hastigheten gjorde den användbar i industrimaskiner. Den engelske ingenjören Charles Parsons utvecklade en ångturbin oberoende ungefär samtidigt; de Lavals konstruktion var ett självständigt svenskt bidrag till tekniken."
+        },
+        "imageSrc": "/invention-images/steam-turbine.webp",
+        "link": "https://www.tekniskamuseet.se/lar-dig-mer/svenska-uppfinnare-och-innovatorer/gustaf-de-laval-mjolkseparatorn-och-angturbinen/",
+        "summary": {
+          "en": "Gustaf de Laval patented his high-speed steam turbine in 1883, independently of Charles Parsons's work.",
+          "sv": "Gustaf de Laval tog patent på sin höghastighetsångturbin 1883, oberoende av Charles Parsons arbete."
+        }
+      },
+      {
+        "id": 79,
+        "name": {
+          "en": "Primus Stove",
+          "sv": "Primuskök"
+        },
+        "inventorName": "Frans Wilhelm Lindqvist",
+        "year": 1891,
+        "description": {
+          "en": "Frans Wilhelm Lindqvist patented a soot-free kerosene stove in 1891. By vaporising the fuel before it burned, the stove produced a clean, hot flame. Lindqvist and Johan Viktor Svensson began manufacturing it in Stockholm in 1892 under the Primus name, and it became a widely exported Swedish product.",
+          "sv": "Frans Wilhelm Lindqvist tog patent på ett sotfritt fotogenkök 1891. Genom att förånga bränslet före förbränningen fick köket en ren och het låga. Lindqvist och Johan Viktor Svensson började tillverka det i Stockholm 1892 under namnet Primus, och det blev en svensk exportframgång."
+        },
+        "imageSrc": "/invention-images/primus-stove.webp",
+        "link": "https://www.tekniskamuseet.se/lar-dig-mer/svenska-uppfinnare-och-innovatorer/frans-wilhelm-lindqvist-fotogenkok/",
+        "summary": {
+          "en": "Frans Wilhelm Lindqvist patented a soot-free kerosene stove in 1891; production under the Primus name began in 1892.",
+          "sv": "Frans Wilhelm Lindqvist tog patent på ett sotfritt fotogenkök 1891; tillverkningen under namnet Primus började 1892."
+        }
       }
     ]
   },
@@ -826,6 +883,44 @@ const inventionsData = [
         "summary": {
           "en": "The Gamma Knife is a Swedish invention from 1968 by Lars Leksell known for practical impact and lasting relevance.",
           "sv": "Gammakniven är en svensk uppfinning från 1968 av Lars Leksell känd för praktisk nytta och långvarig relevans. Den känns..."
+        }
+      },
+      {
+        "id": 80,
+        "name": {
+          "en": "Artificial Kidney (Dialysis Machine)",
+          "sv": "Konstgjord njure (dialysapparat)"
+        },
+        "inventorName": "Nils Alwall",
+        "year": 1946,
+        "description": {
+          "en": "In September 1946, physician Nils Alwall used his artificial kidney for a clinical dialysis treatment at Lund Hospital. The machine filtered waste products from a patient's blood and returned the cleansed blood to the body. Alwall's work helped establish dialysis as a treatment and later contributed to the development of Gambro's kidney products.",
+          "sv": "I september 1946 använde läkaren Nils Alwall sin konstgjorda njure vid en klinisk dialysbehandling på Lunds lasarett. Apparaten filtrerade bort avfallsämnen ur patientens blod och förde tillbaka det renade blodet. Alwalls arbete bidrog till att etablera dialys som behandling och lade senare grund för Gambros njurprodukter."
+        },
+        "imageSrc": "/invention-images/artificial-kidney.webp",
+        "link": "https://www.medicine.lu.se/faculty-medicine-lund-university/history-faculty/nils-alwall",
+        "summary": {
+          "en": "Nils Alwall's artificial kidney was used for clinical dialysis at Lund Hospital in 1946.",
+          "sv": "Nils Alwalls konstgjorda njure användes vid klinisk dialys på Lunds lasarett 1946."
+        }
+      },
+      {
+        "id": 81,
+        "name": {
+          "en": "Losec (Omeprazole)",
+          "sv": "Losec (omeprazol)"
+        },
+        "inventorName": "Astra-Hässle research team",
+        "year": 1979,
+        "description": {
+          "en": "Astra-Hässle developed omeprazole, marketed as Losec, at its research centre in Mölndal, Sweden. The drug introduced a new way to reduce stomach acid by inhibiting the proton pump. The base patent was filed in 1979, and Losec's first sales year was 1988. It became one of Sweden's best-known pharmaceutical innovations.",
+          "sv": "Astra-Hässle utvecklade omeprazol, som såldes under namnet Losec, vid sitt forskningscentrum i Mölndal. Läkemedlet introducerade ett nytt sätt att minska magsyran genom att hämma protonpumpen. Grundpatentet söktes 1979 och Losecs första försäljningsår var 1988. Det blev en av Sveriges mest kända läkemedelsinnovationer."
+        },
+        "imageSrc": "/invention-images/losec.webp",
+        "link": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/statens-offentliga-utredningar/patent-och-innovationer-for-tillvaxt-och-valfard_gub380/html/",
+        "summary": {
+          "en": "Developed by Astra-Hässle in Mölndal, Losec's omeprazole base patent was filed in 1979 before sales began in 1988.",
+          "sv": "Losec utvecklades av Astra-Hässle i Mölndal; grundpatentet för omeprazol söktes 1979 före försäljningsstarten 1988."
         }
       }
     ]
