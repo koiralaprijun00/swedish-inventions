@@ -121,13 +121,13 @@ function HomeContent() {
                         <InventionCard
                           key={localName}
                           name={localName}
-                          creatorName={item.type === "company" ? item.founderName : item.inventorName}
-                          entityType={item.type === "company" ? "company" : "invention"}
-                          sourceUrl={item.link && !item.link.includes("example.com") ? item.link : undefined}
-                          year={item.year?.toString()}
+                          creatorName={("founderName" in item && item.founderName) || ("inventorName" in item && item.inventorName)}
+                          entityType={category.category === "companiesBrands" ? "company" : "invention"}
+                          sourceUrl={"link" in item && item.link && !item.link.includes("example.com") ? item.link : undefined}
+                          year={"year" in item && item.year ? item.year.toString() : undefined}
                           locale={locale}
                           category={getLocalizedCategory(category.category)}
-                          imageSrc={item.imageSrc}
+                          imageSrc={"imageSrc" in item ? item.imageSrc : undefined}
                           description={item.description?.[locale as "en" | "sv"] || item.description?.en || ""}
                           summary={item.summary?.[locale as "en" | "sv"] || item.summary?.en || ""}
                           expanded={expandedInvention === localName}
