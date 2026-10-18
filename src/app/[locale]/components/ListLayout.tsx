@@ -37,7 +37,8 @@ const ListLayout = ({ inventions, locale, title = "Swedish Inventions", descript
             <InventionCard
               key={invention.id}
               name={invention.name}
-              inventorName={invention.inventorName}
+              creatorName={invention.inventorName}
+              entityType="invention"
               year={invention.year}
               locale={locale}
             />
