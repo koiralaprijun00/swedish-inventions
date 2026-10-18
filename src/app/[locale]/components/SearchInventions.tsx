@@ -45,9 +45,9 @@ const SearchInventions: React.FC = () => {
         return {
           id: item.id,
           name: item.name,
-          creatorName: ("founderName" in item ? item.founderName : item.inventorName) || "Unknown",
+          creatorName: ("founderName" in item && item.founderName) || ("inventorName" in item && item.inventorName) || "Unknown",
           description: item.description,
-          imageSrc: item.imageSrc,
+          imageSrc: "imageSrc" in item ? item.imageSrc : undefined,
           category: category.category,
           slug: slug
         };
