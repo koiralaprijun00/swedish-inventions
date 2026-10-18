@@ -29,7 +29,7 @@ const Header = memo(function Header() {
       <div className="container">
         <div className="masthead__row">
           <h1 className="masthead__title">
-            {t("title")} {t("inventions")}
+            {t("archiveTitle")}
           </h1>
           <span className="masthead__meta">
             Stockholm {stockholmTime ? `${stockholmTime} CET` : ""}
