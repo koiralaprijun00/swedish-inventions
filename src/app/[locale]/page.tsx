@@ -123,7 +123,7 @@ function HomeContent() {
                           name={localName}
                           creatorName={item.type === "company" ? item.founderName : item.inventorName}
                           entityType={item.type === "company" ? "company" : "invention"}
-                          sourceUrl={item.link}
+                          sourceUrl={item.link && !item.link.includes("example.com") ? item.link : undefined}
                           year={item.year?.toString()}
                           locale={locale}
                           category={getLocalizedCategory(category.category)}
