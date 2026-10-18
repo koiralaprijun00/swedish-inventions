@@ -13,12 +13,12 @@ interface SearchItem {
     en: string;
     sv: string;
   };
-  inventorName: string;
+  creatorName: string;
   description: {
     en: string;
     sv: string;
   };
-  imageSrc: string;
+  imageSrc?: string;
   category: string;
   slug: string;
 }
@@ -45,7 +45,7 @@ const SearchInventions: React.FC = () => {
         return {
           id: item.id,
           name: item.name,
-          inventorName: item.inventorName || "Unknown",
+          creatorName: ("founderName" in item ? item.founderName : item.inventorName) || "Unknown",
           description: item.description,
           imageSrc: item.imageSrc,
           category: category.category,
@@ -74,7 +74,7 @@ const SearchInventions: React.FC = () => {
         const nameMatch = item.name[locale]?.toLowerCase().includes(searchLower);
         
         // Check if search term is in inventor name
-        const inventorMatch = item.inventorName.toLowerCase().includes(searchLower);
+        const inventorMatch = item.creatorName.toLowerCase().includes(searchLower);
         
         // Check if search term is in description (in current locale)
         const descriptionMatch = item.description[locale]?.toLowerCase().includes(searchLower);
@@ -178,21 +178,27 @@ const SearchInventions: React.FC = () => {
                       onClick={() => handleInventionClick(item.slug)}
                       className="w-full px-4 py-3 hover:bg-muted text-left flex items-center space-x-3 transition-colors group"
                     >
-                      <div className="relative w-12 h-12 flex-shrink-0 border border-border">
-                        <Image
-                          src={item.imageSrc}
-                          alt={item.name[locale]}
-                          fill
-                          sizes="48px"
-                          className="object-cover"
-                        />
+                      <div className="relative w-12 h-12 flex-shrink-0 border border-border flex items-center justify-center bg-muted">
+                        {item.imageSrc ? (
+                          <Image
+                            src={item.imageSrc}
+                            alt={item.name[locale]}
+                            fill
+                            sizes="48px"
+                            className="object-cover"
+                          />
+                        ) : (
+                          <span aria-hidden="true" className="text-sm font-semibold text-secondary">
+                            {item.name[locale]?.slice(0, 1)}
+                          </span>
+                        )}
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-sm font-medium text-primary group-hover:text-accent truncate">
                           {item.name[locale]}
                         </h4>
                         <p className="text-xs text-secondary truncate">
-                          {item.inventorName}
+                          {item.creatorName}
                         </p>
                       </div>
                     </button>
