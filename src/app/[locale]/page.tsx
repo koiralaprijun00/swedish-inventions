@@ -68,6 +68,7 @@ function HomeContent() {
     { key: "gaming", label: t("categories.gaming") },
     { key: "scienceInnovation", label: t("categories.scienceInnovation") },
     { key: "artsCulture", label: t("categories.artsCulture") },
+    { key: "companiesBrands", label: t("categories.companiesBrands") },
   ];
 
   const normalize = (str: string) =>
@@ -120,7 +121,9 @@ function HomeContent() {
                         <InventionCard
                           key={localName}
                           name={localName}
-                          inventorName={item.inventorName}
+                          creatorName={item.type === "company" ? item.founderName : item.inventorName}
+                          entityType={item.type === "company" ? "company" : "invention"}
+                          sourceUrl={item.link && !item.link.includes("example.com") ? item.link : undefined}
                           year={item.year?.toString()}
                           locale={locale}
                           category={getLocalizedCategory(category.category)}

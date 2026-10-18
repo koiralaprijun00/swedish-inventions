@@ -5,34 +5,34 @@
     "inventions": "Uppfinningar",
     "and": "och",
     "category": "Kategori",
-    "inventor":"Uppfinnare",
+    "inventor": "Uppfinnare",
     "innovations": "Innovationer",
     "headerText": "Upptäcka Sveriges bidrag till världen från",
     "peopleOfSweden": "Sveriges folk.",
     "categoryTitle": "Uppfinningar.",
-    "categorySubtitle": "Som om de var avsedda att förändra världen.",
+    "categorySubtitle": "Ett växande arkiv över svenska uppfinningar, företag och formgivning.",
     "details": "Detaljer",
     "unknownInventor": "Okänd",
     "featuredToday": "Dagens utvalda",
     "categoryAll": "Alla",
-    "exploreSwedishInventions": "Utforska Svenska Uppfinningar",
+    "exploreSwedishInventions": "Utforska svenska uppfinningar och företag",
     "share": "Dela",
     "followUs": "Följ oss",
     "Back to top": "Tillbaka till toppen",
     "inventionNotFound": "Uppfinning hittades inte",
     "blog": "Blogg",
-    "searchPlaceholder": "Sök Uppfinningar...",
-"searching": "Söker",
-"noResultsFound": "Inga resultat hittades",
-"resultsFound": "{count} resultat hittades",
-"closeResults": "Stäng",
-"search": "Sök",
-"searchInventions": "Sök Svenska Uppfinningar",
+    "searchPlaceholder": "Sök bland uppfinningar och företag...",
+    "searching": "Söker",
+    "noResultsFound": "Inga resultat hittades",
+    "resultsFound": "{count} resultat hittades",
+    "closeResults": "Stäng",
+    "search": "Sök",
+    "searchInventions": "Sök svenska uppfinningar och företag",
     "inventors": "Uppfinnare",
     "learnMore": "Läs Mer",
     "scrollLeft": "Bläddra Vänster",
     "scrollRight": "Bläddra Höger",
-    "selectInvention": "Välj en uppfinning för att lära dig mer",
+    "selectInvention": "Välj en post för att läsa mer",
     "categories": {
       "all": "Alla",
       "foodBeverage": "Mat & Dryck",
@@ -51,8 +51,10 @@
         "Gaming": "gaming",
         "Science & Innovation": "scienceInnovation",
         "Design & Retail": "designRetail",
-        "Arts & Culture": "artsCulture"
-      }
+        "Arts & Culture": "artsCulture",
+        "Företag & varumärken": "companiesBrands"
+      },
+      "companiesBrands": "Företag & varumärken"
     },
     "Blog": {
       "heading": "Blogg",
@@ -61,6 +63,7 @@
       "notFound": "Inlägg hittades inte",
       "notFoundMessage": "Vi kunde inte hitta ett blogginlägg för denna slug.",
       "backToBlog": "Tillbaka till blogg"
-    }
+    },
+    "archiveTitle": "Svenska uppfinningar och företag"
   }
 }

@@ -8,8 +8,8 @@ import Footer from "../Footer";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Swedish Inventions – Innovations That Changed the World",
-  description: "Explore groundbreaking Swedish inventions that shaped technology, medicine, and everyday life. Discover Sweden’s legacy of innovation."
+  title: "Swedish Inventions & Companies – Innovations That Changed the World",
+  description: "Explore Swedish inventions, design, products and companies that shaped technology and everyday life."
 };
 
 export default async function LocaleLayout({

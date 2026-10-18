@@ -313,6 +313,15 @@ body {
   padding-top: 0.25rem;
 }
 
+.expand-panel__source {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.6875rem;
+  color: var(--gray-700);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .expand-panel__summary {
   font-size: 0.8125rem;
   font-weight: 600;
