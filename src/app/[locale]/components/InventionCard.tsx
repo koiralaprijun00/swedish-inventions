@@ -5,7 +5,9 @@ import Image from "next/image"
 
 type InventionCardProps = {
   name: string
-  inventorName?: string
+  creatorName?: string
+  entityType?: "company" | "invention"
+  sourceUrl?: string
   year?: string
   locale: string
   category?: string
@@ -18,7 +20,9 @@ type InventionCardProps = {
 
 export default function InventionCard({
   name,
-  inventorName,
+  creatorName,
+  entityType = "invention",
+  sourceUrl,
   year,
   locale,
   category,
@@ -37,8 +41,8 @@ export default function InventionCard({
       >
         <span className="inv-row__name">{name}</span>
         <span className="inv-row__meta">
-          {year && <span>{year}</span>}
-          {inventorName && <span>{inventorName}</span>}
+          {year && <span>{entityType === "company" ? `${locale === "sv" ? "Grundat" : "Founded"} ${year}` : year}</span>}
+          {creatorName && <span>{creatorName}</span>}
           <span className="inv-row__arrow">{expanded ? "↓" : "→"}</span>
         </span>
       </button>
@@ -48,16 +52,16 @@ export default function InventionCard({
           <div className="expand-panel__layout">
             {/* Facts + Image column */}
             <div className="expand-panel__facts">
-              {inventorName && (
+              {creatorName && (
                 <div>
-                  <div className="expand-panel__fact-label">Inventor</div>
-                  <div className="expand-panel__fact-value">{inventorName}</div>
+                  <div className="expand-panel__fact-label">{entityType === "company" ? (locale === "sv" ? "Grundare" : "Founder") : (locale === "sv" ? "Uppfinnare" : "Inventor")}</div>
+                  <div className="expand-panel__fact-value">{creatorName}</div>
                 </div>
               )}
               <div style={{ display: "flex", gap: "1.5rem" }}>
                 {year && (
                   <div>
-                    <div className="expand-panel__fact-label">Year</div>
+                    <div className="expand-panel__fact-label">{entityType === "company" ? (locale === "sv" ? "Grundat" : "Founded") : (locale === "sv" ? "År" : "Year")}</div>
                     <div className="expand-panel__fact-value">{year}</div>
                   </div>
                 )}
@@ -83,6 +87,7 @@ export default function InventionCard({
             <div className="expand-panel__desc">
               {summary && <p className="expand-panel__summary">{summary}</p>}
               {description && <p>{description}</p>}
+              {sourceUrl && <a href={sourceUrl} target="_blank" rel="noreferrer noopener" className="expand-panel__source">{locale === "sv" ? "Källa" : "Source"} ↗</a>}
             </div>
           </div>
         </div>
